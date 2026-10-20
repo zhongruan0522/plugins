@@ -795,18 +795,6 @@
       }
     },
     {
-      "name": "security-guidance",
-      "description": "对 Claude 生成代码的安全审查：编辑时基于模式匹配实时告警，Stop 时由 LLM 复查改动 diff，提交时由智能体审查器捕获注入、XSS（跨站脚本）、SSRF、硬编码密钥等 25 类以上漏洞。",
-      "version": "2.0.14",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "source": "./plugins/security-guidance",
-      "category": "security",
-      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance"
-    },
-    {
       "name": "semgrep",
       "description": "Semgrep 实时捕获安全漏洞，引导 Claude 从第一行代码就写得安全。",
       "category": "security",
