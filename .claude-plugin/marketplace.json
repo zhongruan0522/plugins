@@ -9,13 +9,15 @@
       "name": "product-management",
       "displayName": "Product Management",
       "source": "./plugins/product-management",
-      "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape."
+      "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape.",
+      "category": "productivity"
     },
     {
       "name": "design",
       "displayName": "Design",
       "source": "./plugins/design",
-      "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
+      "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs.",
+      "category": "design"
     },
     {
       "name": "mintlify",
@@ -29,6 +31,7 @@
       "name": "ai-firstify",
       "displayName": "AI-Firstify",
       "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
+      "category": "development",
       "source": "./plugins/ai-firstify",
       "homepage": "https://ai-first.techwolf.ai"
     },
@@ -36,6 +39,7 @@
       "name": "product-tracking-skills",
       "displayName": "Product Tracking",
       "description": "AI agent skills that make SaaS products data-ready for product analytics — from codebase scan to tracking plan to working instrumentation code.",
+      "category": "analytics",
       "source": "./plugins/product-tracking-skills",
       "homepage": "https://www.accoil.com/product-tracking"
     },
