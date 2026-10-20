@@ -1,0 +1,70 @@
+#ifndef __EVENT_H__
+#define __EVENT_H__
+
+#define EVENT_TYPE_MALLOC 1
+#define EVENT_TYPE_FREE 2
+#define EVENT_TYPE_CALLOC 3
+#define EVENT_TYPE_REALLOC 4
+#define EVENT_TYPE_ALIGNED_ALLOC 5
+#define EVENT_TYPE_FORK 6
+#define EVENT_TYPE_EXEC 7
+#define EVENT_TYPE_EXIT 8
+#define EVENT_TYPE_RSS 9
+#define EVENT_TYPE_RMAP 10
+
+/* Common header shared by all event types */
+struct event_header {
+    uint8_t event_type; /* See EVENT_TYPE_* constants above */
+    uint64_t timestamp; /* monotonic time in nanoseconds (CLOCK_MONOTONIC) */
+    uint32_t pid;
+    uint32_t tid;
+};
+
+/* Tagged union event structure */
+struct event {
+    struct event_header header;
+    union {
+        /* Allocation events (malloc, calloc, aligned_alloc) */
+        struct {
+            uint64_t addr; /* address returned */
+            uint64_t size; /* size requested */
+        } alloc;
+
+        /* Deallocation event (free) */
+        struct {
+            uint64_t addr; /* address to free */
+        } free;
+
+        /* Reallocation event - includes both old and new addresses */
+        struct {
+            uint64_t old_addr; /* previous address (can be NULL) */
+            uint64_t new_addr; /* new address returned */
+            uint64_t size;     /* new size requested */
+        } realloc;
+
+        /* Process lifecycle events (fork carries the parent; exec/exit have no payload) */
+        struct {
+            uint32_t parent_pid;
+        } fork;
+
+        struct {
+            int32_t member;
+            uint64_t size;
+        } rss;
+
+        struct {
+            int32_t member; /* MM_* counter index */
+            int64_t delta;
+            uint64_t addr;
+        } rmap;
+    } data;
+};
+
+/* Request from the exec-mapping watcher to the userspace attach worker */
+struct attach_request {
+    uint32_t pid;
+    uint64_t dev; /* kernel s_dev encoding: (major << 20) | minor */
+    uint64_t ino;
+};
+
+#endif /* __EVENT_H__ */

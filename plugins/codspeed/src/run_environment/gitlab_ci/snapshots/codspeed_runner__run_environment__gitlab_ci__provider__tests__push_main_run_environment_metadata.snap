@@ -1,0 +1,18 @@
+---
+source: src/run_environment/gitlab_ci/provider.rs
+expression: run_environment_metadata
+---
+{
+  "ref": "refs/heads/main",
+  "headRef": null,
+  "baseRef": "main",
+  "owner": "owner",
+  "repository": "repository",
+  "event": "push",
+  "sender": {
+    "id": "1234567890",
+    "login": "actor"
+  },
+  "localData": null,
+  "repositoryRootPath": "/builds/owner/repository"
+}

@@ -1,0 +1,43 @@
+# Copyright (c) JFrog Ltd. 2026
+# Licensed under the Apache License, Version 2.0
+# https://www.apache.org/licenses/LICENSE-2.0
+
+name: Validate plugin
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # Catches a malformed version in review, where it is cheap to fix. The release workflow
+      # compares it against the latest tag; that comparison only makes sense on main.
+      - name: Check the manifest version is X.Y.Z
+        run: |
+          set -euo pipefail
+          VERSION=$(jq -er '.version' .claude-plugin/plugin.json)
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::.claude-plugin/plugin.json version '$VERSION' is not X.Y.Z"
+            exit 1
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+
+      - name: Validate plugin layout
+        run: node scripts/validate-claude-plugin.mjs
+
+      - name: Run MCP rewrite hook unit tests
+        run: node --test scripts/claude-mcp-json-discover.test.mjs scripts/claude-align-mcp-json.test.mjs scripts/rewrite-mcp-json.test.mjs scripts/agent-guard-check.test.mjs
+
+      - name: Run /bridge-client fallback integration tests
+        run: node --test scripts/bridge-client-fallback.test.mjs
+      - name: Validate the skill-enforcement hook
+        run: node scripts/validate-enforce-hook.mjs

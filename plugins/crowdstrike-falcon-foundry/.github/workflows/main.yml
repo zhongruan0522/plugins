@@ -1,0 +1,268 @@
+name: Foundry Skills CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - name: Install ShellCheck
+        run: command -v shellcheck || sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck
+      - name: Run ShellCheck
+        run: |
+          shellcheck hooks/*.sh scripts/*.sh
+          shellcheck --severity=error *.sh
+
+  test-hooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+          pip install pyyaml
+      - name: Run hook tests
+        run: |
+          source .venv/bin/activate
+          ./test-hooks.sh
+      - name: Run Antigravity swap tests
+        run: ./test-agy-plugin-swap.sh
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - name: Validate hooks.json
+        run: |
+          python -m json.tool hooks/hooks.json > /dev/null
+          python -m json.tool hooks/hooks-cursor.json > /dev/null
+      - name: Validate plugin.json
+        run: |
+          python -m json.tool .claude-plugin/plugin.json > /dev/null
+          python -m json.tool .cursor-plugin/plugin.json > /dev/null
+          python -m json.tool plugin.json > /dev/null
+      - name: Validate SKILL.md frontmatter
+        run: |
+          fail=0
+          for skill in skills/*/SKILL.md; do
+            for field in name description version; do
+              if ! head -20 "$skill" | grep -q "^${field}:"; then
+                echo "FAIL: $skill missing '$field' in frontmatter"
+                fail=1
+              fi
+            done
+          done
+          exit $fail
+      - name: Validate skill size budgets
+        run: |
+          fail=0
+          total_desc_chars=0
+          max_tokens=5500
+
+          for skill in skills/*/SKILL.md; do
+            name=$(basename "$(dirname "$skill")")
+            chars=$(wc -c < "$skill")
+            approx_tokens=$((chars / 4))
+            pct=$((approx_tokens * 100 / max_tokens))
+
+            if [ "$approx_tokens" -gt "$max_tokens" ]; then
+              echo "FAIL: $name ~${approx_tokens} tokens (${pct}% of ${max_tokens} limit)"
+              fail=1
+            elif [ "$approx_tokens" -gt 4500 ]; then
+              echo "WARN: $name ~${approx_tokens} tokens (${pct}% of ${max_tokens} limit)"
+            fi
+
+            lines=$(wc -l < "$skill")
+            if [ "$lines" -gt 500 ]; then
+              echo "FAIL: $name ${lines} lines (Anthropic guidance: keep SKILL.md body under 500 lines)"
+              fail=1
+            elif [ "$lines" -gt 450 ]; then
+              echo "WARN: $name ${lines} lines (approaching the 500-line guidance)"
+            fi
+
+            desc=$(sed -n 's/^description: *//p' "$skill")
+            desc_len=${#desc}
+            total_desc_chars=$((total_desc_chars + desc_len))
+
+            if [ "$desc_len" -gt 1024 ]; then
+              echo "FAIL: $name description ${desc_len} chars (Anthropic max 1024)"
+              fail=1
+            fi
+          done
+
+          desc_budget=8000
+          desc_pct=$((total_desc_chars * 100 / desc_budget))
+          echo ""
+          echo "Description budget: ${total_desc_chars} / ~${desc_budget} chars (${desc_pct}%) — 1% of 200k context at ~4 chars/token"
+          exit $fail
+      - name: Validate hook scripts exist
+        run: |
+          fail=0
+          for script in hooks/*.sh; do
+            [ -x "$script" ] || { echo "FAIL: $script is not executable"; fail=1; }
+          done
+          exit $fail
+      - name: Validate eval prompt consistency
+        run: |
+          # The app-creation prompt lives in three places: the README example, the
+          # eval harness, and the assistant smoke test. They must not drift.
+          fail=0
+          readme=$(grep -m1 '^> Create a Falcon Foundry app' README.md | sed 's/^> //')
+          skill=$(sed -n 's/^PROMPT="\(Create a Falcon Foundry app[^"]*\)$/\1/p' test-skill.sh | head -1)
+          assist=$(sed -n 's/^PROMPT="\(Create a Falcon Foundry app.*\)"$/\1/p' test-assistants.sh | head -1)
+          for name in readme skill assist; do
+            eval "v=\$$name"
+            if [ -z "$v" ]; then echo "FAIL: could not extract the prompt from $name"; fail=1; fi
+          done
+          # The README text is canonical. Both harnesses must START with it; they are
+          # allowed to append automation instructions ("proceed without asking me any
+          # questions", a JSON result schema) that would be wrong to show a human.
+          case "$assist" in
+            "$readme"*) ;;
+            *) echo "FAIL: test-assistants.sh prompt does not start with the README text"
+               echo "  README: $readme"
+               echo "  assist: $assist"; fail=1 ;;
+          esac
+          case "$skill" in
+            "$readme"*) ;;
+            *) echo "FAIL: test-skill.sh prompt does not start with the README text"
+               echo "  skill: $skill"; fail=1 ;;
+          esac
+          [ $fail -eq 0 ] && echo "Eval prompt consistent across README, test-skill.sh, test-assistants.sh"
+          exit $fail
+      - name: Validate version consistency
+        run: |
+          fail=0
+          plugin_version=$(jq -r '.version' .claude-plugin/plugin.json)
+          marketplace_version=$(jq -r '.plugins[0].version' .claude-plugin/marketplace.json)
+          echo "plugin.json version: $plugin_version"
+          echo "marketplace.json plugins[0].version: $marketplace_version"
+
+          # marketplace.json must match plugin.json
+          if [ "$marketplace_version" != "$plugin_version" ]; then
+            echo "FAIL: marketplace.json plugins[0].version '$marketplace_version' != plugin.json '$plugin_version'"
+            fail=1
+          fi
+
+          # Root Agent Plugins manifest must match plugin.json
+          root_plugin_version=$(jq -r '.version' plugin.json)
+          if [ "$root_plugin_version" != "$plugin_version" ]; then
+            echo "FAIL: plugin.json version '$root_plugin_version' != .claude-plugin/plugin.json '$plugin_version'"
+            fail=1
+          fi
+
+          # Codex manifest must match plugin.json
+          codex_plugin_version=$(jq -r '.version' .codex-plugin/plugin.json)
+          if [ "$codex_plugin_version" != "$plugin_version" ]; then
+            echo "FAIL: .codex-plugin/plugin.json version '$codex_plugin_version' != .claude-plugin/plugin.json '$plugin_version'"
+            fail=1
+          fi
+
+          # Cursor manifest must match plugin.json
+          cursor_plugin_version=$(jq -r '.version' .cursor-plugin/plugin.json)
+          if [ "$cursor_plugin_version" != "$plugin_version" ]; then
+            echo "FAIL: .cursor-plugin/plugin.json version '$cursor_plugin_version' != .claude-plugin/plugin.json '$plugin_version'"
+            fail=1
+          fi
+
+          # Codex marketplace catalog pins a release tag, so its ref must match too
+          agents_ref=$(jq -r '.plugins[0].source.ref' .agents/plugins/marketplace.json)
+          if [ "${agents_ref#v}" != "$plugin_version" ]; then
+            echo "FAIL: .agents/plugins/marketplace.json ref '$agents_ref' != v$plugin_version"
+            fail=1
+          fi
+
+          # All SKILL.md versions must match plugin.json
+          for skill in skills/*/SKILL.md; do
+            skill_version=$(sed -n 's/^version: *//p' "$skill")
+            if [ "$skill_version" != "$plugin_version" ]; then
+              echo "FAIL: $skill version '$skill_version' != plugin.json '$plugin_version'"
+              fail=1
+            fi
+          done
+
+          # CHANGELOG must have an entry for this version
+          if ! grep -q "## \[${plugin_version}\]" CHANGELOG.md; then
+            echo "FAIL: CHANGELOG.md missing entry for version $plugin_version"
+            fail=1
+          fi
+
+          # README badge must match
+          if ! grep -q "version-${plugin_version}-blue" README.md; then
+            echo "FAIL: README.md badge doesn't match version $plugin_version"
+            fail=1
+          fi
+
+          [ $fail -eq 0 ] && echo "All versions consistent: $plugin_version"
+          exit $fail
+
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238  # v6.2.0
+        with:
+          node-version: 22
+      - name: Run markdownlint
+        run: npx markdownlint-cli2 "**/*.md"
+      - name: Check relative links resolve
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+          pattern = re.compile(r'\[[^\]]*\]\(([^)#][^)]*)\)')
+          broken = []
+          for path in pathlib.Path('.').rglob('*.md'):
+              if 'node_modules' in path.parts or '.git' in path.parts:
+                  continue
+              for lineno, line in enumerate(path.read_text(errors='ignore').splitlines(), 1):
+                  for match in pattern.finditer(line):
+                      target = match.group(1).split('#')[0].split('?')[0].strip()
+                      if not target or target.startswith(('http', 'mailto:', '/')):
+                          continue
+                      if not (path.parent / target).exists():
+                          broken.append(f"{path}:{lineno} -> {target}")
+          for entry in broken:
+              print(f"FAIL: {entry}")
+          print(f"{len(broken)} broken relative link(s)")
+          sys.exit(1 if broken else 0)
+          PY
+
+  pylint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+          pip install pylint
+      - name: Run pylint
+        run: |
+          source .venv/bin/activate
+          pylint --rcfile=.pylintrc skills/*/scripts/*.py
+
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-test.txt
+      - name: Run unit tests
+        run: |
+          python -m pytest tests/ -v
