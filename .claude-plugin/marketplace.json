@@ -6,18 +6,6 @@
   },
   "plugins": [
     {
-      "name": "productivity",
-      "displayName": "Productivity",
-      "source": "./plugins/productivity",
-      "description": "Manage tasks, plan your day, and build up memory of important context about your work. Syncs with your calendar, email, and chat to keep everything organized and on track."
-    },
-    {
-      "name": "data",
-      "displayName": "Data",
-      "source": "./plugins/data",
-      "description": "Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders."
-    },
-    {
       "name": "product-management",
       "displayName": "Product Management",
       "source": "./plugins/product-management",
@@ -28,18 +16,6 @@
       "displayName": "Design",
       "source": "./plugins/design",
       "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
-    },
-    {
-      "name": "vanta-mcp-plugin",
-      "displayName": "Vanta",
-      "description": "The Vanta plugin connects Claude to Vanta's security and compliance platform through the Vanta MCP server. List failing compliance tests, get test-specific remediation context, and fix failing tests with code changes — directly from your Claude session.",
-      "category": "security",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/VantaInc/vanta-mcp-plugin.git",
-        "sha": "345d86b55faa649e955b7ea5569cf52d8425c2d5"
-      },
-      "homepage": "https://help.vanta.com/en/articles/14094979-connecting-to-vanta-mcp#h_887ce3f337"
     },
     {
       "name": "mintlify",
@@ -190,7 +166,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/datarobot-oss/datarobot-agent-skills.git",
-        "sha": "53a4dacc6b55f4fe3ab4840829ebf2d1ea1477dc"
+        "sha": "53a4dacc6b55f4feab4840829ebf2d1ea1477dc"
       },
       "homepage": "https://datarobot.com"
     },
@@ -274,16 +250,14 @@
     },
     {
       "name": "security-guidance",
-      "displayName": "Security Guidance",
       "description": "Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.",
-      "category": "security",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/anthropics/claude-plugins-official.git",
-        "path": "plugins/security-guidance",
-        "ref": "main",
-        "sha": "87bc24ab561c4876dff68bfaec4881dbc83f8250"
+      "version": "2.0.14",
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
       },
+      "source": "./plugins/security-guidance",
+      "category": "security",
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance"
     },
     {
@@ -339,30 +313,6 @@
         "sha": "877551077786664d1cbeb32013443291c66e69e6"
       },
       "homepage": "https://www.airwallex.com/docs"
-    },
-    {
-      "name": "amd-skills",
-      "description": "AMD's verified Agent Skills in one plugin: route image/audio through local AI on Ryzen AI, serve LLMs on AMD Instinct GPUs with vLLM, optimize inference throughput with Hyperloom, and analyze GPU kernel and PyTorch trace performance.",
-      "author": {
-        "name": "AMD"
-      },
-      "category": "development",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/amd/skills.git",
-        "path": "skills",
-        "ref": "main",
-        "sha": "6916fb371d1cba40757b223cf16b4cd4912b202f"
-      },
-      "strict": false,
-      "skills": [
-        "./local-ai-use",
-        "./local-ai-app-integration",
-        "./serving-llms-on-instinct",
-        "./tracelens-analysis-orchestrator",
-        "./hyperloom-workload-optimizer"
-      ],
-      "homepage": "https://developer.amd.com/"
     },
     {
       "name": "apollo-skills",
@@ -1781,19 +1731,6 @@
       "license": "MIT"
     },
     {
-      "name": "dotnet-contribution",
-      "source": "./plugins/dotnet-contribution",
-      "description": "Comprehensive .NET backend development with C#, ASP.NET Core, Entity Framework Core, and Dapper for production-grade applications",
-      "version": "1.0.2",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "languages"
-    },
-    {
       "name": "meigen-ai-design",
       "source": "./plugins/meigen-ai-design",
       "description": "AI image generation with creative workflow orchestration, prompt engineering, and curated inspiration library via MCP server",
@@ -1819,17 +1756,6 @@
       "category": "creative"
     },
     {
-      "name": "plugin-eval",
-      "source": "./plugins/plugin-eval",
-      "description": "Static lint for Claude Code plugins and skills, with experimental LLM scoring for skills",
-      "version": "0.1.2",
-      "author": {
-        "name": "Seth Hobson"
-      },
-      "license": "MIT",
-      "category": "quality"
-    },
-    {
       "name": "block-no-verify",
       "source": "./plugins/block-no-verify",
       "description": "PreToolUse hook that prevents AI agents from using --no-verify, --no-gpg-sign, and other bypass flags that skip git hooks",
@@ -1852,26 +1778,6 @@
       },
       "license": "MIT",
       "category": "quality"
-    },
-    {
-      "name": "pptx-deck-creation",
-      "source": "./plugins/pptx-deck-creation",
-      "description": "Create production-ready, editable PowerPoint decks through a spec-first, coordinate-explicit workflow with read-only reference analysis and quality gates.",
-      "version": "1.0.1",
-      "author": {
-        "name": "kimtth"
-      },
-      "homepage": "https://github.com/kimtth/agent-pptify-kit",
-      "license": "MIT",
-      "category": "creative",
-      "keywords": [
-        "powerpoint",
-        "pptx",
-        "presentations",
-        "slide-decks",
-        "deck-generation",
-        "slide-design"
-      ]
     }
   ]
 }
