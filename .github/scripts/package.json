@@ -1,0 +1,8 @@
+{
+  "name": "claude-plugins-ci-scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "yaml": "^2.7.0"
+  }
+}
