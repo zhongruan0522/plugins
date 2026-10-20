@@ -18,6 +18,14 @@ import { basename, join, relative, resolve } from "path";
 const YAML_SPECIAL_CHARS = /[{}[\]*&#!|>%@`]/;
 const FRONTMATTER_REGEX = /^---\s*\n([\s\S]*?)---\s*\n?/;
 
+function isBalancedFlow(value: string): boolean {
+  const counts: Record<string, number> = { "[": 0, "]": 0, "{": 0, "}": 0 };
+  for (const ch of value) {
+    if (ch in counts) counts[ch]++;
+  }
+  return counts["["] === counts["]"] && counts["{"] === counts["}"];
+}
+
 /**
  * Pre-process frontmatter text to quote values containing special YAML
  * characters. This allows glob patterns like **\/*.{ts,tsx} to parse.
@@ -46,6 +54,16 @@ function quoteSpecialValues(text: string): string {
       // `-`/`+` and optional trailing comment). Quoting them would turn a
       // valid multi-line folded/literal scalar into the literal string ">".
       if (/^[|>][+-]?\s*(#.*)?$/.test(value)) {
+        result.push(line);
+        continue;
+      }
+      // Skip an unterminated flow collection — a value starting with `[`/`{`
+      // with unbalanced brackets opens a flow sequence/mapping that continues
+      // on the following lines. Quoting just this line (e.g.
+      // `allowed-tools: "["`) would break the multi-line collection apart.
+      // Balanced-bracket values like `[base branch] [what to focus on]` are
+      // not valid YAML flow, so they still fall through to quoting below.
+      if (/^[[{]/.test(value) && !isBalancedFlow(value)) {
         result.push(line);
         continue;
       }
@@ -168,12 +186,16 @@ function validateCommand(
 function detectFileType(filePath: string): FileType | null {
   // Only match agents/ and commands/ at the plugin root level, not nested
   // inside skill content (e.g. plugins/foo/skills/bar/agents/ is skill content,
-  // not an agent definition).
+  // not an agent definition) or in documentation (e.g. plugins/foo/docs/agents/
+  // is prose about agents, not an agent definition).
   const inSkillContent = /\/skills\/[^/]+\//.test(filePath);
-  if (filePath.includes("/agents/") && !inSkillContent) return "agent";
+  const inDocs = /\/docs\//.test(filePath);
+  if (filePath.includes("/agents/") && !inSkillContent && !inDocs)
+    return "agent";
   if (filePath.includes("/skills/") && basename(filePath) === "SKILL.md")
     return "skill";
-  if (filePath.includes("/commands/") && !inSkillContent) return "command";
+  if (filePath.includes("/commands/") && !inSkillContent && !inDocs)
+    return "command";
   return null;
 }
 

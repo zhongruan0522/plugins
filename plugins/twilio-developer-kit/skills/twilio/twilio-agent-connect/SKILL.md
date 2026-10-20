@@ -1,3 +1,12 @@
+---
+name: twilio-agent-connect
+description: >
+  Integrate third-party LLM agentic applications with Twilio's communication
+  channels — Voice, SMS, RCS, WhatsApp, and Chat — via the Twilio Agent Connect
+  (TAC) SDK. Covers TAC middleware for identity resolution, Conversation
+  Memory, Conversation Orchestrator, and multi-channel handling.
+---
+
 # Twilio Agent Connect
 
 ## Overview

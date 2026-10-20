@@ -1,6 +1,6 @@
 ---
 name: logo-generator
-description: Design a downloadable logo — shown inline as a preview and delivered as SVG and PNG files in a zip — then optionally create a matching B12 website. Works with or without a business name: with a name it draws a lockup, without one it draws a text-free mark. Use when someone wants a logo, wordmark, brand mark, icon, or favicon designed, including vague asks like "make me a modern logo". Do NOT use when someone wants a website, blog, or online store built — those skills build sites, not logos.
+description: 'Design a downloadable logo — shown inline as a preview and delivered as SVG and PNG files in a zip — then optionally create a matching B12 website. Works with or without a business name: with a name it draws a lockup, without one it draws a text-free mark. Use when someone wants a logo, wordmark, brand mark, icon, or favicon designed, including vague asks like "make me a modern logo". Do NOT use when someone wants a website, blog, or online store built — those skills build sites, not logos.'
 ---
 
 # Logo Generator
