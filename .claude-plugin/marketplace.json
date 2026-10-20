@@ -9,20 +9,20 @@
       "name": "product-management",
       "displayName": "Product Management",
       "source": "./plugins/product-management",
-      "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape.",
+      "description": "更快地撰写功能规格说明、规划产品路线图并汇总用户调研。让利益相关者随时了解进展，在竞争中保持领先。",
       "category": "productivity"
     },
     {
       "name": "design",
       "displayName": "Design",
       "source": "./plugins/design",
-      "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs.",
+      "description": "加速设计工作流——设计评审、设计系统管理、UX 文案撰写、无障碍审查、调研汇总与开发交接。从创意探索到像素级精确的设计稿。",
       "category": "design"
     },
     {
       "name": "mintlify",
       "displayName": "Mintlify",
-      "description": "Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.",
+      "description": "使用 Mintlify 构建精美的文档站点。把非 Markdown 文件转换成格式规范的 MDX 页面，按正确的组件用法增改内容，并自动完成文档更新。",
       "category": "development",
       "source": "./plugins/mintlify",
       "homepage": "https://www.mintlify.com/"
@@ -30,7 +30,7 @@
     {
       "name": "ai-firstify",
       "displayName": "AI-Firstify",
-      "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
+      "description": "基于 TechWolf AI-First Bootcamp 的 9 条设计原则与 7 种设计模式，对项目进行“AI 优先”审计与重构。",
       "category": "development",
       "source": "./plugins/ai-firstify",
       "homepage": "https://ai-first.techwolf.ai"
@@ -38,14 +38,14 @@
     {
       "name": "product-tracking-skills",
       "displayName": "Product Tracking",
-      "description": "AI agent skills that make SaaS products data-ready for product analytics — from codebase scan to tracking plan to working instrumentation code.",
+      "description": "让 SaaS 产品为产品分析做好数据准备的 AI agent 技能——从扫描代码库、设计埋点方案，到生成可运行的埋点代码。",
       "category": "analytics",
       "source": "./plugins/product-tracking-skills",
       "homepage": "https://www.accoil.com/product-tracking"
     },
     {
       "name": "desktop-commander",
-      "description": "MCP server for terminal commands, process management, and file operations across text, code, PDF, DOCX, Excel, images, and structured data.",
+      "description": "用于执行终端命令、管理进程，以及对文本、代码、PDF、DOCX、Excel、图像和结构化数据进行文件操作的 MCP 服务器。",
       "category": "productivity",
       "source": "./plugins/desktop-commander",
       "homepage": "https://desktopcommander.app"
@@ -53,7 +53,7 @@
     {
       "name": "qodo",
       "displayName": "Qodo",
-      "description": "Bring Qodo's codebase intelligence, coding standards, and code review into your coding agent.",
+      "description": "把 Qodo 的代码库智能分析、编码规范和代码审查能力带进你的编码 agent。",
       "category": "development",
       "source": "./plugins/qodo",
       "homepage": "https://qodo.ai"
@@ -61,21 +61,21 @@
     {
       "name": "qodo-standards",
       "displayName": "Qodo Standards",
-      "description": "Optional Qodo rules discovery and standards administration workflows.",
+      "description": "可选的 Qodo 规则发现与规范管理工作流。",
       "category": "development",
       "source": "./plugins/qodo-standards",
       "homepage": "https://qodo.ai"
     },
     {
       "name": "servicenow-sdk",
-      "description": "Create, edit, and deploy ServiceNow applications with the Fluent SDK effortlessly through Claude. Helps developers build, extend, and manage ServiceNow applications, workflows, and agents using the ServiceNow SDK.",
+      "description": "通过 Claude 轻松使用 Fluent SDK 创建、编辑和部署 ServiceNow 应用。帮助开发者基于 ServiceNow SDK 构建、扩展和管理 ServiceNow 应用、工作流和 agent。",
       "category": "development",
       "source": "./plugins/servicenow-sdk",
       "homepage": "https://servicenow.github.io/sdk/"
     },
     {
       "name": "twilio-developer-kit",
-      "description": "Twilio Skills provide procedural knowledge for AI coding agents — which APIs to use, in what order, and what to avoid. Covers SMS, Voice, WhatsApp, Verify, SendGrid, Compliance, and 30+ products.",
+      "description": "Twilio Skills 为 AI 编码 agent 提供实操知识——该用哪些 API、按什么顺序调用、以及要避开哪些坑。覆盖 SMS、Voice、WhatsApp、Verify、SendGrid、Compliance 等 30 多个产品。",
       "author": {
         "name": "Twilio"
       },
@@ -85,7 +85,7 @@
     },
     {
       "name": "base44",
-      "description": "Build and deploy Base44 full-stack apps with CLI project management and JavaScript/TypeScript SDK development skills",
+      "description": "构建和部署 Base44 全栈应用的技能，涵盖 CLI 项目管理与 JavaScript/TypeScript SDK 开发。",
       "category": "development",
       "source": "./plugins/base44",
       "homepage": "https://docs.base44.com"
@@ -93,7 +93,7 @@
     {
       "name": "langfuse",
       "displayName": "Langfuse",
-      "description": "Skills for working with Langfuse, the open-source LLM engineering platform for tracing, prompt management, and evaluation.",
+      "description": "操作 Langfuse 的技能。Langfuse 是开源的 LLM 工程平台，提供链路追踪、提示词管理和评估能力。",
       "category": "monitoring",
       "source": "./plugins/langfuse",
       "homepage": "https://langfuse.com"
@@ -101,7 +101,7 @@
     {
       "name": "auth0",
       "displayName": "Auth0",
-      "description": "Essential Auth0 skills including quickstarts, migration from other providers, and Multi-Factor Authentication (MFA).",
+      "description": "Auth0 核心技能，包括快速入门、从其他服务商迁移，以及多因素认证（MFA）。",
       "category": "security",
       "source": "./plugins/auth0",
       "homepage": "https://github.com/auth0/agent-skills"
@@ -109,7 +109,7 @@
     {
       "name": "datarobot-agent-skills",
       "displayName": "DataRobot Agent Skills",
-      "description": "DataRobot skills for AI/ML workflows — model training, deployment, predictions, feature engineering, monitoring, explainability, data preparation, App Framework CI/CD, and external agent monitoring.",
+      "description": "面向 AI 与机器学习工作流的 DataRobot 技能——模型训练、部署、预测、特征工程、监控、可解释性、数据准备、App Framework CI/CD 以及外部 agent 监控。",
       "category": "development",
       "source": "./plugins/datarobot-agent-skills",
       "homepage": "https://datarobot.com"
@@ -117,7 +117,7 @@
     {
       "name": "qt-development-skills",
       "displayName": "Qt Development Skills",
-      "description": "Agentic engineering skills for Qt software development, including Qt C++/QML code review, QML coding, and Qt C++/QML code documentation. These skills use AI and can make mistakes. Always double-check the output carefully.",
+      "description": "面向 Qt 软件开发的智能体工程技能，包括 Qt C++/QML 代码审查、QML 编码和 Qt C++/QML 代码文档化。这些技能由 AI 驱动，可能出错，请务必仔细核对输出结果。",
       "category": "development",
       "source": "./plugins/qt-development-skills",
       "homepage": "https://github.com/TheQtCompanyRnD/agent-skills"
@@ -125,7 +125,7 @@
     {
       "name": "canva",
       "displayName": "Canva",
-      "description": "Create, edit, review, resize, and brand-check Canva designs with the Canva MCP server.",
+      "description": "通过 Canva MCP 服务器创建、编辑、审阅 Canva 设计，调整尺寸并检查品牌一致性。",
       "category": "design",
       "source": "./plugins/canva",
       "homepage": "https://www.canva.com"
@@ -133,7 +133,7 @@
     {
       "name": "b12-claude-plugin",
       "displayName": "B12",
-      "description": "B12 plugin with two skills: Website Generator (create a B12 website from a brief description) and B12 Website Editor (edit a live B12 website using Claude's browser access in Claude Cowork).",
+      "description": "B12 插件，包含两个技能：Website Generator（根据一段简要描述创建 B12 网站）和 B12 Website Editor（在 Claude Cowork 中借助 Claude 的浏览器访问能力编辑已上线的 B12 网站）。",
       "category": "design",
       "source": "./plugins/b12-claude-plugin",
       "homepage": "https://github.com/b12io/b12-claude-plugin"
@@ -141,7 +141,7 @@
     {
       "name": "modern-web-guidance",
       "displayName": "Modern Web Guidance",
-      "description": "Keep your coding agent up to date with the latest web best practices",
+      "description": "让你的编码 agent 始终跟上最新的 Web 开发最佳实践。",
       "category": "development",
       "source": "./plugins/modern-web-guidance",
       "homepage": "https://goo.gle/modern-web-guidance"
@@ -149,7 +149,7 @@
     {
       "name": "stackhawk-api",
       "displayName": "StackHawk API",
-      "description": "Query the StackHawk platform API for security posture reporting, findings analysis, and app management. Guides agents through authentication, data retrieval, and result presentation.",
+      "description": "查询 StackHawk 平台 API，用于安全态势报告、安全发现分析和应用管理。引导 agent 完成身份验证、数据检索和结果呈现。",
       "category": "security",
       "source": "./plugins/stackhawk-api",
       "homepage": "https://docs.stackhawk.com/ai-security/"
@@ -157,14 +157,14 @@
     {
       "name": "stackhawk-hawkscan",
       "displayName": "StackHawk HawkScan",
-      "description": "Configure, run, and interpret HawkScan DAST results. Generates stackhawk.yml configs, runs scans via CLI or Docker, and transforms security findings into prioritized fix tasks for your coding agent.",
+      "description": "配置、运行并解读 HawkScan 动态应用安全测试（DAST）结果。生成 stackhawk.yml 配置，通过 CLI 或 Docker 运行扫描，并把安全发现转成按优先级排序的修复任务交给你的编码 agent。",
       "category": "security",
       "source": "./plugins/stackhawk-hawkscan",
       "homepage": "https://docs.stackhawk.com/ai-security/"
     },
     {
       "name": "security-guidance",
-      "description": "Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.",
+      "description": "对 Claude 生成代码的安全审查：编辑时基于模式匹配实时告警，Stop 时由 LLM 复查改动 diff，提交时由智能体审查器捕获注入、XSS（跨站脚本）、SSRF、硬编码密钥等 25 类以上漏洞。",
       "version": "2.0.14",
       "author": {
         "name": "Anthropic",
@@ -176,7 +176,7 @@
     },
     {
       "name": "42crunch-api-security-testing",
-      "description": "Automate API security directly in Claude Code with 42Crunch - automatically audit OpenAPI specs, detect vulnerabilities aligned with OWASP API Security risks (including BOLA/BFLA), and apply AI-powered fixes. Designed for AI-assisted development workflows, it provides continuous guardrails through an audit->scan->remediate->validate loop, ensuring APIs meet enterprise security standards before deployment.",
+      "description": "在 Claude Code 中用 42Crunch 实现 API 安全自动化——自动审计 OpenAPI 规范，检测与 OWASP API Security 风险清单（含 BOLA/BFLA）对应的漏洞，并应用 AI 驱动的修复。专为 AI 辅助开发设计，通过“审计→扫描→修复→验证”循环提供持续防护，确保 API 在部署前达到企业安全标准。",
       "author": {
         "name": "42Crunch"
       },
@@ -186,7 +186,7 @@
     },
     {
       "name": "agent-sdk-dev",
-      "description": "Development kit for working with the Claude Agent SDK",
+      "description": "Claude Agent SDK 开发套件。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -197,14 +197,14 @@
     },
     {
       "name": "agentforce-adlc",
-      "description": "Agentforce Agent Development Life Cycle — author, discover, scaffold, deploy, test, and optimize .agent files",
+      "description": "Agentforce agent 开发生命周期——编写、发现、脚手架生成、部署、测试和优化 .agent 文件。",
       "category": "development",
       "source": "./plugins/agentforce-adlc",
       "homepage": "https://github.com/SalesforceAIResearch/agentforce-adlc"
     },
     {
       "name": "airwallex-dev",
-      "description": "Build Airwallex payment integrations in your own codebase. Generates the checkout, card-element, onboarding, and subscription-billing code for an Airwallex integration and wires it into your project: Hosted Payment Page, Drop-in and Split Card elements, connected-account KYC onboarding, and Billing Hosted Checkout for subscriptions and card-saving. Also plans card-on-file merchant-initiated flows for AI providers such as top-ups and auto-recharge.",
+      "description": "在你自己的代码库里构建 Airwallex 支付集成。生成收银台、卡片组件、商户入驻和订阅计费代码并接入项目：Hosted Payment Page、Drop-in 与 Split 卡片组件、关联账户 KYC 入驻，以及用于订阅和绑卡的 Billing Hosted Checkout。还能为 AI 服务商规划绑卡代扣等商户发起的支付流程，例如充值和自动续费。",
       "author": {
         "name": "Airwallex"
       },
@@ -214,7 +214,7 @@
     },
     {
       "name": "apollo-skills",
-      "description": "Apollo GraphQL agent skills for Claude Code — Apollo Client, Server, Federation, Connectors, Router, Rover CLI, iOS, Kotlin, and the Apollo MCP server. Covers schema design, query optimization, and GraphQL best practices.",
+      "description": "面向 Claude Code 的 Apollo GraphQL agent 技能——Apollo Client、Server、Federation、Connectors、Router、Rover CLI、iOS、Kotlin 及 Apollo MCP 服务器。覆盖 schema 设计、查询优化和 GraphQL 最佳实践。",
       "author": {
         "name": "Apollo GraphQL"
       },
@@ -224,7 +224,7 @@
     },
     {
       "name": "appwrite",
-      "description": "Appwrite tools for Claude Code, including SDK skills, Appwrite MCP servers, and deployment commands.",
+      "description": "面向 Claude Code 的 Appwrite 工具，包括 SDK 技能、Appwrite MCP 服务器和部署命令。",
       "author": {
         "name": "Appwrite"
       },
@@ -234,14 +234,14 @@
     },
     {
       "name": "astronomer-data-agents",
-      "description": "Data engineering for Apache Airflow and Astronomer. Author DAGs with best practices, debug pipeline failures, trace data lineage, profile tables, migrate Airflow 2 to 3, and manage local and cloud deployments.",
+      "description": "面向 Apache Airflow 与 Astronomer 的数据工程。按最佳实践编写 DAG、排查流水线故障、追踪数据血缘、梳理数据表画像、把 Airflow 2 迁移到 3，并管理本地与云端部署。",
       "category": "development",
       "source": "./plugins/astronomer-data-agents",
       "homepage": "https://github.com/astronomer/agents"
     },
     {
       "name": "clangd-lsp",
-      "description": "C/C++ language server (clangd) for code intelligence",
+      "description": "用于代码智能分析的 C/C++ 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -272,7 +272,7 @@
     },
     {
       "name": "claude-code-setup",
-      "description": "Analyze codebases and recommend tailored Claude Code automations such as hooks, skills, MCP servers, and subagents.",
+      "description": "分析你的代码库，推荐量身定制的 Claude Code 自动化配置，例如 hooks、skills、MCP 服务器和子代理。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -283,7 +283,7 @@
     },
     {
       "name": "claude-md-management",
-      "description": "Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.",
+      "description": "维护和改进 CLAUDE.md 文件的工具——检查质量、沉淀会话中的经验教训，让项目记忆保持最新。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -294,7 +294,7 @@
     },
     {
       "name": "claude-security",
-      "description": "Deep vulnerability scanning of your own code, run entirely inside your Claude Code session at a chosen effort tier, with every finding challenged before it is reported and the verification tally computed in code. Turns surviving findings into targeted patches, each verified by a panel of agents, that you apply when you choose.",
+      "description": "完全在你的 Claude Code 会话内、按选定深度档位对自己的代码做漏洞深度扫描；每条发现都先经过验证才会报告，验证统计由代码算出，结果可信。验证通过的问题会转成针对性补丁，每个补丁再由一组 agent 复核，何时应用由你决定。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -306,13 +306,13 @@
     {
       "name": "cloudflare",
       "source": "./plugins/cloudflare",
-      "description": "Skills for the Cloudflare developer platform: Workers, Durable Objects, Agents SDK, MCP servers, Wrangler CLI, and web performance.",
+      "description": "Cloudflare 开发者平台技能：Workers、Durable Objects、Agents SDK、MCP 服务器、Wrangler CLI 和 Web 性能优化。",
       "category": "deployment",
       "homepage": "https://github.com/cloudflare/skills"
     },
     {
       "name": "code-modernization",
-      "description": "Guided modernization for any legacy codebase: start with /modernize, get an assessment, an interactive map, the business rules mined from the code, and a plan you approve, then an upgrade, a rewrite or a rebuild with independent proof that the new code behaves like the old. Includes security hardening, a one-page report, specialist agents, and an optional live progress pane (early access).",
+      "description": "任意遗留代码库的引导式现代化：运行 /modernize 后，先得到评估报告、交互式图谱、从代码中梳理出的业务规则和一份由你确认的方案，随后进行升级、重写或重建，并用独立测试证明新代码行为与旧代码一致。包含安全加固、一页纸报告、专家 agent 以及可选的实时进度面板（抢先体验）。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -323,7 +323,7 @@
     },
     {
       "name": "code-review",
-      "description": "Automated code review for pull requests using multiple specialized agents with confidence-based scoring to filter false positives",
+      "description": "用多个专职 agent 对 Pull Request 做自动化代码审查，按置信度评分过滤误报。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -334,7 +334,7 @@
     },
     {
       "name": "code-simplifier",
-      "description": "Agent that simplifies and refines code for clarity, consistency, and maintainability while preserving functionality. Focuses on recently modified code.",
+      "description": "在保留功能的前提下简化、精炼代码，提升清晰度、一致性和可维护性的 agent。重点关注最近改动的代码。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -345,14 +345,14 @@
     },
     {
       "name": "coderabbit",
-      "description": "Your code review partner. CodeRabbit provides external validation using a specialized AI architecture and 40+ integrated static analyzers—offering a different perspective that catches bugs, security vulnerabilities, logic errors, and edge cases. Context-aware analysis via AST parsing and codegraph relationships. Automatically incorporates CLAUDE.md and project coding guidelines into reviews. Useful after writing or modifying code, before commits, when implementing complex or security-sensitive logic, or when a second opinion would increase confidence in the changes. Returns specific findings with suggested fixes that can be applied immediately. Free to use.",
+      "description": "你的代码审查伙伴。CodeRabbit 用专门的 AI 架构加 40 多个内置静态分析器提供外部验证——换个视角发现 bug、安全漏洞、逻辑错误和边界情况。通过 AST 解析和代码关系图做上下文感知分析，自动把 CLAUDE.md 和项目编码规范纳入审查。适合在写完或改完代码之后、提交之前，或在实现复杂、安全敏感的逻辑需要“第二意见”把关时使用。返回具体发现并附可直接应用的修复建议。免费使用。",
       "category": "productivity",
       "source": "./plugins/coderabbit",
       "homepage": "https://github.com/coderabbitai/skills"
     },
     {
       "name": "codspeed",
-      "description": "CodSpeed is the all-in-one performance testing toolkit. Dive into benchmarking results, flamegraphs, and performance comparisons — give Claude granular profiling context to pinpoint bottlenecks and autonomously iterate on performance via the CodSpeed MCP server.",
+      "description": "CodSpeed 是一体化性能测试工具包。深入分析基准测试结果、火焰图和性能对比——给 Claude 提供细粒度的性能分析上下文，精确定位瓶颈，并通过 CodSpeed MCP 服务器自主迭代优化性能。",
       "author": {
         "name": "CodSpeed"
       },
@@ -362,7 +362,7 @@
     },
     {
       "name": "commit-commands",
-      "description": "Commands for git commit workflows including commit, push, and PR creation",
+      "description": "git 提交工作流命令，包括提交、推送和创建 PR。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -373,7 +373,7 @@
     },
     {
       "name": "context7",
-      "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Context7's hosted remote MCP server (https://mcp.context7.com/mcp) — no local Node.js or npx required — to pull version-specific documentation and code examples directly from source repositories into your LLM context. Works anonymously out of the box; set CONTEXT7_API_KEY for higher rate limits.",
+      "description": "Upstash Context7 MCP 服务器，用于查询最新文档。连接 Context7 托管的远程 MCP 服务器（https://mcp.context7.com/mcp）——无需本地 Node.js 或 npx——直接把源仓库的特定版本文档和代码示例拉进你的 LLM 上下文。默认匿名即可使用；设置 CONTEXT7_API_KEY 可提高速率限制。",
       "author": {
         "name": "Upstash"
       },
@@ -386,7 +386,7 @@
     },
     {
       "name": "crowdsec",
-      "description": "Operational skill for installing, configuring, operating, and debugging CrowdSec (cscli, LAPI/CAPI, hub, bouncers, WAF/AppSec) across bare-metal, Docker, and Kubernetes.",
+      "description": "在裸机、Docker 和 Kubernetes 环境中安装、配置、运维和排障 CrowdSec（cscli、LAPI/CAPI、hub、bouncers、WAF/AppSec）的运维技能。",
       "author": {
         "name": "CrowdSec"
       },
@@ -396,7 +396,7 @@
     },
     {
       "name": "crowdstrike-falcon-foundry",
-      "description": "CrowdStrike Falcon Foundry development skills for building cybersecurity applications on the Falcon platform. Includes UI development, collections, functions, workflows, API integration, security patterns, and debugging workflows.",
+      "description": "在 Falcon 平台上构建网络安全应用的 CrowdStrike Falcon Foundry 开发技能。包括 UI 开发、collections、functions、工作流、API 集成、安全模式和调试工作流。",
       "author": {
         "name": "CrowdStrike"
       },
@@ -406,7 +406,7 @@
     },
     {
       "name": "crowdstrike-falcon-fusion",
-      "description": "CrowdStrike Falcon Fusion skills for authoring, deploying, and executing Fusion workflows. Includes live action discovery, YAML authoring with schema validation, workflow import and release, execution monitoring, and Falcon Next-Gen SIEM lookup files.",
+      "description": "编写、部署和执行 Fusion 工作流的 CrowdStrike Falcon Fusion 技能。包括实时动作发现、带 schema 校验的 YAML 编写、工作流导入与发布、执行监控，以及 Falcon 下一代 SIEM 的查找文件。",
       "author": {
         "name": "CrowdStrike"
       },
@@ -416,7 +416,7 @@
     },
     {
       "name": "csharp-lsp",
-      "description": "C# language server for code intelligence",
+      "description": "用于代码智能分析的 C# 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -436,7 +436,7 @@
     },
     {
       "name": "duende-skills",
-      "description": "Duende development skills and agents for Claude Code — covering OAuth/OIDC protocols, IdentityServer, token management, ASP.NET Core authentication/authorization, BFF patterns, and secure identity architecture",
+      "description": "面向 Claude Code 的 Duende 开发技能与 agent——覆盖 OAuth/OIDC 协议、IdentityServer、令牌管理、ASP.NET Core 认证与授权、BFF 模式和安全的身份架构。",
       "author": {
         "name": "Duende Software"
       },
@@ -446,14 +446,14 @@
     },
     {
       "name": "expo",
-      "description": "Official Expo skills for building, deploying, upgrading, and debugging React Native apps with Expo. Covers UI development with Expo Router, SwiftUI and Jetpack Compose components, Tailwind CSS setup, API routes, data fetching, CI/CD workflows, App Store and Play Store deployment, SDK upgrades, DOM components, and dev client distribution.",
+      "description": "构建、部署、升级和调试基于 Expo 的 React Native 应用的官方 Expo 技能。覆盖用 Expo Router 做 UI 开发、SwiftUI 与 Jetpack Compose 组件、Tailwind CSS 配置、API 路由、数据获取、CI/CD 工作流、App Store 与 Play Store 上架、SDK 升级、DOM 组件和开发客户端分发。",
       "category": "development",
       "source": "./plugins/expo",
       "homepage": "https://github.com/expo/skills/blob/main/plugins/expo/README.md"
     },
     {
       "name": "feature-dev",
-      "description": "Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review",
+      "description": "覆盖完整功能开发流程的工作流，配备分别负责代码库探索、架构设计和质量审查的专职 agent。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -464,14 +464,14 @@
     },
     {
       "name": "firecrawl",
-      "description": "Web scraping and crawling powered by Firecrawl. Turn any website into clean, LLM-ready markdown or structured data. Scrape single pages, crawl entire sites, search the web, and extract structured information. Includes an AI agent for autonomous multi-source data gathering - just describe what you need and it finds, navigates, and extracts automatically.",
+      "description": "由 Firecrawl 驱动的网页抓取与爬取。把任意网站转换成干净的、适合 LLM 使用的 Markdown 或结构化数据。可以抓取单个页面、爬取整站、搜索网络并提取结构化信息。还包含能自主采集多来源数据的 AI agent——只需描述需求，它就会自动查找、跳转并提取。",
       "category": "development",
       "source": "./plugins/firecrawl",
       "homepage": "https://github.com/firecrawl/firecrawl-claude-plugin.git"
     },
     {
       "name": "frontend-design",
-      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics.",
+      "description": "以高设计水准创建独特的、可直接用于生产环境的前端界面。生成有创意、够精致、避免“一眼 AI 味”的代码。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -482,7 +482,7 @@
     },
     {
       "name": "gopls-lsp",
-      "description": "Go language server for code intelligence and refactoring",
+      "description": "用于代码智能分析与重构的 Go 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -502,7 +502,7 @@
     },
     {
       "name": "greptile",
-      "description": "AI code review agent for GitHub and GitLab. View and resolve Greptile's PR review comments, run reviews on your working branch, and search your organization's knowledge base and coding patterns, directly from Claude Code.",
+      "description": "面向 GitHub 和 GitLab 的 AI 代码审查 agent。直接在 Claude Code 里查看和处理 Greptile 的 PR 审查意见、对当前工作分支发起审查，并搜索你组织的知识库和编码模式。",
       "author": {
         "name": "Greptile",
         "url": "https://greptile.com"
@@ -513,7 +513,7 @@
     },
     {
       "name": "hookify",
-      "description": "Easily create custom hooks to prevent unwanted behaviors by analyzing conversation patterns or from explicit instructions. Define rules via simple markdown files.",
+      "description": "通过分析会话模式或按明确指令，轻松创建自定义 hooks 来阻止不希望出现的行为。用简单的 Markdown 文件定义规则。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -524,7 +524,7 @@
     },
     {
       "name": "hyperframes",
-      "description": "HyperFrames by HeyGen. Write HTML, render video. Compositions, GSAP and runtime adapter animations, captions, voiceovers, audio-reactive visuals, and website-to-video capture for HyperFrames.",
+      "description": "HeyGen 出品的 HyperFrames：写 HTML，出视频。支持合成、GSAP 与运行时适配器动画、字幕、配音、随音频律动的视觉效果，以及网页转视频录制。",
       "author": {
         "name": "HeyGen"
       },
@@ -534,7 +534,7 @@
     },
     {
       "name": "jdtls-lsp",
-      "description": "Java language server (Eclipse JDT.LS) for code intelligence",
+      "description": "用于代码智能分析的 Java 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -555,7 +555,7 @@
     },
     {
       "name": "jfrog",
-      "description": "Use the JFrog Platform from Claude Code: Artifactory repos and artifacts, security findings and exposures, Catalog package safety and downloads, workflows across the SDLC, and platform administration.",
+      "description": "在 Claude Code 中使用 JFrog 平台：Artifactory 仓库与构件、安全发现与风险暴露、Catalog 软件包安全信息与下载情况、贯穿软件开发生命周期（SDLC）的工作流，以及平台管理。",
       "author": {
         "name": "JFrog Ltd.",
         "url": "https://jfrog.com"
@@ -566,7 +566,7 @@
     },
     {
       "name": "kotlin-lsp",
-      "description": "Kotlin language server for code intelligence",
+      "description": "用于代码智能分析的 Kotlin 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -591,14 +591,14 @@
     },
     {
       "name": "linear",
-      "description": "Linear issue tracking integration. Create issues, manage projects, update statuses, search across workspaces, and streamline your software development workflow with Linear's modern issue tracker.",
+      "description": "Linear 问题跟踪集成。创建 issue、管理项目、更新状态、跨工作区搜索，用 Linear 现代化的问题跟踪器理顺你的软件开发流程。",
       "category": "productivity",
       "source": "./plugins/linear",
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/linear"
     },
     {
       "name": "logfire",
-      "description": "Add Logfire observability to Python applications with auto-instrumentation for FastAPI, httpx, asyncpg, SQLAlchemy, and more",
+      "description": "为 Python 应用接入 Logfire 可观测性，自动为 FastAPI、httpx、asyncpg、SQLAlchemy 等常用库添加监控。",
       "author": {
         "name": "Pydantic"
       },
@@ -608,7 +608,7 @@
     },
     {
       "name": "lovable",
-      "description": "Build, iterate on, deploy, and manage Lovable apps from Claude Code. Bundles the official Lovable MCP server (remote, OAuth 2.1) and adds focused commands for the common build/iterate/database workflows, with credit- and publish-safety prompts.",
+      "description": "在 Claude Code 中构建、迭代、部署和管理 Lovable 应用。内置官方 Lovable MCP 服务器（远程，OAuth 2.1），并为常用的构建、迭代、数据库操作提供专用命令，附带额度与发布安全提醒。",
       "author": {
         "name": "Lovable"
       },
@@ -618,7 +618,7 @@
     },
     {
       "name": "mattpocock-skills",
-      "description": "Matt Pocock's agent skills for real engineering — grilling, spec/ticket flows, TDD, code review, domain modelling and more. Plug-and-play, not vibe coding.",
+      "description": "Matt Pocock 面向真实工程的 agent 技能——深度追问式评审、规格与工单流程、TDD、代码审查、领域建模等。即插即用，拒绝“氛围编程”。",
       "author": {
         "name": "Matt Pocock"
       },
@@ -628,14 +628,14 @@
     },
     {
       "name": "mongodb",
-      "description": "Official Claude plugin for MongoDB (MCP Server + Skills). Connect to databases, explore data, manage collections, optimize queries, generate reliable code, implement best practices, develop advanced features, and more.",
+      "description": "MongoDB 官方 Claude 插件（MCP 服务器 + 技能）。连接数据库、探索数据、管理集合、优化查询、生成可靠代码、落地最佳实践、开发高级功能等。",
       "category": "database",
       "source": "./plugins/mongodb",
       "homepage": "https://www.mongodb.com/docs/mcp-server/overview/"
     },
     {
       "name": "mongodb-atlas",
-      "description": "Connect to MongoDB Atlas clusters only through the Atlas Managed MCP Server. Sign in with your Atlas account to explore data, manage collections, optimize queries, generate reliable code with MongoDB best practices, and manage Atlas resources such as clusters, projects, database users, and network access. If you are running a different MongoDB deployment or want to run a local MongoDB MCP Server, install the MongoDB (Self-Managed MCP) plugin instead.",
+      "description": "仅通过 Atlas 托管 MCP 服务器连接 MongoDB Atlas 集群。用 Atlas 账户登录后可探索数据、管理集合、优化查询、按 MongoDB 最佳实践生成可靠代码，并管理集群、项目、数据库用户和网络访问等 Atlas 资源。如果你用的是其他 MongoDB 部署方式，或想运行本地 MongoDB MCP 服务器，请改用 MongoDB（Self-Managed MCP）插件。",
       "author": {
         "name": "MongoDB"
       },
@@ -645,14 +645,14 @@
     },
     {
       "name": "pagerduty",
-      "description": "Enhance code quality and security through PagerDuty risk scoring and incident correlation. Score pre-commit diffs against historical incident data and surface deployment risk before you ship.",
+      "description": "借助 PagerDuty 风险评分和事件关联提升代码质量与安全性。用历史事件数据为提交前的 diff 打分，在发布前暴露部署风险。",
       "category": "monitoring",
       "source": "./plugins/pagerduty",
       "homepage": "https://github.com/PagerDuty/claude-code-plugins"
     },
     {
       "name": "paypal",
-      "description": "PayPal development plugin for Claude — integrate payments, subscriptions, invoices, disputes, and more using PayPal's APIs and MCP server",
+      "description": "面向 Claude 的 PayPal 开发插件——用 PayPal 的 API 和 MCP 服务器集成支付、订阅、发票、争议处理等功能。",
       "author": {
         "name": "PayPal"
       },
@@ -662,7 +662,7 @@
     },
     {
       "name": "php-lsp",
-      "description": "PHP language server (Intelephense) for code intelligence",
+      "description": "用于代码智能分析的 PHP 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -685,7 +685,7 @@
     },
     {
       "name": "plugin-dev",
-      "description": "Comprehensive toolkit for developing Claude Code plugins. Includes 7 expert skills covering hooks, MCP integration, commands, agents, and best practices. AI-assisted plugin creation and validation.",
+      "description": "开发 Claude Code 插件的全套工具。包含 7 个专家技能，覆盖 hooks、MCP 集成、命令、agent 和最佳实践，支持 AI 辅助的插件创建与验证。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -696,7 +696,7 @@
     },
     {
       "name": "pr-review-toolkit",
-      "description": "Comprehensive PR review agents specializing in comments, tests, error handling, type design, code quality, and code simplification",
+      "description": "一组全方位的 PR 审查 agent，专精注释、测试、错误处理、类型设计、代码质量和代码简化。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -707,7 +707,7 @@
     },
     {
       "name": "pyright-lsp",
-      "description": "Python language server (Pyright) for type checking and code intelligence",
+      "description": "用于类型检查与代码智能分析的 Python 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -731,7 +731,7 @@
     },
     {
       "name": "ralph-loop",
-      "description": "Interactive self-referential AI loops for iterative development, implementing the Ralph Wiggum technique. Claude works on the same task repeatedly, seeing its previous work, until completion.",
+      "description": "实现 Ralph Wiggum 技法的交互式自我迭代 AI 循环。Claude 反复处理同一个任务，能看到自己之前的产出，直到完成为止。",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -742,7 +742,7 @@
     },
     {
       "name": "redis-development",
-      "description": "Redis development best practices — data structures, query engine, vector search, caching, and performance optimization",
+      "description": "Redis 开发最佳实践——数据结构、查询引擎、向量搜索、缓存与性能优化。",
       "author": {
         "name": "Redis"
       },
@@ -752,7 +752,7 @@
     },
     {
       "name": "ruby-lsp",
-      "description": "Ruby language server for code intelligence and analysis",
+      "description": "用于代码智能分析的 Ruby 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -776,7 +776,7 @@
     },
     {
       "name": "rust-analyzer-lsp",
-      "description": "Rust language server for code intelligence and analysis",
+      "description": "用于代码智能分析的 Rust 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -796,7 +796,7 @@
     },
     {
       "name": "security-guidance",
-      "description": "Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.",
+      "description": "对 Claude 生成代码的安全审查：编辑时基于模式匹配实时告警，Stop 时由 LLM 复查改动 diff，提交时由智能体审查器捕获注入、XSS（跨站脚本）、SSRF、硬编码密钥等 25 类以上漏洞。",
       "version": "2.0.14",
       "author": {
         "name": "Anthropic",
@@ -808,14 +808,14 @@
     },
     {
       "name": "semgrep",
-      "description": "Semgrep catches security vulnerabilities in real-time and guides Claude to write secure code from the start.",
+      "description": "Semgrep 实时捕获安全漏洞，引导 Claude 从第一行代码就写得安全。",
       "category": "security",
       "source": "./plugins/semgrep",
       "homepage": "https://github.com/semgrep/mcp-marketplace.git"
     },
     {
       "name": "serena",
-      "description": "Semantic code analysis MCP server providing intelligent code understanding, refactoring suggestions, and codebase navigation through language server protocol integration.",
+      "description": "语义化代码分析 MCP 服务器，通过语言服务器协议集成，提供智能代码理解、重构建议和代码库导航。",
       "category": "development",
       "source": "./plugins/serena",
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/serena",
@@ -825,7 +825,7 @@
     },
     {
       "name": "sonarqube",
-      "description": "Automatically enforce SonarQube code quality and security in the agent coding loop — 7,000+ rules, secrets scanning, agentic analysis, and quality gates across 40+ languages. PostToolUse hooks run analysis after every file edit. Pre-tool secrets scanning prevents 450+ patterns from reaching the LLM. Slash commands give on-demand access to quality gate status, coverage, duplication, and dependency risks. Includes SonarQube CLI, MCP Server, skills, hooks, and slash commands.",
+      "description": "在 agent 编码循环中自动执行 SonarQube 代码质量与安全检查——覆盖 40 多种语言、7000 多条规则，提供密钥扫描、智能体分析和质量门禁。PostToolUse hooks 在每次文件编辑后自动分析；调用工具前的密钥扫描可防止 450 多种密钥样式被送入 LLM；斜杠命令随时可查质量门禁状态、覆盖率、重复度和依赖风险。包含 SonarQube CLI、MCP 服务器、技能、hooks 和斜杠命令。",
       "author": {
         "name": "SonarSource"
       },
@@ -835,49 +835,49 @@
     },
     {
       "name": "sonatype-guide",
-      "description": "Sonatype Guide MCP server for software supply chain intelligence and dependency security. Analyze dependencies for vulnerabilities, get secure version recommendations, and check component quality metrics.",
+      "description": "Sonatype Guide MCP 服务器，提供软件供应链情报和依赖安全。分析依赖中的漏洞、给出安全版本建议，并检查组件质量指标。",
       "category": "security",
       "source": "./plugins/sonatype-guide",
       "homepage": "https://github.com/sonatype/sonatype-guide-claude-plugin.git"
     },
     {
       "name": "sourcegraph",
-      "description": "Code search and understanding across codebases. Search, read, and trace references across repositories; analyze refactor impact; investigate incidents via commit and diff search; run targeted security sweeps.",
+      "description": "跨代码库的代码搜索与理解。跨仓库搜索、阅读和追踪引用；分析重构影响；通过提交与 diff 记录排查线上事故；执行针对性的安全排查。",
       "category": "development",
       "source": "./plugins/sourcegraph",
       "homepage": "https://sourcegraph.com"
     },
     {
       "name": "stripe",
-      "description": "Stripe development plugin for Claude",
+      "description": "面向 Claude 的 Stripe 开发插件。",
       "category": "development",
       "source": "./plugins/stripe",
       "homepage": "https://github.com/stripe/ai/tree/main/providers/claude/plugin"
     },
     {
       "name": "sumup",
-      "description": "SumUp payment integrations across terminal and online checkout flows. Build Android and iOS POS apps with SumUp card readers, online checkout with server SDKs and the checkout widget, and control card readers remotely via Cloud API.",
+      "description": "覆盖线下收银与线上结账流程的 SumUp 支付集成。用 SumUp 读卡器构建 Android 和 iOS 的 POS（销售终端）应用，通过服务端 SDK 和结账组件实现线上收款，并通过 Cloud API 远程管理读卡器。",
       "category": "development",
       "source": "./plugins/sumup",
       "homepage": "https://www.sumup.com/"
     },
     {
       "name": "supabase",
-      "description": "Supabase MCP integration for database operations, authentication, storage, and real-time subscriptions. Manage your Supabase projects, run SQL queries, and interact with your backend directly.",
+      "description": "用于数据库操作、身份验证、存储和实时订阅的 Supabase MCP 集成。管理你的 Supabase 项目、运行 SQL 查询，直接与后端交互。",
       "category": "database",
       "source": "./plugins/supabase",
       "homepage": "https://github.com/supabase-community/supabase-plugin"
     },
     {
       "name": "superpowers",
-      "description": "Superpowers teaches Claude brainstorming, subagent driven development with built in code review, systematic debugging, and red/green TDD. Additionally, it teaches Claude how to author and test new skills.",
+      "description": "Superpowers 教会 Claude 头脑风暴、带内置代码审查的子代理驱动开发、系统性调试和红绿 TDD，还会教 Claude 如何编写和测试新技能。",
       "category": "development",
       "source": "./plugins/superpowers",
       "homepage": "https://github.com/obra/superpowers.git"
     },
     {
       "name": "swift-lsp",
-      "description": "Swift language server (SourceKit-LSP) for code intelligence",
+      "description": "用于代码智能分析的 Swift 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -897,7 +897,7 @@
     },
     {
       "name": "typescript-lsp",
-      "description": "TypeScript/JavaScript language server for enhanced code intelligence",
+      "description": "用于增强代码智能分析的 TypeScript/JavaScript 语言服务器。",
       "version": "1.0.0",
       "author": {
         "name": "Anthropic",
@@ -927,7 +927,7 @@
     },
     {
       "name": "workos",
-      "description": "WorkOS integration skills for AuthKit, SSO, Directory Sync, RBAC, Vault, Audit Logs, migrations, and API references.",
+      "description": "WorkOS 集成技能，覆盖 AuthKit、SSO、Directory Sync、RBAC、Vault、审计日志、迁移和 API 参考。",
       "author": {
         "name": "WorkOS"
       },
@@ -938,7 +938,7 @@
     {
       "name": "dynatrace",
       "displayName": "Dynatrace",
-      "description": "Dynatrace observability skills: DQL query patterns, application and infrastructure monitoring, log analysis, problem investigation, and incident response workflows, with the Dynatrace MCP server for live platform access.",
+      "description": "Dynatrace 可观测性技能：DQL 查询模式、应用与基础设施监控、日志分析、问题排查和事件响应工作流，并通过 Dynatrace MCP 服务器实时访问平台。",
       "author": {
         "name": "Dynatrace"
       },
@@ -949,7 +949,7 @@
     {
       "name": "code-documentation",
       "source": "./plugins/code-documentation",
-      "description": "Documentation generation, code explanation, and technical writing with automated doc generation and tutorial creation",
+      "description": "文档生成、代码解释和技术写作，支持自动生成文档和编写教程。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -962,7 +962,7 @@
     {
       "name": "git-pr-workflows",
       "source": "./plugins/git-pr-workflows",
-      "description": "Git workflow automation, pull request enhancement, and team onboarding processes",
+      "description": "Git 工作流自动化、Pull Request 增强，以及团队新人上手流程。",
       "version": "1.3.1",
       "author": {
         "name": "Seth Hobson",
@@ -975,7 +975,7 @@
     {
       "name": "backend-development",
       "source": "./plugins/backend-development",
-      "description": "Backend API design, GraphQL architecture, workflow orchestration with Temporal, and test-driven backend development",
+      "description": "后端 API 设计、GraphQL 架构、基于 Temporal 的工作流编排，以及测试驱动的后端开发。",
       "version": "1.3.2",
       "author": {
         "name": "Seth Hobson",
@@ -988,7 +988,7 @@
     {
       "name": "frontend-mobile-development",
       "source": "./plugins/frontend-mobile-development",
-      "description": "Frontend UI development and mobile application implementation across platforms",
+      "description": "前端 UI 开发与跨平台移动应用实现。",
       "version": "1.2.3",
       "author": {
         "name": "Seth Hobson",
@@ -1001,7 +1001,7 @@
     {
       "name": "full-stack-orchestration",
       "source": "./plugins/full-stack-orchestration",
-      "description": "End-to-end feature orchestration with testing, security, performance, and deployment",
+      "description": "端到端的功能编排，覆盖测试、安全、性能和部署。",
       "version": "1.3.1",
       "author": {
         "name": "Seth Hobson",
@@ -1014,7 +1014,7 @@
     {
       "name": "tdd-workflows",
       "source": "./plugins/tdd-workflows",
-      "description": "Test-driven development methodology with red-green-refactor cycles and code review",
+      "description": "测试驱动开发方法论，包含“红-绿-重构”循环和代码审查。",
       "version": "1.3.1",
       "author": {
         "name": "Seth Hobson",
@@ -1027,7 +1027,7 @@
     {
       "name": "code-refactoring",
       "source": "./plugins/code-refactoring",
-      "description": "Code cleanup, refactoring automation, and technical debt management with context restoration",
+      "description": "代码清理、重构自动化，以及可恢复上下文的技术债务管理。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1040,7 +1040,7 @@
     {
       "name": "dependency-management",
       "source": "./plugins/dependency-management",
-      "description": "Dependency auditing, version management, and security vulnerability scanning",
+      "description": "依赖审计、版本管理和安全漏洞扫描。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1053,7 +1053,7 @@
     {
       "name": "error-debugging",
       "source": "./plugins/error-debugging",
-      "description": "Error analysis, trace debugging, and multi-agent problem diagnosis",
+      "description": "错误分析、调用链调试和多 agent 协作的问题诊断。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1065,7 +1065,7 @@
     },
     {
       "name": "deployment-strategies",
-      "description": "Deployment patterns, rollback automation, and infrastructure templates",
+      "description": "部署模式、回滚自动化和基础设施模板。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1078,7 +1078,7 @@
     },
     {
       "name": "deployment-validation",
-      "description": "Pre-deployment checks, configuration validation, and deployment readiness assessment",
+      "description": "部署前检查、配置校验和部署就绪度评估。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1091,7 +1091,7 @@
     },
     {
       "name": "kubernetes-operations",
-      "description": "Kubernetes manifest generation, networking configuration, security policies, observability setup, GitOps workflows, and auto-scaling",
+      "description": "Kubernetes 清单生成、网络配置、安全策略、可观测性设置、GitOps 工作流和自动扩缩容。",
       "version": "1.2.3",
       "author": {
         "name": "Seth Hobson",
@@ -1104,7 +1104,7 @@
     },
     {
       "name": "cloud-infrastructure",
-      "description": "Cloud architecture design for AWS/Azure/GCP/OCI, Kubernetes cluster configuration, Terraform infrastructure-as-code, hybrid cloud networking, and multi-cloud cost optimization",
+      "description": "面向 AWS/Azure/GCP/OCI 的云架构设计、Kubernetes 集群配置、Terraform 基础设施即代码、混合云组网和多云成本优化。",
       "version": "1.3.2",
       "author": {
         "name": "Seth Hobson",
@@ -1117,7 +1117,7 @@
     },
     {
       "name": "cicd-automation",
-      "description": "CI/CD pipeline configuration, GitHub Actions/GitLab CI workflow setup, and automated deployment pipeline orchestration",
+      "description": "CI/CD 流水线配置、GitHub Actions/GitLab CI 工作流搭建，以及自动化部署流水线编排。",
       "version": "1.2.3",
       "author": {
         "name": "Seth Hobson",
@@ -1131,7 +1131,7 @@
     {
       "name": "comprehensive-review",
       "source": "./plugins/comprehensive-review",
-      "description": "Multi-perspective code analysis covering architecture, security, and best practices",
+      "description": "覆盖架构、安全和最佳实践的多视角代码分析。",
       "version": "1.3.1",
       "author": {
         "name": "Seth Hobson",
@@ -1144,7 +1144,7 @@
     {
       "name": "performance-testing-review",
       "source": "./plugins/performance-testing-review",
-      "description": "Performance analysis, test coverage review, and AI-powered code quality assessment",
+      "description": "性能分析、测试覆盖率审查和 AI 驱动的代码质量评估。",
       "version": "1.2.2",
       "author": {
         "name": "Seth Hobson",
@@ -1157,7 +1157,7 @@
     {
       "name": "framework-migration",
       "source": "./plugins/framework-migration",
-      "description": "Framework updates, migration planning, and architectural transformation workflows",
+      "description": "框架升级、迁移规划和架构转型工作流。",
       "version": "1.3.2",
       "author": {
         "name": "Seth Hobson",
@@ -1170,7 +1170,7 @@
     {
       "name": "codebase-cleanup",
       "source": "./plugins/codebase-cleanup",
-      "description": "Technical debt reduction, dependency updates, and code refactoring automation",
+      "description": "削减技术债务、更新依赖、自动重构代码。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1183,7 +1183,7 @@
     {
       "name": "database-design",
       "source": "./plugins/database-design",
-      "description": "Database architecture, schema design, and SQL optimization for production systems",
+      "description": "面向生产系统的数据库架构、表结构设计和 SQL 优化。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1196,7 +1196,7 @@
     {
       "name": "database-migrations",
       "source": "./plugins/database-migrations",
-      "description": "Database migration automation, observability, and cross-database migration strategies",
+      "description": "数据库迁移自动化、迁移可观测性，以及跨数据库迁移策略。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1208,7 +1208,7 @@
     },
     {
       "name": "security-scanning",
-      "description": "SAST analysis, dependency vulnerability scanning, OWASP Top 10 compliance, container security scanning, and automated security hardening",
+      "description": "静态应用安全测试（SAST）分析、依赖漏洞扫描、OWASP Top 10 合规检查、容器安全扫描和自动化安全加固。",
       "version": "1.3.2",
       "author": {
         "name": "Seth Hobson",
@@ -1221,7 +1221,7 @@
     },
     {
       "name": "security-compliance",
-      "description": "SOC2, HIPAA, and GDPR compliance validation, secrets scanning, compliance checklists, and regulatory documentation",
+      "description": "SOC2、HIPAA、GDPR 合规验证，密钥扫描、合规检查清单和监管文档。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1234,7 +1234,7 @@
     },
     {
       "name": "backend-api-security",
-      "description": "API security hardening, authentication implementation, authorization patterns, rate limiting, and input validation",
+      "description": "API 安全加固、身份认证实现、授权模式、限流和输入校验。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1247,7 +1247,7 @@
     },
     {
       "name": "frontend-mobile-security",
-      "description": "XSS prevention, CSRF protection, content security policies, mobile app security, and secure storage patterns",
+      "description": "XSS（跨站脚本）防护、CSRF（跨站请求伪造）防护、内容安全策略（CSP）、移动应用安全和安全存储方案。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1261,7 +1261,7 @@
     {
       "name": "api-scaffolding",
       "source": "./plugins/api-scaffolding",
-      "description": "REST and GraphQL API scaffolding, framework selection, backend architecture, and API generation",
+      "description": "REST 与 GraphQL API 脚手架、框架选型、后端架构和 API 生成。",
       "version": "1.2.3",
       "author": {
         "name": "Seth Hobson",
@@ -1274,7 +1274,7 @@
     {
       "name": "api-testing-observability",
       "source": "./plugins/api-testing-observability",
-      "description": "API testing automation, request mocking, OpenAPI documentation generation, observability setup, and monitoring",
+      "description": "API 测试自动化、请求模拟、OpenAPI 文档生成、可观测性配置和监控。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1287,7 +1287,7 @@
     {
       "name": "documentation-generation",
       "source": "./plugins/documentation-generation",
-      "description": "OpenAPI specification generation, Mermaid diagram creation, tutorial writing, API reference documentation",
+      "description": "生成 OpenAPI 规范、Mermaid 图表、教程和 API 参考文档。",
       "version": "1.2.3",
       "author": {
         "name": "Seth Hobson",
@@ -1300,7 +1300,7 @@
     {
       "name": "c4-architecture",
       "source": "./plugins/c4-architecture",
-      "description": "Comprehensive C4 architecture documentation workflow with bottom-up code analysis, component synthesis, container mapping, and context diagram generation",
+      "description": "完整的 C4 架构文档工作流：自底向上分析代码、归纳组件、映射容器并生成上下文图。",
       "version": "1.0.1",
       "author": {
         "name": "Seth Hobson",
@@ -1313,7 +1313,7 @@
     {
       "name": "multi-platform-apps",
       "source": "./plugins/multi-platform-apps",
-      "description": "Cross-platform application development coordinating web, iOS, Android, and desktop implementations",
+      "description": "跨平台应用开发，统一协调 Web、iOS、Android 和桌面端实现。",
       "version": "1.3.1",
       "author": {
         "name": "Seth Hobson",
@@ -1326,7 +1326,7 @@
     {
       "name": "python-development",
       "source": "./plugins/python-development",
-      "description": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices",
+      "description": "基于 Python 3.12+、Django、FastAPI、异步模式和生产环境最佳实践的现代 Python 开发。",
       "version": "1.2.3",
       "author": {
         "name": "Seth Hobson",
@@ -1339,7 +1339,7 @@
     {
       "name": "javascript-typescript",
       "source": "./plugins/javascript-typescript",
-      "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks",
+      "description": "使用 ES6+、Node.js、React 和现代 Web 框架的 JavaScript 与 TypeScript 开发。",
       "version": "1.2.3",
       "author": {
         "name": "Seth Hobson",
@@ -1352,7 +1352,7 @@
     {
       "name": "systems-programming",
       "source": "./plugins/systems-programming",
-      "description": "Systems programming with Rust, Go, C, and C++ for performance-critical and low-level development",
+      "description": "用 Rust、Go、C、C++ 做性能敏感与底层开发的系统编程。",
       "version": "1.2.3",
       "author": {
         "name": "Seth Hobson",
@@ -1365,7 +1365,7 @@
     {
       "name": "jvm-languages",
       "source": "./plugins/jvm-languages",
-      "description": "JVM language development including Java, Scala, and C# with enterprise patterns and frameworks",
+      "description": "JVM 语言开发，包括 Java、Scala 和 C#，并涵盖企业级模式与框架。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1378,7 +1378,7 @@
     {
       "name": "web-scripting",
       "source": "./plugins/web-scripting",
-      "description": "Web scripting with PHP and Ruby for web applications, CMS development, and backend services",
+      "description": "用 PHP 和 Ruby 编写 Web 脚本，用于 Web 应用、CMS 开发和后端服务。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1391,7 +1391,7 @@
     {
       "name": "functional-programming",
       "source": "./plugins/functional-programming",
-      "description": "Functional programming with Elixir, OTP patterns, Phoenix framework, and distributed systems",
+      "description": "函数式编程：Elixir、OTP 模式、Phoenix 框架和分布式系统。",
       "version": "1.2.1",
       "author": {
         "name": "Seth Hobson",
@@ -1404,7 +1404,7 @@
     {
       "name": "shell-scripting",
       "source": "./plugins/shell-scripting",
-      "description": "Production-grade Bash scripting with defensive programming, POSIX compliance, and comprehensive testing",
+      "description": "生产级 Bash 脚本编写，讲究防御式编程、POSIX 兼容和充分测试。",
       "version": "1.2.3",
       "author": {
         "name": "Ryan Snodgrass",
@@ -1417,7 +1417,7 @@
     {
       "name": "developer-essentials",
       "source": "./plugins/developer-essentials",
-      "description": "Essential developer skills including Git workflows, SQL optimization, error handling, code review, E2E testing, authentication, debugging, and monorepo management",
+      "description": "开发者核心技能，包括 Git 工作流、SQL 优化、错误处理、代码审查、端到端（E2E）测试、身份认证、调试和 monorepo 管理。",
       "version": "1.0.4",
       "author": {
         "name": "Seth Hobson",
@@ -1429,7 +1429,7 @@
     },
     {
       "name": "dgx-spark-ops",
-      "description": "NVIDIA DGX Spark (GB10) environment operations. Use when setting up, preflighting, or debugging ML workloads on DGX Spark or aarch64 Blackwell hardware — CUDA-13 wheel/ABI checks, unified-memory OOM ladders, thermal monitoring.",
+      "description": "NVIDIA DGX Spark（GB10）环境运维。适用于在 DGX Spark 或 aarch64 Blackwell 硬件上搭建、预检或调试机器学习工作负载——包括 CUDA-13 wheel/ABI 检查、统一内存场景下的内存耗尽（OOM）排查和温度监控。",
       "version": "1.0.0",
       "author": {
         "name": "Seth Hobson",
@@ -1443,7 +1443,7 @@
     {
       "name": "reverse-engineering",
       "source": "./plugins/reverse-engineering",
-      "description": "Binary reverse engineering, malware analysis, firmware security, and software protection research for authorized security research, CTF competitions, and defensive security",
+      "description": "二进制逆向工程、恶意软件分析、固件安全和软件保护研究，面向授权的安全研究、CTF 竞赛和防御性安全场景。",
       "version": "1.0.1",
       "author": {
         "name": "Dávid Balatoni",
@@ -1455,7 +1455,7 @@
     },
     {
       "name": "conductor",
-      "description": "Context-Driven Development plugin that transforms Claude Code into a project management tool with structured workflow: Context → Spec & Plan → Implement",
+      "description": "上下文驱动开发插件，把 Claude Code 变成项目管理工具，遵循“上下文 → 规格与计划 → 实现”的结构化工作流。",
       "version": "1.2.2",
       "author": {
         "name": "Seth Hobson",
@@ -1468,7 +1468,7 @@
     },
     {
       "name": "ui-design",
-      "description": "Comprehensive UI/UX design plugin for mobile (iOS, Android, React Native) and web applications with design systems, accessibility, and modern patterns",
+      "description": "全面的 UI/UX 设计插件，覆盖移动端（iOS、Android、React Native）和 Web 应用，涵盖设计系统、无障碍和现代设计模式。",
       "version": "1.0.5",
       "author": {
         "name": "Seth Hobson",
@@ -1482,7 +1482,7 @@
     {
       "name": "meigen-ai-design",
       "source": "./plugins/meigen-ai-design",
-      "description": "AI image generation with creative workflow orchestration, prompt engineering, and curated inspiration library via MCP server",
+      "description": "AI 图像生成，通过 MCP 服务器提供创意工作流编排、提示词工程和精选灵感库。",
       "version": "1.0.9",
       "author": {
         "name": "MeiGen",
@@ -1495,7 +1495,7 @@
     {
       "name": "brand-landingpage",
       "source": "./plugins/brand-landingpage",
-      "description": "Guides developers from brand discovery through iterative design to deployment-ready HTML via Stitch.",
+      "description": "通过 Stitch 引导开发者从品牌探索、迭代设计，到产出可直接部署的 HTML。",
       "version": "1.0.1",
       "author": {
         "name": "Travis D. Elliott",
@@ -1507,7 +1507,7 @@
     {
       "name": "block-no-verify",
       "source": "./plugins/block-no-verify",
-      "description": "PreToolUse hook that prevents AI agents from using --no-verify, --no-gpg-sign, and other bypass flags that skip git hooks",
+      "description": "PreToolUse hook，防止 AI agent 使用 --no-verify、--no-gpg-sign 等跳过 git hooks 的绕过参数。",
       "version": "1.0.2",
       "author": {
         "name": "cskwork"
@@ -1519,7 +1519,7 @@
     {
       "name": "skill-forge-essentials",
       "source": "./plugins/skill-forge-essentials",
-      "description": "Behavioral skills for AI-specific failure patterns: hidden code debt from agent generation and context compaction amnesia via behavioral self-enforcement",
+      "description": "针对 AI 特有失败模式的行为技能：通过行为层面的自我约束，解决 agent 生成代码留下的隐性技术债务，以及上下文压缩导致的遗忘问题。",
       "version": "1.0.0",
       "author": {
         "name": "Adit Jain",
