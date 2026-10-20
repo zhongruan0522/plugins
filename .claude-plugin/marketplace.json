@@ -51,22 +51,6 @@
       "homepage": "https://desktopcommander.app"
     },
     {
-      "name": "qodo",
-      "displayName": "Qodo",
-      "description": "把 Qodo 的代码库智能分析、编码规范和代码审查能力带进你的编码 agent。",
-      "category": "development",
-      "source": "./plugins/qodo",
-      "homepage": "https://qodo.ai"
-    },
-    {
-      "name": "qodo-standards",
-      "displayName": "Qodo Standards",
-      "description": "可选的 Qodo 规则发现与规范管理工作流。",
-      "category": "development",
-      "source": "./plugins/qodo-standards",
-      "homepage": "https://qodo.ai"
-    },
-    {
       "name": "servicenow-sdk",
       "description": "通过 Claude 轻松使用 Fluent SDK 创建、编辑和部署 ServiceNow 应用。帮助开发者基于 ServiceNow SDK 构建、扩展和管理 ServiceNow 应用、工作流和 agent。",
       "category": "development",
@@ -115,28 +99,12 @@
       "homepage": "https://datarobot.com"
     },
     {
-      "name": "qt-development-skills",
-      "displayName": "Qt Development Skills",
-      "description": "面向 Qt 软件开发的智能体工程技能，包括 Qt C++/QML 代码审查、QML 编码和 Qt C++/QML 代码文档化。这些技能由 AI 驱动，可能出错，请务必仔细核对输出结果。",
-      "category": "development",
-      "source": "./plugins/qt-development-skills",
-      "homepage": "https://github.com/TheQtCompanyRnD/agent-skills"
-    },
-    {
       "name": "canva",
       "displayName": "Canva",
       "description": "通过 Canva MCP 服务器创建、编辑、审阅 Canva 设计，调整尺寸并检查品牌一致性。",
       "category": "design",
       "source": "./plugins/canva",
       "homepage": "https://www.canva.com"
-    },
-    {
-      "name": "b12-claude-plugin",
-      "displayName": "B12",
-      "description": "B12 插件，包含两个技能：Website Generator（根据一段简要描述创建 B12 网站）和 B12 Website Editor（在 Claude Cowork 中借助 Claude 的浏览器访问能力编辑已上线的 B12 网站）。",
-      "category": "design",
-      "source": "./plugins/b12-claude-plugin",
-      "homepage": "https://github.com/b12io/b12-claude-plugin"
     },
     {
       "name": "modern-web-guidance",
@@ -183,17 +151,6 @@
       "category": "security",
       "source": "./plugins/42crunch-api-security-testing",
       "homepage": "https://42crunch.com"
-    },
-    {
-      "name": "agent-sdk-dev",
-      "description": "Claude Agent SDK 开发套件。",
-      "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
-      },
-      "source": "./plugins/agent-sdk-dev",
-      "category": "development",
-      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/agent-sdk-dev"
     },
     {
       "name": "agentforce-adlc",
@@ -395,26 +352,6 @@
       "homepage": "https://www.crowdsec.net"
     },
     {
-      "name": "crowdstrike-falcon-foundry",
-      "description": "在 Falcon 平台上构建网络安全应用的 CrowdStrike Falcon Foundry 开发技能。包括 UI 开发、collections、functions、工作流、API 集成、安全模式和调试工作流。",
-      "author": {
-        "name": "CrowdStrike"
-      },
-      "category": "security",
-      "source": "./plugins/crowdstrike-falcon-foundry",
-      "homepage": "https://github.com/CrowdStrike/foundry-skills"
-    },
-    {
-      "name": "crowdstrike-falcon-fusion",
-      "description": "编写、部署和执行 Fusion 工作流的 CrowdStrike Falcon Fusion 技能。包括实时动作发现、带 schema 校验的 YAML 编写、工作流导入与发布、执行监控，以及 Falcon 下一代 SIEM 的查找文件。",
-      "author": {
-        "name": "CrowdStrike"
-      },
-      "category": "security",
-      "source": "./plugins/crowdstrike-falcon-fusion",
-      "homepage": "https://github.com/CrowdStrike/fusion-skills"
-    },
-    {
       "name": "csharp-lsp",
       "description": "用于代码智能分析的 C# 语言服务器。",
       "version": "1.0.0",
@@ -433,16 +370,6 @@
           }
         }
       }
-    },
-    {
-      "name": "duende-skills",
-      "description": "面向 Claude Code 的 Duende 开发技能与 agent——覆盖 OAuth/OIDC 协议、IdentityServer、令牌管理、ASP.NET Core 认证与授权、BFF 模式和安全的身份架构。",
-      "author": {
-        "name": "Duende Software"
-      },
-      "category": "security",
-      "source": "./plugins/duende-skills",
-      "homepage": "https://duendesoftware.com"
     },
     {
       "name": "expo",
@@ -554,17 +481,6 @@
       }
     },
     {
-      "name": "jfrog",
-      "description": "在 Claude Code 中使用 JFrog 平台：Artifactory 仓库与构件、安全发现与风险暴露、Catalog 软件包安全信息与下载情况、贯穿软件开发生命周期（SDLC）的工作流，以及平台管理。",
-      "author": {
-        "name": "JFrog Ltd.",
-        "url": "https://jfrog.com"
-      },
-      "category": "security",
-      "source": "./plugins/jfrog",
-      "homepage": "https://jfrog.com"
-    },
-    {
       "name": "kotlin-lsp",
       "description": "用于代码智能分析的 Kotlin 语言服务器。",
       "version": "1.0.0",
@@ -607,16 +523,6 @@
       "homepage": "https://github.com/pydantic/skills/tree/main/plugins/logfire"
     },
     {
-      "name": "lovable",
-      "description": "在 Claude Code 中构建、迭代、部署和管理 Lovable 应用。内置官方 Lovable MCP 服务器（远程，OAuth 2.1），并为常用的构建、迭代、数据库操作提供专用命令，附带额度与发布安全提醒。",
-      "author": {
-        "name": "Lovable"
-      },
-      "category": "development",
-      "source": "./plugins/lovable",
-      "homepage": "https://lovable.dev"
-    },
-    {
       "name": "mattpocock-skills",
       "description": "Matt Pocock 面向真实工程的 agent 技能——深度追问式评审、规格与工单流程、TDD、代码审查、领域建模等。即插即用，拒绝“氛围编程”。",
       "author": {
@@ -632,16 +538,6 @@
       "category": "database",
       "source": "./plugins/mongodb",
       "homepage": "https://www.mongodb.com/docs/mcp-server/overview/"
-    },
-    {
-      "name": "mongodb-atlas",
-      "description": "仅通过 Atlas 托管 MCP 服务器连接 MongoDB Atlas 集群。用 Atlas 账户登录后可探索数据、管理集合、优化查询、按 MongoDB 最佳实践生成可靠代码，并管理集群、项目、数据库用户和网络访问等 Atlas 资源。如果你用的是其他 MongoDB 部署方式，或想运行本地 MongoDB MCP 服务器，请改用 MongoDB（Self-Managed MCP）插件。",
-      "author": {
-        "name": "MongoDB"
-      },
-      "category": "database",
-      "source": "./plugins/mongodb-atlas",
-      "homepage": "https://www.mongodb.com/docs/mcp-server/get-started/"
     },
     {
       "name": "pagerduty",
@@ -912,27 +808,6 @@
           }
         }
       }
-    },
-    {
-      "name": "workos",
-      "description": "WorkOS 集成技能，覆盖 AuthKit、SSO、Directory Sync、RBAC、Vault、审计日志、迁移和 API 参考。",
-      "author": {
-        "name": "WorkOS"
-      },
-      "category": "security",
-      "source": "./plugins/workos",
-      "homepage": "https://workos.com"
-    },
-    {
-      "name": "dynatrace",
-      "displayName": "Dynatrace",
-      "description": "Dynatrace 可观测性技能：DQL 查询模式、应用与基础设施监控、日志分析、问题排查和事件响应工作流，并通过 Dynatrace MCP 服务器实时访问平台。",
-      "author": {
-        "name": "Dynatrace"
-      },
-      "category": "monitoring",
-      "source": "./plugins/dynatrace",
-      "homepage": "https://www.dynatrace.com/hub/detail/claude-code-cli/"
     },
     {
       "name": "code-documentation",
@@ -1351,32 +1226,6 @@
       "category": "languages"
     },
     {
-      "name": "jvm-languages",
-      "source": "./plugins/jvm-languages",
-      "description": "JVM 语言开发，包括 Java、Scala 和 C#，并涵盖企业级模式与框架。",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "languages"
-    },
-    {
-      "name": "web-scripting",
-      "source": "./plugins/web-scripting",
-      "description": "用 PHP 和 Ruby 编写 Web 脚本，用于 Web 应用、CMS 开发和后端服务。",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "languages"
-    },
-    {
       "name": "functional-programming",
       "source": "./plugins/functional-programming",
       "description": "函数式编程：Elixir、OTP 模式、Phoenix 框架和分布式系统。",
@@ -1416,19 +1265,6 @@
       "category": "development"
     },
     {
-      "name": "dgx-spark-ops",
-      "description": "NVIDIA DGX Spark（GB10）环境运维。适用于在 DGX Spark 或 aarch64 Blackwell 硬件上搭建、预检或调试机器学习工作负载——包括 CUDA-13 wheel/ABI 检查、统一内存场景下的内存耗尽（OOM）排查和温度监控。",
-      "version": "1.0.0",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "source": "./plugins/dgx-spark-ops",
-      "category": "ai-ml",
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT"
-    },
-    {
       "name": "reverse-engineering",
       "source": "./plugins/reverse-engineering",
       "description": "二进制逆向工程、恶意软件分析、固件安全和软件保护研究，面向授权的安全研究、CTF 竞赛和防御性安全场景。",
@@ -1466,19 +1302,6 @@
       "category": "development",
       "homepage": "https://github.com/wshobson/agents",
       "license": "MIT"
-    },
-    {
-      "name": "meigen-ai-design",
-      "source": "./plugins/meigen-ai-design",
-      "description": "AI 图像生成，通过 MCP 服务器提供创意工作流编排、提示词工程和精选灵感库。",
-      "version": "1.0.9",
-      "author": {
-        "name": "MeiGen",
-        "url": "https://github.com/jau123"
-      },
-      "homepage": "https://github.com/jau123/MeiGen-AI-Design-MCP",
-      "license": "MIT",
-      "category": "creative"
     },
     {
       "name": "brand-landingpage",
