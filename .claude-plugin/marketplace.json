@@ -1,8 +1,8 @@
 {
   "name": "all-plugins",
   "owner": {
-    "name": "Anthropic",
-    "email": "support@anthropic.com"
+    "name": "A",
+    "email": "support@A.com"
   },
   "plugins": [
     {
@@ -112,8 +112,8 @@
       "description": "对 Claude 生成代码的安全审查：编辑时基于模式匹配实时告警，Stop 时由 LLM 复查改动 diff，提交时由智能体审查器捕获注入、XSS（跨站脚本）、SSRF、硬编码密钥等 25 类以上漏洞。",
       "version": "2.0.14",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/security-guidance",
       "category": "security",
@@ -151,8 +151,8 @@
       "description": "用于代码智能分析的 C/C++ 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/clangd-lsp",
       "category": "development",
@@ -181,8 +181,8 @@
       "name": "claude-code-setup",
       "description": "分析你的代码库，推荐量身定制的 Claude Code 自动化配置，例如 hooks、skills、MCP 服务器和子代理。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/claude-code-setup",
       "category": "productivity",
@@ -192,8 +192,8 @@
       "name": "claude-md-management",
       "description": "维护和改进 CLAUDE.md 文件的工具——检查质量、沉淀会话中的经验教训，让项目记忆保持最新。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/claude-md-management",
       "category": "productivity",
@@ -203,8 +203,8 @@
       "name": "claude-security",
       "description": "完全在你的 Claude Code 会话内、按选定深度档位对自己的代码做漏洞深度扫描；每条发现都先经过验证才会报告，验证统计由代码算出，结果可信。验证通过的问题会转成针对性补丁，每个补丁再由一组 agent 复核，何时应用由你决定。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/claude-security",
       "category": "security",
@@ -221,8 +221,8 @@
       "name": "code-modernization",
       "description": "任意遗留代码库的引导式现代化：运行 /modernize 后，先得到评估报告、交互式图谱、从代码中梳理出的业务规则和一份由你确认的方案，随后进行升级、重写或重建，并用独立测试证明新代码行为与旧代码一致。包含安全加固、一页纸报告、专家 agent 以及可选的实时进度面板（抢先体验）。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/code-modernization",
       "category": "development",
@@ -232,8 +232,8 @@
       "name": "code-review",
       "description": "用多个专职 agent 对 Pull Request 做自动化代码审查，按置信度评分过滤误报。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/code-review",
       "category": "productivity",
@@ -243,8 +243,8 @@
       "name": "code-simplifier",
       "description": "在保留功能的前提下简化、精炼代码，提升清晰度、一致性和可维护性的 agent。重点关注最近改动的代码。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/code-simplifier",
       "category": "productivity",
@@ -271,8 +271,8 @@
       "name": "commit-commands",
       "description": "git 提交工作流命令，包括提交、推送和创建 PR。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/commit-commands",
       "category": "productivity",
@@ -306,8 +306,8 @@
       "description": "用于代码智能分析的 C# 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/csharp-lsp",
       "category": "development",
@@ -332,8 +332,8 @@
       "name": "feature-dev",
       "description": "覆盖完整功能开发流程的工作流，配备分别负责代码库探索、架构设计和质量审查的专职 agent。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/feature-dev",
       "category": "development",
@@ -343,8 +343,8 @@
       "name": "frontend-design",
       "description": "以高设计水准创建独特的、可直接用于生产环境的前端界面。生成有创意、够精致、避免“一眼 AI 味”的代码。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/frontend-design",
       "category": "development",
@@ -355,8 +355,8 @@
       "description": "用于代码智能分析与重构的 Go 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/gopls-lsp",
       "category": "development",
@@ -385,8 +385,8 @@
       "name": "hookify",
       "description": "通过分析会话模式或按明确指令，轻松创建自定义 hooks 来阻止不希望出现的行为。用简单的 Markdown 文件定义规则。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/hookify",
       "category": "productivity",
@@ -407,8 +407,8 @@
       "description": "用于代码智能分析的 Java 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/jdtls-lsp",
       "category": "development",
@@ -428,8 +428,8 @@
       "description": "用于代码智能分析的 Kotlin 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/kotlin-lsp",
       "category": "development",
@@ -487,8 +487,8 @@
       "description": "用于代码智能分析的 PHP 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/php-lsp",
       "category": "development",
@@ -509,8 +509,8 @@
       "name": "plugin-dev",
       "description": "开发 Claude Code 插件的全套工具。包含 7 个专家技能，覆盖 hooks、MCP 集成、命令、agent 和最佳实践，支持 AI 辅助的插件创建与验证。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/plugin-dev",
       "category": "development",
@@ -520,8 +520,8 @@
       "name": "pr-review-toolkit",
       "description": "一组全方位的 PR 审查 agent，专精注释、测试、错误处理、类型设计、代码质量和代码简化。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/pr-review-toolkit",
       "category": "productivity",
@@ -532,8 +532,8 @@
       "description": "用于类型检查与代码智能分析的 Python 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/pyright-lsp",
       "category": "development",
@@ -555,8 +555,8 @@
       "name": "ralph-loop",
       "description": "实现 Ralph Wiggum 技法的交互式自我迭代 AI 循环。Claude 反复处理同一个任务，能看到自己之前的产出，直到完成为止。",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/ralph-loop",
       "category": "development",
@@ -577,8 +577,8 @@
       "description": "用于代码智能分析的 Ruby 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/ruby-lsp",
       "category": "development",
@@ -601,8 +601,8 @@
       "description": "用于代码智能分析的 Rust 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/rust-analyzer-lsp",
       "category": "development",
@@ -690,8 +690,8 @@
       "description": "用于代码智能分析的 Swift 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/swift-lsp",
       "category": "development",
@@ -710,8 +710,8 @@
       "description": "用于增强代码智能分析的 TypeScript/JavaScript 语言服务器。",
       "version": "1.0.0",
       "author": {
-        "name": "Anthropic",
-        "email": "support@anthropic.com"
+        "name": "A",
+        "email": "support@A.com"
       },
       "source": "./plugins/typescript-lsp",
       "category": "development",
