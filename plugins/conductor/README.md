@@ -1,125 +1,125 @@
-# Conductor - Context-Driven Development Plugin for Claude Code
+# Conductor - Claude Code 的上下文驱动开发插件
 
-Conductor transforms Claude Code into a project management tool by implementing **Context-Driven Development**. It enforces a structured workflow: **Context → Spec & Plan → Implement**.
+Conductor 通过实现**上下文驱动开发（Context-Driven Development）**，将 Claude Code 转变为一个项目管理工具。它强制执行结构化的工作流：**上下文 → 规格与计划 → 实现**。
 
-## Philosophy
+## 理念
 
-By treating context as a managed artifact alongside code, teams establish a persistent, project-aware foundation for all AI interactions. The system maintains:
+通过将上下文视为与代码并列的受管制品，团队能为所有 AI 交互建立一个持久的、具备项目感知能力的基础。系统会维护：
 
-- **Product vision** as living documentation
-- **Technical decisions** as structured artifacts
-- **Work units (tracks)** with specifications and phased plans
-- **TDD workflow** with verification checkpoints
+- **产品愿景**——作为持续演进的活文档
+- **技术决策**——作为结构化的制品
+- **工作单元（track）**——附带规格说明与分阶段计划
+- **TDD 工作流**——附带验证检查点
 
-## Features
+## 功能特性
 
-- **Specification & Planning**: Generate detailed specs and actionable task plans before implementation
-- **Context Management**: Maintain style guides, tech stack preferences, and product goals
-- **Safe Iteration**: Review plans before code generation, keeping humans in control
-- **Team Collaboration**: Project-level context documents become shared foundations
-- **Project Intelligence**: Handles both greenfield (new) and brownfield (existing) projects
-- **Semantic Reversion**: Git-aware revert by logical work units (tracks, phases, tasks)
-- **State Persistence**: Resume setup across multiple sessions
+- **规格与规划**：在实现之前生成详细的规格说明和可执行的任务计划
+- **上下文管理**：维护风格指南、技术栈偏好和产品目标
+- **安全迭代**：在代码生成之前审查计划，让人类始终保持掌控
+- **团队协作**：项目级上下文文档成为共享的基础
+- **项目智能**：同时支持全新项目（greenfield）和既有项目（brownfield）
+- **语义化回退**：按逻辑工作单元（track、阶段、任务）进行 Git 感知的回退
+- **状态持久化**：跨多个会话恢复设置进度
 
-## Commands
+## 命令
 
-| Command                | Description                                                                        |
-| ---------------------- | ---------------------------------------------------------------------------------- |
-| `/conductor:setup`     | Initialize project with product definition, tech stack, workflow, and style guides |
-| `/conductor:new-track` | Create a feature or bug track with spec.md and plan.md                             |
-| `/conductor:implement` | Execute tasks from the plan following workflow rules                               |
-| `/conductor:status`    | Display project progress overview                                                  |
-| `/conductor:revert`    | Git-aware undo by track, phase, or task                                            |
-| `/conductor:manage`    | Manage track lifecycle: archive, restore, delete, rename, and cleanup              |
+| 命令                   | 说明                                                                 |
+| ---------------------- | -------------------------------------------------------------------- |
+| `/conductor:setup`     | 通过产品定义、技术栈、工作流和风格指南初始化项目                     |
+| `/conductor:new-track` | 创建包含 spec.md 和 plan.md 的新功能或缺陷修复 track                 |
+| `/conductor:implement` | 按照工作流规则执行计划中的任务                                       |
+| `/conductor:status`    | 显示项目进度概览                                                     |
+| `/conductor:revert`    | 按 track、阶段或任务进行 Git 感知的撤销                              |
+| `/conductor:manage`    | 管理 track 生命周期：归档、恢复、删除、重命名和清理                  |
 
-## Generated Artifacts
+## 生成的工件
 
 ```
 conductor/
-├── index.md              # Navigation hub
-├── product.md            # Product vision & goals
-├── product-guidelines.md # Standards & messaging
-├── tech-stack.md         # Technology preferences
-├── workflow.md           # Development practices (TDD, commits)
-├── tracks.md             # Master track registry
-├── setup_state.json      # Resumable setup state
-├── code_styleguides/     # Language-specific conventions
+├── index.md              # 导航中心
+├── product.md            # 产品愿景与目标
+├── product-guidelines.md # 标准与信息传达
+├── tech-stack.md         # 技术偏好
+├── workflow.md           # 开发实践（TDD、提交）
+├── tracks.md             # track 总注册表
+├── setup_state.json      # 可恢复的设置状态
+├── code_styleguides/     # 语言专属约定
 └── tracks/
-    ├── _archive/         # Archived tracks
+    ├── _archive/         # 已归档的 track
     └── <track-id>/
-        ├── spec.md       # Requirements specification
-        ├── plan.md       # Phased task breakdown
-        ├── metadata.json # Track metadata
-        └── index.md      # Track navigation
+        ├── spec.md       # 需求规格说明
+        ├── plan.md       # 分阶段任务分解
+        ├── metadata.json # track 元数据
+        └── index.md      # track 导航
 ```
 
-## Workflow
+## 工作流
 
-### 1. Setup (`/conductor:setup`)
+### 1. 初始化设置（`/conductor:setup`）
 
-Interactive initialization that creates foundational project documentation:
+交互式初始化，创建项目基础文档：
 
-- Detects greenfield vs brownfield projects
-- Asks sequential questions about product, tech stack, workflow preferences
-- Generates style guides for selected languages
-- Creates tracks registry
+- 检测全新项目还是既有项目
+- 依次询问产品、技术栈、工作流偏好等问题
+- 为所选语言生成风格指南
+- 创建 track 注册表
 
-### 2. Create Track (`/conductor:new-track`)
+### 2. 创建 Track（`/conductor:new-track`）
 
-Start a new feature or bug fix:
+启动一个新的功能或缺陷修复：
 
-- Interactive Q&A to gather requirements
-- Generates detailed specification (spec.md)
-- Creates phased implementation plan (plan.md)
-- Registers track in tracks.md
+- 通过交互式问答收集需求
+- 生成详细的规格说明（spec.md）
+- 创建分阶段的实施计划（plan.md）
+- 将 track 登记到 tracks.md
 
-### 3. Implement (`/conductor:implement`)
+### 3. 实现（`/conductor:implement`）
 
-Execute the plan systematically:
+系统化地执行计划：
 
-- Follows TDD red-green-refactor cycle
-- Updates task status markers
-- Includes manual verification checkpoints
-- Synchronizes documentation on completion
+- 遵循 TDD 红-绿-重构循环
+- 更新任务状态标记
+- 包含人工验证检查点
+- 完成后同步文档
 
-### 4. Monitor (`/conductor:status`)
+### 4. 监控（`/conductor:status`）
 
-View project progress:
+查看项目进度：
 
-- Current phase and task
-- Completion percentage
-- Identified blockers
+- 当前阶段和任务
+- 完成百分比
+- 已识别的阻塞项
 
-### 5. Revert (`/conductor:revert`)
+### 5. 回退（`/conductor:revert`）
 
-Undo work by logical unit:
+按逻辑单元撤销工作：
 
-- Select track, phase, or task to revert
-- Git-aware: finds all associated commits
-- Requires confirmation before execution
+- 选择要回退的 track、阶段或任务
+- Git 感知：查找所有相关提交
+- 执行前需要确认
 
-### 6. Manage (`/conductor:manage`)
+### 6. 管理（`/conductor:manage`）
 
-Manage track lifecycle:
+管理 track 生命周期：
 
-- Archive completed tracks with reason tracking
-- Restore archived tracks to active state
-- Delete tracks permanently (with safeguards)
-- Rename track IDs with reference updates
-- Cleanup orphaned artifacts and stale tracks
+- 归档已完成的 track 并记录原因
+- 将已归档的 track 恢复为活跃状态
+- 永久删除 track（带有安全防护）
+- 重命名 track ID 并更新引用
+- 清理孤立工件和过期 track
 
-## Installation
+## 安装
 
 ```bash
 /plugin install conductor
 ```
 
-## Acknowledgments
+## 致谢
 
-This plugin is based on [Conductor](https://github.com/gemini-cli-extensions/conductor) by Google, originally developed for Gemini CLI.
+本插件基于 Google 的 [Conductor](https://github.com/gemini-cli-extensions/conductor) 项目，该项目最初为 Gemini CLI 开发。
 
-Adapted for Claude Code by [@wshobson](https://github.com/wshobson).
+由 [@wshobson](https://github.com/wshobson) 适配至 Claude Code。
 
-## License
+## 许可证
 
-Apache License 2.0 - See the [original project](https://github.com/gemini-cli-extensions/conductor) for license details.
+Apache License 2.0 - 许可详情请参阅[原项目](https://github.com/gemini-cli-extensions/conductor)。

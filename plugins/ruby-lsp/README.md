@@ -1,31 +1,31 @@
 # ruby-lsp
 
-Ruby language server for Claude Code, providing code intelligence and analysis.
+适用于 Claude Code 的 Ruby 语言服务器，提供代码智能与分析功能。
 
-## Supported Extensions
-`.rb`, `.rake`, `.gemspec`, `.ru`, `.erb`
+## 支持的扩展名
+`.rb`、`.rake`、`.gemspec`、`.ru`、`.erb`
 
-## Installation
+## 安装
 
-### Via gem (recommended)
+### 通过 gem 安装（推荐）
 ```bash
 gem install ruby-lsp
 ```
 
-### Via Bundler
-Add to your Gemfile:
+### 通过 Bundler 安装
+添加到你的 Gemfile：
 ```ruby
 gem 'ruby-lsp', group: :development
 ```
 
-Then run:
+然后运行：
 ```bash
 bundle install
 ```
 
-## Requirements
-- Ruby 3.0 or later
+## 环境要求
+- Ruby 3.0 或更高版本
 
-## More Information
-- [Ruby LSP Website](https://shopify.github.io/ruby-lsp/)
-- [GitHub Repository](https://github.com/Shopify/ruby-lsp)
+## 更多信息
+- [Ruby LSP 网站](https://shopify.github.io/ruby-lsp/)
+- [GitHub 仓库](https://github.com/Shopify/ruby-lsp)

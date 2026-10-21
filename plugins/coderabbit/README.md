@@ -1,159 +1,157 @@
-# CodeRabbit Skills and Plugins
+# CodeRabbit 技能与插件
 
 ![Version](https://img.shields.io/badge/version-1.1.1-blue)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Agents](https://img.shields.io/badge/works_with-35%2B_agents-brightgreen)](#supported-agents)
+[![Agents](https://img.shields.io/badge/works_with-35%2B_agents-brightgreen)](#支持的智能体)
 
-The canonical home for CodeRabbit's agent-native skills and plugin packaging.
-Use it to install AI-powered code review into 35+ coding agents, Gemini CLI,
-Antigravity CLI, Claude Code, Cursor, and other supported agent environments.
+这里是 CodeRabbit 面向智能体的原生技能与插件打包的权威主页。
+用它把 AI 驱动的代码评审安装到 35 个以上的编码智能体、Gemini CLI、
+Antigravity CLI、Claude Code、Cursor 以及其他受支持的智能体环境中。
 
-CodeRabbit detects bugs, security issues, and quality risks before you merge.
+CodeRabbit 在你合并之前发现 bug、安全问题和质量风险。
 
-## Quickstart
+## 快速开始
 
-Install the CodeRabbit CLI via the [CLI docs](https://docs.coderabbit.ai/cli),
-then tell your agent: **“Review my code.”** The review command starts the
-authentication flow when needed.
+按照 [CLI 文档](https://docs.coderabbit.ai/cli)安装 CodeRabbit CLI，
+然后告诉你的智能体：**“评审我的代码。”** 评审命令会在需要时启动
+身份验证流程。
 
-## Installation
+## 安装
 
-### 1. Install the CodeRabbit CLI
+### 1. 安装 CodeRabbit CLI
 
-Use the [CLI docs](https://docs.coderabbit.ai/cli) for the primary install path.
-They cover Homebrew, the install script, and CLI usage.
+主要安装路径请使用 [CLI 文档](https://docs.coderabbit.ai/cli)，
+其中涵盖 Homebrew、安装脚本和 CLI 用法。
 
-### 2. Install the agent integration
+### 2. 安装智能体集成
 
-Choose the path that matches your coding agent.
+选择与你的编码智能体相匹配的路径。
 
-#### Skills installer
+#### 技能安装器
 
-For agents that support portable `SKILL.md` files, use the
-[skills docs](https://docs.coderabbit.ai/cli/skills).
+对于支持便携式 `SKILL.md` 文件的智能体，请使用
+[技能文档](https://docs.coderabbit.ai/cli/skills)。
 
 ```bash
 npx skills add coderabbitai/skills
 ```
 
-Installation options for the skills installer:
+技能安装器的安装选项：
 
-| Flag           | Purpose                                          |
+| 旗标           | 用途                                             |
 | -------------- | ------------------------------------------------ |
-| `-g, --global` | Install to user directory instead of project     |
-| `-a, --agent`  | Target specific agents (for example `claude-code`) |
-| `-s, --skill`  | Install particular skills by name                |
-| `--all`        | Install all skills to all agents without prompts |
+| `-g, --global` | 安装到用户目录而不是项目                         |
+| `-a, --agent`  | 面向特定智能体（例如 `claude-code`）             |
+| `-s, --skill`  | 按名称安装特定技能                               |
+| `--all`        | 无提示地把所有技能安装到所有智能体               |
 
-#### Claude Code Plugin
+#### Claude Code 插件
 
-Claude Code users can also install this as a plugin directly from the official marketplace:
+Claude Code 用户也可以直接从官方插件市场将其作为插件安装：
 
 ```text
 /plugin marketplace update
 /plugin install coderabbit
 ```
 
-For the full setup flow, see the
-[Claude Code integration guide](https://docs.coderabbit.ai/cli/claude-code-integration).
+完整的设置流程请参见
+[Claude Code 集成指南](https://docs.coderabbit.ai/cli/claude-code-integration)。
 
-#### Cursor Plugin
+#### Cursor 插件
 
-This repository now includes Cursor marketplace metadata in
-[`/.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json).
+本仓库现已包含 Cursor 插件市场元数据，位于
+[`/.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json)。
 
-After publication, Cursor marketplace installs use:
+发布之后，Cursor 插件市场安装使用：
 
 ```text
 /add-plugin coderabbit
 ```
 
-For the current recommended setup, see the
-[Cursor integration guide](https://docs.coderabbit.ai/cli/cursor-integration).
+当前推荐的设置请参见
+[Cursor 集成指南](https://docs.coderabbit.ai/cli/cursor-integration)。
 
-#### Gemini CLI Extension (pre-release)
+#### Gemini CLI 扩展（预发布）
 
-Until `v1.2.0` is published as the Latest release, Gemini CLI users can install
-the native extension from `main`:
+在 `v1.2.0` 作为 Latest 发布之前，Gemini CLI 用户可以从 `main`
+安装原生扩展：
 
 ```bash
 gemini extensions install https://github.com/coderabbitai/skills --ref main
 gemini extensions list
 ```
 
-After `v1.2.0` is published, the `--ref main` option can be omitted.
+`v1.2.0` 发布之后，`--ref main` 选项可以省略。
 
-The repository-root [`gemini-extension.json`](gemini-extension.json) packages
-the portable skills, `/coderabbit:review` command, and code-review subagent.
-This native extension is separate from the generic skills-installer path above.
+仓库根目录的 [`gemini-extension.json`](gemini-extension.json) 打包了
+便携式技能、`/coderabbit:review` 命令和代码评审子智能体。
+该原生扩展独立于上文的通用技能安装器路径。
 
-#### Antigravity CLI Plugin
+#### Antigravity CLI 插件
 
-Antigravity CLI users can install the native plugin directly from this
-repository:
+Antigravity CLI 用户可以直接从本仓库安装原生插件：
 
 ```bash
 agy plugin install https://github.com/coderabbitai/skills
 agy plugin list
 ```
 
-The repository-root [`plugin.json`](plugin.json) manifest packages the skills,
-review command, and code-review subagent for Antigravity CLI's plugin discovery.
+仓库根目录的 [`plugin.json`](plugin.json) 清单为 Antigravity CLI 的
+插件发现机制打包了技能、评审命令和代码评审子智能体。
 
 #### Codex App
 
-Codex users can install the official CodeRabbit plugin by following the
-[Codex app integration guide](https://docs.coderabbit.ai/cli/codex-integration#codex-app).
+Codex 用户可以按照
+[Codex 应用集成指南](https://docs.coderabbit.ai/cli/codex-integration#codex-app)安装官方 CodeRabbit 插件。
 
-For an at-a-glance inventory of active and repo-packaged distribution paths, see
-[DISTRIBUTION_CHANNELS.md](DISTRIBUTION_CHANNELS.md).
+如需一目了然地了解活跃的和仓库打包的分发渠道，请参见
+[DISTRIBUTION_CHANNELS.md](DISTRIBUTION_CHANNELS.md)。
 
-## What Lives Here
+## 仓库内容
 
-| Path | Purpose |
+| 路径 | 用途 |
 | --- | --- |
-| `skills/` | Portable CodeRabbit skills for agents that support `SKILL.md`. |
-| `.claude-plugin/` | Claude Code plugin marketplace metadata. |
-| `commands/` | Native review commands for Claude Code, Gemini CLI, and Antigravity CLI. |
-| `agents/` | Code-review subagent shipped to Claude Code, Gemini CLI, and Antigravity CLI. |
-| `.cursor-plugin/` | Cursor marketplace metadata. |
-| `gemini-extension.json` | Gemini CLI extension manifest. |
-| `plugin.json` | Antigravity CLI plugin manifest. |
-| `assets/` | Shared marketplace and brand assets. |
-| `DISTRIBUTION_CHANNELS.md` | Maintainer inventory of live, packaged, and in-development channels. |
+| `skills/` | 面向支持 `SKILL.md` 的智能体的便携式 CodeRabbit 技能。 |
+| `.claude-plugin/` | Claude Code 插件市场元数据。 |
+| `commands/` | Claude Code、Gemini CLI 和 Antigravity CLI 的原生评审命令。 |
+| `agents/` | 随 Claude Code、Gemini CLI 和 Antigravity CLI 一起发布的代码评审子智能体。 |
+| `.cursor-plugin/` | Cursor 插件市场元数据。 |
+| `gemini-extension.json` | Gemini CLI 扩展清单。 |
+| `plugin.json` | Antigravity CLI 插件清单。 |
+| `assets/` | 共享的插件市场与品牌资源。 |
+| `DISTRIBUTION_CHANNELS.md` | 维护者对活跃、已打包和开发中渠道的清单。 |
 
-## Usage
+## 用法
 
-Once installed, just ask your agent:
+安装之后，直接对你的智能体说：
 
 ```text
-Review my code
-Check for security issues
-What's wrong with my changes?
-Run a code review
-Review my PR
-Review the directory at ../my-service
+评审我的代码
+检查安全问题
+我的改动有什么问题？
+运行一次代码评审
+评审我的 PR
+评审 ../my-service 这个目录
 ```
 
-The agent will automatically:
+智能体会自动：
 
-1. Check if CodeRabbit CLI is installed
-2. Run the review on your changes
-3. Present findings grouped by severity
-4. Optionally fix issues and re-review
+1. 检查 CodeRabbit CLI 是否已安装
+2. 对你的改动运行评审
+3. 按严重级别分组展示发现
+4. 可选择修复问题并重新评审
 
-When you ask for a specific review directory, the agent can pass CodeRabbit CLI
-`--dir <path>` after confirming that path is inside an initialized Git working
-tree.
+当你要求评审某个特定目录时，智能体可以传入 CodeRabbit CLI 的
+`--dir <path>`，但会先确认该路径位于一个已初始化的 Git 工作树内。
 
-## Supported Agents
+## 支持的智能体
 
-CodeRabbit supports 35+ coding agents.
+CodeRabbit 支持 35 个以上的编码智能体。
 
-| Agent              | Project Path           | Global Path                            |
+| 智能体             | 项目路径               | 全局路径                               |
 | ------------------ | ---------------------- | -------------------------------------- |
 | Amp, Kimi Code CLI | `.agents/skills/`      | `~/.config/agents/skills/`             |
-| Antigravity CLI    | `.agents/skills/`      | `~/.gemini/config/skills/`              |
+| Antigravity CLI    | `.agents/skills/`      | `~/.gemini/config/skills/`             |
 | Claude Code        | `.claude/skills/`      | `~/.claude/skills/`                    |
 | Cline              | `.cline/skills/`       | `~/.cline/skills/`                     |
 | CodeBuddy          | `.codebuddy/skills/`   | `~/.codebuddy/skills/`                 |
@@ -181,98 +179,97 @@ CodeRabbit supports 35+ coding agents.
 | Pochi              | `.pochi/skills/`       | `~/.pochi/skills/`                     |
 | Qoder              | `.qoder/skills/`       | `~/.qoder/skills/`                     |
 | Qwen Code          | `.qwen/skills/`        | `~/.qwen/skills/`                      |
-| Replit             | `.agent/skills/`       | N/A (project-only)                     |
+| Replit             | `.agent/skills/`       | 不适用（仅项目）                       |
 | Roo Code           | `.roo/skills/`         | `~/.roo/skills/`                       |
 | Trae               | `.trae/skills/`        | `~/.trae/skills/`                      |
 | Trae CN            | `.trae/skills/`        | `~/.trae-cn/skills/`                   |
 | Windsurf           | `.windsurf/skills/`    | `~/.codeium/windsurf/skills/`          |
 | Zencoder           | `.zencoder/skills/`    | `~/.zencoder/skills/`                  |
 
-## Available Skills
+## 可用技能
 
 ### [code-review](skills/code-review/SKILL.md)
 
-AI-powered code review that finds bugs, security issues, and suggests improvements using CodeRabbit.
+使用 CodeRabbit 的 AI 驱动代码评审，找出 bug 和安全问题并提出改进建议。
 
-**Use when:**
+**何时使用：**
 
-- You want to review code changes before committing or merging
-- Checking for bugs, security vulnerabilities, or anti-patterns
-- Getting PR feedback or suggestions for improvements
-- Running automated code quality checks
+- 你想在提交或合并之前评审代码改动
+- 检查 bug、安全漏洞或反模式
+- 获取 PR 反馈或改进建议
+- 运行自动化代码质量检查
 
-**Categories covered:** Bug detection, security analysis, code quality, performance issues, best practices
+**涵盖类别：** bug 检测、安全分析、代码质量、性能问题、最佳实践
 
-**Triggers:** "review my code", "check for bugs", "security review", "PR feedback", "run coderabbit"
+**触发语：** “评审我的代码”“检查 bug”“安全评审”“PR 反馈”“运行 coderabbit”
 
-**Capabilities:**
+**能力：**
 
-- Analyzes code changes for bugs, security issues, and anti-patterns
-- Preserves finding severities (critical, major, minor, trivial, info, none)
-- Supports autonomous fix-review cycles
-- Reviews tracked changes by default, with committed and uncommitted scopes
-- Supports directory-scoped reviews through CodeRabbit CLI `--dir <path>`
+- 分析代码改动中的 bug、安全问题和反模式
+- 保留发现的严重级别（critical、major、minor、trivial、info、none）
+- 支持自主的修复-评审循环
+- 默认评审被跟踪的改动，支持已提交与未提交两种范围
+- 通过 CodeRabbit CLI 的 `--dir <path>` 支持限定目录的评审
 
 ### [autofix](skills/autofix/SKILL.md)
 
-Safe fix workflow for unresolved CodeRabbit GitHub PR review threads, with per-issue review and approval.
+针对 CodeRabbit GitHub PR 评审中未解决讨论串的安全修复工作流，逐条评审并批准。
 
-**Use when:**
+**何时使用：**
 
-- You already have an open GitHub PR reviewed by CodeRabbit
-- You want to apply suggested fixes from unresolved current CodeRabbit review threads
-- You want guided fixes with explicit approval for each change
+- 你已有一个经 CodeRabbit 评审过的处于打开状态的 GitHub PR
+- 你想应用当前尚未解决的 CodeRabbit 评审讨论串中建议的修复
+- 你希望每处修改都获得明确批准的引导式修复
 
-**Categories covered:** Review-thread extraction, issue prioritization, guarded fixes, consolidated commit and PR summary
+**涵盖类别：** 评审讨论串提取、问题优先级排序、受控修复、合并提交与 PR 摘要
 
-**Triggers:** "coderabbit autofix", "fix coderabbit", "cr fix"
+**触发语：** “coderabbit autofix”“修复 coderabbit”“cr fix”
 
-**Capabilities:**
+**能力：**
 
-- Fetches unresolved current CodeRabbit review threads for the current PR
-- Parses and prioritizes issues by severity
-- Applies fixes only after validating the issue and getting approval
-- Produces a single consolidated commit and posts a PR summary comment
+- 获取当前 PR 的未解决 CodeRabbit 评审讨论串
+- 解析问题并按严重级别排序
+- 仅在校验问题并获得批准之后才应用修复
+- 产出一个合并的提交，并发表一条 PR 摘要评论
 
-## Plugin Components
+## 插件组成
 
 ### Claude Code
 
-- Slash command: `/coderabbit:review`
-- Subagent: `code-reviewer`
-- Marketplace manifest: `.claude-plugin/plugin.json`
+- 斜杠命令：`/coderabbit:review`
+- 子智能体：`code-reviewer`
+- 插件市场清单：`.claude-plugin/plugin.json`
 
-The `code-review` skill also remains available for natural-language triggering
-inside compatible agents.
+在兼容的智能体中，`code-review` 技能也依然保留，可通过自然语言触发。
 
 ### Cursor
 
-- Marketplace manifest: `.cursor-plugin/plugin.json`
-- Skills source: `skills/`
+- 插件市场清单：`.cursor-plugin/plugin.json`
+- 技能来源：`skills/`
 
 ### Antigravity CLI
 
-- Native plugin manifest: `plugin.json`
-- Skills source: `skills/`
-- Review command: `commands/coderabbit-review.md` (converted to a skill during installation)
-- Subagent: `agents/code-reviewer.md`
+- 原生插件清单：`plugin.json`
+- 技能来源：`skills/`
+- 评审命令：`commands/coderabbit-review.md`（安装时转换为技能）
+- 子智能体：`agents/code-reviewer.md`
 
 ### Gemini CLI
 
-- Native extension manifest: `gemini-extension.json`
-- Skills source: `skills/`
-- Slash command: `/coderabbit:review` (`commands/coderabbit/review.toml`)
-- Subagent: `agents/code-reviewer.md`
+- 原生扩展清单：`gemini-extension.json`
+- 技能来源：`skills/`
+- 斜杠命令：`/coderabbit:review`（`commands/coderabbit/review.toml`）
+- 子智能体：`agents/code-reviewer.md`
 
-## Resources
+## 资源
 
-- [CodeRabbit Documentation](https://coderabbit.ai/docs)
-- [CodeRabbit CLI Guide](https://docs.coderabbit.ai/cli)
+- [CodeRabbit 文档](https://coderabbit.ai/docs)
+- [CodeRabbit CLI 指南](https://docs.coderabbit.ai/cli)
 - [Vercel Skills CLI](https://github.com/vercel-labs/skills)
-- [Agent Skills Specification](https://agentskills.io/specification)
-- [Gemini CLI Extension Documentation](https://geminicli.com/docs/extensions/reference/)
-- [Antigravity CLI Plugin Documentation](https://antigravity.google/docs/cli-plugins)
+- [Agent Skills 规范](https://agentskills.io/specification)
+- [Gemini CLI 扩展文档](https://geminicli.com/docs/extensions/reference/)
+- [Antigravity CLI 插件文档](https://antigravity.google/docs/cli-plugins)
 
-## License
+## 许可证
 
 MIT

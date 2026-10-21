@@ -1,19 +1,19 @@
-# Desktop Commander Claude Code Plugin
+# Desktop Commander Claude Code 插件
 
-Desktop Commander gives Claude Code access to a local MCP server for terminal sessions, filesystem work, structured documents, search, process management, and SSH workflows — plus a set of skills that steer the agent toward those capabilities for common tasks.
+Desktop Commander 让 Claude Code 可以访问一个本地 MCP 服务器，用于终端会话、文件系统操作、结构化文档、搜索、进程管理和 SSH 工作流——此外还提供一组技能，在常见任务中引导智能体使用这些能力。
 
-## Components
+## 组成部分
 
-- MCP server: `desktop-commander`, installed with `npx -y @wonderwhy-er/desktop-commander@latest`.
-- Skill: `desktop-commander-overview` — explains when to use Desktop Commander MCP tools and how common workflows compose.
-- Skill: `terminal` — persistent shells/REPLs, SSH, Windows PowerShell, process/port inspection, and saving recurring workflows as scripts.
-- Skill: `computer-health-check` — read-only system health check (CPU, memory, disk, battery, startup) with safe, opt-in cleanups.
-- Skill: `ai-tools-setup` — install, configure, and repair Claude Desktop, MCP servers, and local AI tooling (mcp.json / claude_desktop_config.json).
-- Skill: `knowledge-base` — build and maintain a Markdown knowledge base any AI agent can navigate without a vector database.
-- Skill: `obsidian-vault` — organize Obsidian vaults: MOCs, wikilinks, properties, Dataview/Bases dashboards, and orphan/link cleanup.
+- MCP 服务器：`desktop-commander`，通过 `npx -y @wonderwhy-er/desktop-commander@latest` 安装。
+- 技能：`desktop-commander-overview` — 说明何时使用 Desktop Commander 的 MCP 工具，以及常见工作流如何组合。
+- 技能：`terminal` — 持久 shell/REPL、SSH、Windows PowerShell、进程/端口检查，以及将重复性工作流保存为脚本。
+- 技能：`computer-health-check` — 只读的系统健康检查（CPU、内存、磁盘、电池、启动项），并提供安全、需主动选择（opt-in）的清理操作。
+- 技能：`ai-tools-setup` — 安装、配置和修复 Claude Desktop、MCP 服务器以及本地 AI 工具链（mcp.json / claude_desktop_config.json）。
+- 技能：`knowledge-base` — 构建和维护一个任何 AI 智能体无需向量数据库即可浏览的 Markdown 知识库。
+- 技能：`obsidian-vault` — 整理 Obsidian 库（vault）：MOC、wikilink、属性、Dataview/Bases 仪表板，以及孤儿文件/链接清理。
 
-## Usage
+## 用法
 
-Install the plugin in Claude Code, then ask Claude to use Desktop Commander when it needs persistent shells, long-running processes, local file reads, Excel/DOCX/PDF handling, large CSV analysis, remote SSH sessions, a system health check, AI-tooling setup, or knowledge-base/Obsidian organization.
+在 Claude Code 中安装本插件，然后当 Claude 需要持久 shell、长时间运行的进程、读取本地文件、处理 Excel/DOCX/PDF、分析大型 CSV、远程 SSH 会话、系统健康检查、AI 工具链配置，或整理知识库/Obsidian 库时，让它使用 Desktop Commander。
 
-For full project documentation, see the repository README.
+完整的项目文档请参阅仓库 README。

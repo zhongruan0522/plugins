@@ -1,67 +1,67 @@
 # Twilio for AI
 
-Official Twilio Skills and MCP for AI coding agents. Works across Claude Code, Cursor, Codex, and any tool supporting the [Agent Skills](https://agentskills.io) standard.
+面向 AI 编程智能体的官方 Twilio Skills 与 MCP。适用于 Claude Code、Cursor、Codex 以及任何支持 [Agent Skills](https://agentskills.io) 标准的工具。
 
-> **Public Beta:** Twilio MCP and Twilio Skills are currently available as Public Beta products, and the information contained in this repository is subject to change. This means that some features are not yet implemented and others may be changed before the products are declared as Generally Available. Public Beta products are not covered by the Twilio Support Terms or Twilio Service Level Agreement.
+> **公开测试版（Public Beta）：**Twilio MCP 和 Twilio Skills 目前以公开测试版产品形式提供，本仓库中的信息可能随时变更。这意味着部分功能尚未实现，另一些功能在产品正式发布（Generally Available）之前可能发生变化。公开测试版产品不在 Twilio 支持条款或 Twilio 服务等级协议的覆盖范围内。
 
 ---
 
 ## Twilio MCP
 
-The Twilio MCP server provides search over Twilio documentation and API specifications. It exposes two tools:
+Twilio MCP 服务器提供针对 Twilio 文档和 API 规范的搜索。它暴露两个工具：
 
-| Tool | Description |
+| 工具 | 说明 |
 |------|-------------|
-| `twilio__search` | Search Twilio docs and API operations by natural language query |
-| `twilio__retrieve` | Fetch full parameter schemas for specific API operations |
+| `twilio__search` | 通过自然语言查询搜索 Twilio 文档和 API 操作 |
+| `twilio__retrieve` | 获取特定 API 操作的完整参数 schema |
 
-**Endpoint:** `https://mcp.twilio.com/docs`
+**端点：**`https://mcp.twilio.com/docs`
 
-See [`mcp/README.md`](mcp/README.md) for setup instructions across all supported IDEs.
-Documentation: https://www.twilio.com/docs/ai/mcp
+各受支持 IDE 的设置说明参见 [`mcp/README.md`](mcp/README.md)。
+文档：https://www.twilio.com/docs/ai/mcp
 
-## Feedback
+## 反馈
 
-- Questions and feedback: questions-mcp@twilio.com
-- Issues: [GitHub Issues](https://github.com/twilio/ai/issues)
+- 问题与反馈：questions-mcp@twilio.com
+- Issue：[GitHub Issues](https://github.com/twilio/ai/issues)
 
 
 ---
 
 ## Twilio Skills
 
-Skills are structured packages of procedural knowledge for AI coding agents. They follow a progressive disclosure architecture: your agent sees lightweight metadata for all available skills, loads the relevant skill when a task matches, and drills into reference material on demand — keeping your context window lean while providing deep domain expertise exactly when needed.
+技能是面向 AI 编程智能体的结构化程序性知识包。它们采用渐进式披露架构：你的智能体只看到所有可用技能的轻量元数据，当任务匹配时加载相关技能，并按需深入参考资料——在保持上下文窗口精简的同时，在恰当时机提供深入的专业知识。
 
-### What Skills help with
+### 技能能帮上什么忙
 
-- **Product selection:** "I need to verify users" — the agent reasons through Twilio Verify vs. custom OTP, whether to add Lookup for fraud scoring, before any code gets written
-- **Architecture patterns:** "Build me an AI voice agent" — the agent asks questions to understand your use case complexity, then recommends the right combination of products (e.g., Conversation Relay + Memory + Conversation Intelligence + TaskRouter)
-- **What to avoid:** Skills carry explicit `CANNOT` sections that reduce hallucination by documenting hard constraints and common pitfalls
+- **产品选型：**“我需要验证用户身份”——智能体会在写任何代码之前，先分析该用 Twilio Verify 还是自己实现 OTP、是否要加 Lookup 做欺诈评分
+- **架构模式：**“帮我构建一个 AI 语音智能体”——智能体会通过提问了解你的用例复杂度，然后推荐合适的产品组合（例如 Conversation Relay + Memory + Conversation Intelligence + TaskRouter）
+- **避坑指南：**技能带有明确的 `CANNOT` 章节，通过记录硬性约束和常见陷阱来减少幻觉
 
-### Available skill categories
+### 可用的技能类别
 
-| Type | Purpose | Examples |
+| 类型 | 用途 | 示例 |
 |------|---------|---------|
-| **Setup** | Account, auth, and number configuration | `twilio-account-setup`, `twilio-iam-auth-setup` |
-| **Planner** | Use-case qualification and product selection | `twilio-identity-verification-advisor`, `twilio-marketing-promotions-advisor` |
-| **Product** | How to use one Twilio product correctly | `twilio-verify-send-otp`, `twilio-sms-send-message`, `twilio-sendgrid-email-send` |
-| **Guardrail** | Operational patterns preventing failures | `twilio-security-hardening`, `twilio-reliability-patterns`, `twilio-compliance-traffic` |
+| **配置** | 账户、认证和号码配置 | `twilio-account-setup`、`twilio-iam-auth-setup` |
+| **规划** | 用例确认与产品选型 | `twilio-identity-verification-advisor`、`twilio-marketing-promotions-advisor` |
+| **产品** | 如何正确使用单个 Twilio 产品 | `twilio-verify-send-otp`、`twilio-sms-send-message`、`twilio-sendgrid-email-send` |
+| **防护** | 预防故障的运营模式 | `twilio-security-hardening`、`twilio-reliability-patterns`、`twilio-compliance-traffic` |
 
-Covers: SMS, MMS, WhatsApp, RCS, Voice, Verify, SendGrid, Conversations, Messaging Services, Compliance (A2P 10DLC, Toll-Free, STIR/SHAKEN), and more.
+覆盖：SMS、MMS、WhatsApp、RCS、Voice、Verify、SendGrid、Conversations、Messaging Services、合规（A2P 10DLC、Toll-Free、STIR/SHAKEN）等。
 
-Documentation: https://www.twilio.com/docs/ai/skills
+文档：https://www.twilio.com/docs/ai/skills
 
-### Install
+### 安装
 
 #### Claude Code
 
 ```bash
-# Add the Twilio marketplace and install the plugin (includes Skills + MCP)
+# 添加 Twilio 插件市场并安装插件（包含 Skills + MCP）
 /plugin marketplace add twilio/ai
 /plugin install twilio-developer-kit@twilio
 ```
 
-Skills activate automatically when your prompt matches a covered use case. You can also invoke them directly:
+当你的提示词匹配所覆盖的用例时，技能会自动激活。你也可以直接调用：
 
 ```
 /twilio-verify-send-otp
@@ -70,14 +70,14 @@ Skills activate automatically when your prompt matches a covered use case. You c
 
 #### Cursor
 
-Skills follow the open [Agent Skills](https://agentskills.io) standard. Cursor auto-discovers them from `.agents/skills/` in your workspace:
+技能遵循开放的 [Agent Skills](https://agentskills.io) 标准。Cursor 会自动发现工作区 `.agents/skills/` 目录中的技能：
 
 ```bash
 git clone https://github.com/twilio/ai.git .twilio-ai
 cp -r .twilio-ai/skills/ .agents/skills/
 ```
 
-Add the MCP server in Cursor Settings > MCP:
+在 Cursor Settings > MCP 中添加 MCP 服务器：
 
 ```json
 {
@@ -91,43 +91,43 @@ Add the MCP server in Cursor Settings > MCP:
 #### Codex (OpenAI)
 
 ```bash
-# Add MCP server
+# 添加 MCP 服务器
 codex mcp add twilio-docs --url https://mcp.twilio.com/docs
 
-# Add Skills (user-level, available across all projects)
+# 添加技能（用户级，所有项目可用）
 git clone https://github.com/twilio/ai.git
 cp -r ai/skills/ ~/.agents/skills/
 ```
 
-#### Other tools (GitHub Copilot, Gemini CLI, JetBrains, etc.)
+#### 其他工具（GitHub Copilot、Gemini CLI、JetBrains 等）
 
-Twilio Skills use the open [Agent Skills](https://agentskills.io) standard (`SKILL.md` format). Any tool supporting this standard can load them from the `skills/` directory in this repo.
+Twilio Skills 采用开放的 [Agent Skills](https://agentskills.io) 标准（`SKILL.md` 格式）。任何支持该标准的工具都可以从本仓库的 `skills/` 目录加载它们。
 
-For MCP, use the streamable HTTP endpoint: `https://mcp.twilio.com/docs`
-
----
-
-## Verify it's working
-
-After setup, ask your agent:
-
-> "How do I send an SMS with Twilio?"
-
-Your agent should provide guidance on Messaging Services, A2P compliance, error handling, and recommend specific skills for deeper implementation — rather than relying solely on training data.
+MCP 请使用 streamable HTTP 端点：`https://mcp.twilio.com/docs`
 
 ---
 
-## Feedback
+## 验证是否生效
 
-- Questions and feedback: questions-skills@twilio.com
-- Issues: [GitHub Issues](https://github.com/twilio/ai/issues)
+完成设置后，问你的智能体：
+
+> “如何用 Twilio 发送短信？”
+
+你的智能体应当给出关于 Messaging Services、A2P 合规、错误处理的指导，并推荐具体技能做更深入的实现——而不是只依赖训练数据。
 
 ---
 
-## Disclaimer
+## 反馈
 
-Twilio MCP and Twilio Skills are currently available as Public Beta products, and the information contained in this repository is subject to change. This means that some features are not yet implemented and others may be changed before the products are declared as Generally Available. Public Beta products are not covered by the Twilio Support Terms or Twilio Service Level Agreement.
+- 问题与反馈：questions-skills@twilio.com
+- Issue：[GitHub Issues](https://github.com/twilio/ai/issues)
 
-## License
+---
+
+## 免责声明
+
+Twilio MCP 和 Twilio Skills 目前以公开测试版（Public Beta）产品形式提供，本仓库中的信息可能随时变更。这意味着部分功能尚未实现，另一些功能在产品正式发布（Generally Available）之前可能发生变化。公开测试版产品不在 Twilio 支持条款或 Twilio 服务等级协议的覆盖范围内。
+
+## 许可证
 
 MIT

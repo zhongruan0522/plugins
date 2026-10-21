@@ -1,68 +1,68 @@
-# StackHawk API Skill for Claude
+# StackHawk API 技能（Claude 专用）
 
-Security posture reporting and findings analysis powered by the [StackHawk platform API](https://apidocs.stackhawk.com), embedded directly into your Claude agentic workflow.
+由 [StackHawk 平台 API](https://apidocs.stackhawk.com) 驱动的安全态势报告与发现分析，直接嵌入你的 Claude 智能体工作流。
 
-## What This Does
+## 功能说明
 
-This plugin teaches Claude how to query the StackHawk platform for security reporting. It authenticates, retrieves findings data across your applications and environments, and presents actionable security posture summaries — helping you understand where your risks are, what changed between scans, and which apps need attention.
+本插件教会 Claude 如何查询 StackHawk 平台以获取安全报告。它会完成身份验证，检索你的应用与环境中的发现（findings）数据，并呈现可操作的安全态势摘要——帮助你了解风险所在、扫描之间发生了哪些变化，以及哪些应用需要关注。
 
 ```
-Question → Authenticate → Query API via hawk op → Present Results → Suggest Next Actions
+提问 → 身份验证 → 通过 hawk op 查询 API → 呈现结果 → 建议后续操作
 ```
 
-The skill uses the combined `hawk` CLI (`hawk op …`) — most operations collapse from a three-call drill-down pipeline into a single `hawk op` command with built-in auth, pagination, and JSON output.
+该技能使用合并后的 `hawk` CLI（`hawk op …`）——大多数操作从三步调用的逐层下钻流程，简化为一条内置认证、分页和 JSON 输出的 `hawk op` 命令。
 
-## Prerequisites
+## 前提条件
 
-- A [StackHawk account](https://app.stackhawk.com) (free tier available)
-- A StackHawk API key — generate one at **Settings → API Keys**
-- The `hawk` CLI installed and initialized via `hawk init --browser` (stores credentials in `~/.hawk/hawk.properties`)
-- For any non-interactive session (CI, containers, headless agents): `HAWK_API_KEY` set as an environment variable
-- `jq` installed (used for JSON processing in recipes)
+- 一个 [StackHawk 账户](https://app.stackhawk.com)（提供免费套餐）
+- 一个 StackHawk API 密钥——在 **Settings → API Keys** 页面生成
+- 已安装 `hawk` CLI 并通过 `hawk init --browser` 完成初始化（凭据存储在 `~/.hawk/hawk.properties` 中）
+- 对于任何非交互式会话（CI、容器、无头智能体）：需将 `HAWK_API_KEY` 设置为环境变量
+- 已安装 `jq`（配方（recipe）中使用它处理 JSON）
 
-## Installation
+## 安装
 
 ```bash
-# Add the StackHawk marketplace
+# 添加 StackHawk 插件市场
 /plugin marketplace add stackhawk/agent-skills
 
-# Install the StackHawk API skill
+# 安装 StackHawk API 技能
 /plugin install stackhawk-api@stackhawk
 ```
 
-## Usage
+## 用法
 
-Once installed, Claude will use the StackHawk API skill when you ask questions like:
+安装后，当你提出类似下面的问题时，Claude 会自动使用 StackHawk API 技能：
 
-> "What's my security posture across all apps?"
+> "我所有应用的整体安全态势如何？"
 
-> "Show me the findings from the last scan of my payment-api"
+> "给我看看 payment-api 最近一次扫描的发现结果"
 
-> "Which apps haven't been scanned in the last 30 days?"
+> "哪些应用在过去 30 天内没有被扫描过？"
 
-> "What changed since the last scan of my auth-service?"
+> "自 auth-service 上次扫描以来有什么变化？"
 
-## Supported Queries
+## 支持的查询
 
-- **Org-wide security posture summaries** — aggregate findings and severity counts across all applications
-- **Per-app findings deep dives** — drill from application → scan → alerts → individual findings
-- **Stale app detection** — identify applications that haven't been scanned recently
-- **Scan comparison** — surface what changed (new, resolved, or modified findings) between scans
-- **Team and environment management** — view apps by team, environment, or environment type
+- **全组织安全态势摘要**——汇总所有应用的发现数据与严重级别计数
+- **单应用发现深度下钻**——从应用 → 扫描 → 告警 → 单条发现逐层深入
+- **陈旧应用检测**——识别近期未被扫描的应用
+- **扫描对比**——呈现两次扫描之间的变化（新增、已解决或已修改的发现）
+- **团队与环境管理**——按团队、环境或环境类型查看应用
 
-## Security Note
+## 安全提示
 
-Never hardcode your API key. For interactive local use, `hawk init` stores credentials locally. For any non-interactive session (CI, containers, headless agents), set `HAWK_API_KEY` as a secret — never inline key values in scripts or configs.
+切勿硬编码你的 API 密钥。对于交互式本地使用，`hawk init` 会将凭据存储在本地。对于任何非交互式会话（CI、容器、无头智能体），请将 `HAWK_API_KEY` 作为密钥（secret）设置——绝不要在脚本或配置中内联密钥值。
 
-StackHawk issues this key. The `hawk op` CLI uses it to authenticate with the StackHawk platform API. The plugin does not send the key to documentation or CLI download URLs.
+该密钥由 StackHawk 签发。`hawk op` CLI 使用它与 StackHawk 平台 API 进行身份验证。本插件不会将该密钥发送到文档或 CLI 下载 URL。
 
-## Resources
+## 资源
 
-- [hawk CLI docs](https://docs.stackhawk.com)
-- [StackHawk API Docs](https://apidocs.stackhawk.com)
-- [StackHawk Platform](https://app.stackhawk.com)
-- [StackHawk Support](https://support.stackhawk.com)
+- [hawk CLI 文档](https://docs.stackhawk.com)
+- [StackHawk API 文档](https://apidocs.stackhawk.com)
+- [StackHawk 平台](https://app.stackhawk.com)
+- [StackHawk 支持](https://support.stackhawk.com)
 
-## License
+## 许可证
 
 MIT © [StackHawk](https://www.stackhawk.com)

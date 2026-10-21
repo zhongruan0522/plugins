@@ -1,313 +1,313 @@
 # PR Review Toolkit
 
-A comprehensive collection of specialized agents for thorough pull request review, covering code comments, test coverage, error handling, type design, code quality, and code simplification.
+一套面向全面 PR 审查的专用智能体合集，涵盖代码注释、测试覆盖率、错误处理、类型设计、代码质量和代码简化。
 
-## Overview
+## 概述
 
-This plugin bundles 6 expert review agents that each focus on a specific aspect of code quality. Use them individually for targeted reviews or together for comprehensive PR analysis.
+该插件打包了 6 个专家审查智能体，每个智能体专注于代码质量的某个特定方面。可以单独使用进行针对性审查，也可以组合使用进行全面的 PR 分析。
 
-## Agents
+## 智能体
 
 ### 1. comment-analyzer
-**Focus**: Code comment accuracy and maintainability
+**专注领域**：代码注释的准确性与可维护性
 
-**Analyzes:**
-- Comment accuracy vs actual code
-- Documentation completeness
-- Comment rot and technical debt
-- Misleading or outdated comments
+**分析内容：**
+- 注释与实际代码是否一致
+- 文档完整性
+- 注释腐化与技术债务
+- 误导性或过时的注释
 
-**When to use:**
-- After adding documentation
-- Before finalizing PRs with comment changes
-- When reviewing existing comments
+**使用时机：**
+- 添加文档之后
+- 在定稿包含注释改动的 PR 之前
+- 审查现有注释时
 
-**Triggers:**
+**触发语句：**
 ```
-"Check if the comments are accurate"
-"Review the documentation I added"
-"Analyze comments for technical debt"
+"检查注释是否准确"
+"审查我添加的文档"
+"分析注释中的技术债务"
 ```
 
 ### 2. pr-test-analyzer
-**Focus**: Test coverage quality and completeness
+**专注领域**：测试覆盖的质量与完整性
 
-**Analyzes:**
-- Behavioral vs line coverage
-- Critical gaps in test coverage
-- Test quality and resilience
-- Edge cases and error conditions
+**分析内容：**
+- 行为覆盖与行覆盖的对比
+- 测试覆盖中的关键缺口
+- 测试质量与健壮性
+- 边界情况与错误条件
 
-**When to use:**
-- After creating a PR
-- When adding new functionality
-- To verify test thoroughness
+**使用时机：**
+- 创建 PR 之后
+- 添加新功能时
+- 验证测试是否充分时
 
-**Triggers:**
+**触发语句：**
 ```
-"Check if the tests are thorough"
-"Review test coverage for this PR"
-"Are there any critical test gaps?"
+"检查测试是否充分"
+"审查这个 PR 的测试覆盖率"
+"是否存在关键的测试缺口？"
 ```
 
 ### 3. silent-failure-hunter
-**Focus**: Error handling and silent failures
+**专注领域**：错误处理与静默失败
 
-**Analyzes:**
-- Silent failures in catch blocks
-- Inadequate error handling
-- Inappropriate fallback behavior
-- Missing error logging
+**分析内容：**
+- catch 块中的静默失败
+- 不完善的错误处理
+- 不当的兜底行为
+- 缺失的错误日志
 
-**When to use:**
-- After implementing error handling
-- When reviewing try/catch blocks
-- Before finalizing PRs with error handling
+**使用时机：**
+- 实现错误处理之后
+- 审查 try/catch 块时
+- 在定稿包含错误处理的 PR 之前
 
-**Triggers:**
+**触发语句：**
 ```
-"Review the error handling"
-"Check for silent failures"
-"Analyze catch blocks in this PR"
+"审查错误处理"
+"检查是否存在静默失败"
+"分析这个 PR 中的 catch 块"
 ```
 
 ### 4. type-design-analyzer
-**Focus**: Type design quality and invariants
+**专注领域**：类型设计的质量与不变量
 
-**Analyzes:**
-- Type encapsulation (rated 1-10)
-- Invariant expression (rated 1-10)
-- Type usefulness (rated 1-10)
-- Invariant enforcement (rated 1-10)
+**分析内容：**
+- 类型封装性（1-10 评分）
+- 不变量表达（1-10 评分）
+- 类型实用性（1-10 评分）
+- 不变量执行（1-10 评分）
 
-**When to use:**
-- When introducing new types
-- During PR creation with data models
-- When refactoring type designs
+**使用时机：**
+- 引入新类型时
+- 创建包含数据模型的 PR 时
+- 重构类型设计时
 
-**Triggers:**
+**触发语句：**
 ```
-"Review the UserAccount type design"
-"Analyze type design in this PR"
-"Check if this type has strong invariants"
+"审查 UserAccount 类型设计"
+"分析这个 PR 中的类型设计"
+"检查这个类型是否有强不变量"
 ```
 
 ### 5. code-reviewer
-**Focus**: General code review for project guidelines
+**专注领域**：依据项目准则进行通用代码审查
 
-**Analyzes:**
-- CLAUDE.md compliance
-- Style violations
-- Bug detection
-- Code quality issues
+**分析内容：**
+- CLAUDE.md 合规性
+- 风格违规
+- 缺陷检测
+- 代码质量问题
 
-**When to use:**
-- After writing or modifying code
-- Before committing changes
-- Before creating pull requests
+**使用时机：**
+- 编写或修改代码之后
+- 提交更改之前
+- 创建 PR 之前
 
-**Triggers:**
+**触发语句：**
 ```
-"Review my recent changes"
-"Check if everything looks good"
-"Review this code before I commit"
+"审查我最近的更改"
+"检查一切是否正常"
+"在我提交之前审查这段代码"
 ```
 
 ### 6. code-simplifier
-**Focus**: Code simplification and refactoring
+**专注领域**：代码简化与重构
 
-**Analyzes:**
-- Code clarity and readability
-- Unnecessary complexity and nesting
-- Redundant code and abstractions
-- Consistency with project standards
-- Overly compact or clever code
+**分析内容：**
+- 代码清晰度与可读性
+- 不必要的复杂度和嵌套
+- 冗余代码与抽象
+- 与项目标准的一致性
+- 过度紧凑或炫技的代码
 
-**When to use:**
-- After writing or modifying code
-- After passing code review
-- When code works but feels complex
+**使用时机：**
+- 编写或修改代码之后
+- 通过代码审查之后
+- 代码能运行但感觉复杂时
 
-**Triggers:**
+**触发语句：**
 ```
-"Simplify this code"
-"Make this clearer"
-"Refine this implementation"
-```
-
-**Note**: This agent preserves functionality while improving code structure and maintainability.
-
-## Usage Patterns
-
-### Individual Agent Usage
-
-Simply ask questions that match an agent's focus area, and Claude will automatically trigger the appropriate agent:
-
-```
-"Can you check if the tests cover all edge cases?"
-→ Triggers pr-test-analyzer
-
-"Review the error handling in the API client"
-→ Triggers silent-failure-hunter
-
-"I've added documentation - is it accurate?"
-→ Triggers comment-analyzer
+"简化这段代码"
+"让这段代码更清晰"
+"改进这个实现"
 ```
 
-### Comprehensive PR Review
+**注意**：该智能体会在改善代码结构和可维护性的同时保留原有功能。
 
-For thorough PR review, ask for multiple aspects:
+## 使用模式
+
+### 单个智能体使用
+
+只要提出的问题与某个智能体的专注领域相符，Claude 就会自动触发相应的智能体：
 
 ```
-"I'm ready to create this PR. Please:
-1. Review test coverage
-2. Check for silent failures
-3. Verify code comments are accurate
-4. Review any new types
-5. General code review"
+"你能检查测试是否覆盖了所有边界情况吗？"
+→ 触发 pr-test-analyzer
+
+"审查 API 客户端中的错误处理"
+→ 触发 silent-failure-hunter
+
+"我添加了文档 - 内容准确吗？"
+→ 触发 comment-analyzer
 ```
 
-This will trigger all relevant agents to analyze different aspects of your PR.
+### 全面 PR 审查
 
-### Proactive Review
+要进行彻底的 PR 审查，可以同时提出多个方面的要求：
 
-Claude may proactively use these agents based on context:
+```
+"我准备创建这个 PR 了。请：
+1. 审查测试覆盖率
+2. 检查是否存在静默失败
+3. 确认代码注释是否准确
+4. 审查新增的类型
+5. 进行通用代码审查"
+```
 
-- **After writing code** → code-reviewer
-- **After adding docs** → comment-analyzer
-- **Before creating PR** → Multiple agents as appropriate
-- **After adding types** → type-design-analyzer
+这会触发所有相关智能体，从不同角度分析你的 PR。
 
-## Installation
+### 主动审查
 
-Install from your personal marketplace:
+Claude 可能会根据上下文主动使用这些智能体：
+
+- **编写代码后** → code-reviewer
+- **添加文档后** → comment-analyzer
+- **创建 PR 前** → 按需使用多个智能体
+- **添加类型后** → type-design-analyzer
+
+## 安装
+
+从你的个人插件市场安装：
 
 ```bash
 /plugins
-# Find "pr-review-toolkit"
-# Install
+# 找到 "pr-review-toolkit"
+# 安装
 ```
 
-Or add manually to settings if needed.
+如有需要，也可手动添加到设置中。
 
-## Agent Details
+## 智能体详情
 
-### Confidence Scoring
+### 置信度评分
 
-Agents provide confidence scores for their findings:
+各智能体会为发现的问题提供置信度评分：
 
-**comment-analyzer**: Identifies issues with high confidence in accuracy checks
+**comment-analyzer**：在准确性检查中以高置信度识别问题
 
-**pr-test-analyzer**: Rates test gaps 1-10 (10 = critical, must add)
+**pr-test-analyzer**：为测试缺口打 1-10 分（10 = 关键，必须补充）
 
-**silent-failure-hunter**: Flags severity of error handling issues
+**silent-failure-hunter**：标注错误处理问题的严重程度
 
-**type-design-analyzer**: Rates 4 dimensions on 1-10 scale
+**type-design-analyzer**：对 4 个维度进行 1-10 评分
 
-**code-reviewer**: Scores issues 0-100 (91-100 = critical)
+**code-reviewer**：为问题打 0-100 分（91-100 = 关键）
 
-**code-simplifier**: Identifies complexity and suggests simplifications
+**code-simplifier**：识别复杂度并提出简化建议
 
-### Output Formats
+### 输出格式
 
-All agents provide structured, actionable output:
-- Clear issue identification
-- Specific file and line references
-- Explanation of why it's a problem
-- Suggestions for improvement
-- Prioritized by severity
+所有智能体都提供结构化、可执行的输出：
+- 清晰的问题识别
+- 具体的文件与行号引用
+- 说明为什么这是问题
+- 改进建议
+- 按严重程度排序
 
-## Best Practices
+## 最佳实践
 
-### When to Use Each Agent
+### 各智能体的使用时机
 
-**Before Committing:**
-- code-reviewer (general quality)
-- silent-failure-hunter (if changed error handling)
+**提交之前：**
+- code-reviewer（通用质量）
+- silent-failure-hunter（如果改动了错误处理）
 
-**Before Creating PR:**
-- pr-test-analyzer (test coverage check)
-- comment-analyzer (if added/modified comments)
-- type-design-analyzer (if added/modified types)
-- code-reviewer (final sweep)
+**创建 PR 之前：**
+- pr-test-analyzer（检查测试覆盖率）
+- comment-analyzer（如果添加/修改了注释）
+- type-design-analyzer（如果添加/修改了类型）
+- code-reviewer（最终检查）
 
-**After Passing Review:**
-- code-simplifier (improve clarity and maintainability)
+**通过审查之后：**
+- code-simplifier（提升清晰度和可维护性）
 
-**During PR Review:**
-- Any agent for specific concerns raised
-- Targeted re-review after fixes
+**PR 审查过程中：**
+- 针对提出的具体问题使用相应智能体
+- 修复后进行针对性复审
 
-### Running Multiple Agents
+### 运行多个智能体
 
-You can request multiple agents to run in parallel or sequentially:
+你可以要求多个智能体并行或按顺序运行：
 
-**Parallel** (faster):
+**并行**（更快）：
 ```
-"Run pr-test-analyzer and comment-analyzer in parallel"
-```
-
-**Sequential** (when one informs the other):
-```
-"First review test coverage, then check code quality"
+"并行运行 pr-test-analyzer 和 comment-analyzer"
 ```
 
-## Tips
+**按顺序**（一个结果为另一个提供输入时）：
+```
+"先审查测试覆盖率，再检查代码质量"
+```
 
-- **Be specific**: Target specific agents for focused review
-- **Use proactively**: Run before creating PRs, not after
-- **Address critical issues first**: Agents prioritize findings
-- **Iterate**: Run again after fixes to verify
-- **Don't over-use**: Focus on changed code, not entire codebase
+## 技巧
 
-## Troubleshooting
+- **明确具体**：指定特定智能体进行聚焦审查
+- **主动使用**：在创建 PR 之前运行，而不是之后
+- **优先处理关键问题**：智能体会对发现的问题进行排序
+- **迭代**：修复后再次运行以验证
+- **不要过度使用**：关注已更改的代码，而非整个代码库
 
-### Agent Not Triggering
+## 故障排除
 
-**Issue**: Asked for review but agent didn't run
+### 智能体未触发
 
-**Solution**:
-- Be more specific in your request
-- Mention the agent type explicitly
-- Reference the specific concern (e.g., "test coverage")
+**问题**：请求了审查但智能体没有运行
 
-### Agent Analyzing Wrong Files
+**解决方法**：
+- 让请求更具体
+- 明确提到智能体类型
+- 指出具体的关注点（例如"测试覆盖率"）
 
-**Issue**: Agent reviewing too much or wrong files
+### 智能体分析了错误的文件
 
-**Solution**:
-- Specify which files to focus on
-- Reference the PR number or branch
-- Mention "recent changes" or "git diff"
+**问题**：智能体审查的范围过大或文件不对
 
-## Integration with Workflow
+**解决方法**：
+- 指定要关注哪些文件
+- 提供 PR 编号或分支
+- 提到"最近的更改"或"git diff"
 
-This plugin works great with:
-- **build-validator**: Run build/tests before review
-- **Project-specific agents**: Combine with your custom agents
+## 与工作流集成
 
-**Recommended workflow:**
-1. Write code → **code-reviewer**
-2. Fix issues → **silent-failure-hunter** (if error handling)
-3. Add tests → **pr-test-analyzer**
-4. Document → **comment-analyzer**
-5. Review passes → **code-simplifier** (polish)
-6. Create PR
+该插件与以下内容配合良好：
+- **build-validator**：在审查前运行构建/测试
+- **项目专属智能体**：与你的自定义智能体结合使用
 
-## Contributing
+**推荐工作流：**
+1. 编写代码 → **code-reviewer**
+2. 修复问题 → **silent-failure-hunter**（如果涉及错误处理）
+3. 添加测试 → **pr-test-analyzer**
+4. 编写文档 → **comment-analyzer**
+5. 审查通过 → **code-simplifier**（打磨）
+6. 创建 PR
 
-Found issues or have suggestions? These agents are maintained in:
-- User agents: `~/.claude/agents/`
-- Project agents: `.claude/agents/` in claude-cli-internal
+## 参与贡献
 
-## License
+发现问题或有建议？这些智能体维护在：
+- 用户级智能体：`~/.claude/agents/`
+- 项目级智能体：claude-cli-internal 中的 `.claude/agents/`
+
+## 许可证
 
 MIT
 
-## Author
+## 作者
 
 Daisy (daisy@anthropic.com)
 
 ---
 
-**Quick Start**: Just ask for review and the right agent will trigger automatically!
+**快速开始**：只需请求审查，相应的智能体就会自动触发！

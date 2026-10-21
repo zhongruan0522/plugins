@@ -1,225 +1,225 @@
-# Commit Commands Plugin
+# Commit Commands 插件
 
-Streamline your git workflow with simple commands for committing, pushing, and creating pull requests.
+用简单的命令简化你的 git 工作流：提交、推送、创建拉取请求一步到位。
 
-## Overview
+## 概述
 
-The Commit Commands Plugin automates common git operations, reducing context switching and manual command execution. Instead of running multiple git commands, use a single slash command to handle your entire workflow.
+Commit Commands 插件将常见的 git 操作自动化，减少上下文切换和手动执行命令。无需运行多条 git 命令，一条斜杠命令即可处理你的整个工作流。
 
-## Commands
+## 命令
 
 ### `/commit`
 
-Creates a git commit with an automatically generated commit message based on staged and unstaged changes.
+基于暂存与未暂存的更改，自动生成提交信息并创建 git 提交。
 
-**What it does:**
-1. Analyzes current git status
-2. Reviews both staged and unstaged changes
-3. Examines recent commit messages to match your repository's style
-4. Drafts an appropriate commit message
-5. Stages relevant files
-6. Creates the commit
+**它做什么：**
+1. 分析当前 git 状态
+2. 查看暂存与未暂存的更改
+3. 检查最近的提交信息以匹配你仓库的风格
+4. 起草合适的提交信息
+5. 暂存相关文件
+6. 创建提交
 
-**Usage:**
+**用法：**
 ```bash
 /commit
 ```
 
-**Example workflow:**
+**示例工作流：**
 ```bash
-# Make some changes to your code
-# Then simply run:
+# 先对代码做一些更改
+# 然后只需运行：
 /commit
 
-# Claude will:
-# - Review your changes
-# - Stage the files
-# - Create a commit with an appropriate message
-# - Show you the commit status
+# Claude 会：
+# - 查看你的更改
+# - 暂存文件
+# - 用合适的提交信息创建提交
+# - 向你显示提交状态
 ```
 
-**Features:**
-- Automatically drafts commit messages that match your repo's style
-- Follows conventional commit practices
-- Avoids committing files with secrets (.env, credentials.json)
-- Includes Claude Code attribution in commit message
+**特性：**
+- 自动起草符合你仓库风格的提交信息
+- 遵循约定式提交（conventional commits）惯例
+- 避免提交含密钥的文件（.env、credentials.json）
+- 在提交信息中加入 Claude Code 署名
 
 ### `/commit-push-pr`
 
-Complete workflow command that commits, pushes, and creates a pull request in one step.
+一步完成提交、推送并创建拉取请求的完整工作流命令。
 
-**What it does:**
-1. Creates a new branch (if currently on main)
-2. Stages and commits changes with an appropriate message
-3. Pushes the branch to origin
-4. Creates a pull request using `gh pr create`
-5. Provides the PR URL
+**它做什么：**
+1. 创建新分支（如果当前在 main 上）
+2. 用合适的提交信息暂存并提交更改
+3. 把分支推送到 origin
+4. 使用 `gh pr create` 创建拉取请求
+5. 给出 PR URL
 
-**Usage:**
+**用法：**
 ```bash
 /commit-push-pr
 ```
 
-**Example workflow:**
+**示例工作流：**
 ```bash
-# Make your changes
-# Then run:
+# 做好你的更改
+# 然后运行：
 /commit-push-pr
 
-# Claude will:
-# - Create a feature branch (if needed)
-# - Commit your changes
-# - Push to remote
-# - Open a PR with summary and test plan
-# - Give you the PR URL to review
+# Claude 会：
+# - 创建功能分支（如有需要）
+# - 提交你的更改
+# - 推送到远程
+# - 打开带摘要和测试计划的 PR
+# - 给你 PR URL 供你审查
 ```
 
-**Features:**
-- Analyzes all commits in the branch (not just the latest)
-- Creates comprehensive PR descriptions with:
-  - Summary of changes (1-3 bullet points)
-  - Test plan checklist
-  - Claude Code attribution
-- Handles branch creation automatically
-- Uses GitHub CLI (`gh`) for PR creation
+**特性：**
+- 分析分支中的所有提交（不只是最新一条）
+- 创建内容详实的 PR 描述，包含：
+  - 更改摘要（1-3 个要点）
+  - 测试计划清单
+  - Claude Code 署名
+- 自动处理分支创建
+- 使用 GitHub CLI（`gh`）创建 PR
 
-**Requirements:**
-- GitHub CLI (`gh`) must be installed and authenticated
-- Repository must have a remote named `origin`
+**要求：**
+- 必须安装并认证 GitHub CLI（`gh`）
+- 仓库必须有名为 `origin` 的远程
 
 ### `/clean_gone`
 
-Cleans up local branches that have been deleted from the remote repository.
+清理已从远程仓库删除的本地分支。
 
-**What it does:**
-1. Lists all local branches to identify [gone] status
-2. Identifies and removes worktrees associated with [gone] branches
-3. Deletes all branches marked as [gone]
-4. Provides feedback on removed branches
+**它做什么：**
+1. 列出所有本地分支以识别 [gone] 状态
+2. 识别并移除与 [gone] 分支关联的 worktree
+3. 删除所有标记为 [gone] 的分支
+4. 反馈已移除的分支
 
-**Usage:**
+**用法：**
 ```bash
 /clean_gone
 ```
 
-**Example workflow:**
+**示例工作流：**
 ```bash
-# After PRs are merged and remote branches are deleted
+# 在 PR 合并且远程分支被删除后
 /clean_gone
 
-# Claude will:
-# - Find all branches marked as [gone]
-# - Remove any associated worktrees
-# - Delete the stale local branches
-# - Report what was cleaned up
+# Claude 会：
+# - 找出所有标记为 [gone] 的分支
+# - 移除关联的 worktree
+# - 删除过时的本地分支
+# - 报告清理了哪些内容
 ```
 
-**Features:**
-- Handles both regular branches and worktree branches
-- Safely removes worktrees before deleting branches
-- Shows clear feedback about what was removed
-- Reports if no cleanup was needed
+**特性：**
+- 同时处理普通分支和 worktree 分支
+- 删除分支前先安全移除 worktree
+- 清楚地反馈移除了什么
+- 如无需清理也会说明
 
-**When to use:**
-- After merging and deleting remote branches
-- When your local branch list is cluttered with stale branches
-- During regular repository maintenance
+**何时使用：**
+- 在合并并删除远程分支之后
+- 当本地分支列表被过时分支塞满时
+- 在日常仓库维护时
 
-## Installation
+## 安装
 
-This plugin is included in the Claude Code repository. The commands are automatically available when using Claude Code.
+本插件已包含在 Claude Code 仓库中。使用 Claude Code 时这些命令自动可用。
 
-## Best Practices
+## 最佳实践
 
-### Using `/commit`
-- Review the staged changes before committing
-- Let Claude analyze your changes and match your repo's commit style
-- Trust the automated message, but verify it's accurate
-- Use for routine commits during development
+### 使用 `/commit`
+- 提交前检查暂存的更改
+- 让 Claude 分析你的更改并匹配你仓库的提交风格
+- 可以信任自动生成的信息，但要核实其准确性
+- 适合开发过程中的日常提交
 
-### Using `/commit-push-pr`
-- Use when you're ready to create a PR
-- Ensure all your changes are complete and tested
-- Claude will analyze the full branch history for the PR description
-- Review the PR description and edit if needed
-- Use when you want to minimize context switching
+### 使用 `/commit-push-pr`
+- 在准备创建 PR 时使用
+- 确保所有更改已完成并经过测试
+- Claude 会分析完整的分支历史来生成 PR 描述
+- 审查 PR 描述，必要时进行编辑
+- 适合希望尽量减少上下文切换的场景
 
-### Using `/clean_gone`
-- Run periodically to keep your branch list clean
-- Especially useful after merging multiple PRs
-- Safe to run - only removes branches already deleted remotely
-- Helps maintain a tidy local repository
+### 使用 `/clean_gone`
+- 定期运行，保持分支列表干净
+- 在合并多个 PR 后尤其有用
+- 可以放心运行——只会移除已在远程删除的分支
+- 有助于保持本地仓库整洁
 
-## Workflow Integration
+## 工作流集成
 
-### Quick commit workflow:
+### 快速提交工作流：
 ```bash
-# Write code
+# 编写代码
 /commit
-# Continue development
+# 继续开发
 ```
 
-### Feature branch workflow:
+### 功能分支工作流：
 ```bash
-# Develop feature across multiple commits
-/commit  # First commit
-# More changes
-/commit  # Second commit
-# Ready to create PR
+# 用多次提交开发功能
+/commit  # 第一次提交
+# 继续修改
+/commit  # 第二次提交
+# 准备创建 PR
 /commit-push-pr
 ```
 
-### Maintenance workflow:
+### 维护工作流：
 ```bash
-# After several PRs are merged
+# 在多个 PR 合并之后
 /clean_gone
-# Clean workspace ready for next feature
+# 工作区已清理完毕，可以开始下一个功能
 ```
 
-## Requirements
+## 要求
 
-- Git must be installed and configured
-- For `/commit-push-pr`: GitHub CLI (`gh`) must be installed and authenticated
-- Repository must be a git repository with a remote
+- 必须安装并配置 Git
+- 对于 `/commit-push-pr`：必须安装并认证 GitHub CLI（`gh`）
+- 仓库必须是带远程的 git 仓库
 
-## Troubleshooting
+## 故障排查
 
-### `/commit` creates empty commit
+### `/commit` 创建了空提交
 
-**Issue**: No changes to commit
+**问题**：没有可提交的更改
 
-**Solution**:
-- Ensure you have unstaged or staged changes
-- Run `git status` to verify changes exist
+**解决方法**：
+- 确认存在未暂存或已暂存的更改
+- 运行 `git status` 确认更改存在
 
-### `/commit-push-pr` fails to create PR
+### `/commit-push-pr` 创建 PR 失败
 
-**Issue**: `gh pr create` command fails
+**问题**：`gh pr create` 命令失败
 
-**Solution**:
-- Install GitHub CLI: `brew install gh` (macOS) or see [GitHub CLI installation](https://cli.github.com/)
-- Authenticate: `gh auth login`
-- Ensure repository has a GitHub remote
+**解决方法**：
+- 安装 GitHub CLI：`brew install gh`（macOS），或参见 [GitHub CLI 安装](https://cli.github.com/)
+- 认证：`gh auth login`
+- 确认仓库有 GitHub 远程
 
-### `/clean_gone` doesn't find branches
+### `/clean_gone` 找不到分支
 
-**Issue**: No branches marked as [gone]
+**问题**：没有标记为 [gone] 的分支
 
-**Solution**:
-- Run `git fetch --prune` to update remote tracking
-- Branches must be deleted from the remote to show as [gone]
+**解决方法**：
+- 运行 `git fetch --prune` 更新远程跟踪
+- 分支必须已从远程删除才会显示为 [gone]
 
-## Tips
+## 技巧
 
-- **Combine with other tools**: Use `/commit` during development, then `/commit-push-pr` when ready
-- **Let Claude draft messages**: The commit message analysis learns from your repo's style
-- **Regular cleanup**: Run `/clean_gone` weekly to maintain a clean branch list
-- **Review before pushing**: Always review the commit message and changes before pushing
+- **与其他工具配合**：开发过程中用 `/commit`，就绪后再用 `/commit-push-pr`
+- **让 Claude 起草提交信息**：提交信息分析会学习你仓库的风格
+- **定期清理**：每周运行一次 `/clean_gone`，保持分支列表干净
+- **推送前先审查**：推送前务必审查提交信息和更改
 
-## Author
+## 作者
 
 Anthropic (support@anthropic.com)
 
-## Version
+## 版本
 
 1.0.0

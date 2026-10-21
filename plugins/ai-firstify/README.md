@@ -1,14 +1,14 @@
 # ai-firstify
 
-Audit, re-engineer, or bootstrap projects to align with AI-first design principles. Based on the 9 design principles and 7 design patterns from the [TechWolf AI-First Bootcamp](https://ai-first.techwolf.ai).
+审计、重构或从零搭建项目，使其符合 AI 优先（AI-first）设计原则。基于 [TechWolf AI-First Bootcamp](https://ai-first.techwolf.ai) 的 9 条设计原则和 7 种设计模式。
 
-## Install
+## 安装
 
 ```bash
-# Add the TechWolf marketplace (once)
+# 添加 TechWolf 插件市场（一次即可）
 claude plugin marketplace add techwolf-ai/ai-first-toolkit
 
-# Install the plugin
+# 安装插件
 claude plugin install ai-firstify@techwolf-ai-first
 ```
 
@@ -18,7 +18,7 @@ claude plugin install ai-firstify@techwolf-ai-first
 ./install.sh ai-firstify
 ```
 
-Update, uninstall, or verify:
+更新、卸载或验证：
 
 ```bash
 ./install.sh update ai-firstify
@@ -26,11 +26,11 @@ Update, uninstall, or verify:
 ./install.sh verify ai-firstify
 ```
 
-For Codex, this plugin installs:
+对于 Codex，本插件会安装：
 
 - `ai-firstify`
 
-The installer also writes plugin metadata into the installed skill directory and copies a Codex guidance file into `~/.codex/skills/.techwolf-ai-first/plugins/ai-firstify/`.
+安装器还会将插件元数据写入已安装的技能目录，并把一份 Codex 指引文件复制到 `~/.codex/skills/.techwolf-ai-first/plugins/ai-firstify/`。
 
 ### Google Antigravity
 
@@ -38,7 +38,7 @@ The installer also writes plugin metadata into the installed skill directory and
 ./install.sh ai-firstify --ide antigravity
 ```
 
-Update, uninstall, or verify:
+更新、卸载或验证：
 
 ```bash
 ./install.sh update ai-firstify --ide antigravity
@@ -46,28 +46,28 @@ Update, uninstall, or verify:
 ./install.sh verify ai-firstify --ide antigravity
 ```
 
-This installs the plugin as `~/.gemini/config/plugins/ai-firstify/` (`plugin.json` + `installed_version.json` + `skills/`), the same layout Antigravity uses for its own plugins.
+这会将插件安装为 `~/.gemini/config/plugins/ai-firstify/`（`plugin.json` + `installed_version.json` + `skills/`），与 Antigravity 自身插件所用的布局一致。
 
-## Usage
+## 用法
 
-The skill triggers automatically when you ask Claude Code to:
+当你让 Claude Code 做以下事情时，该技能会自动触发：
 
-- **Audit** a project: "review", "audit", "analyze", "assess"
-- **Re-Engineer** a project: "ai-firstify", "fix", "improve", "transform"
-- **Bootstrap** a new project: "start", "new project", "bootstrap", "build from scratch"
+- **审计**项目："review"、"audit"、"analyze"、"assess"
+- **重构**项目："ai-firstify"、"fix"、"improve"、"transform"
+- **搭建**新项目："start"、"new project"、"bootstrap"、"build from scratch"
 
-Or invoke directly:
+也可以直接调用：
 
 ```
 /ai-firstify
 ```
 
-## Modes
+## 模式
 
-1. **Audit**: Read-only analysis across 7 dimensions with a scored report
-2. **Re-Engineer**: Full audit followed by active fixes in 7 phases
-3. **Bootstrap**: Interactive new project setup with discovery questions
+1. **审计**：跨 7 个维度进行只读分析，并输出带评分的报告
+2. **重构**：先完成完整审计，再分 7 个阶段进行主动修复
+3. **引导搭建**：通过引导式问答，交互式地搭建新项目
 
-## License
+## 许可证
 
-This project is licensed under the [MIT License](../../LICENSE).
+本项目基于 [MIT License](../../LICENSE) 授权。

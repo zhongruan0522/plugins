@@ -1,402 +1,402 @@
-# Plugin Development Toolkit
+# 插件开发工具包
 
-A comprehensive toolkit for developing Claude Code plugins with expert guidance on hooks, MCP integration, plugin structure, and marketplace publishing.
+一个用于开发 Claude Code 插件的全面工具包，在钩子、MCP 集成、插件结构和插件市场发布方面提供专家级指导。
 
-## Overview
+## 概述
 
-The plugin-dev toolkit provides seven specialized skills to help you build high-quality Claude Code plugins:
+plugin-dev 工具包提供七个专项技能，帮助你构建高质量的 Claude Code 插件：
 
-1. **hook-development** - Advanced hooks API and event-driven automation
-2. **mcp-integration** - Model Context Protocol server integration
-3. **plugin-structure** - Plugin organization and manifest configuration
-4. **plugin-settings** - Configuration patterns using .claude/plugin-name.local.md files
-5. **command-development** - Creating slash commands with frontmatter and arguments
-6. **agent-development** - Creating autonomous agents with AI-assisted generation
-7. **skill-development** - Creating skills with progressive disclosure and strong triggers
+1. **hook-development** - 高级钩子 API 与事件驱动自动化
+2. **mcp-integration** - Model Context Protocol 服务器集成
+3. **plugin-structure** - 插件组织与清单配置
+4. **plugin-settings** - 使用 .claude/plugin-name.local.md 文件的配置模式
+5. **command-development** - 创建带 frontmatter 和参数的斜杠命令
+6. **agent-development** - 借助 AI 辅助生成创建自主智能体
+7. **skill-development** - 创建具备渐进式披露和强触发的技能
 
-Each skill follows best practices with progressive disclosure: lean core documentation, detailed references, working examples, and utility scripts.
+每个技能都遵循渐进式披露的最佳实践：精简的核心文档、详细的参考资料、可运行的示例和实用脚本。
 
-## Guided Workflow Command
+## 引导式工作流命令
 
 ### /plugin-dev:create-plugin
 
-A comprehensive, end-to-end workflow command for creating plugins from scratch, similar to the feature-dev workflow.
+一个从零开始创建插件的端到端综合工作流命令，类似于 feature-dev 工作流。
 
-**8-Phase Process:**
-1. **Discovery** - Understand plugin purpose and requirements
-2. **Component Planning** - Determine needed skills, commands, agents, hooks, MCP
-3. **Detailed Design** - Specify each component and resolve ambiguities
-4. **Structure Creation** - Set up directories and manifest
-5. **Component Implementation** - Create each component using AI-assisted agents
-6. **Validation** - Run plugin-validator and component-specific checks
-7. **Testing** - Verify plugin works in Claude Code
-8. **Documentation** - Finalize README and prepare for distribution
+**8 阶段流程：**
+1. **发现** - 理解插件的用途和需求
+2. **组件规划** - 确定所需的技能、命令、智能体、钩子和 MCP
+3. **详细设计** - 明确每个组件并消除歧义
+4. **结构创建** - 建立目录和清单
+5. **组件实现** - 使用 AI 辅助智能体创建每个组件
+6. **验证** - 运行 plugin-validator 和组件专属检查
+7. **测试** - 验证插件在 Claude Code 中正常工作
+8. **文档** - 定稿 README 并准备分发
 
-**Features:**
-- Asks clarifying questions at each phase
-- Loads relevant skills automatically
-- Uses agent-creator for AI-assisted agent generation
-- Runs validation utilities (validate-agent.sh, validate-hook-schema.sh, etc.)
-- Follows plugin-dev's own proven patterns
-- Guides through testing and verification
+**特性：**
+- 在每个阶段提出澄清性问题
+- 自动加载相关技能
+- 使用 agent-creator 进行 AI 辅助智能体生成
+- 运行验证工具（validate-agent.sh、validate-hook-schema.sh 等）
+- 遵循 plugin-dev 自身经过验证的模式
+- 引导完成测试和验证
 
-**Usage:**
+**用法：**
 ```bash
-/plugin-dev:create-plugin [optional description]
+/plugin-dev:create-plugin [可选描述]
 
-# Examples:
+# 示例：
 /plugin-dev:create-plugin
-/plugin-dev:create-plugin A plugin for managing database migrations
+/plugin-dev:create-plugin 一个管理数据库迁移的插件
 ```
 
-Use this workflow for structured, high-quality plugin development from concept to completion.
+使用该工作流，实现从概念到落地的结构化、高质量插件开发。
 
-## Skills
+## 技能
 
 ### 1. hook-development
 
-**Trigger phrases:** "create a hook", "add a PreToolUse hook", "validate tool use", "implement prompt-based hooks", "${CLAUDE_PLUGIN_ROOT}", "block dangerous commands"
+**触发短语：**"create a hook"、"add a PreToolUse hook"、"validate tool use"、"implement prompt-based hooks"、"${CLAUDE_PLUGIN_ROOT}"、"block dangerous commands"
 
-**What it covers:**
-- Prompt-based hooks (recommended) with LLM decision-making
-- Command hooks for deterministic validation
-- All hook events: PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification
-- Hook output formats and JSON schemas
-- Security best practices and input validation
-- ${CLAUDE_PLUGIN_ROOT} for portable paths
+**涵盖内容：**
+- 基于 LLM 决策的提示词型钩子（推荐）
+- 用于确定性校验的命令钩子
+- 所有钩子事件：PreToolUse、PostToolUse、Stop、SubagentStop、SessionStart、SessionEnd、UserPromptSubmit、PreCompact、Notification
+- 钩子输出格式和 JSON schema
+- 安全最佳实践和输入校验
+- 使用 ${CLAUDE_PLUGIN_ROOT} 实现可移植路径
 
-**Resources:**
-- Core SKILL.md (1,619 words)
-- 3 example hook scripts (validate-write, validate-bash, load-context)
-- 3 reference docs: patterns, migration, advanced techniques
-- 3 utility scripts: validate-hook-schema.sh, test-hook.sh, hook-linter.sh
+**资源：**
+- 核心 SKILL.md（1,619 词）
+- 3 个示例钩子脚本（validate-write、validate-bash、load-context）
+- 3 份参考文档：patterns、migration、advanced techniques
+- 3 个实用脚本：validate-hook-schema.sh、test-hook.sh、hook-linter.sh
 
-**Use when:** Creating event-driven automation, validating operations, or enforcing policies in your plugin.
+**适用场景：** 在插件中创建事件驱动自动化、校验操作或强制执行策略时。
 
 ### 2. mcp-integration
 
-**Trigger phrases:** "add MCP server", "integrate MCP", "configure .mcp.json", "Model Context Protocol", "stdio/SSE/HTTP server", "connect external service"
+**触发短语：**"add MCP server"、"integrate MCP"、"configure .mcp.json"、"Model Context Protocol"、"stdio/SSE/HTTP server"、"connect external service"
 
-**What it covers:**
-- MCP server configuration (.mcp.json vs plugin.json)
-- All server types: stdio (local), SSE (hosted/OAuth), HTTP (REST), WebSocket (real-time)
-- Environment variable expansion (${CLAUDE_PLUGIN_ROOT}, user vars)
-- MCP tool naming and usage in commands/agents
-- Authentication patterns: OAuth, tokens, env vars
-- Integration patterns and performance optimization
+**涵盖内容：**
+- MCP 服务器配置（.mcp.json 与 plugin.json）
+- 所有服务器类型：stdio（本地）、SSE（托管/OAuth）、HTTP（REST）、WebSocket（实时）
+- 环境变量展开（${CLAUDE_PLUGIN_ROOT}、用户变量）
+- 在命令/智能体中使用 MCP 工具及命名
+- 认证模式：OAuth、令牌、环境变量
+- 集成模式与性能优化
 
-**Resources:**
-- Core SKILL.md (1,666 words)
-- 3 example configurations (stdio, SSE, HTTP)
-- 3 reference docs: server-types (~3,200w), authentication (~2,800w), tool-usage (~2,600w)
+**资源：**
+- 核心 SKILL.md（1,666 词）
+- 3 个示例配置（stdio、SSE、HTTP）
+- 3 份参考文档：server-types（约 3,200 词）、authentication（约 2,800 词）、tool-usage（约 2,600 词）
 
-**Use when:** Integrating external services, APIs, databases, or tools into your plugin.
+**适用场景：** 在插件中集成外部服务、API、数据库或工具时。
 
 ### 3. plugin-structure
 
-**Trigger phrases:** "plugin structure", "plugin.json manifest", "auto-discovery", "component organization", "plugin directory layout"
+**触发短语：**"plugin structure"、"plugin.json manifest"、"auto-discovery"、"component organization"、"plugin directory layout"
 
-**What it covers:**
-- Standard plugin directory structure and auto-discovery
-- plugin.json manifest format and all fields
-- Component organization (commands, agents, skills, hooks)
-- ${CLAUDE_PLUGIN_ROOT} usage throughout
-- File naming conventions and best practices
-- Minimal, standard, and advanced plugin patterns
+**涵盖内容：**
+- 标准插件目录结构与自动发现
+- plugin.json 清单格式及所有字段
+- 组件组织（命令、智能体、技能、钩子）
+- ${CLAUDE_PLUGIN_ROOT} 的全面使用
+- 文件命名规范与最佳实践
+- 最小、标准、高级三种插件模式
 
-**Resources:**
-- Core SKILL.md (1,619 words)
-- 3 example structures (minimal, standard, advanced)
-- 2 reference docs: component-patterns, manifest-reference
+**资源：**
+- 核心 SKILL.md（1,619 词）
+- 3 个示例结构（minimal、standard、advanced）
+- 2 份参考文档：component-patterns、manifest-reference
 
-**Use when:** Starting a new plugin, organizing components, or configuring the plugin manifest.
+**适用场景：** 开始一个新插件、组织组件或配置插件清单时。
 
 ### 4. plugin-settings
 
-**Trigger phrases:** "plugin settings", "store plugin configuration", ".local.md files", "plugin state files", "read YAML frontmatter", "per-project plugin settings"
+**触发短语：**"plugin settings"、"store plugin configuration"、".local.md files"、"plugin state files"、"read YAML frontmatter"、"per-project plugin settings"
 
-**What it covers:**
-- .claude/plugin-name.local.md pattern for configuration
-- YAML frontmatter + markdown body structure
-- Parsing techniques for bash scripts (sed, awk, grep patterns)
-- Temporarily active hooks (flag files and quick-exit)
-- Real-world examples from multi-agent-swarm and ralph-loop plugins
-- Atomic file updates and validation
-- Gitignore and lifecycle management
+**涵盖内容：**
+- 用于配置的 .claude/plugin-name.local.md 模式
+- YAML frontmatter + markdown 正文结构
+- bash 脚本的解析技术（sed、awk、grep 模式）
+- 临时激活的钩子（标志文件与快速退出）
+- 来自 multi-agent-swarm 和 ralph-loop 插件的真实示例
+- 原子文件更新与校验
+- gitignore 与生命周期管理
 
-**Resources:**
-- Core SKILL.md (1,623 words)
-- 3 examples (read-settings hook, create-settings command, templates)
-- 2 reference docs: parsing-techniques, real-world-examples
-- 2 utility scripts: validate-settings.sh, parse-frontmatter.sh
+**资源：**
+- 核心 SKILL.md（1,623 词）
+- 3 个示例（read-settings 钩子、create-settings 命令、模板）
+- 2 份参考文档：parsing-techniques、real-world-examples
+- 2 个实用脚本：validate-settings.sh、parse-frontmatter.sh
 
-**Use when:** Making plugins configurable, storing per-project state, or implementing user preferences.
+**适用场景：** 让插件可配置、存储项目级状态或实现用户偏好设置时。
 
 ### 5. command-development
 
-**Trigger phrases:** "create a slash command", "add a command", "command frontmatter", "define command arguments", "organize commands"
+**触发短语：**"create a slash command"、"add a command"、"command frontmatter"、"define command arguments"、"organize commands"
 
-**What it covers:**
-- Slash command structure and markdown format
-- YAML frontmatter fields (description, argument-hint, allowed-tools)
-- Dynamic arguments and file references
-- Bash execution for context
-- Command organization and namespacing
-- Best practices for command development
+**涵盖内容：**
+- 斜杠命令结构与 markdown 格式
+- YAML frontmatter 字段（description、argument-hint、allowed-tools）
+- 动态参数与文件引用
+- 通过 bash 执行获取上下文
+- 命令组织与命名空间
+- 命令开发最佳实践
 
-**Resources:**
-- Core SKILL.md (1,535 words)
-- Examples and reference documentation
-- Command organization patterns
+**资源：**
+- 核心 SKILL.md（1,535 词）
+- 示例与参考文档
+- 命令组织模式
 
-**Use when:** Creating slash commands, defining command arguments, or organizing plugin commands.
+**适用场景：** 创建斜杠命令、定义命令参数或组织插件命令时。
 
 ### 6. agent-development
 
-**Trigger phrases:** "create an agent", "add an agent", "write a subagent", "agent frontmatter", "when to use description", "agent examples", "autonomous agent"
+**触发短语：**"create an agent"、"add an agent"、"write a subagent"、"agent frontmatter"、"when to use description"、"agent examples"、"autonomous agent"
 
-**What it covers:**
-- Agent file structure (YAML frontmatter + system prompt)
-- All frontmatter fields (name, description, model, color, tools)
-- Description format with <example> blocks for reliable triggering
-- System prompt design patterns (analysis, generation, validation, orchestration)
-- AI-assisted agent generation using Claude Code's proven prompt
-- Validation rules and best practices
-- Complete production-ready agent examples
+**涵盖内容：**
+- 智能体文件结构（YAML frontmatter + 系统提示词）
+- 所有 frontmatter 字段（name、description、model、color、tools）
+- 使用 <example> 块的描述格式，确保可靠触发
+- 系统提示词设计模式（分析、生成、校验、编排）
+- 使用 Claude Code 经过验证的提示词进行 AI 辅助智能体生成
+- 校验规则与最佳实践
+- 完整可用于生产的智能体示例
 
-**Resources:**
-- Core SKILL.md (1,438 words)
-- 2 examples: agent-creation-prompt (AI-assisted workflow), complete-agent-examples (4 full agents)
-- 3 reference docs: agent-creation-system-prompt (from Claude Code), system-prompt-design (~4,000w), triggering-examples (~2,500w)
-- 1 utility script: validate-agent.sh
+**资源：**
+- 核心 SKILL.md（1,438 词）
+- 2 个示例：agent-creation-prompt（AI 辅助工作流）、complete-agent-examples（4 个完整智能体）
+- 3 份参考文档：agent-creation-system-prompt（来自 Claude Code）、system-prompt-design（约 4,000 词）、triggering-examples（约 2,500 词）
+- 1 个实用脚本：validate-agent.sh
 
-**Use when:** Creating autonomous agents, defining agent behavior, or implementing AI-assisted agent generation.
+**适用场景：** 创建自主智能体、定义智能体行为或实现 AI 辅助智能体生成时。
 
 ### 7. skill-development
 
-**Trigger phrases:** "create a skill", "add a skill to plugin", "write a new skill", "improve skill description", "organize skill content"
+**触发短语：**"create a skill"、"add a skill to plugin"、"write a new skill"、"improve skill description"、"organize skill content"
 
-**What it covers:**
-- Skill structure (SKILL.md with YAML frontmatter)
-- Progressive disclosure principle (metadata → SKILL.md → resources)
-- Strong trigger descriptions with specific phrases
-- Writing style (imperative/infinitive form, third person)
-- Bundled resources organization (references/, examples/, scripts/)
-- Skill creation workflow
-- Based on skill-creator methodology adapted for Claude Code plugins
+**涵盖内容：**
+- 技能结构（带 YAML frontmatter 的 SKILL.md）
+- 渐进式披露原则（元数据 → SKILL.md → 资源）
+- 使用特定短语的强触发描述
+- 写作风格（祈使/不定式形式，第三人称）
+- 附带资源的组织方式（references/、examples/、scripts/）
+- 技能创建工作流
+- 基于 skill-creator 方法论，并针对 Claude Code 插件做了适配
 
-**Resources:**
-- Core SKILL.md (1,232 words)
-- References: skill-creator methodology, plugin-dev patterns
-- Examples: Study plugin-dev's own skills as templates
+**资源：**
+- 核心 SKILL.md（1,232 词）
+- 参考资料：skill-creator 方法论、plugin-dev 模式
+- 示例：将 plugin-dev 自身的技能作为模板来研究
 
-**Use when:** Creating new skills for plugins or improving existing skill quality.
+**适用场景：** 为插件创建新技能或提升现有技能质量时。
 
 
-## Installation
+## 安装
 
-Install from claude-code-marketplace:
+从 claude-code-marketplace 安装：
 
 ```bash
 /plugin install plugin-dev@claude-code-marketplace
 ```
 
-Or for development, use directly:
+开发时也可直接使用：
 
 ```bash
 cc --plugin-dir /path/to/plugin-dev
 ```
 
-## Quick Start
+## 快速开始
 
-### Creating Your First Plugin
+### 创建你的第一个插件
 
-1. **Plan your plugin structure:**
-   - Ask: "What's the best directory structure for a plugin with commands and MCP integration?"
-   - The plugin-structure skill will guide you
+1. **规划插件结构：**
+   - 询问："带命令和 MCP 集成的插件，最佳目录结构是什么？"
+   - plugin-structure 技能会为你提供指导
 
-2. **Add MCP integration (if needed):**
-   - Ask: "How do I add an MCP server for database access?"
-   - The mcp-integration skill provides examples and patterns
+2. **添加 MCP 集成（如需要）：**
+   - 询问："如何添加一个用于数据库访问的 MCP 服务器？"
+   - mcp-integration 技能提供示例和模式
 
-3. **Implement hooks (if needed):**
-   - Ask: "Create a PreToolUse hook that validates file writes"
-   - The hook-development skill gives working examples and utilities
+3. **实现钩子（如需要）：**
+   - 询问："创建一个校验文件写入的 PreToolUse 钩子"
+   - hook-development 技能提供可运行的示例和实用工具
 
 
-## Development Workflow
+## 开发工作流
 
-The plugin-dev toolkit supports your entire plugin development lifecycle:
+plugin-dev 工具包覆盖插件开发的完整生命周期：
 
 ```
 ┌─────────────────────┐
-│  Design Structure   │  → plugin-structure skill
-│  (manifest, layout) │
+│  设计结构            │  → plugin-structure 技能
+│  （清单、布局）      │
 └──────────┬──────────┘
            │
 ┌──────────▼──────────┐
-│  Add Components     │
-│  (commands, agents, │  → All skills provide guidance
-│   skills, hooks)    │
+│  添加组件            │
+│  （命令、智能体、    │  → 所有技能均提供指导
+│   技能、钩子）       │
 └──────────┬──────────┘
            │
 ┌──────────▼──────────┐
-│  Integrate Services │  → mcp-integration skill
-│  (MCP servers)      │
+│  集成服务            │  → mcp-integration 技能
+│  （MCP 服务器）      │
 └──────────┬──────────┘
            │
 ┌──────────▼──────────┐
-│  Add Automation     │  → hook-development skill
-│  (hooks, validation)│     + utility scripts
+│  添加自动化          │  → hook-development 技能
+│  （钩子、校验）      │     + 实用脚本
 └──────────┬──────────┘
            │
 ┌──────────▼──────────┐
-│  Test & Validate    │  → hook-development utilities
+│  测试与验证          │  → hook-development 实用工具
 │                     │     validate-hook-schema.sh
 └──────────┬──────────┘     test-hook.sh
            │                 hook-linter.sh
 ```
 
-## Features
+## 特性
 
-### Progressive Disclosure
+### 渐进式披露
 
-Each skill uses a three-level disclosure system:
-1. **Metadata** (always loaded): Concise descriptions with strong triggers
-2. **Core SKILL.md** (when triggered): Essential API reference (~1,500-2,000 words)
-3. **References/Examples** (as needed): Detailed guides, patterns, and working code
+每个技能都采用三级披露体系：
+1. **元数据**（始终加载）：带强触发的简洁描述
+2. **核心 SKILL.md**（触发时加载）：核心 API 参考（约 1,500-2,000 词）
+3. **参考/示例**（按需加载）：详细指南、模式和可运行代码
 
-This keeps Claude Code's context focused while providing deep knowledge when needed.
+这样既能保持 Claude Code 上下文的聚焦，又能在需要时提供深入的知识。
 
-### Utility Scripts
+### 实用脚本
 
-The hook-development skill includes production-ready utilities:
+hook-development 技能包含可用于生产环境的实用工具：
 
 ```bash
-# Validate hooks.json structure
+# 校验 hooks.json 结构
 ./validate-hook-schema.sh hooks/hooks.json
 
-# Test hooks before deployment
+# 部署前测试钩子
 ./test-hook.sh my-hook.sh test-input.json
 
-# Lint hook scripts for best practices
+# 对钩子脚本进行最佳实践检查
 ./hook-linter.sh my-hook.sh
 ```
 
-### Working Examples
+### 可运行的示例
 
-Every skill provides working examples:
-- **hook-development**: 3 complete hook scripts (bash, write validation, context loading)
-- **mcp-integration**: 3 server configurations (stdio, SSE, HTTP)
-- **plugin-structure**: 3 plugin layouts (minimal, standard, advanced)
-- **plugin-settings**: 3 examples (read-settings hook, create-settings command, templates)
-- **command-development**: 10 complete command examples (review, test, deploy, docs, etc.)
+每个技能都提供可运行的示例：
+- **hook-development**：3 个完整的钩子脚本（bash、写入校验、上下文加载）
+- **mcp-integration**：3 种服务器配置（stdio、SSE、HTTP）
+- **plugin-structure**：3 种插件布局（minimal、standard、advanced）
+- **plugin-settings**：3 个示例（read-settings 钩子、create-settings 命令、模板）
+- **command-development**：10 个完整的命令示例（review、test、deploy、docs 等）
 
-## Documentation Standards
+## 文档标准
 
-All skills follow consistent standards:
-- Third-person descriptions ("This skill should be used when...")
-- Strong trigger phrases for reliable loading
-- Imperative/infinitive form throughout
-- Based on official Claude Code documentation
-- Security-first approach with best practices
+所有技能都遵循一致的标准：
+- 第三人称描述（"This skill should be used when..."）
+- 用于可靠加载的强触发短语
+- 全程使用祈使/不定式形式
+- 基于官方 Claude Code 文档
+- 安全优先的方法与最佳实践
 
-## Total Content
+## 内容总量
 
-- **Core Skills**: ~11,065 words across 7 SKILL.md files
-- **Reference Docs**: ~10,000+ words of detailed guides
-- **Examples**: 12+ working examples (hook scripts, MCP configs, plugin layouts, settings files)
-- **Utilities**: 6 production-ready validation/testing/parsing scripts
+- **核心技能**：7 个 SKILL.md 文件，共约 11,065 词
+- **参考文档**：10,000+ 词的详细指南
+- **示例**：12 个以上可运行示例（钩子脚本、MCP 配置、插件布局、设置文件）
+- **实用工具**：6 个可用于生产的校验/测试/解析脚本
 
-## Use Cases
+## 使用场景
 
-### Building a Database Plugin
-
-```
-1. "What's the structure for a plugin with MCP integration?"
-   → plugin-structure skill provides layout
-
-2. "How do I configure an stdio MCP server for PostgreSQL?"
-   → mcp-integration skill shows configuration
-
-3. "Add a Stop hook to ensure connections close properly"
-   → hook-development skill provides pattern
+### 构建数据库插件
 
 ```
+1. "带 MCP 集成的插件应该采用什么结构？"
+   → plugin-structure 技能提供布局
 
-### Creating a Validation Plugin
+2. "如何为 PostgreSQL 配置 stdio MCP 服务器？"
+   → mcp-integration 技能展示配置方法
 
-```
-1. "Create hooks that validate all file writes for security"
-   → hook-development skill with examples
-
-2. "Test my hooks before deploying"
-   → Use validate-hook-schema.sh and test-hook.sh
-
-3. "Organize my hooks and configuration files"
-   → plugin-structure skill shows best practices
+3. "添加一个 Stop 钩子以确保连接正确关闭"
+   → hook-development 技能提供模式
 
 ```
 
-### Integrating External Services
+### 创建校验类插件
 
 ```
-1. "Add Asana MCP server with OAuth"
-   → mcp-integration skill covers SSE servers
+1. "创建钩子，对所有文件写入进行安全校验"
+   → hook-development 技能及示例
 
-2. "Use Asana tools in my commands"
-   → mcp-integration tool-usage reference
+2. "在部署前测试我的钩子"
+   → 使用 validate-hook-schema.sh 和 test-hook.sh
 
-3. "Structure my plugin with commands and MCP"
-   → plugin-structure skill provides patterns
+3. "整理我的钩子和配置文件"
+   → plugin-structure 技能展示最佳实践
+
 ```
 
-## Best Practices
+### 集成外部服务
 
-All skills emphasize:
+```
+1. "添加带 OAuth 的 Asana MCP 服务器"
+   → mcp-integration 技能涵盖 SSE 服务器
 
-✅ **Security First**
-- Input validation in hooks
-- HTTPS/WSS for MCP servers
-- Environment variables for credentials
-- Principle of least privilege
+2. "在我的命令中使用 Asana 工具"
+   → mcp-integration 的 tool-usage 参考
 
-✅ **Portability**
-- Use ${CLAUDE_PLUGIN_ROOT} everywhere
-- Relative paths only
-- Environment variable substitution
+3. "用命令和 MCP 组织我的插件"
+   → plugin-structure 技能提供模式
+```
 
-✅ **Testing**
-- Validate configurations before deployment
-- Test hooks with sample inputs
-- Use debug mode (`claude --debug`)
+## 最佳实践
 
-✅ **Documentation**
-- Clear README files
-- Documented environment variables
-- Usage examples
+所有技能都强调：
 
-## Contributing
+✅ **安全优先**
+- 在钩子中进行输入校验
+- MCP 服务器使用 HTTPS/WSS
+- 凭据使用环境变量
+- 最小权限原则
 
-This plugin is part of the claude-code-marketplace. To contribute improvements:
+✅ **可移植性**
+- 到处使用 ${CLAUDE_PLUGIN_ROOT}
+- 仅使用相对路径
+- 环境变量替换
 
-1. Fork the marketplace repository
-2. Make changes to plugin-dev/
-3. Test locally with `cc --plugin-dir`
-4. Create PR following marketplace-publishing guidelines
+✅ **测试**
+- 部署前校验配置
+- 用示例输入测试钩子
+- 使用调试模式（`claude --debug`）
 
-## Version
+✅ **文档**
+- 清晰的 README 文件
+- 记录在案的环境变量
+- 用法示例
 
-0.1.0 - Initial release with seven comprehensive skills and three validation agents
+## 参与贡献
 
-## Author
+本插件是 claude-code-marketplace 的一部分。如需贡献改进：
+
+1. Fork 插件市场仓库
+2. 修改 plugin-dev/
+3. 使用 `cc --plugin-dir` 在本地测试
+4. 按照插件市场发布指南创建 PR
+
+## 版本
+
+0.1.0 - 首个版本，包含七个全面的技能和三个校验智能体
+
+## 作者
 
 Daisy Hollman (daisy@anthropic.com)
 
-## License
+## 许可证
 
-MIT License - See repository for details
+MIT 许可证 - 详情见仓库
 
 ---
 
-**Note:** This toolkit is designed to help you build high-quality plugins. The skills load automatically when you ask relevant questions, providing expert guidance exactly when you need it.
+**注意：** 本工具包旨在帮助你构建高质量的插件。当你提出相关问题时，技能会自动加载，在你最需要的时候提供专家级指导。

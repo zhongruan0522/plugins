@@ -1,118 +1,118 @@
-# Product Management Plugin
+# 产品管理插件
 
-A product management plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Covers the full PM workflow: writing feature specs, managing roadmaps, communicating with stakeholders, synthesizing user research, analyzing competitors, and tracking product metrics.
+一款产品管理插件，主要为 [Cowork](https://claude.com/product/cowork)（Anthropic 的智能体桌面应用）设计，但同样适用于 Claude Code。覆盖完整的产品经理工作流：撰写功能规格、管理路线图、与利益相关者沟通、整合用户研究、分析竞争对手，以及跟踪产品指标。
 
-## Installation
+## 安装
 
 ```
 claude plugin marketplace add anthropics/knowledge-work-plugins
 claude plugin install product-management@knowledge-work-plugins
 ```
 
-## What It Does
+## 功能
 
-This plugin gives you an AI-powered product management partner that can help with:
+这款插件为你提供一个 AI 驱动的产品管理搭档，可以协助你完成：
 
-- **Feature Specs & PRDs** — Generate structured product requirements documents from a problem statement or feature idea. Includes user stories, requirements prioritization, success metrics, and scope management.
-- **Roadmap Planning** — Create, update, and reprioritize your product roadmap. Supports Now/Next/Later, quarterly themes, and OKR-aligned formats with dependency mapping.
-- **Stakeholder Updates** — Generate status updates tailored to your audience (executives, engineering, customers). Pulls context from connected tools to save you the weekly update grind.
-- **User Research Synthesis** — Turn interview notes, survey data, and support tickets into structured insights. Identifies themes, builds personas, and surfaces opportunity areas with supporting evidence.
-- **Competitive Analysis** — Research competitors and generate briefs with feature comparisons, positioning analysis, and strategic implications.
-- **Metrics Review** — Analyze product metrics, identify trends, compare against targets, and surface actionable insights.
-- **Product Brainstorming** — Explore problem spaces, generate ideas, and stress-test product thinking with a sharp sparring partner. Supports divergent ideation, assumption testing, and strategy exploration using frameworks like How Might We, Jobs-to-be-Done, First Principles, and Opportunity Solution Trees.
+- **功能规格与 PRD**——从问题陈述或功能构想生成结构化的产品需求文档。包含用户故事、需求优先级排序、成功指标和范围管理。
+- **路线图规划**——创建、更新产品路线图并重新排列优先级。支持 Now/Next/Later、季度主题和 OKR 对齐等格式，并带依赖关系映射。
+- **利益相关者汇报**——面向不同受众（高管、工程团队、客户）生成状态汇报。自动从已连接的工具中拉取上下文，把你从每周例行汇报中解放出来。
+- **用户研究整合**——把访谈记录、问卷数据和支持工单转化为结构化洞察。识别主题、构建用户画像，并给出有证据支撑的机会领域。
+- **竞品分析**——调研竞争对手并生成简报，包含功能对比、定位分析和战略启示。
+- **指标复盘**——分析产品指标、识别趋势、对照目标进行比较，并提炼可执行的洞察。
+- **产品头脑风暴**——与一位犀利的陪练搭档一起探索问题空间、产生创意、压力测试产品思路。支持发散式构思、假设检验和策略探索，可使用 How Might We、Jobs-to-be-Done、第一性原理、机会解决方案树（Opportunity Solution Tree）等框架。
 
-## Commands
+## 命令
 
-| Command | What It Does |
+| 命令 | 功能 |
 |---|---|
-| `/write-spec` | Write a feature spec or PRD from a problem statement |
-| `/roadmap-update` | Update, create, or reprioritize your roadmap |
-| `/stakeholder-update` | Generate a stakeholder update (weekly, monthly, launch) |
-| `/synthesize-research` | Synthesize user research from interviews, surveys, and tickets |
-| `/competitive-brief` | Create a competitive analysis brief |
-| `/metrics-review` | Review and analyze product metrics |
-| `/brainstorm` | Brainstorm a product idea, problem space, or strategic question with a thinking partner |
+| `/write-spec` | 根据问题陈述撰写功能规格或 PRD |
+| `/roadmap-update` | 更新、创建路线图或重新排列优先级 |
+| `/stakeholder-update` | 生成利益相关者汇报（每周、每月、发布） |
+| `/synthesize-research` | 整合来自访谈、问卷和工单的用户研究 |
+| `/competitive-brief` | 创建竞品分析简报 |
+| `/metrics-review` | 复盘并分析产品指标 |
+| `/brainstorm` | 与思考搭档一起头脑风暴产品构想、问题空间或战略问题 |
 
-## Skills
+## 技能
 
-| Skill | What It Covers |
+| 技能 | 覆盖内容 |
 |---|---|
-| `feature-spec` | PRD structure, user stories, requirements categorization, acceptance criteria |
-| `roadmap-management` | Prioritization frameworks (RICE, MoSCoW), roadmap formats, dependency mapping |
-| `stakeholder-comms` | Update templates by audience, risk communication, decision documentation |
-| `user-research-synthesis` | Thematic analysis, affinity mapping, persona development, opportunity sizing |
-| `competitive-analysis` | Feature comparison matrices, positioning analysis, win/loss analysis |
-| `metrics-tracking` | Product metrics hierarchy, goal setting (OKRs), dashboard design, review cadences |
-| `product-brainstorming` | Brainstorming modes (problem exploration, solution ideation, assumption testing, strategy), PM frameworks, session structure, thinking partner behaviors |
+| `feature-spec` | PRD 结构、用户故事、需求分类、验收标准 |
+| `roadmap-management` | 优先级框架（RICE、MoSCoW）、路线图格式、依赖关系映射 |
+| `stakeholder-comms` | 按受众划分的汇报模板、风险沟通、决策记录 |
+| `user-research-synthesis` | 主题分析、亲和图、用户画像构建、机会评估 |
+| `competitive-analysis` | 功能对比矩阵、定位分析、赢单/丢单分析 |
+| `metrics-tracking` | 产品指标层级、目标设定（OKR）、仪表盘设计、复盘节奏 |
+| `product-brainstorming` | 头脑风暴模式（问题探索、方案构思、假设检验、策略）、产品经理框架、会话结构、思考搭档行为 |
 
-## Example Workflows
+## 示例工作流
 
-### Writing a PRD
-
-```
-You: /write-spec
-Claude: What feature or problem are you speccing out?
-You: We need to add SSO support for enterprise customers
-Claude: [Asks about target users, constraints, success metrics]
-Claude: [Generates full PRD with problem statement, user stories, requirements, success metrics, open questions]
-```
-
-### Preparing a Stakeholder Update
+### 撰写 PRD
 
 ```
-You: /stakeholder-update
-Claude: What type of update? (weekly, monthly, launch, ad-hoc)
-You: Weekly update for the exec team
-Claude: [Pulls context from project management tool, chat, and docs]
-Claude: [Generates executive summary with progress, decisions, risks, and next milestones]
+你：/write-spec
+Claude：你想为哪个功能或问题写规格？
+你：我们需要为企业客户添加 SSO 支持
+Claude：[询问目标用户、约束条件、成功指标]
+Claude：[生成完整 PRD，包含问题陈述、用户故事、需求、成功指标、待定问题]
 ```
 
-### Synthesizing User Research
+### 准备利益相关者汇报
 
 ```
-You: /synthesize-research
-Claude: What research do you want to synthesize? You can paste interview notes, upload files, or I can pull from connected sources.
-You: [Pastes 8 interview transcripts]
-Claude: [Identifies themes, patterns, and insights across interviews]
-Claude: [Generates synthesis with key findings, personas, opportunity areas, and evidence]
+你：/stakeholder-update
+Claude：要哪种类型的汇报？（每周、每月、发布、临时）
+你：给高管团队的每周汇报
+Claude：[从项目管理工具、聊天和文档中拉取上下文]
+Claude：[生成高管摘要，包含进展、决策、风险和下一个里程碑]
 ```
 
-### Brainstorming a Product Idea
+### 整合用户研究
 
 ```
-You: /brainstorm Should we add AI-powered search to our product?
-Claude: Before we jump to AI search — what problem are your users hitting with search today?
-You: They can't find things. Support tickets about "can't find X" are our #2 category.
-Claude: That's a discovery problem, not necessarily a search technology problem. Let me push on this...
-Claude: [Explores whether the issue is search quality, information architecture, or content discoverability]
-Claude: [Generates 5 distinct approaches ranging from better taxonomy to AI search to guided navigation]
-Claude: [Challenges assumptions, suggests cheapest experiment to test the riskiest one]
+你：/synthesize-research
+Claude：你想整合哪些研究？可以粘贴访谈记录、上传文件，或者我从已连接的来源拉取。
+你：[粘贴 8 份访谈记录]
+Claude：[识别访谈中的主题、模式和洞察]
+Claude：[生成包含关键发现、用户画像、机会领域和证据的整合报告]
 ```
 
-### Competitive Analysis
+### 头脑风暴产品构想
 
 ```
-You: /competitive-brief
-Claude: Which competitor(s) or feature area do you want to analyze?
-You: Compare our onboarding flow to [competitor A] and [competitor B]
-Claude: [Researches competitor onboarding approaches]
-Claude: [Generates brief with feature comparison, strengths/weaknesses, and strategic implications]
+你：/brainstorm 我们应该给产品加上 AI 驱动的搜索吗？
+Claude：先别急着上 AI 搜索——你的用户目前在搜索上遇到了什么问题？
+你：他们找不到东西。“找不到 X”类的支持工单是我们的第二大类别。
+Claude：这是信息发现问题，不一定是搜索技术问题。让我深入追问一下……
+Claude：[探究问题究竟出在搜索质量、信息架构，还是内容可发现性]
+Claude：[生成 5 种不同方案，从更好的分类体系到 AI 搜索再到引导式导航]
+Claude：[挑战假设，建议用成本最低的实验来验证风险最高的方案]
 ```
 
-## Data Sources
+### 竞品分析
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](CONNECTORS.md).
+```
+你：/competitive-brief
+Claude：你想分析哪些竞品或功能领域？
+你：把我们的新手引导流程与 [竞品 A] 和 [竞品 B] 做对比
+Claude：[调研竞品的新手引导方案]
+Claude：[生成简报，包含功能对比、优劣势和战略启示]
+```
 
-Connect your project management and communication tools for the best experience. Without them, provide context manually.
+## 数据源
 
-**Included MCP connections:**
-- Chat (Slack) for team context and stakeholder threads
-- Project tracker (Linear, Asana, monday.com, ClickUp, Atlassian) for roadmap integration, ticket context, and status tracking
-- Knowledge base (Notion) for existing specs, research, and meeting notes
-- Design (Figma) for design context and handoff
-- Product analytics (Amplitude, Pendo) for usage data, metrics, and behavioral analysis
-- User feedback (Intercom) for support tickets, feature requests, and user conversations
-- Meeting transcription (Fireflies) for meeting notes and discussion context
+> 如果看到不认识的占位符，或需要确认哪些工具已连接，请参见 [CONNECTORS.md](CONNECTORS.md)。
 
-**Additional options:**
-- See [CONNECTORS.md](CONNECTORS.md) for alternative tools in each category
+连接你的项目管理与沟通工具以获得最佳体验。没有连接时，请手动提供上下文。
+
+**内置 MCP 连接：**
+- 聊天（Slack）：提供团队上下文和利益相关者讨论串
+- 项目跟踪（Linear、Asana、monday.com、ClickUp、Atlassian）：用于路线图集成、工单上下文和状态跟踪
+- 知识库（Notion）：存放现有规格、研究和会议记录
+- 设计（Figma）：提供设计上下文和设计交付
+- 产品分析（Amplitude、Pendo）：提供使用数据、指标和行为分析
+- 用户反馈（Intercom）：提供支持工单、功能请求和用户对话
+- 会议转写（Fireflies）：提供会议记录和讨论上下文
+
+**其他选项：**
+- 各类别的替代工具参见 [CONNECTORS.md](CONNECTORS.md)

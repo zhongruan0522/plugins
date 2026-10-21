@@ -1,84 +1,67 @@
 # auth0
 
-Auth0 skills for setting up authentication, migrating from other providers, implementing Multi-Factor Authentication (MFA) and passwordless passkey (WebAuthn) login, framework-specific SDK integrations and CLI.
+Auth0 技能，涵盖搭建认证、从其他提供商迁移、实现多因素认证（MFA）与无密码通行密钥（WebAuthn）登录、各框架专属的 SDK 集成以及 CLI。
 
-## Installation
+## 安装
 
-**Via Codex / ChatGPT desktop:**
+**通过 Codex / ChatGPT 桌面版：**
 
-Add the repository marketplace from `.agents/plugins/marketplace.json` to the
-Plugins UI, then install **Auth0**. It tracks the published `main` snapshot. The
-public plugin directory requires submission and approval through the
-[OpenAI plugin submission portal](https://platform.openai.com/plugins).
+在插件 UI 中添加来自 `.agents/plugins/marketplace.json` 的仓库插件市场，然后安装 **Auth0**。它会跟随已发布的 `main` 快照。公开插件目录需要通过 [OpenAI 插件提交门户](https://platform.openai.com/plugins)提交并经审批后方可收录。
 
-**Via Claude Code:**
+**通过 Claude Code：**
 
-First, add the Auth0 marketplace if you haven't already:
+首先，如果尚未添加 Auth0 插件市场，请先添加：
 
 ```bash
 /plugin marketplace add auth0/agent-skills
 ```
 
-Then install the plugin:
+然后安装插件：
 
 ```bash
 /plugin install auth0@auth0-agent-skills
 ```
 
-**Via Skills CLI:**
+**通过 Skills CLI：**
 
 ```bash
 npx skills add auth0/agent-skills/plugins/auth0
 ```
 
-**Via an Agent Plugins-compatible client:**
+**通过兼容 Agent Plugins 的客户端：**
 
-Load the `plugins/auth0` directory using the client's plugin install flow.
-[Agent Plugins](https://agent-plugins.org/) defines the portable package format,
-not a universal install command.
+使用客户端的插件安装流程加载 `plugins/auth0` 目录。[Agent Plugins](https://agent-plugins.org/) 定义的是可移植的包格式，而非统一的安装命令。
 
-**Via Antigravity:**
+**通过 Antigravity：**
 
 ```bash
 agy plugin install plugins/auth0
 ```
 
-**Via Gemini CLI:**
+**通过 Gemini CLI：**
 
-Install from a local clone — `gemini extensions install` expects a manifest at
-the repository root, and this manifest lives at `plugins/auth0/`:
+从本地克隆安装——`gemini extensions install` 要求清单文件位于仓库根目录，而本插件的清单位于 `plugins/auth0/`：
 
 ```bash
 gemini extensions install ./plugins/auth0
 ```
 
-## Skills
+## 技能
 
-| Skill | Description | Documentation |
+| 技能 | 说明 | 文档 |
 |-------|-------------|---------------|
-| [auth0](skills/auth0) | Adds Auth0 authentication to any app. Covers 35+ frameworks (React, Next.js, TanStack Start, Vue, Angular, Express, Flask, FastAPI, Spring Boot, Swift, Android, Kotlin Multiplatform, Flutter, Laravel, Go, PHP, .NET MAUI, ASP.NET Core, React Native, Expo, Ionic, and more), MFA, Organizations, Universal Portals for hosted account and organization self-service, Vercel native integration, custom domains, ACUL screen generation, branding, debugging auth errors, security best practices, running a tenant security & configuration audit (CheckMate), a plan-aware tenant health check, and migration from other providers. | [SKILL.md](skills/auth0/SKILL.md) |
+| [auth0](skills/auth0) | 为任何应用添加 Auth0 认证。覆盖 35+ 框架（React、Next.js、TanStack Start、Vue、Angular、Express、Flask、FastAPI、Spring Boot、Swift、Android、Kotlin Multiplatform、Flutter、Laravel、Go、PHP、.NET MAUI、ASP.NET Core、React Native、Expo、Ionic 等）、MFA、Organizations、用于托管账户与组织自助服务的 Universal Portals、Vercel 原生集成、自定义域名、ACUL 屏幕生成、品牌定制、认证错误调试、安全最佳实践、运行租户安全与配置审计（CheckMate）、结合订阅计划的租户健康检查，以及从其他提供商迁移。 | [SKILL.md](skills/auth0/SKILL.md) |
 
-## Forcing the skill with `/auth0`
+## 用 `/auth0` 强制调用技能
 
-Auto-detection is reliable on capable models. On a smaller/faster model in a
-session with **many** other skills installed, the assistant can occasionally
-miss the trigger — most often on open-ended *questions* ("how do I…?") rather
-than direct instructions. When that happens, name the skill explicitly:
+在能力较强的模型上，自动检测是可靠的。而在安装了**大量**其他技能的会话中，更小/更快的模型偶尔可能错过触发——最常发生在开放式的*提问*（"我应该怎么……？"）上，而非直接指令。遇到这种情况时，请显式指名技能：
 
 ```
 /auth0 how do I configure brand colors in Auth0?
 ```
 
-Naming the skill removes the selection step entirely, so it always activates.
+显式指名技能即可完全跳过选择步骤，因此它一定会被激活。
 
-## Migrating from the individual skills
+## 从独立技能迁移
 
-Earlier versions shipped one skill per SDK/framework (`auth0-react`,
-`auth0-nextjs`, `express-oauth2-jwt-bearer`, …). These are now **consolidated
-into the single `auth0` skill** above, which routes to the same guidance by
-detecting your framework. Plugin/marketplace installs swap in the consolidated
-skill on the next update with nothing to do. **If you referenced an old skill by
-name** — in your `CLAUDE.md`, another skill's `requires.skills`, or any
-instruction file — those names no longer exist and the reference will dangle;
-replace them with `auth0`. See the [repository README](../../README.md#migrating-from-the-individual-skills)
-for full migration details.
+早期版本为每个 SDK/框架提供一个技能（`auth0-react`、`auth0-nextjs`、`express-oauth2-jwt-bearer` 等）。这些技能现已**合并为上述单一的 `auth0` 技能**，它通过检测你的框架路由到相同的指导内容。通过插件/插件市场安装的用户会在下次更新时自动换成合并后的技能，无需任何操作。**如果你在 `CLAUDE.md`、其他技能的 `requires.skills` 或任何指令文件中按名称引用过旧技能**——这些名称已不存在，相关引用将会失效；请将其替换为 `auth0`。完整的迁移细节请参阅[仓库 README](../../README.md#migrating-from-the-individual-skills)。

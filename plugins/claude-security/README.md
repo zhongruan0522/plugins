@@ -1,100 +1,100 @@
-# Claude Security Plugin for Claude Code
+# 适用于 Claude Code 的 Claude Security 插件
 
-Put a team of agents to work as security researchers on your codebase: map the architecture, build a threat model, hunt across every component, and independently verify every finding before it reaches the report. Then, if you want, turn the confirmed findings into suggested fixes delivered as targeted patch files you review and apply when you choose.
+让一组智能体以安全研究人员的身份在你的代码库上工作：绘制架构、构建威胁模型、在所有组件中搜寻漏洞，并在每条发现进入报告之前独立加以验证。之后，如果你愿意，还可以把已确认的发现转化为建议的修复，以针对性的补丁文件交付，由你审阅并在你选定的时候应用。
 
-This is the in-your-session version of [Claude Security](https://claude.com/product/claude-security), Anthropic’s hosted product for vulnerability detection and patching. It runs entirely inside your Claude Code session — no separate process, no daemon.
+这是 [Claude Security](https://claude.com/product/claude-security) 的会话内版本；后者是 Anthropic 托管的漏洞检测与修补产品。它完全在你的 Claude Code 会话内运行——没有单独的进程，也没有守护进程。
 
-## Recommended models
+## 推荐模型
 
-We recommend Claude Opus 5.5 or Fable 5.1 for best performance. Pick a model using Claude Code's `/model` command.
+为获得最佳性能，我们推荐 Claude Opus 5.5 或 Fable 5.1。可使用 Claude Code 的 `/model` 命令选择模型。
 
-In Opus 5.5 or Fable 5.1, portions of a scan may occasionally be downgraded to Opus 4.8. The rest of the scan will complete on your chosen model. Please share feedback with `/feedback` so we can keep improving our cybersecurity safeguards.
+在 Opus 5.5 或 Fable 5.1 下，扫描的部分环节偶尔会降级到 Opus 4.8 执行，扫描的其余部分仍会在你所选的模型上完成。请通过 `/feedback` 分享反馈，帮助我们持续改进网络安全防护。
 
-## Where it runs
+## 运行位置
 
-A scan and a fix both run in your Claude Code session, under your permissions. The plugin reads the repository you have open the same way you would, and adds no isolation of its own: the directory's `.git/config`, its `.claude/` settings and hooks, and its `CLAUDE.md` all apply exactly as they would in any other session.
+扫描和修复都在你的 Claude Code 会话内、在你的权限之下运行。插件读取你打开的仓库的方式与你本人无异，自身不添加任何隔离：该目录的 `.git/config`、`.claude/` 设置与钩子，以及 `CLAUDE.md`，都与在任何其他会话中完全一样地生效。
 
-That makes it a natural fit for code you control — your own repositories, where the question is which bugs are in the code rather than whether the code is trying something. If you are scanning a repository that you do not trust, such as a third-party dependency or an unfamiliar repository, we suggest running the whole session inside [sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime).
+这使它天然适合你可控的代码——你自己的仓库，那里的问题只是代码里有哪些缺陷，而不是代码是否在图谋什么。如果你要扫描的是你不信任的仓库，例如第三方依赖或不熟悉的仓库，我们建议把整个会话放进 [sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) 中运行。
 
-## Installation
+## 安装
 
-Install from the official Anthropic marketplace, then reload plugins in the same session:
+从 Anthropic 官方插件市场安装，然后在同一会话中重新加载插件：
 
     /plugin install claude-security@claude-plugins-official
     /reload-plugins
 
-If Claude Code reports that the marketplace is not found, run `/plugin marketplace add anthropics/claude-plugins-official` first, then retry.
+如果 Claude Code 提示找不到插件市场，请先运行 `/plugin marketplace add anthropics/claude-plugins-official`，然后重试。
 
 
-## Getting started
+## 快速上手
 
-Run `/claude-security` for the menu. It offers the three jobs the plugin does:
+运行 `/claude-security` 打开菜单。它提供该插件的三项任务：
 
-| Job | What it scans |
+| 任务 | 扫描对象 |
 | --- | --- |
-| **Scan codebase** | The whole repository, or a scoped part of it |
-| **Scan changes** | This branch's diff, a pull request's diff (with its branch checked out), or one commit |
-| **Suggest patches** | A report's findings, turned into patch files |
+| **扫描代码库** | 整个仓库，或其中指定范围的部分 |
+| **扫描变更** | 当前分支的 diff、某个拉取请求的 diff（需检出其分支），或单个提交 |
+| **建议补丁** | 把报告中的发现转化为补丁文件 |
 
-You can skip the menu. Type the job after the command (`/claude-security scan my branch at high`) or ask in plain words ("run a Claude Security scan on the whole repo at medium"). A scan asks you once to confirm its time and token cost, unless your request already accepts it.
+你可以跳过菜单：在命令后面直接写下任务（`/claude-security scan my branch at high`），或者用自然语言提出（“对整个仓库做一次中等强度的 Claude Security 扫描”）。除非你的请求本身已表示接受，扫描会请你确认一次时间与 token 开销。
 
-Everything happens in your session. A scan reports each stage as it starts, with the detail available by running `/workflows`, then assembles the report when the agents are done.
+一切都发生在你的会话内。扫描会在每个阶段开始时报告（详情可通过 `/workflows` 查看），并在智能体完成后汇总出报告。
 
-## Choosing scope and effort
+## 选择范围与投入
 
-Two things shape a scan: **scope**, how much of the tree it looks at, and **effort**, how much work it does there. Say what you want if you know; if you don't, the plugin works it out with you rather than making you guess.
+决定一次扫描的有两件事：**范围（scope）**，即它查看目录树的多少；以及**投入（effort）**，即它在此基础上做多少工作。清楚自己的需求就直接说明；不清楚也没关系，插件会与你一同确定，而不是让你凭空猜测。
 
-It reads the repository before it asks — how large the tree is, which directories hold real code, what branch you are on, whether there is a diff to scan — so the choice you are offered is concrete, with the cost of each option stated, and every question carries an "I don't know" that resolves to a sensible default. It then says what it settled on before the work starts.
+它在提问之前会先读取仓库——目录树有多大、哪些目录放着真正的代码、你在哪个分支上、有没有可扫描的 diff——因此提供给你的选项是具体的，每个选项的开销都有说明，而且每个问题都带有一个“我不知道”选项，会落到一个合理的默认值。在开工之前，它还会说明自己最终定下的方案。
 
-From there the scan sizes itself to the target. A narrow scope gets a pass proportionate to it, verified to the same standard: a thorough scan covers more ground, but every finding a quick scan does report has cleared the same verification bar. A large repository is scanned with attention on the code an attacker can reach, treating tests, fixtures and generated code as background rather than targets, plus a dedicated secrets pass that still checks fixtures for real committed keys. Unless you point the scan at it, a codebase scan is told to ignore vendored and installed third-party code, such as `node_modules` or a virtual environment: to read there only to understand your own code, and to report no finding there. A scan of changes still reviews a change to such code. A target with nothing in it is not scanned at all; the run says there is nothing to scan.
+此后，扫描会依据目标自行调整规模。范围窄就做与之相称的一轮检查，并按同一标准验证：彻底的扫描覆盖面更广，但快速扫描真正报告的每条发现都通过了同样的验证门槛。对大型仓库，扫描会把注意力放在攻击者可达的代码上，把测试、fixture 和生成代码当作背景而非目标，同时仍会执行一轮专门的密钥检查，检查 fixture 中是否提交了真实密钥。除非你明确指向这类代码，代码库扫描会被要求忽略 vendored 与已安装的第三方代码，例如 `node_modules` 或虚拟环境：只在这些目录里阅读以理解你自己的代码，且不在其中报告任何发现。变更扫描仍会审阅对这类代码的改动。内容为空的目标完全不会被扫描；运行结果会说明没有可扫描的内容。
 
-A scan of changes is a security review of the diff. It reports only flaws the change takes part in and leaves the rest to a scan of the codebase. For a feature-sized change, choose `high` effort.
+变更扫描是对 diff 的安全审查。它只报告该变更所牵涉的缺陷，其余留给代码库扫描。对于功能级别的变更，请选择 `high` 投入。
 
-## What a scan gives you
+## 扫描给你带来什么
 
-Every scan writes its results into a timestamped `CLAUDE-SECURITY-<timestamp>/` directory in the repository:
+每次扫描都会把结果写入仓库中一个带时间戳的 `CLAUDE-SECURITY-<timestamp>/` 目录：
 
-- **`CLAUDE-SECURITY-RESULTS.md`** — the human-readable report: each finding with its impact, exploit scenario, preconditions, severity (CRITICAL, HIGH, MEDIUM or LOW, assigned from exploitability and impact along the lines of the [CVSS v4.0](https://www.first.org/cvss/v4-0/specification-document) qualitative scale), confidence, and an outcome-focused recommendation.
-- **`CLAUDE-SECURITY-RESULTS.jsonl`** — the same findings in machine-readable form, one JSON object per line. Each record carries a `claudeSecurityPluginFindingId`, designed to stay the same from scan to scan so tooling can tell a known finding from a new one. The SARIF log carries the same id. Neither this file nor the SARIF log quotes the source line of a hard-coded credential finding, since that line is the credential; file, line and symbol locate it.
-- **`CLAUDE-SECURITY-RESULTS.sarif`** — the same findings as a [SARIF 2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html) log for GitHub code scanning, IDE SARIF viewers, and other tooling that speaks the standard.
-- **`CLAUDE-SECURITY-REVISION-<sha12>.json`** — the revision stamp: which commit was scanned, at what effort, the severity counts, and how thoroughly the run was verified. The filename carries `-dirty` when uncommitted changes were part of the scanned tree, so a report is always tied to the code it describes.
+- **`CLAUDE-SECURITY-RESULTS.md`** —— 人类可读的报告：每条发现包含其影响、利用场景、前提条件、严重级别（CRITICAL、HIGH、MEDIUM 或 LOW，参照 [CVSS v4.0](https://www.first.org/cvss/v4-0/specification-document) 的定性分级、依据可利用性与影响评定）、置信度，以及以结果为导向的修复建议。
+- **`CLAUDE-SECURITY-RESULTS.jsonl`** —— 同一批发现的机器可读形式，每行一个 JSON 对象。每条记录带有 `claudeSecurityPluginFindingId`，其设计是在多次扫描之间保持不变，让工具能区分已知发现与新发现。SARIF 日志携带相同的 id。该文件与 SARIF 日志都不会引用硬编码凭据发现的源代码行，因为那一行本身就是凭据；由文件、行号与符号来定位。
+- **`CLAUDE-SECURITY-RESULTS.sarif`** —— 同一批发现的 [SARIF 2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html) 日志，供 GitHub 代码扫描、IDE 的 SARIF 查看器以及其他支持该标准的工具使用。
+- **`CLAUDE-SECURITY-REVISION-<sha12>.json`** —— 修订戳：扫描了哪个提交、以何种投入、各严重级别的数量，以及本次运行的验证彻底程度。当未提交的更改属于被扫描的目录树时，文件名会带上 `-dirty`，因此报告始终与它所描述的代码绑定。
 
-Once these files are written, an agent replaces each credential value it finds in the report, the JSONL and the SARIF log with `[REDACTED]`. It is a model's best effort, not a guarantee, so look over the files before you share them; if it fails or reports a file it could not clean, the scan says so.
+这些文件写好之后，会有一个智能体把它在报告、JSONL 和 SARIF 日志中发现的每个凭据值替换为 `[REDACTED]`。这是模型尽力的结果，不是保证，因此在分享这些文件之前请先过目；如果清理失败，或它报告了某个未能清理的文件，扫描会如实说明。
 
-That is the whole report — the run's working files are removed once it is written, so the directory holds only what you read. It carries its own `.gitignore`, so a stray `git add` never sweeps a report or a suggested patch into a commit; the report stays searchable where it sits, and if you want it in history, delete that one `.gitignore` and commit it like any other file.
+这就是报告的全部——运行产生的工作文件在报告写好后即被删除，因此目录里只剩下你要读的东西。目录自带一份 `.gitignore`，所以一次不经意的 `git add` 绝不会把报告或建议补丁卷进提交；报告留在原处仍可被搜索，如果你想让它进入版本历史，删掉那一份 `.gitignore`，像提交其他文件一样提交即可。
 
-A whole-repository scan accounts for the whole repository. Every top-level directory has to be either scanned or explicitly set aside with a reason — vendored code, generated code, documentation — and that accounting is checked before the search begins, not taken on trust. Whatever was left out, and why, is named in the report's Coverage section. A clean result tells you what was examined rather than leaving you to assume it.
+整仓库扫描会对整个仓库进行清点。每个顶层目录要么被扫描，要么带着理由被明确排除——vendored 代码、生成代码、文档——而且这份清点会在搜索开始之前得到核查，而不是默认可信。任何被排除的内容及其原因，都会写进报告的 Coverage 部分。一份“干净”的结果会告诉你检查了什么，而不是让你自己去假设。
 
-## How a finding earns its place
+## 发现如何赢得进入报告的资格
 
-However much effort a scan spends, a finding reaches the report only after surviving verification. Every candidate is handed to independent verifiers whose job is to disprove it, working from the code rather than from the report of it, and told to call it a false positive unless they can confirm a real path to exploitation. Findings that survive that are what you read; the rest are discarded, never shown. That is why the reports stay short.
+无论扫描投入多少精力，一条发现只有挺过验证才能进入报告。每个候选发现都会交给独立的验证者，他们的职责就是推翻它：他们依据代码本身而非关于它的报告开展工作，并且除非能确认一条真实可行的利用路径，否则应将其判定为误报。挺过这一关的发现才是你读到的内容；其余的会被丢弃，绝不展示。这就是报告能保持简短的原因。
 
-A finding also cannot claim more confidence than its verification earned, nor, once two of the verifiers who confirmed it have rated it, a higher severity than they support, and the record of how thoroughly a run was verified is computed in code rather than asserted by the model that produced the findings — so the report's own account of its rigor is one you can check.
+一条发现也不能声称高于其验证所得的置信度，而且在确认它的两名验证者给出评级之后，其严重级别也不能高于他们所支持的程度；此外，一次运行的验证彻底程度是由代码计算出来的，而不是由产出发现的模型自行断言——因此报告对自身严谨性的陈述是你可以核验的。
 
-Throughout, what the repository says is evidence rather than instruction. Code, comments, and any `CLAUDE.md` in the tree are read as data under review, so text addressed to the scan is noted rather than obeyed. Under the trusted-code model this keeps the work anchored to the evidence; it is not a defense against a hostile repository.
+贯穿始终，仓库所述内容是证据而非指令。代码、注释以及目录树中的任何 `CLAUDE.md` 都被当作受审数据阅读，因此面向扫描的文字只会被记录，而不会被服从。在可信代码模型下，这让工作始终锚定在证据上；它并不是针对恶意仓库的防御。
 
-Scans are nondeterministic. Two scans of the same code can surface different findings, and the same scan finds more over time as models improve; running scans regularly builds coverage. Claude Security reasons about code the way a human security researcher does, which complements SAST, dependency scanning, and code review rather than replacing them.
+扫描是非确定性的。同一代码的两次扫描可能浮现不同的发现，同一扫描也会随着模型进步而随时间找到更多问题；定期运行扫描可以逐步积累覆盖面。Claude Security 像人类安全研究员一样对代码进行推理，它是对 SAST、依赖扫描和代码评审的补充，而非替代。
 
-## Addressing vulnerabilities
+## 处理漏洞
 
-"Suggest patches" from the menu turns a report's findings into patch files you apply when you choose — from an existing report you pick, or from a fresh scan it runs first. The report has to still describe the code you have: the plugin will not draft a fix against code the scan never saw, and it will tell you when a report has gone stale rather than patch from it.
+菜单中的“建议补丁”会把报告中的发现转化为补丁文件，供你在选定的时候应用——可以来自你挑定的既有报告，也可以来自它先执行的一次全新扫描。报告必须仍然描述你手头的代码：插件不会针对扫描从未见过的代码起草修复；如果报告已经过时，它会告诉你，而不会基于过时报告打补丁。
 
-Each fix is developed away from your working tree, in a scratch copy of the repository — your own checkout and index are never touched — and then reviewed by agents independent of the one that wrote it, including a review of your project's tests against the change and a fresh look at the diff on its own terms for anything new it might introduce.
+每个修复都在你的工作区之外、仓库的一份临时副本中开发——你自己的检出与索引绝不会被触碰——随后由独立于编写者的智能体进行评审，包括结合该变更审视你项目的测试，以及就 diff 本身再做一次全新审视，看它是否会引入新的东西。
 
-A patch is written only when that review can vouch for three things: the change addresses that one finding, it introduces no new vulnerability, and it leaves the code's behaviour otherwise unchanged — and a change to which inputs the code accepts counts as a behaviour change. When it cannot vouch for all three, you get a short note explaining why instead of a patch. When the review marks the patched code as exercised by none of your project's tests, the patch notes that no project test of it was run, and its behaviour claim then rests on review rather than on a test run.
+只有当评审能够为以下三点担保时，才会写出补丁：该变更解决了那一条发现、没有引入新的漏洞，并且除此之外不改变代码的行为——而代码所接受输入的变化也算行为变化。当评审无法为三点全部担保时，你得到的是一段简短说明原因的文字，而不是补丁。当评审判定被修补的代码没有被你项目的任何测试覆盖到时，补丁会注明没有运行过任何项目测试，此时其行为论断依据的是评审而非测试运行。
 
-The patches land in the report's `patches/` folder: one `F<n>.patch` per finding, a short note beside each explaining the change and how to apply it (`git apply CLAUDE-SECURITY-<ts>/patches/F<n>.patch`), and an index. Nothing is applied for you — the job does not apply, commit, or push anything. If you want a patch applied or turned into a pull request, ask, and Claude does that as a separate request you can watch.
+补丁会落在报告的 `patches/` 目录：每条发现一个 `F<n>.patch`，每个补丁旁边附有一份简短说明，解释该变更及如何应用（`git apply CLAUDE-SECURITY-<ts>/patches/F<n>.patch`），外加一份索引。不会有人替你应用任何东西——该任务不做应用、提交或推送。如果你想应用某个补丁或把它变成拉取请求，直接提出，Claude 会作为一个你可以全程观看的独立请求来完成。
 
-## Requirements
+## 环境要求
 
-- Claude Code with this plugin installed
-- Python 3.9 or newer on `PATH`
-- A git checkout for scanning changes and suggesting patches — a whole-repository scan works without one
+- 安装了本插件的 Claude Code
+- `PATH` 上有 Python 3.9 或更新版本
+- 一个 git 检出，用于扫描变更和建议补丁——整仓库扫描没有它也能进行
 
-## Telemetry
+## 遥测
 
-The plugin reports usage counts (scans started and finished, findings by severity, patches drafted, which step failed when one does, and how often a scan is suggested after a push) and its Python minor version through Claude Code's built-in telemetry. To turn this off, use Claude Code's own settings: set `DISABLE_TELEMETRY=1` (or `DO_NOT_TRACK=1`, or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1`) and these counts are not sent to Anthropic. See [Claude Code's data usage documentation](https://code.claude.com/docs/en/data-usage#telemetry-services). To stop the scan suggestion itself, set `CLAUDE_SECURITY_SCAN_TIP=off`.
+插件通过 Claude Code 内置的遥测上报使用计数（扫描的启动与完成次数、按严重级别划分的发现数、起草的补丁数、失败时是哪一步失败，以及推送后建议扫描的频率）以及它的 Python 次版本号。要关闭它，请使用 Claude Code 自身的设置：设置 `DISABLE_TELEMETRY=1`（或 `DO_NOT_TRACK=1`，或 `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1`），这些计数就不会被发送给 Anthropic。参见 [Claude Code 的数据使用文档](https://code.claude.com/docs/en/data-usage#telemetry-services)。要停用扫描建议本身，请设置 `CLAUDE_SECURITY_SCAN_TIP=off`。
 
-## Security
+## 安全
 
-The trust model and how to report a vulnerability in the plugin itself are in [SECURITY.md](SECURITY.md).
+信任模型，以及如何报告插件自身的漏洞，见 [SECURITY.md](SECURITY.md)。

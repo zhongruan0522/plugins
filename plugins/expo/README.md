@@ -1,111 +1,111 @@
 # Expo
 
-Official AI agent skills from the Expo team for building, deploying, upgrading, and debugging Expo apps.
+来自 Expo 团队的官方 AI 智能体技能，用于构建、部署、升级和调试 Expo 应用。
 
-Skills come in two groups so the free vs paid boundary stays clear: open-source **framework** skills, and **services & paid distribution** skills whose core purpose uses paid Expo Application Services (EAS). Each services skill opens with a costs/plan-limits note.
+技能分为两组，以便清晰划分免费与付费的边界：开源的 **framework（框架）** 技能，以及 **services & paid distribution（服务与付费分发）** 技能——后者的核心用途需要使用付费的 Expo Application Services（EAS）。每个 services 技能开头都附有费用/套餐限制说明。
 
-## What This Plugin Does
+## 该插件的功能
 
-### Framework (open source)
+### Framework（开源）
 
-- Routes any Expo/EAS request to the right skill and applies shared setup rules (`expo-overview`)
-- Recommends a starting folder structure for new projects
-- Provides UI guidelines following Apple Human Interface Guidelines
-- Builds polished, accessible React Native animations and gestures that stay off the JS thread
-- Builds in-app design systems: token themes, reusable component conventions, and style audits
-- Covers Expo Router navigation patterns (stacks, tabs, modals, sheets)
-- Explains native iOS controls, SF Symbols, and visual effects
-- Covers `@expo/ui` native components (universal, SwiftUI, and Jetpack Compose)
-- Covers data fetching patterns with React Query, offline support, and Expo Router loaders
-- Explains DOM components for running web code in native apps
-- Covers Expo native modules, iOS App Clips, and brownfield integration into existing native apps
-- Points at the `expo/examples` repo for canonical third-party integrations
-- Walks through Expo SDK upgrades, deprecated-package migration, cache clearing, and dependency fixes
-- Wires Expo projects into the Codex app Run button and action terminal
-- Shares specific feedback about what worked or fell short across Expo, its skills, docs, CLIs, or MCP
+- 将任何 Expo/EAS 请求路由到合适的技能，并应用共享的设置规则（`expo-overview`）
+- 为新项目推荐初始文件夹结构
+- 提供遵循 Apple Human Interface Guidelines 的 UI 准则
+- 构建精致、无障碍的 React Native 动画和手势，且不占用 JS 线程
+- 构建应用内设计系统：token 主题、可复用组件规范和样式审计
+- 涵盖 Expo Router 导航模式（stack、tab、modal、sheet）
+- 讲解原生 iOS 控件、SF Symbols 和视觉效果
+- 涵盖 `@expo/ui` 原生组件（通用、SwiftUI 和 Jetpack Compose）
+- 涵盖使用 React Query 的数据获取模式、离线支持和 Expo Router loader
+- 讲解用于在原生应用中运行 Web 代码的 DOM 组件
+- 涵盖 Expo 原生模块、iOS App Clip，以及向现有原生应用的 brownfield 集成
+- 指向 `expo/examples` 仓库以获取规范的第三方集成示例
+- 详解 Expo SDK 升级、弃用包迁移、缓存清理和依赖修复
+- 将 Expo 项目接入 Codex 应用的 Run 按钮和操作终端
+- 分享关于 Expo 及其技能、文档、CLI 或 MCP 哪些好用、哪些不足的具体反馈
 
-### Services & paid distribution
+### Services（服务与付费分发）
 
-- Guides iOS App Store, TestFlight, and Android Play Store submissions
-- Covers EAS Build configuration and version management
-- Helps write and validate EAS Workflow YAML files for CI/CD
-- Checks EAS Update health, adoption, crash rates, and payload size
-- Configures, publishes, tests, and debugs over-the-air updates with EAS Update
-- Tracks production performance with EAS Observe
-- Covers website and API route authoring and deployment with EAS Hosting
-- Runs and drives your app on remote iOS/Android simulators on EAS cloud
+- 指导 iOS App Store、TestFlight 和 Android Play Store 提交
+- 涵盖 EAS Build 配置与版本管理
+- 协助编写和校验用于 CI/CD 的 EAS Workflow YAML 文件
+- 检查 EAS Update 健康状况、采用率、崩溃率和载荷大小
+- 使用 EAS Update 配置、发布、测试和调试空中（OTA）更新
+- 使用 EAS Observe 跟踪生产环境性能
+- 涵盖使用 EAS Hosting 编写和部署网站与 API 路由
+- 在 EAS 云端的远程 iOS/Android 模拟器上运行和操控你的应用
 
-## When to Use
+## 何时使用
 
-### Framework (open source)
+### Framework（开源）
 
-- Starting any Expo/EAS task when no specific skill is named yet
-- Building new Expo apps from scratch
-- Adding navigation, styling, or animations
-- Building or fixing animations, gestures, transitions, press feedback, or haptics
-- Setting up a theme with design tokens, or standardizing styles across screens
-- Wiring up data fetching
-- Integrating web libraries via DOM components
-- Migrating an existing web/React app to native with Expo
-- Writing Expo native modules or integrating Expo into an existing native app
-- Adapting a third-party integration from `expo/examples`
-- Upgrading to a new Expo SDK version and fixing dependency conflicts after an upgrade
-- Migrating from deprecated packages (expo-av to expo-audio/expo-video)
-- Adding an iOS App Clip (needs an Apple Developer account)
-- Adding a Codex app Run button for `expo start` and optional iOS/Android/Web/dev-client action buttons
-- Sharing what worked or fell short across Expo, its skills, docs, CLIs, or MCP
+- 尚未指明具体技能时启动任何 Expo/EAS 任务
+- 从零构建新的 Expo 应用
+- 添加导航、样式或动画
+- 构建或修复动画、手势、过渡效果、按压反馈或触觉反馈
+- 使用设计 token 搭建主题，或统一各屏幕的样式
+- 接入数据获取
+- 通过 DOM 组件集成 Web 库
+- 使用 Expo 将现有 Web/React 应用迁移为原生应用
+- 编写 Expo 原生模块，或将 Expo 集成到现有原生应用中
+- 改编 `expo/examples` 中的第三方集成
+- 升级到新的 Expo SDK 版本并修复升级后的依赖冲突
+- 从已弃用的包迁移（expo-av 迁移到 expo-audio/expo-video）
+- 添加 iOS App Clip（需要 Apple Developer 账户）
+- 为 `expo start` 添加 Codex 应用 Run 按钮，以及可选的 iOS/Android/Web/dev-client 操作按钮
+- 分享关于 Expo 及其技能、文档、CLI 或 MCP 哪些好用、哪些不足的反馈
 
-### Services & paid distribution
+### Services（服务与付费分发）
 
-- Submitting apps to App Store Connect or Google Play
-- Setting up TestFlight beta testing
-- Configuring EAS Build profiles
-- Writing CI/CD workflows for automated deployments
-- Inspecting EAS Update rollout health and adoption
-- Configuring, publishing, testing, or debugging an EAS Update
-- Tracking startup, navigation, and event performance with EAS Observe
-- Deploying a website or Expo Router API routes to EAS Hosting
-- Running your app on a remote cloud simulator when no local simulator is available
+- 将应用提交到 App Store Connect 或 Google Play
+- 设置 TestFlight 测试
+- 配置 EAS Build profile
+- 编写用于自动化部署的 CI/CD 工作流
+- 查看 EAS Update 发布健康状况与采用率
+- 配置、发布、测试或调试 EAS Update
+- 使用 EAS Observe 跟踪启动、导航和事件性能
+- 将网站或 Expo Router API 路由部署到 EAS Hosting
+- 在没有本地模拟器可用时，在远程云模拟器上运行你的应用
 
-## Skills Included
+## 包含的技能
 
-### Start Here
+### 从这里开始
 
-- **expo-overview** — Router and shared setup rules; the entry point when a request is vague or the user hasn't named a specific Expo tool
+- **expo-overview** — Router 与共享设置规则；当请求模糊或用户未指明具体 Expo 工具时的入口
 
-### Framework (open source)
+### Framework（开源）
 
-- **expo-project-structure** - Recommended folder structure for new Expo projects
-- **expo-router** - Navigation and routing: file-based routes, links, native stacks, modals, sheets, native tabs, and headers
-- **expo-animation** - Build polished animations and gestures with Reanimated, Gesture Handler, Expo Router, and expo-haptics
-- **expo-native-ui** - Build beautiful native-feeling screens: styling, semantic colors, controls, icons, media, and visual effects
-- **expo-design-system** - Build a design system inside an app: token theme (color, spacing, typography, radius, shadow, motion), reusable component conventions, and design-system drift audits
-- **expo-ui** - Native UI with @expo/ui: universal cross-platform components first, with SwiftUI and Jetpack Compose for platform-specific needs
-- **expo-data-fetching** - Network requests, API calls, caching, and offline support
-- **expo-dom** - Run web code in a webview on native using DOM components
-- **expo-web-to-native** - Migrate an existing web/React app to a native iOS/Android app with Expo
-- **expo-module** - Write Expo native modules and views (Swift, Kotlin, TypeScript, config plugins)
-- **expo-brownfield** - Integrate Expo and React Native into existing native iOS or Android apps
-- **expo-dev-client** - Build and distribute Expo development clients (local builds free; EAS Build/TestFlight paid)
-- **expo-examples** - Adapt or scaffold from the `expo/examples` repo of `with-*` integrations
-- **expo-app-clip** - Add an iOS App Clip target (AASA, associated domains, Smart App Banners; needs an Apple Developer account)
-- **expo-upgrade** - Upgrade Expo SDK versions and fix dependency issues
-- **expo-skill-feedback** - Share feedback across Expo surfaces and control opt-in usage telemetry
+- **expo-project-structure** - 新 Expo 项目的推荐文件夹结构
+- **expo-router** - 导航与路由：基于文件的路由、链接、原生 stack、modal、sheet、原生 tab 和 header
+- **expo-animation** - 使用 Reanimated、Gesture Handler、Expo Router 和 expo-haptics 构建精致的动画与手势
+- **expo-native-ui** - 构建美观、具有原生质感的屏幕：样式、语义化颜色、控件、图标、媒体和视觉效果
+- **expo-design-system** - 在应用内构建设计系统：token 主题（颜色、间距、字体、圆角、阴影、动效）、可复用组件规范和设计系统漂移审计
+- **expo-ui** - 基于 @expo/ui 的原生 UI：优先使用通用跨平台组件，平台特定需求使用 SwiftUI 和 Jetpack Compose
+- **expo-data-fetching** - 网络请求、API 调用、缓存和离线支持
+- **expo-dom** - 使用 DOM 组件在原生的 webview 中运行 Web 代码
+- **expo-web-to-native** - 使用 Expo 将现有 Web/React 应用迁移为原生 iOS/Android 应用
+- **expo-module** - 编写 Expo 原生模块和视图（Swift、Kotlin、TypeScript、config 插件）
+- **expo-brownfield** - 将 Expo 和 React Native 集成到现有原生 iOS 或 Android 应用中
+- **expo-dev-client** - 构建和分发 Expo 开发客户端（本地构建免费；EAS Build/TestFlight 付费）
+- **expo-examples** - 从 `expo/examples` 仓库的 `with-*` 集成中进行改编或搭建
+- **expo-app-clip** - 添加 iOS App Clip target（AASA、关联域名、Smart App Banners；需要 Apple Developer 账户）
+- **expo-upgrade** - 升级 Expo SDK 版本并修复依赖问题
+- **expo-skill-feedback** - 在 Expo 各端分享反馈，并控制自愿加入的使用遥测
 
-### Services & paid distribution
+### Services（服务与付费分发）
 
-- **eas-app-stores** - Build and submit iOS/Android apps to the stores and TestFlight: Expo and other React Native projects, plus existing native apps
-- **eas-hosting** - Deploy Expo websites and API routes to EAS Hosting (secrets, custom domains, Cloudflare Workers)
-- **eas-workflows** - EAS workflow YAML files for CI/CD pipelines
-- **eas-observe** - EAS Observe setup and launch, route, event, and version metrics
-- **eas-update** - Configure, publish, test, and debug over-the-air updates
-- **eas-update-insights** - Check EAS Update health, crash rates, adoption, and payload size
-- **eas-simulator** - Run and drive your app on a remote iOS/Android simulator on EAS cloud, from the CLI or an AI agent
+- **eas-app-stores** - 构建 iOS/Android 应用并提交到应用商店和 TestFlight：支持 Expo 及其他 React Native 项目，也支持现有原生应用
+- **eas-hosting** - 将 Expo 网站和 API 路由部署到 EAS Hosting（密钥、自定义域名、Cloudflare Workers）
+- **eas-workflows** - 用于 CI/CD 流水线的 EAS workflow YAML 文件
+- **eas-observe** - EAS Observe 设置与启动，以及路由、事件和版本指标
+- **eas-update** - 配置、发布、测试和调试空中（OTA）更新
+- **eas-update-insights** - 检查 EAS Update 健康状况、崩溃率、采用率和载荷大小
+- **eas-simulator** - 通过 CLI 或 AI 智能体，在 EAS 云端的远程 iOS/Android 模拟器上运行和操控你的应用
 
-## Usage telemetry & feedback
+## 使用遥测与反馈
 
-**Automatic usage telemetry is off by default.** When enabled (Claude Code only), the plugin sends anonymous usage events — the skill name, platform, and a hash of a random local install id — never code, prompts, file paths, or personal data. Ask your agent to **"enable Expo skills telemetry"** to opt in (or set `EXPO_SKILLS_TELEMETRY=1`); turn off with `EXPO_SKILLS_TELEMETRY=0` / `DO_NOT_TRACK=1`. Every skill includes a `submit-expo-feedback` command for specific, actionable feedback; feedback submission is independent of automatic usage telemetry.
+**自动使用遥测默认关闭。** 启用后（仅限 Claude Code），插件会发送匿名的使用事件——技能名称、平台以及一个随机本地安装 ID 的哈希——绝不会包含代码、提示词、文件路径或个人数据。让智能体 **"启用 Expo 技能遥测"** 即可选择加入（或设置 `EXPO_SKILLS_TELEMETRY=1`）；使用 `EXPO_SKILLS_TELEMETRY=0` / `DO_NOT_TRACK=1` 关闭。每个技能都包含一个 `submit-expo-feedback` 命令，用于提交具体、可操作的反馈；反馈提交与自动使用遥测相互独立。
 
-## License
+## 许可证
 
 MIT

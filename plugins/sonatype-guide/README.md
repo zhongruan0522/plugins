@@ -1,49 +1,49 @@
-# Sonatype Guide Plugin for Claude Code
+# Claude Code 的 Sonatype Guide 插件
 
-Integrates [Sonatype Guide](https://guide.sonatype.com) MCP server to provide Claude Code with software supply chain intelligence and dependency security analysis.
+集成 [Sonatype Guide](https://guide.sonatype.com) MCP 服务器，为 Claude Code 提供软件供应链情报与依赖安全分析。
 
-## Features
+## 功能特性
 
-With this plugin, Claude Code can:
+安装本插件后，Claude Code 可以：
 
-- **Proactively check dependencies** - Automatically evaluates packages before installing or upgrading, not just when you ask
-- **Analyze vulnerabilities** - Surface CVEs with severity scores, distinguishing direct vs transitive risks
-- **Recommend secure versions** - Ranked upgrade paths with Developer Trust Scores and breaking change analysis
-- **Audit your project** - Scan dependency manifests for security, license, and policy compliance issues
-- **Compare alternatives** - Side-by-side security comparison when choosing between libraries
+- **主动检查依赖** - 在安装或升级软件包之前自动进行评估，而不仅是在你开口询问时
+- **分析漏洞** - 呈现带有严重级别评分的 CVE，并区分直接风险与传递性风险
+- **推荐安全版本** - 结合开发者信任评分（Developer Trust Score）与破坏性变更分析，给出排序后的升级路径
+- **审计你的项目** - 扫描依赖清单中的安全、许可证与策略合规问题
+- **比较备选方案** - 在多个库之间做选择时提供并排的安全对比
 
-## Prerequisites
+## 前提条件
 
-You need a Sonatype Guide account and API token.
+你需要一个 Sonatype Guide 账户和 API 令牌。
 
-### Get Your Token
+### 获取令牌
 
-1. Visit [guide.sonatype.com/settings/tokens](https://guide.sonatype.com/settings/tokens)
-2. Generate a new token
-3. Copy the token value
+1. 访问 [guide.sonatype.com/settings/tokens](https://guide.sonatype.com/settings/tokens)
+2. 生成一个新令牌
+3. 复制令牌值
 
-## Setup
+## 配置
 
-### 1. Set Your Environment Variable
+### 1. 设置环境变量
 
-Add your Sonatype Guide token as an environment variable. Choose one method:
+将你的 Sonatype Guide 令牌添加为环境变量。以下两种方式任选其一：
 
-**Option A: Shell profile** (recommended)
+**方式 A：Shell 配置文件**（推荐）
 
-Add to `~/.zshrc`, `~/.bashrc`, or `~/.profile`:
+添加到 `~/.zshrc`、`~/.bashrc` 或 `~/.profile`：
 
 ```bash
 export SONATYPE_GUIDE_TOKEN="your-token-here"
 ```
 
-Then reload:
+然后重新加载：
 ```bash
-source ~/.zshrc  # or ~/.bashrc
+source ~/.zshrc  # 或 ~/.bashrc
 ```
 
-**Option B: Claude Code settings**
+**方式 B：Claude Code 设置文件**
 
-Add to `.claude/settings.json` or `~/.claude/settings.json`:
+添加到 `.claude/settings.json` 或 `~/.claude/settings.json`：
 
 ```json
 {
@@ -53,56 +53,56 @@ Add to `.claude/settings.json` or `~/.claude/settings.json`:
 }
 ```
 
-### 2. Install the Plugin
+### 2. 安装插件
 
 ```bash
 claude plugin install sonatype-guide
 ```
 
-### 3. Verify Installation
+### 3. 验证安装
 
-Check the MCP server status:
+检查 MCP 服务器状态：
 
 ```
 /mcp
 ```
 
-You should see `sonatype-guide` listed as connected.
+你应该能看到 `sonatype-guide` 已列出并处于已连接状态。
 
-## Usage
+## 用法
 
-The plugin includes a skill that activates automatically when Claude installs, adds, or upgrades dependencies — no special syntax needed. You can also ask directly:
-
-```
-Scan my package.json for vulnerable dependencies
-```
+本插件包含一个技能，当 Claude 安装、添加或升级依赖时会自动激活——无需任何特殊语法。你也可以直接提问：
 
 ```
-What's the most secure version of spring-core I should use?
+扫描我的 package.json，找出存在漏洞的依赖
 ```
 
 ```
-Should I use axios or got for HTTP requests?
+spring-core 最安全、应该使用的版本是哪个？
 ```
 
-## Troubleshooting
+```
+发起 HTTP 请求时，我该用 axios 还是 got？
+```
 
-**MCP server not connecting:**
-- Verify your token: `echo $SONATYPE_GUIDE_TOKEN`
-- Ensure your token is valid at [guide.sonatype.com](https://guide.sonatype.com)
-- Restart Claude Code after setting the environment variable
+## 故障排除
 
-**Token not recognized:**
-- If using shell profile, restart your terminal
-- If using settings.json, check JSON syntax
-- Variable name must be exactly `SONATYPE_GUIDE_TOKEN`
+**MCP 服务器无法连接：**
+- 验证你的令牌：`echo $SONATYPE_GUIDE_TOKEN`
+- 在 [guide.sonatype.com](https://guide.sonatype.com) 确认你的令牌有效
+- 设置环境变量后重启 Claude Code
 
-## Security
+**令牌未被识别：**
+- 如果使用的是 Shell 配置文件，请重启终端
+- 如果使用的是 settings.json，请检查 JSON 语法
+- 变量名必须严格为 `SONATYPE_GUIDE_TOKEN`
 
-Never commit your token to version control. The plugin uses environment variable expansion to keep credentials secure and user-specific.
+## 安全
 
-## Links
+切勿将令牌提交到版本控制。本插件通过环境变量展开来保证凭据安全且与特定用户绑定。
+
+## 链接
 
 - [Sonatype Guide](https://guide.sonatype.com)
 - [Sonatype](https://www.sonatype.com)
-- [Claude Code Plugin Documentation](https://docs.anthropic.com/en/docs/claude-code/plugins)
+- [Claude Code 插件文档](https://docs.anthropic.com/en/docs/claude-code/plugins)

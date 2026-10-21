@@ -1,7 +1,5 @@
-# Canva Plugin Package
+# Canva 插件包
 
-This folder is the shared Canva plugin package used by Claude, Cursor, and
-Codex. It contains the host-specific plugin manifests, MCP registration, and
-the active `skills/` directory.
+此文件夹是 Claude、Cursor 和 Codex 共用的 Canva 插件包，包含各宿主专用的插件清单、MCP 注册信息，以及实际生效的 `skills/` 目录。
 
-See the repository root [README.md](../../README.md) for install instructions.
+安装说明请参阅仓库根目录的 [README.md](../../README.md)。

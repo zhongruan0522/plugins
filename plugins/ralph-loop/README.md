@@ -1,197 +1,197 @@
-# Ralph Loop Plugin
+# Ralph Loop 插件
 
-Implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.
+在 Claude Code 中实现 Ralph Wiggum 技术，用于迭代式、自引用的 AI 开发循环。
 
-## What is Ralph Loop?
+## 什么是 Ralph Loop？
 
-Ralph Loop is a development methodology based on continuous AI agent loops. As Geoffrey Huntley describes it: **"Ralph is a Bash loop"** - a simple `while true` that repeatedly feeds an AI agent a prompt file, allowing it to iteratively improve its work until completion.
+Ralph Loop 是一种基于持续 AI 智能体循环的开发方法论。正如 Geoffrey Huntley 所描述的：**"Ralph is a Bash loop"（Ralph 就是一个 Bash 循环）**——一个简单的 `while true`，不断把提示词文件喂给 AI 智能体，让它迭代改进自己的工作直至完成。
 
-This technique is inspired by the Ralph Wiggum coding technique (named after the character from The Simpsons), embodying the philosophy of persistent iteration despite setbacks.
+该技术受 Ralph Wiggum 编码技术启发（以《辛普森一家》中的角色命名），体现了屡遭挫折仍坚持迭代的哲学。
 
-### Core Concept
+### 核心概念
 
-This plugin implements Ralph using a **Stop hook** that intercepts Claude's exit attempts:
+本插件通过一个拦截 Claude 退出尝试的 **Stop 钩子**来实现 Ralph：
 
 ```bash
-# You run ONCE:
+# 你只需运行一次：
 /ralph-loop "Your task description" --completion-promise "DONE"
 
-# Then Claude Code automatically:
-# 1. Works on the task
-# 2. Tries to exit
-# 3. Stop hook blocks exit
-# 4. Stop hook feeds the SAME prompt back
-# 5. Repeat until completion
+# 之后 Claude Code 会自动：
+# 1. 处理任务
+# 2. 尝试退出
+# 3. Stop 钩子阻止退出
+# 4. Stop 钩子把同一段提示词重新喂回去
+# 5. 重复直至完成
 ```
 
-The loop happens **inside your current session** - you don't need external bash loops. The Stop hook in `hooks/stop-hook.sh` creates the self-referential feedback loop by blocking normal session exit.
+循环发生在**你当前会话内部**——不需要外部 bash 循环。`hooks/stop-hook.sh` 中的 Stop 钩子通过阻止正常的会话退出，构建出这个自引用反馈循环。
 
-This creates a **self-referential feedback loop** where:
-- The prompt never changes between iterations
-- Claude's previous work persists in files
-- Each iteration sees modified files and git history
-- Claude autonomously improves by reading its own past work in files
+由此形成一个**自引用反馈循环**：
+- 提示词在迭代之间从不改变
+- Claude 之前的工作保存在文件里
+- 每次迭代都能看到修改过的文件和 git 历史
+- Claude 通过阅读文件中自己过往的工作实现自主改进
 
-## Quick Start
+## 快速开始
 
 ```bash
 /ralph-loop "Build a REST API for todos. Requirements: CRUD operations, input validation, tests. Output <promise>COMPLETE</promise> when done." --completion-promise "COMPLETE" --max-iterations 50
 ```
 
-Claude will:
-- Implement the API iteratively
-- Run tests and see failures
-- Fix bugs based on test output
-- Iterate until all requirements met
-- Output the completion promise when done
+Claude 将会：
+- 迭代式地实现该 API
+- 运行测试并观察失败
+- 根据测试输出修复 bug
+- 持续迭代直到满足所有需求
+- 完成时输出完成承诺（completion promise）
 
-## Commands
+## 命令
 
 ### /ralph-loop
 
-Start a Ralph loop in your current session.
+在当前会话中启动一个 Ralph 循环。
 
-**Usage:**
+**用法：**
 ```bash
 /ralph-loop "<prompt>" --max-iterations <n> --completion-promise "<text>"
 ```
 
-**Options:**
-- `--max-iterations <n>` - Stop after N iterations (default: unlimited)
-- `--completion-promise <text>` - Phrase that signals completion
+**选项：**
+- `--max-iterations <n>` - N 次迭代后停止（默认：无限制）
+- `--completion-promise <text>` - 表示完成的标志语句
 
 ### /cancel-ralph
 
-Cancel the active Ralph loop.
+取消正在运行的 Ralph 循环。
 
-**Usage:**
+**用法：**
 ```bash
 /cancel-ralph
 ```
 
-## Prompt Writing Best Practices
+## 提示词编写最佳实践
 
-### 1. Clear Completion Criteria
+### 1. 明确的完成标准
 
-❌ Bad: "Build a todo API and make it good."
+❌ 差：“Build a todo API and make it good.”（写一个 todo API，要写好。）
 
-✅ Good:
+✅ 好：
 ```markdown
-Build a REST API for todos.
+为 todos 构建一个 REST API。
 
-When complete:
-- All CRUD endpoints working
-- Input validation in place
-- Tests passing (coverage > 80%)
-- README with API docs
-- Output: <promise>COMPLETE</promise>
+完成标准：
+- 所有 CRUD 端点可用
+- 具备输入校验
+- 测试通过（覆盖率 > 80%）
+- 附带带 API 文档的 README
+- 输出：<promise>COMPLETE</promise>
 ```
 
-### 2. Incremental Goals
+### 2. 增量式目标
 
-❌ Bad: "Create a complete e-commerce platform."
+❌ 差：“Create a complete e-commerce platform.”（创建一个完整的电商平台。）
 
-✅ Good:
+✅ 好：
 ```markdown
-Phase 1: User authentication (JWT, tests)
-Phase 2: Product catalog (list/search, tests)
-Phase 3: Shopping cart (add/remove, tests)
+阶段 1：用户认证（JWT、测试）
+阶段 2：商品目录（列表/搜索、测试）
+阶段 3：购物车（添加/移除、测试）
 
-Output <promise>COMPLETE</promise> when all phases done.
+所有阶段完成后输出 <promise>COMPLETE</promise>。
 ```
 
-### 3. Self-Correction
+### 3. 自我纠错
 
-❌ Bad: "Write code for feature X."
+❌ 差：“Write code for feature X.”（为功能 X 写代码。）
 
-✅ Good:
+✅ 好：
 ```markdown
-Implement feature X following TDD:
-1. Write failing tests
-2. Implement feature
-3. Run tests
-4. If any fail, debug and fix
-5. Refactor if needed
-6. Repeat until all green
-7. Output: <promise>COMPLETE</promise>
+按 TDD 实现功能 X：
+1. 先写失败的测试
+2. 实现功能
+3. 运行测试
+4. 如有失败，调试并修复
+5. 必要时重构
+6. 重复直到全部通过
+7. 输出：<promise>COMPLETE</promise>
 ```
 
-### 4. Escape Hatches
+### 4. 逃生通道
 
-Always use `--max-iterations` as a safety net to prevent infinite loops on impossible tasks:
+始终使用 `--max-iterations` 作为安全网，防止在不可能完成的任务上陷入无限循环：
 
 ```bash
-# Recommended: Always set a reasonable iteration limit
+# 建议：始终设置一个合理的迭代上限
 /ralph-loop "Try to implement feature X" --max-iterations 20
 
-# In your prompt, include what to do if stuck:
-# "After 15 iterations, if not complete:
-#  - Document what's blocking progress
-#  - List what was attempted
-#  - Suggest alternative approaches"
+# 在提示词中写明卡住时该怎么办：
+# "15 次迭代后如果仍未完成：
+#  - 记录阻碍进展的因素
+#  - 列出已尝试过的办法
+#  - 提出替代方案"
 ```
 
-**Note**: The `--completion-promise` uses exact string matching, so you cannot use it for multiple completion conditions (like "SUCCESS" vs "BLOCKED"). Always rely on `--max-iterations` as your primary safety mechanism.
+**注意**：`--completion-promise` 采用精确字符串匹配，因此无法用它表达多种完成条件（比如 "SUCCESS" 与 "BLOCKED"）。请始终以 `--max-iterations` 作为主要安全机制。
 
-## Philosophy
+## 理念
 
-Ralph embodies several key principles:
+Ralph 体现了以下几个关键原则：
 
-### 1. Iteration > Perfection
-Don't aim for perfect on first try. Let the loop refine the work.
+### 1. 迭代 > 完美
+不要指望第一次就做到完美。让循环去打磨工作成果。
 
-### 2. Failures Are Data
-"Deterministically bad" means failures are predictable and informative. Use them to tune prompts.
+### 2. 失败即数据
+“确定性地糟糕”意味着失败是可预测且富有信息量的。利用它们来调优提示词。
 
-### 3. Operator Skill Matters
-Success depends on writing good prompts, not just having a good model.
+### 3. 操作者的水平很重要
+成功取决于写出好的提示词，而不仅仅是拥有好的模型。
 
-### 4. Persistence Wins
-Keep trying until success. The loop handles retry logic automatically.
+### 4. 坚持者胜
+不断尝试直到成功。重试逻辑由循环自动处理。
 
-## When to Use Ralph
+## 何时使用 Ralph
 
-**Good for:**
-- Well-defined tasks with clear success criteria
-- Tasks requiring iteration and refinement (e.g., getting tests to pass)
-- Greenfield projects where you can walk away
-- Tasks with automatic verification (tests, linters)
+**适合：**
+- 有明确成功标准、定义清晰的任务
+- 需要迭代和打磨的任务（例如让测试通过）
+- 可以放手不管的全新（greenfield）项目
+- 带自动验证手段的任务（测试、linter）
 
-**Not good for:**
-- Tasks requiring human judgment or design decisions
-- One-shot operations
-- Tasks with unclear success criteria
-- Production debugging (use targeted debugging instead)
+**不适合：**
+- 需要人类判断或设计决策的任务
+- 一次性操作
+- 成功标准不清晰的任务
+- 生产环境调试（请改用有针对性的调试）
 
-## Real-World Results
+## 实战成果
 
-- Successfully generated 6 repositories overnight in Y Combinator hackathon testing
-- One $50k contract completed for $297 in API costs
-- Created entire programming language ("cursed") over 3 months using this approach
+- 在 Y Combinator 黑客松测试中一夜成功生成 6 个代码仓库
+- 一份价值 5 万美元的合同仅花费 297 美元 API 成本即告完成
+- 用这种方法在 3 个月里创造出一门完整的编程语言（“cursed”）
 
-## Windows Compatibility
+## Windows 兼容性
 
-The stop hook uses a bash script that requires Git for Windows to run properly.
+Stop 钩子使用 bash 脚本，需要 Git for Windows 才能正常运行。
 
-**Issue**: On Windows, the `bash` command may resolve to WSL bash (often misconfigured) instead of Git Bash, causing the hook to fail with errors like:
+**问题**：在 Windows 上，`bash` 命令可能解析到 WSL bash（往往配置不当）而不是 Git Bash，导致钩子失败并报如下错误：
 - `wsl: Unknown key 'automount.crossDistro'`
 - `execvpe(/bin/bash) failed: No such file or directory`
 
-**Workaround**: Edit the cached plugin's `hooks/hooks.json` to use Git Bash explicitly:
+**解决方法**：编辑缓存插件的 `hooks/hooks.json`，显式使用 Git Bash：
 
 ```json
 "command": "\"C:/Program Files/Git/bin/bash.exe\" ${CLAUDE_PLUGIN_ROOT}/hooks/stop-hook.sh"
 ```
 
-**Location**: `~/.claude/plugins/cache/claude-plugins-official/ralph-wiggum/<hash>/hooks/hooks.json`
+**位置**：`~/.claude/plugins/cache/claude-plugins-official/ralph-wiggum/<hash>/hooks/hooks.json`
 
-**Note**: Use `Git/bin/bash.exe` (the wrapper with proper PATH), not `Git/usr/bin/bash.exe` (raw MinGW bash without utilities in PATH).
+**注意**：请使用 `Git/bin/bash.exe`（带正确 PATH 的包装器），不要用 `Git/usr/bin/bash.exe`（未把工具加入 PATH 的原生 MinGW bash）。
 
-## Learn More
+## 了解更多
 
-- Original technique: https://ghuntley.com/ralph/
-- Ralph Orchestrator: https://github.com/mikeyobrien/ralph-orchestrator
+- 原始技术：https://ghuntley.com/ralph/
+- Ralph Orchestrator：https://github.com/mikeyobrien/ralph-orchestrator
 
-## For Help
+## 获取帮助
 
-Run `/help` in Claude Code for detailed command reference and examples.
+在 Claude Code 中运行 `/help` 查看详细的命令参考和示例。

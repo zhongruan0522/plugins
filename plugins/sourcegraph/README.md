@@ -1,56 +1,56 @@
 # sourcegraph-claudecode-plugin
 
-Sourcegraph plugin for Claude Code that adds:
+适用于 Claude Code 的 Sourcegraph 插件，提供：
 
-- Sourcegraph MCP server connectivity (code search, navigation, Deep Search, Code Finder, evaluator)
-- `searching-sourcegraph` skill for disciplined search workflows (with supporting workflows and query patterns)
+- Sourcegraph MCP 服务器连接（代码搜索、导航、Deep Search、Code Finder、evaluator）
+- `searching-sourcegraph` 技能，用于规范化的搜索工作流（附带配套工作流与查询模式）
 
-## Prerequisites
+## 前提条件
 
-- [Claude Code](https://code.claude.com) version 1.0.33 or later (`claude --version`)
-- A Sourcegraph instance with MCP enabled
-- A Sourcegraph access token with `mcp` scope
+- [Claude Code](https://code.claude.com) 1.0.33 或更高版本（`claude --version`）
+- 一个启用了 MCP 的 Sourcegraph 实例
+- 一个具有 `mcp` 作用域的 Sourcegraph 访问令牌
 
-Set the required environment variables in your shell profile (`.zshrc`, `.bashrc`, etc.):
+在 shell 配置文件（`.zshrc`、`.bashrc` 等）中设置所需的环境变量：
 
 ```bash
 export SOURCEGRAPH_ENDPOINT="https://sourcegraph.example.com"
 export SOURCEGRAPH_ACCESS_TOKEN="<your-token>"
 ```
 
-## Install (permanent)
+## 安装（永久）
 
-Add this repository as a marketplace, then install the plugin:
+将本仓库添加为插件市场，然后安装插件：
 
 ```bash
-# From a local clone
+# 从本地克隆
 claude plugin marketplace add ./sourcegraph-claudecode-plugin
 
-# Or directly from GitHub
+# 或直接从 GitHub
 claude plugin marketplace add sourcegraph-community/sourcegraph-claudecode-plugin
 ```
 
-Then install:
+然后安装：
 
 ```bash
 claude plugin install sourcegraph@sourcegraph-claudecode-plugin
 ```
 
-Restart Claude Code after installing.
+安装后请重启 Claude Code。
 
-## Install (per-session, for development)
+## 安装（按会话，用于开发）
 
-Load the plugin for a single session without installing permanently:
+为单个会话加载插件而不进行永久安装：
 
 ```bash
 claude --plugin-dir ./sourcegraph-claudecode-plugin
 ```
 
-Run `/reload-plugins` after making changes during a session.
+在会话期间做出更改后运行 `/reload-plugins`。
 
-## Alternative: add MCP server only
+## 替代方案：仅添加 MCP 服务器
 
-If you only want the Sourcegraph MCP tools without the skills, add the server directly:
+如果你只想要 Sourcegraph 的 MCP 工具而不需要技能，可以直接添加服务器：
 
 ```bash
 claude mcp add --transport http sourcegraph \
@@ -58,14 +58,14 @@ claude mcp add --transport http sourcegraph \
   --header "Authorization: token ${SOURCEGRAPH_ACCESS_TOKEN}"
 ```
 
-## Verify
+## 验证
 
-After installing, confirm everything loaded:
+安装后，确认一切已正确加载：
 
-- `/help` should list `sourcegraph:searching-sourcegraph`
-- `/mcp` should show the `sourcegraph` MCP server as connected
+- `/help` 应列出 `sourcegraph:searching-sourcegraph`
+- `/mcp` 应显示 `sourcegraph` MCP 服务器已连接
 
-## Structure
+## 结构
 
 ```text
 .
@@ -88,34 +88,34 @@ After installing, confirm everything loaded:
 └── README.md
 ```
 
-## Skill
+## 技能
 
-The plugin installs one skill: `searching-sourcegraph`. Claude auto-invokes it when you need to search or navigate code via Sourcegraph. It includes workflows for implementing features, understanding code, debugging issues, fixing bugs, and code review.
+本插件安装一个技能：`searching-sourcegraph`。当你需要通过 Sourcegraph 搜索或浏览代码时，Claude 会自动调用它。它包含实现功能、理解代码、调试问题、修复缺陷和代码评审等工作流。
 
-## MCP Details
+## MCP 详情
 
-- Endpoint: `${SOURCEGRAPH_ENDPOINT}/.api/mcp/all` (full tool suite: code search, navigation, Deep Search, Code Finder, evaluator)
-- Transport: HTTP (`"type": "http"`)
-- Auth header: `Authorization: token <token>`
+- 端点：`${SOURCEGRAPH_ENDPOINT}/.api/mcp/all`（完整工具套件：代码搜索、导航、Deep Search、Code Finder、evaluator）
+- 传输方式：HTTP（`"type": "http"`）
+- 认证头：`Authorization: token <token>`
 
-Sourcegraph's MCP server exposes several endpoints depending on how many tools you want:
+Sourcegraph 的 MCP 服务器根据你需要的工具数量提供多个端点：
 
-| Endpoint | Tools exposed |
+| 端点 | 暴露的工具 |
 |----------|----------------|
-| `/.api/mcp` | Curated default set: `read_file`, `list_files`, `keyword_search`, `nls_search`, `list_repos`, `commit_search`, `diff_search`, `deepsearch_read` |
-| `/.api/mcp/all` | Full suite — everything above, plus `go_to_definition`, `find_references`, `compare_revisions`, `get_contributor_repos`, `deepsearch`, `code_finder`, `evaluator` |
-| `/.api/mcp/deepsearch` | Deep Search only: `deepsearch`, `deepsearch_read` |
-| `/.api/mcp/v1` | **Deprecated.** Full suite under legacy `sg_`-prefixed tool names, kept for backward compatibility |
+| `/.api/mcp` | 精选的默认集合：`read_file`、`list_files`、`keyword_search`、`nls_search`、`list_repos`、`commit_search`、`diff_search`、`deepsearch_read` |
+| `/.api/mcp/all` | 完整套件——包含上述全部，另有 `go_to_definition`、`find_references`、`compare_revisions`、`get_contributor_repos`、`deepsearch`、`code_finder`、`evaluator` |
+| `/.api/mcp/deepsearch` | 仅 Deep Search：`deepsearch`、`deepsearch_read` |
+| `/.api/mcp/v1` | **已弃用。**以旧版 `sg_` 前缀工具名提供的完整套件，仅为向后兼容而保留 |
 
-This plugin uses `/.api/mcp/all` because the `searching-sourcegraph` skill and its workflows rely on code navigation and Deep Search tools that aren't in the curated default set.
+本插件使用 `/.api/mcp/all`，因为 `searching-sourcegraph` 技能及其工作流依赖代码导航和 Deep Search 工具，而这些工具并不在精选的默认集合中。
 
-## Built from
+## 基于以下项目构建
 
 - [sourcegraph-cursor-plugin](https://github.com/sourcegraph-community/sourcegraph-cursor-plugin)
 - [sourcegraph-gemini](https://github.com/sourcegraph-community/sourcegraph-gemini)
 - [sourcegraph-skill](https://github.com/sourcegraph-community/sourcegraph-skill)
 
-## Docs
+## 文档
 
-- [Claude Code plugins](https://code.claude.com/docs/en/plugins)
+- [Claude Code 插件](https://code.claude.com/docs/en/plugins)
 - [Sourcegraph MCP](https://sourcegraph.com/docs/api/mcp)

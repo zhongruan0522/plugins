@@ -1,43 +1,43 @@
 # PayPal AI Toolkit
 
-A plugin that integrates PayPal's APIs and MCP server into your AI coding workflow. Get AI-assisted help with PayPal payments, subscriptions, invoices, disputes, and more — in Claude Code, OpenAI Codex, Cursor, and other compatible agents.
+一个把 PayPal 的 API 和 MCP 服务器集成进你的 AI 编码工作流的插件。在 Claude Code、OpenAI Codex、Cursor 及其他兼容智能体中，获得针对 PayPal 支付、订阅、发票、争议等的 AI 辅助。
 
-## Features
+## 特性
 
-- **Best practices Skill** — auto-injects PayPal API knowledge when you're working on payment integrations
-- **Commands** — quick reference commands for common developer tasks (Claude Code and Cursor)
-- **Hooks** — automatically checks PayPal best practices before writing integration code
-- **MCP Server integration** — connects your agent to PayPal's sandbox MCP servers for direct API operations via natural language
+- **最佳实践技能（Skill）** —— 在你处理支付集成时自动注入 PayPal API 知识
+- **命令** —— 面向常见开发任务的速查命令（Claude Code 和 Cursor）
+- **钩子（Hook）** —— 在编写集成代码之前自动检查 PayPal 最佳实践
+- **MCP 服务器集成** —— 把你的智能体连接到 PayPal 的沙箱 MCP 服务器，用自然语言直接执行 API 操作
 
 ![Demo of installation and usage](https://github.com/user-attachments/assets/787a2b4c-4276-422c-9124-fd535571a68c)
 
-## Installation
+## 安装
 
-### Prerequisites
+### 前提条件
 
-- A PayPal Developer account at https://developer.paypal.com
-- A PayPal sandbox access token
-- Claude Code (`claude --version`), OpenAI Codex (`codex --version`), and/or Cursor
+- 一个 PayPal 开发者账号，见 https://developer.paypal.com
+- 一个 PayPal 沙箱访问令牌
+- Claude Code（`claude --version`）、OpenAI Codex（`codex --version`）和/或 Cursor
 
 ### Claude Code
 
-PayPal AI Toolkit is available on the official Anthropic marketplace, which Claude Code adds automatically. Install it with:
+PayPal AI Toolkit 已上架 Anthropic 官方插件市场，Claude Code 会自动添加该市场。使用以下命令安装：
 
 ```
 /plugin install paypal@claude-plugins-official
 ```
 
-Then run `/reload-plugins` to activate it.
+然后运行 `/reload-plugins` 激活。
 
-#### Local / development install
+#### 本地 / 开发安装
 
-To work on the plugin itself, clone the repo and load it directly instead:
+如果要开发插件本身，请改为克隆仓库并直接加载：
 
 ```bash
 git clone https://github.com/paypal/AI-Toolkit.git
 ```
 
-Then start Claude Code with the plugin loaded:
+然后在加载插件的情况下启动 Claude Code：
 
 ```bash
 cd your-project/
@@ -46,14 +46,14 @@ claude --plugin-dir /path/to/AI-Toolkit
 
 ### OpenAI Codex
 
-Add the PayPal marketplace, then install the plugin:
+添加 PayPal 插件市场，然后安装插件：
 
 ```bash
 codex plugin marketplace add paypal/AI-Toolkit
 codex plugin add paypal@paypal-ai-toolkit
 ```
 
-#### Local / development install
+#### 本地 / 开发安装
 
 ```bash
 git clone https://github.com/paypal/AI-Toolkit.git
@@ -61,42 +61,42 @@ codex plugin marketplace add /path/to/AI-Toolkit
 codex plugin add paypal@paypal-ai-toolkit
 ```
 
-Restart Codex after installing so skills and the sandbox MCP server load.
+安装后请重启 Codex，以便技能和沙箱 MCP 服务器加载。
 
 ### Cursor
 
-Add this repository as a marketplace, then install the plugin:
+把本仓库添加为插件市场，然后安装插件：
 
 ```bash
 cursor-agent plugin marketplace add https://github.com/paypal/AI-Toolkit
 ```
 
-Then open **Customize** (or type `/plugin`) and install `paypal` at user or project scope.
+然后打开 **Customize**（或输入 `/plugin`），在用户或项目作用域安装 `paypal`。
 
-Once the plugin is listed on the Cursor marketplace, you can also install it from chat with `/add-plugin paypal`.
+一旦该插件上架 Cursor 插件市场，你也可以在聊天中用 `/add-plugin paypal` 安装。
 
-#### Local / development install
+#### 本地 / 开发安装
 
-Load the checkout directly (no marketplace or admin setting required):
+直接加载检出的仓库（无需插件市场或管理员设置）：
 
 ```bash
 git clone https://github.com/paypal/AI-Toolkit.git
 cursor-agent --plugin-dir /path/to/AI-Toolkit
 ```
 
-You can also copy the repo into Cursor's local plugin folder. This requires **Allow Local Plugin Imports** (Dashboard → Settings → Security & Identity → Marketplace and Plugins), which is off by default on some teams. Symlinks that point outside this folder are skipped:
+你也可以把仓库复制到 Cursor 的本地插件文件夹。这需要启用 **Allow Local Plugin Imports**（Dashboard → Settings → Security & Identity → Marketplace and Plugins），某些团队默认关闭该选项。指向该文件夹之外的符号链接会被跳过：
 
 ```bash
 git clone https://github.com/paypal/AI-Toolkit.git ~/.cursor/plugins/local/paypal
 ```
 
-`cursor-agent plugin marketplace add` only accepts a git URL (for example `https://github.com/paypal/AI-Toolkit`), not a local path.
+`cursor-agent plugin marketplace add` 只接受 git URL（例如 `https://github.com/paypal/AI-Toolkit`），不接受本地路径。
 
-Restart Cursor or run **Developer: Reload Window**, then confirm skills, commands, and `paypal-sandbox` in **Customize**.
+重启 Cursor 或运行 **Developer: Reload Window**，然后在 **Customize** 中确认技能、命令和 `paypal-sandbox`。
 
-### Configure your sandbox access token
+### 配置你的沙箱访问令牌
 
-1. Generate a sandbox access token:
+1. 生成一个沙箱访问令牌：
 
    ```bash
    curl -X POST https://api-m.sandbox.paypal.com/v1/oauth2/token \
@@ -105,11 +105,11 @@ Restart Cursor or run **Developer: Reload Window**, then confirm skills, command
      | jq -r .access_token
    ```
 
-   Get the client ID and secret from the [PayPal Developer Dashboard](https://developer.paypal.com/dashboard/applications/sandbox).
+   客户端 ID 和密钥可从 [PayPal Developer Dashboard](https://developer.paypal.com/dashboard/applications/sandbox) 获取。
 
-2. Paste the single-line value into your agent's config.
+2. 把这个单行值粘贴到你的智能体配置中。
 
-   **Claude Code** — merge into the existing `"env"` block in `~/.claude/settings.json`:
+   **Claude Code** —— 合并进 `~/.claude/settings.json` 中已有的 `"env"` 块：
 
    ```json
    "env": {
@@ -117,36 +117,36 @@ Restart Cursor or run **Developer: Reload Window**, then confirm skills, command
    }
    ```
 
-   **OpenAI Codex** — merge into `~/.codex/config.toml`:
+   **OpenAI Codex** —— 合并进 `~/.codex/config.toml`：
 
    ```toml
    [shell_environment_policy.set]
    PAYPAL_SANDBOX_ACCESS_TOKEN = "A21AA…"
    ```
 
-   **Cursor** — after installing the plugin, open **Customize → Plugins → PayPal → Configure** and paste the token. Cursor stores it and substitutes `${PAYPAL_SANDBOX_ACCESS_TOKEN}` in `.mcp.json`. A GUI-launched Cursor does not inherit `export` from `~/.zshrc`.
+   **Cursor** —— 安装插件后，打开 **Customize → Plugins → PayPal → Configure** 并粘贴令牌。Cursor 会保存它，并在 `.mcp.json` 中替换 `${PAYPAL_SANDBOX_ACCESS_TOKEN}`。以 GUI 启动的 Cursor 不会继承 `~/.zshrc` 中的 `export`。
 
-3. **Fully quit and reopen** the agent (close the app — not just `/clear`).
+3. **完全退出并重新打开**智能体（关闭应用——而不只是 `/clear`）。
 
-4. In Claude Code, run `/paypal:setup` to verify. In Codex or Cursor, ask the agent to list PayPal MCP tools or create a sandbox invoice.
+4. 在 Claude Code 中，运行 `/paypal:setup` 进行验证。在 Codex 或 Cursor 中，让智能体列出 PayPal MCP 工具或创建一张沙箱发票。
 
-> **Use the agent config or Cursor plugin Configure panel, not `~/.zshrc`.** GUI launches don't source `~/.zshrc`, and a line-wrapped `export` embeds a newline in the token that breaks the HTTP header.
+> **请使用智能体配置或 Cursor 插件的 Configure 面板，不要用 `~/.zshrc`。** GUI 启动不会加载 `~/.zshrc`，而换行的 `export` 会在令牌中嵌入一个换行符，破坏 HTTP 头。
 
-Tokens expire in up to 8 hours depending on scope — check the `expires_in` field in the response. Run `/paypal:setup refresh` when you hit a 401.
+令牌会在最多 8 小时后过期，具体取决于作用域——请查看响应中的 `expires_in` 字段。遇到 401 时，运行 `/paypal:setup refresh`。
 
-## Commands
+## 命令
 
-Slash commands are available in Claude Code and Cursor. Codex uses the same skills and MCP server through natural language.
+斜杠命令在 Claude Code 和 Cursor 中可用。Codex 则通过自然语言使用相同的技能和 MCP 服务器。
 
-| Command                         | Description                                       |
+| 命令                            | 说明                                              |
 | ------------------------------- | ------------------------------------------------- |
-| `/paypal:doctor [symptom]`      | Scan your codebase for PayPal integration issues  |
-| `/paypal:explain-error <code>`  | Explain a PayPal error code with causes and fixes |
-| `/paypal:sandbox [topic]`       | Sandbox setup, test accounts, and testing tips    |
-| `/paypal:setup [mode]`          | Configure the plugin, verify MCP, refresh tokens  |
-| `/paypal:test-accounts [topic]` | Test cards, BNPL, Venmo, webhooks, and scenarios  |
+| `/paypal:doctor [symptom]`      | 扫描你的代码库中的 PayPal 集成问题                |
+| `/paypal:explain-error <code>`  | 解释 PayPal 错误码及其成因与修复方法              |
+| `/paypal:sandbox [topic]`       | 沙箱设置、测试账号和测试技巧                      |
+| `/paypal:setup [mode]`          | 配置插件、验证 MCP、刷新令牌                      |
+| `/paypal:test-accounts [topic]` | 测试卡、BNPL、Venmo、webhook 及各种场景           |
 
-### Examples
+### 示例
 
 ```
 /paypal:explain-error INSTRUMENT_DECLINED
@@ -157,61 +157,61 @@ Slash commands are available in Claude Code and Cursor. Codex uses the same skil
 /paypal:doctor webhooks not firing
 ```
 
-## MCP Server
+## MCP 服务器
 
-The plugin connects to PayPal's sandbox MCP server, which exposes tools for:
+该插件连接 PayPal 的沙箱 MCP 服务器，它提供以下工具：
 
-- **Orders & Payments** — create orders, capture payments, process refunds
-- **Invoices** — create, send, manage, and generate QR codes for invoices
-- **Subscriptions** — manage billing plans and subscriptions
-- **Disputes** — list and respond to buyer disputes
-- **Catalog** — manage products and pricing
-- **Shipment** — create and track shipments
-- **Reporting** — list transactions, get merchant insights
+- **订单与支付** —— 创建订单、捕获付款、处理退款
+- **发票** —— 创建、发送、管理发票并生成二维码
+- **订阅** —— 管理计费计划和订阅
+- **争议** —— 列出买家争议并作出回应
+- **商品目录** —— 管理商品与定价
+- **发货** —— 创建并跟踪货运
+- **报表** —— 列出交易、获取商家洞察
 
-### Transport and environments
+### 传输方式与环境
 
-The server uses **SSE** at the `/sse` path. `paypal-sandbox` activates once you set `PAYPAL_SANDBOX_ACCESS_TOKEN` in `~/.claude/settings.json` (Claude Code), `~/.codex/config.toml` (Codex), or **Customize → Plugins → PayPal → Configure** (Cursor).
+服务器在 `/sse` 路径上使用 **SSE**。一旦你在 `~/.claude/settings.json`（Claude Code）、`~/.codex/config.toml`（Codex）或 **Customize → Plugins → PayPal → Configure**（Cursor）中设置了 `PAYPAL_SANDBOX_ACCESS_TOKEN`，`paypal-sandbox` 就会激活。
 
-## Skills
+## 技能
 
-The `paypal-best-practices` skill is automatically invoked when your agent detects you're working on PayPal integrations. It provides:
+当你的智能体检测到你正在处理 PayPal 集成时，会自动调用 `paypal-best-practices` 技能。它提供：
 
-- Recommended APIs and deprecated APIs to avoid
-- Authentication and credential best practices
-- Orders, Subscriptions, and Invoices API flows
-- Webhook verification and security guidance
-- Error handling patterns
-- Sandbox testing guidance
+- 推荐的 API 以及应避免的已弃用 API
+- 身份验证与凭据的最佳实践
+- Orders、Subscriptions 和 Invoices API 流程
+- webhook 验证与安全指南
+- 错误处理模式
+- 沙箱测试指南
 
-The `paypal-routing` skill routes PayPal-related questions to the right command or reference file and is not directly user-invocable.
+`paypal-routing` 技能把 PayPal 相关的问题路由到正确的命令或参考文件，不能由用户直接调用。
 
-## Hooks
+## 钩子
 
-A `PreToolUse` hook checks whether a file edit touches PayPal SDK, API, or checkout code. If it does, the agent is required to consult the `paypal-best-practices` skill and the correct SDK version reference (v5 or v6) before writing the code.
+一个 `PreToolUse` 钩子会检查文件编辑是否触及 PayPal SDK、API 或结账（checkout）代码。如果触及，智能体在编写代码之前必须先查阅 `paypal-best-practices` 技能以及正确版本的 SDK 参考（v5 或 v6）。
 
-## Plugin Structure
+## 插件结构
 
 ```
 AI-Toolkit/
 ├── .agents/
 │   └── plugins/
-│       └── marketplace.json     # Codex marketplace catalog
+│       └── marketplace.json     # Codex 插件市场目录
 ├── .claude-plugin/
-│   ├── marketplace.json     # Claude Code marketplace registry
-│   └── plugin.json          # Claude Code plugin manifest
+│   ├── marketplace.json     # Claude Code 插件市场注册表
+│   └── plugin.json          # Claude Code 插件清单
 ├── .codex-plugin/
-│   └── plugin.json          # Codex plugin manifest
+│   └── plugin.json          # Codex 插件清单
 ├── .cursor-plugin/
-│   ├── marketplace.json     # Cursor marketplace catalog
-│   └── plugin.json          # Cursor plugin manifest
-├── .mcp.json                # PayPal sandbox MCP server (SSE)
+│   ├── marketplace.json     # Cursor 插件市场目录
+│   └── plugin.json          # Cursor 插件清单
+├── .mcp.json                # PayPal 沙箱 MCP 服务器（SSE）
 ├── skills/
 │   ├── paypal-best-practices/
-│   │   ├── SKILL.md         # Auto-injected best practices context
-│   │   └── references/      # Topic-specific integration guides
+│   │   ├── SKILL.md         # 自动注入的最佳实践上下文
+│   │   └── references/      # 按主题划分的集成指南
 │   └── paypal-routing/
-│       └── SKILL.md         # Intent routing (non-user-invocable)
+│       └── SKILL.md         # 意图路由（不可由用户直接调用）
 ├── commands/
 │   ├── doctor.md            # /paypal:doctor
 │   ├── explain-error.md     # /paypal:explain-error
@@ -219,26 +219,26 @@ AI-Toolkit/
 │   ├── setup.md             # /paypal:setup
 │   └── test-accounts.md     # /paypal:test-accounts
 ├── hooks/
-│   └── hooks.json           # Pre-write best-practices check
+│   └── hooks.json           # 写入前的最佳实践检查
 ├── LICENSE                  # Apache-2.0
-├── CONTRIBUTING.md          # Contribution and commit guidelines
+├── CONTRIBUTING.md          # 贡献与提交规范
 └── README.md
 ```
 
-## Contributing
+## 参与贡献
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to report issues, develop locally, and submit pull requests.
+如何报告问题、本地开发以及提交拉取请求，请参见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-Commit messages and PR titles should follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), for example:
+提交信息和 PR 标题应遵循 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)，例如：
 
 ```
 feat: allow provided config object to extend other configs
 ```
 
-## Resources
+## 资源
 
-- [PayPal Developer Docs](https://developer.paypal.com/docs/)
-- [PayPal REST API Reference](https://developer.paypal.com/api/rest/)
-- [PayPal MCP Server](https://developer.paypal.com/ai-tools/mcp-server.md)
+- [PayPal 开发者文档](https://developer.paypal.com/docs/)
+- [PayPal REST API 参考](https://developer.paypal.com/api/rest/)
+- [PayPal MCP 服务器](https://developer.paypal.com/ai-tools/mcp-server.md)
 - [PayPal Agent Toolkit](https://github.com/paypal/agent-toolkit)
 - [PayPal Developer Dashboard](https://developer.paypal.com/dashboard)

@@ -1,24 +1,24 @@
 # php-lsp
 
-PHP language server (Intelephense) for Claude Code, providing code intelligence and diagnostics.
+适用于 Claude Code 的 PHP 语言服务器（Intelephense），提供代码智能与诊断功能。
 
-## Supported Extensions
+## 支持的扩展名
 `.php`
 
-## Installation
+## 安装
 
-Install Intelephense globally via npm:
+通过 npm 全局安装 Intelephense：
 
 ```bash
 npm install -g intelephense
 ```
 
-Or with yarn:
+或使用 yarn：
 
 ```bash
 yarn global add intelephense
 ```
 
-## More Information
-- [Intelephense Website](https://intelephense.com/)
-- [Intelephense on npm](https://www.npmjs.com/package/intelephense)
+## 更多信息
+- [Intelephense 网站](https://intelephense.com/)
+- [npm 上的 Intelephense](https://www.npmjs.com/package/intelephense)

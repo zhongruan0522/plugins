@@ -1,40 +1,40 @@
-# CLAUDE.md Management Plugin
+# CLAUDE.md 管理插件
 
-Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.
+用于维护和改进 CLAUDE.md 文件的工具——审计文件质量、沉淀会话经验，让项目记忆保持最新。
 
-## What It Does
+## 功能
 
-Two complementary tools for different purposes:
+两个互补的工具，各有不同用途：
 
-| | claude-md-improver (skill) | /revise-claude-md (command) |
+| | claude-md-improver（技能） | /revise-claude-md（命令） |
 |---|---|---|
-| **Purpose** | Keep CLAUDE.md aligned with codebase | Capture session learnings |
-| **Triggered by** | Codebase changes | End of session |
-| **Use when** | Periodic maintenance | Session revealed missing context |
+| **用途** | 让 CLAUDE.md 与代码库保持一致 | 沉淀会话中的经验 |
+| **触发时机** | 代码库发生变化 | 会话结束时 |
+| **适用场景** | 定期维护 | 会话中发现了缺失的上下文 |
 
-## Usage
+## 用法
 
-### Skill: claude-md-improver
+### 技能：claude-md-improver
 
-Audits CLAUDE.md files against current codebase state:
+对照代码库的当前状态审计 CLAUDE.md 文件：
 
 ```
-"audit my CLAUDE.md files"
-"check if my CLAUDE.md is up to date"
+"审计我的 CLAUDE.md 文件"
+"检查我的 CLAUDE.md 是否为最新"
 ```
 
-<img src="claude-md-improver-example.png" alt="CLAUDE.md improver showing quality scores and recommended updates" width="600">
+<img src="claude-md-improver-example.png" alt="CLAUDE.md 改进器显示质量评分与建议的更新" width="600">
 
-### Command: /revise-claude-md
+### 命令：/revise-claude-md
 
-Captures learnings from the current session:
+记录当前会话中的经验：
 
 ```
 /revise-claude-md
 ```
 
-<img src="revise-claude-md-example.png" alt="Revise command capturing session learnings into CLAUDE.md" width="600">
+<img src="revise-claude-md-example.png" alt="revise 命令正在将会话经验写入 CLAUDE.md" width="600">
 
-## Author
+## 作者
 
 Isabella He (isabella@anthropic.com)

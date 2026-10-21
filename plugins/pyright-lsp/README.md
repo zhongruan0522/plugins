@@ -1,31 +1,31 @@
 # pyright-lsp
 
-Python language server (Pyright) for Claude Code, providing static type checking and code intelligence.
+适用于 Claude Code 的 Python 语言服务器（Pyright），提供静态类型检查与代码智能功能。
 
-## Supported Extensions
-`.py`, `.pyi`
+## 支持的扩展名
+`.py`、`.pyi`
 
-## Installation
+## 安装
 
-Install Pyright globally via npm:
+通过 npm 全局安装 Pyright：
 
 ```bash
 npm install -g pyright
 ```
 
-Or with pip:
+或使用 pip：
 
 ```bash
 pip install pyright
 ```
 
-Or with pipx (recommended for CLI tools):
+或使用 pipx（推荐用于 CLI 工具）：
 
 ```bash
 pipx install pyright
 ```
 
-## More Information
-- [Pyright on npm](https://www.npmjs.com/package/pyright)
-- [Pyright on PyPI](https://pypi.org/project/pyright/)
-- [GitHub Repository](https://github.com/microsoft/pyright)
+## 更多信息
+- [npm 上的 Pyright](https://www.npmjs.com/package/pyright)
+- [PyPI 上的 Pyright](https://pypi.org/project/pyright/)
+- [GitHub 仓库](https://github.com/microsoft/pyright)

@@ -8,9 +8,9 @@
   </a>
 </p>
 
-<h3 align="center">Optimize code performance and catch regressions early.</h3>
+<h3 align="center">优化代码性能，尽早发现性能回退。</h3>
 
-<p align="center"><a href="https://codspeed.io/login?flow=get-started&utm_source=github-readme">Get Started</a> · <a href="https://codspeed.io/docs?utm_source=github-readme">Documentation</a></p>
+<p align="center"><a href="https://codspeed.io/login?flow=get-started&utm_source=github-readme">快速开始</a> · <a href="https://codspeed.io/docs?utm_source=github-readme">文档</a></p>
 
 <br/>
 
@@ -25,101 +25,101 @@
 
 [![Video Demo](./assets/readme-video.gif)](https://codspeed.io/?utm_source=github-readme)
 
-# Key features
+# 核心特性
 
-- 🎯 **<1% variance** in measurements using CPU simulation - no more flaky benchmarks.
-- 🔥 **Differential flamegraphs** to pinpoint exactly what got slower, commit by commit.
-- 💬 **PR comments & status checks** showing performance impact directly in your workflow.
-- 🛡️ **Merge protection** to block PRs that degrade performance beyond your threshold.
-- 🐍 **Multi-language support** for Python, Rust, Node.js, Go, C/C++ and more.
-- 🏠 **Run locally or in CI** - works on your machine and integrates with GitHub Actions, GitLab CI, CircleCI, and more.
-- 🔌 **Plug your existing benchmarks** in less than 5 minutes - works with pytest, vitest, criterion, and more.
+- 🎯 借助 CPU 模拟实现 **<1% 方差**的测量——告别不稳定的基准测试。
+- 🔥 **差分火焰图**，逐个提交精确 pinpoint 到底什么变慢了。
+- 💬 **PR 评论与状态检查**，在你的工作流中直接展示性能影响。
+- 🛡️ **合并保护**，阻止性能退化超出阈值的 PR。
+- 🐍 **多语言支持**，覆盖 Python、Rust、Node.js、Go、C/C++ 等。
+- 🏠 **本地或 CI 运行**——既能在你的机器上工作，也能集成 GitHub Actions、GitLab CI、CircleCI 等。
+- 🔌 **接入现有基准测试**只需不到 5 分钟——兼容 pytest、vitest、criterion 等。
 
-## Installation
+## 安装
 
 ```bash
 curl -fsSL https://codspeed.io/install.sh | bash
 ```
 
 > [!NOTE]
-> The CodSpeed CLI officially supports Ubuntu 20.04, 22.04, 24.04 and Debian 11, 12.
-> Other Linux distributions may work, but are not officially supported.
+> CodSpeed CLI 官方支持 Ubuntu 20.04、22.04、24.04 以及 Debian 11、12。
+> 其他 Linux 发行版也许可以运行，但不在官方支持之列。
 
-## Quick Start
+## 快速上手
 
-First, authenticate to keep your benchmark results linked to your CodSpeed account:
+首先进行身份验证，让你的基准测试结果与 CodSpeed 账号关联：
 
 ```bash
 codspeed auth login
 ```
 
-The simplest way to get started is to benchmark any executable program directly:
+最简单的入门方式是直接对任何可执行程序进行基准测试：
 
 ```bash
-# Benchmark a single command
+# 对单条命令进行基准测试
 codspeed exec -- ./my-binary --arg1 value
 
-# Benchmark a script
+# 对脚本进行基准测试
 codspeed exec -- python my_script.py
 
-# Benchmark with specific instrument
+# 使用指定 instrument 进行基准测试
 codspeed exec --mode walltime -- node app.js
 ```
 
-This approach requires no code changes and works with any executable. CodSpeed will measure the performance provide the instrument results.
+这种方式无需修改代码，适用于任何可执行程序。CodSpeed 会测量性能并提供 instrument 的结果。
 
-## Deeper integration with harnesses using `codspeed run`
+## 通过 `codspeed run` 与 harness 深度集成
 
-For more control and integration with your existing benchmark suite, you can use language-specific harnesses. This allows you to:
+如需更多控制，或要与现有基准测试套件集成，你可以使用特定语言的 harness。这样可以：
 
-- Define multiple benchmarks and keep them versioned in your codebase
-- Scope benchmarks to specific functions or modules
-- Integrate with existing benchmark suites (pytest, criterion, vitest, etc.)
+- 定义多个基准测试，并在代码库中纳入版本管理
+- 把基准测试限定到特定函数或模块
+- 与现有基准测试套件集成（pytest、criterion、vitest 等）
 
 ```bash
-# Using the Rust harness with criterion
+# 使用 Rust harness 配合 criterion
 codspeed run cargo codspeed run
 
-# Using the Python harness with pytest
+# 使用 Python harness 配合 pytest
 codspeed run pytest ./tests --codspeed
 
-# Using the Node.js harness with vitest
+# 使用 Node.js harness 配合 vitest
 codspeed run pnpm vitest bench
 ```
 
-These harnesses provide deeper instrumentation and allow you to write benchmarks using familiar testing frameworks.
+这些 harness 提供更深入的插桩，让你可以用熟悉的测试框架编写基准测试。
 
-### Languages Integrations
+### 语言集成
 
-CodSpeed provides first-class integrations for multiple languages and frameworks:
+CodSpeed 为多种语言和框架提供一等公民级别的集成：
 
-| Language        | Repository                                                       | Supported Frameworks                  |
+| 语言            | 仓库                                                             | 支持的框架                            |
 | --------------- | ---------------------------------------------------------------- | ------------------------------------- |
-| Rust            | [codspeed-rust](https://github.com/CodSpeedHQ/codspeed-rust)     | `divan`, `criterion.rs`, `bencher`    |
+| Rust            | [codspeed-rust](https://github.com/CodSpeedHQ/codspeed-rust)     | `divan`、`criterion.rs`、`bencher`    |
 | C/C++           | [codspeed-cpp](https://github.com/CodSpeedHQ/codspeed-cpp)       | `google-benchmark`                    |
-| Python          | [pytest-codspeed](https://github.com/CodSpeedHQ/pytest-codspeed) | `pytest` plugin                       |
-| Node.js         | [codspeed-node](https://github.com/CodSpeedHQ/codspeed-node)     | `vitest`, `tinybench`, `benchmark.js` |
-| Go              | [codspeed-go](https://github.com/CodSpeedHQ/codspeed-go)         | builtin `testing` package integration |
-| Zig (community) | [codspeed-zig](https://github.com/james-elicx/codspeed-zig)      | custom                                |
+| Python          | [pytest-codspeed](https://github.com/CodSpeedHQ/pytest-codspeed) | `pytest` 插件                         |
+| Node.js         | [codspeed-node](https://github.com/CodSpeedHQ/codspeed-node)     | `vitest`、`tinybench`、`benchmark.js` |
+| Go              | [codspeed-go](https://github.com/CodSpeedHQ/codspeed-go)         | 内置 `testing` 包集成                 |
+| Zig（社区）     | [codspeed-zig](https://github.com/james-elicx/codspeed-zig)      | 自定义                                |
 
-Need to bench another language or framework? Open [an issue](https://github.com/CodSpeedHQ/codspeed/issues) or let us know on [Discord](https://codspeed.io/discord)!
+需要对其他语言或框架做基准测试？提交 [issue](https://github.com/CodSpeedHQ/codspeed/issues) 或到 [Discord](https://codspeed.io/discord) 告诉我们！
 
-### CLI Harness: `codspeed.yml` configuration
+### CLI harness：`codspeed.yml` 配置
 
-The CLI also offers a built-in harness that allows you to define benchmarks directly.
+CLI 还提供一个内置 harness，让你直接定义基准测试。
 
-You can define multiple `codspeed exec` benchmark targets and configure options in a `codspeed.yml` file.
-This is useful when you want to benchmark several commands with different configurations.
+你可以在 `codspeed.yml` 文件中定义多个 `codspeed exec` 基准测试目标并配置选项。
+当你想以不同配置对多条命令做基准测试时，这会很有用。
 
-Create a `codspeed.yml` file in your project root:
+在项目根目录创建一个 `codspeed.yml` 文件：
 
 ```yaml
-# Global options applied to all benchmarks
+# 应用于所有基准测试的全局选项
 options:
   warmup-time: "0.2s"
   max-time: 1s
 
-# List of benchmarks to run
+# 要运行的基准测试列表
 benchmarks:
   - name: "Fast operation"
     exec: ./my_binary --mode fast
@@ -135,67 +135,67 @@ benchmarks:
     exec: python scripts/benchmark.py
 ```
 
-Then run all benchmarks with:
+然后用以下命令运行所有基准测试：
 
 ```bash
 codspeed run --mode walltime
 ```
 
 > [!TIP]
-> For more details on configuration options, see the [CLI documentation](https://codspeed.io/docs/cli).
+> 有关配置选项的更多细节，参见 [CLI 文档](https://codspeed.io/docs/cli)。
 
-## Performance Instruments
+## 性能测量工具（Instruments）
 
-CodSpeed provides multiple instruments to measure different aspects of your code's performance. Choose the one that best fits your use case:
+CodSpeed 提供多种 instrument，用于测量代码性能的不同方面。请选择最适合你用例的一种：
 
-### CPU Simulation
+### CPU 模拟（CPU Simulation）
 
-Simulates CPU behavior for **<1% variance** regardless of system load. Hardware-agnostic measurements with automatic flame graphs.
+模拟 CPU 行为，无论系统负载如何都能保持 **<1% 方差**。测量与硬件无关，并自动生成火焰图。
 
-**Best for:** CPU-intensive code, CI regression detection, cross-platform comparison
+**最适合：** CPU 密集型代码、CI 回退检测、跨平台比较
 
 ```bash
 codspeed exec --mode simulation -- ./my-binary
 ```
 
-### Memory
+### 内存（Memory）
 
-Tracks heap allocations (peak usage, count, allocation size) with eBPF profiling.
+通过 eBPF 剖析跟踪堆分配（峰值用量、分配次数、分配大小）。
 
-**Best for:** Memory optimization, leak detection, constrained environments
+**最适合：** 内存优化、泄漏检测、资源受限环境
 
-**Supported:** Rust, C/C++ with libc, jemalloc, mimalloc
+**支持：** Rust、使用 libc、jemalloc、mimalloc 的 C/C++
 
 ```bash
 codspeed exec --mode memory -- ./my-binary
 ```
 
-### Walltime
+### 墙钟时间（Walltime）
 
-Measures real-world execution time including I/O, system calls, and multi-threading effects.
+测量真实世界的执行时间，包括 I/O、系统调用和多线程的影响。
 
-**Best for:** API tests, I/O-heavy workloads, multi-threaded applications
+**最适合：** API 测试、I/O 密集型负载、多线程应用
 
 ```bash
 codspeed exec --mode walltime -- ./my-api-test
 ```
 
 > [!WARNING]
-> Using the `walltime` mode on traditional VMs/Hosted Runners will lead to inconsistent data. For the best results, we recommend using CodSpeed Hosted Macro Runners, which are fine-tuned for performance measurement consistency.
-> Check out the [Walltime Instrument Documentation](https://docs.codspeed.io/instruments/walltime/) for more details.
+> 在传统虚拟机/托管运行器（Hosted Runners）上使用 `walltime` 模式会得到不一致的数据。为获得最佳结果，我们推荐使用 CodSpeed Hosted Macro Runners，它们专为性能测量的一致性做了调优。
+> 更多细节请查看 [Walltime Instrument 文档](https://docs.codspeed.io/instruments/walltime/)。
 
 > [!TIP]
-> For detailed information on each instrument, see the [Instruments documentation](https://codspeed.io/docs/instruments).
+> 有关每种 instrument 的详细信息，参见 [Instruments 文档](https://codspeed.io/docs/instruments)。
 
-## Usage In CI environments
+## 在 CI 环境中使用
 
-Running CodSpeed in CI allows you to automatically detect performance regressions on every pull request and track performance evolution over time.
+在 CI 中运行 CodSpeed，让你能在每个拉取请求上自动检测性能回退，并跟踪性能随时间的演变。
 
 ### GitHub Actions
 
-We recommend using our official GitHub Action: [@CodSpeedHQ/action](https://github.com/CodSpeedHQ/action).
+我们推荐使用我们的官方 GitHub Action：[@CodSpeedHQ/action](https://github.com/CodSpeedHQ/action)。
 
-Here is a sample `.github/workflows/codspeed.yml` workflow for Python:
+下面是 Python 的一个 `.github/workflows/codspeed.yml` 工作流示例：
 
 ```yaml
 name: CodSpeed Benchmarks
@@ -203,7 +203,7 @@ name: CodSpeed Benchmarks
 on:
   push:
     branches:
-      - "main" # or "master"
+      - "main" # 或 "master"
   pull_request:
   workflow_dispatch:
 
@@ -217,14 +217,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Set up your language/environment here
-      # For Python:
+      # 在这里设置你的语言/环境
+      # 以 Python 为例：
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
 
-      # Run benchmarks with CodSpeed
+      # 使用 CodSpeed 运行基准测试
       - uses: CodSpeedHQ/action@v5
         with:
           mode: instrumentation
@@ -233,7 +233,7 @@ jobs:
 
 ### GitLab CI
 
-Here is a sample `.gitlab-ci.yml` configuration for Python:
+下面是 Python 的一个 `.gitlab-ci.yml` 配置示例：
 
 ```yaml
 workflow:
@@ -256,9 +256,9 @@ codspeed:
 
 ### CircleCI
 
-CodSpeed supports CircleCI for repositories hosted on GitHub.
+对于托管在 GitHub 上的仓库，CodSpeed 支持 CircleCI。
 
-Here is a sample `.circleci/config.yml` configuration for Python:
+下面是 Python 的一个 `.circleci/config.yml` 配置示例：
 
 ```yaml
 version: 2.1
@@ -279,7 +279,7 @@ workflows:
       - benchmarks
 ```
 
-Jobs authenticate with OpenID Connect (OIDC) automatically, so there is no token to store. Pull requests opened from a fork cannot mint an OIDC token: set the `CODSPEED_TOKEN` environment variable for those jobs, as described in the [CircleCI configuration documentation](https://codspeed.io/docs/integrations/ci/circleci/configuration).
+作业通过 OpenID Connect（OIDC）自动完成身份验证，因此无需存储任何 token。从 fork 发起的拉取请求无法生成 OIDC token：请为这类作业设置 `CODSPEED_TOKEN` 环境变量，详见 [CircleCI 配置文档](https://codspeed.io/docs/integrations/ci/circleci/configuration)。
 
 > [!TIP]
-> For more CI integration examples and advanced configurations, check out the [CI Integration Documentation](https://codspeed.io/docs/integrations/ci/).
+> 更多 CI 集成示例和高级配置，请查看 [CI 集成文档](https://codspeed.io/docs/integrations/ci/)。

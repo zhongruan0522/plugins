@@ -1,29 +1,29 @@
-# Claude Code Setup Plugin
+# Claude Code Setup 插件
 
-Analyze codebases and recommend tailored Claude Code automations - hooks, skills, MCP servers, and more.
+分析代码库并推荐量身定制的 Claude Code 自动化方案——钩子、技能、MCP 服务器等。
 
-## What It Does
+## 功能
 
-Claude uses this skill to scan your codebase and recommend the top 1-2 automations in each category:
+Claude 使用此技能扫描你的代码库，并针对每个类别推荐最值得采用的 1-2 项自动化方案：
 
-- **MCP Servers** - External integrations (context7 for docs, Playwright for frontend)
-- **Skills** - Packaged expertise (Plan agent, frontend-design)
-- **Hooks** - Automatic actions (auto-format, auto-lint, block sensitive files)
-- **Subagents** - Specialized reviewers (security, performance, accessibility)
-- **Slash Commands** - Quick workflows (/test, /pr-review, /explain)
+- **MCP 服务器** - 外部集成（用于文档查询的 context7、用于前端的 Playwright）
+- **技能** - 打包好的专业知识（Plan agent、frontend-design）
+- **钩子** - 自动执行的操作（自动格式化、自动 lint、阻止敏感文件）
+- **子智能体** - 专项审查者（安全、性能、无障碍）
+- **斜杠命令** - 快捷工作流（/test、/pr-review、/explain）
 
-This skill is **read-only** - it analyzes but doesn't modify files.
+该技能是**只读**的——只做分析，不会修改文件。
 
-## Usage
+## 用法
 
 ```
-"recommend automations for this project"
-"help me set up Claude Code"
-"what hooks should I use?"
+"为这个项目推荐自动化方案"
+"帮我配置 Claude Code"
+"我应该使用哪些钩子？"
 ```
 
-<img src="automation-recommender-example.png" alt="Automation recommender analyzing a codebase and providing tailored recommendations" width="600">
+<img src="automation-recommender-example.png" alt="自动化推荐器正在分析代码库并给出量身定制的建议" width="600">
 
-## Author
+## 作者
 
 Isabella He (isabella@anthropic.com)

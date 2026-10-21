@@ -1,26 +1,26 @@
-# SonarQube agent integrations
+# SonarQube 智能体集成
 
-**Made by [Sonar](https://www.sonarsource.com/)**
+**由 [Sonar](https://www.sonarsource.com/) 出品**
 
-SonarQube is the AI code quality and security verification platform used by millions of developers to catch bugs, vulnerabilities, and leaked secrets. This plugin enforces those standards in the agent coding loop: 7,500+ distinct issue types, secrets scanning, agentic analysis, and quality gates across 40+ languages.
+SonarQube 是被数百万开发者用于捕获 bug、漏洞和泄露密钥的 AI 代码质量与安全验证平台。本插件把这些标准落实到智能体编码回路中：覆盖 40 多种语言的 7,500 多种独立问题类型、密钥扫描、智能体式分析，以及质量门禁。
 
-SonarQube combines deterministic checks with AI-assisted workflows so quality rules apply consistently to code from both developers and agents. Where your stack supports it, analysis and secrets scanning can run inside the agent loop instead of only in CI.
+SonarQube 将确定性检查与 AI 辅助工作流相结合，使质量规则对来自开发者和智能体双方的代码一致生效。在你的技术栈支持的情况下，分析与密钥扫描可以在智能体回路内运行，而不只在 CI 中运行。
 
-## What do the plugins include
+## 插件包含哪些内容
 
-The Plugin helps agents connect to [SonarQube CLI](https://cli.sonarqube.com/) and [SonarQube MCP Server](https://docs.sonarsource.com/sonarqube-mcp-server) for issue detection, checking project metrics such as test coverage and duplications, fetch dependency risks, etc. Claude Code, Copilot CLI, Codex, and Antigravity (through SonarQube CLI) install agent hooks for secrets scanning and, when entitled, Vortex analysis.
+本插件帮助智能体连接 [SonarQube CLI](https://cli.sonarqube.com/) 和 [SonarQube MCP 服务器](https://docs.sonarsource.com/sonarqube-mcp-server)，用于问题检测、检查测试覆盖率和重复度等项目指标、获取依赖风险等。Claude Code、Copilot CLI、Codex 和 Antigravity（通过 SonarQube CLI）会安装用于密钥扫描的智能体钩子，以及（在有权使用时）Vortex 分析钩子。
 
-How to use: Run `/sonarqube:sonar-integrate` after installation to walk through setup — CLI installation, authentication, and wiring up the MCP Server and hooks. From there, use slash commands like `/sonarqube:sonar-quality-gate` to check quality gates or interact naturally with prompts like "analyze my code for issues," "show open SonarQube findings," or "check my coverage." With Vortex analysis enabled, verification happens automatically after each edit with no manual invocation required.
+使用方法：安装后运行 `/sonarqube:sonar-integrate`，它会引导你完成设置——CLI 安装、身份验证，以及接通 MCP 服务器和钩子。之后，既可以用 `/sonarqube:sonar-quality-gate` 这类斜杠命令检查质量门禁，也可以自然地用提示语交互，例如“分析我的代码有哪些问题”“显示未解决的 SonarQube 发现”“检查我的覆盖率”。启用 Vortex 分析后，每次编辑之后都会自动验证，无需手动调用。
 
-## Prerequisites
+## 前提条件
 
-- A SonarQube account (**SonarQube Cloud**, **Server**, or **Community Build**). Some features (for example Vortex analysis) depend on your SonarQube Cloud organization settings.
-- **[SonarQube CLI](https://cli.sonarqube.com/)** (`sonar`) on your machine.
-- A **container runtime** (Docker, Podman, or Nerdctl) for the MCP server image.
+- 一个 SonarQube 账号（**SonarQube Cloud**、**Server** 或 **Community Build**）。某些功能（例如 Vortex 分析）取决于你的 SonarQube Cloud 组织设置。
+- 机器上安装了 **[SonarQube CLI](https://cli.sonarqube.com/)**（`sonar`）。
+- 一个用于 MCP 服务器镜像的**容器运行时**（Docker、Podman 或 Nerdctl）。
 
-Authenticate once with **`sonar auth login`** (browser flow; credentials stay in your OS keychain). The MCP server uses that login.
+使用 **`sonar auth login`** 完成一次身份验证（浏览器流程；凭据保存在你的操作系统钥匙串中）。MCP 服务器会使用该登录。
 
-Check auth anytime:
+随时检查认证状态：
 
 ```bash
 sonar auth status
@@ -28,23 +28,23 @@ sonar auth status
 
 ---
 
-## How plugins connect to SonarQube
+## 插件如何连接 SonarQube
 
-**SonarQube CLI** can wire everything for you:
+**SonarQube CLI** 可以为你接好一切：
 
 ```bash
-sonar integrate claude        # Claude Code: MCP, hooks, secrets scanning, etc.
-sonar integrate copilot       # GitHub Copilot CLI: MCP, hooks, secrets scanning, etc.
-sonar integrate codex         # Codex: MCP, hooks, secrets scanning, Vortex analysis hook
-sonar integrate antigravity   # Antigravity: hooks, instructions, CAG, MCP patch (after plugin install)
-sonar integrate cursor        # Cursor: MCP, secret-scanning hooks, Vortex analysis instructions
+sonar integrate claude        # Claude Code：MCP、钩子、密钥扫描等
+sonar integrate copilot       # GitHub Copilot CLI：MCP、钩子、密钥扫描等
+sonar integrate codex         # Codex：MCP、钩子、密钥扫描、Vortex 分析钩子
+sonar integrate antigravity   # Antigravity：钩子、指令、CAG、MCP 补丁（插件安装后）
+sonar integrate cursor        # Cursor：MCP、密钥扫描钩子、Vortex 分析指令
 ```
 
-Run these **after** `sonar auth login`. Use the **`/sonarqube:sonar-integrate`** skill if you prefer a guided flow (install/update CLI, login, then integrate).
+请在 `sonar auth login` **之后**运行这些命令。如果你更喜欢引导式流程（安装/更新 CLI、登录，然后集成），可以使用 **`/sonarqube:sonar-integrate`** 技能。
 
 ## Claude Code
 
-Install from Anthropic's marketplace **`claude-plugins-official`**:
+从 Anthropic 的插件市场 **`claude-plugins-official`** 安装：
 
 ```shell
 /plugin install sonarqube@claude-plugins-official
@@ -54,198 +54,198 @@ Install from Anthropic's marketplace **`claude-plugins-official`**:
 claude plugin install sonarqube@claude-plugins-official
 ```
 
-### One-time setup
+### 一次性设置
 
-- **Node.js** — for the SessionStart hook (`scripts/setup.js`).
-- Install **SonarQube CLI** if needed, then **`/sonarqube:sonar-integrate`** or **`sonar auth login`** + **`sonar integrate claude`**.
+- **Node.js** —— SessionStart 钩子（`scripts/setup.js`）需要它。
+- 如有需要，先安装 **SonarQube CLI**，然后运行 **`/sonarqube:sonar-integrate`**，或 **`sonar auth login`** + **`sonar integrate claude`**。
 
-`sonar auth login` by scenario:
+不同场景下的 `sonar auth login`：
 
-| Scenario             | Command                                                 |
-|----------------------|---------------------------------------------------------|
-| SonarQube Cloud (EU) | `sonar auth login -o <org-key>`                         |
-| SonarQube Cloud (US) | `sonar auth login -o <org-key> -s https://sonarqube.us` |
-| SonarQube Server     | `sonar auth login -s <server-url>`                      |
+| 场景                  | 命令                                                    |
+|-----------------------|---------------------------------------------------------|
+| SonarQube Cloud（EU） | `sonar auth login -o <org-key>`                         |
+| SonarQube Cloud（US） | `sonar auth login -o <org-key> -s https://sonarqube.us` |
+| SonarQube Server      | `sonar auth login -s <server-url>`                      |
 
-Optional: add **`sonar-project.properties`** in the project root with `sonar.projectKey`, sources, etc.
+可选：在项目根目录添加 **`sonar-project.properties`**，填入 `sonar.projectKey`、源码目录等。
 
 ---
 
 ## GitHub Copilot CLI
 
-Plugin bundle: **`.github/plugin/`**.
+插件包：**`.github/plugin/`**。
 
-1. Install **sonarqube** from the pre-packaged `awesome-copilot` plugins catalog:
+1. 从预打包的 `awesome-copilot` 插件目录安装 **sonarqube**：
 
    ```shell
    /plugin install sonarqube@awesome-copilot
    ```
 
-2. Run **`sonar integrate copilot`**, or invoke the `/sonarqube:sonar-integrate` skill.
+2. 运行 **`sonar integrate copilot`**，或调用 `/sonarqube:sonar-integrate` 技能。
 
-Same workflows as **[Usage](#usage)** once MCP is connected.
+MCP 连接后，工作流与 **[用法](#用法)** 相同。
 
 ---
 
 ## Cursor
 
-**`.cursor-plugin/`** with MCP via **`mcp.json`**.
+**`.cursor-plugin/`**，通过 **`mcp.json`** 提供 MCP。
 
-1. Install **SonarQube** plugin through [Cursor's marketplace](https://cursor.com/marketplace/sonarsource):
+1. 通过 [Cursor 插件市场](https://cursor.com/marketplace/sonarsource)安装 **SonarQube** 插件：
 
 ```
 /add-plugin sonarqube
 ```
 
-2. Run **`sonar integrate cursor`**, or invoke the `/sonarqube:sonar-integrate` skill.
+2. 运行 **`sonar integrate cursor`**，或调用 `/sonarqube:sonar-integrate` 技能。
 
 ---
 
 ## Antigravity
 
-Repo-root plugin: **`plugin.json`**, **`mcp_config.json`**, **`rules/sonarqube.md`**, and shared **`skills/`**. Hooks and managed instructions are **not** in the plugin bundle—they are installed by **`sonar integrate antigravity`**.
+仓库根目录的插件文件：**`plugin.json`**、**`mcp_config.json`**、**`rules/sonarqube.md`**，以及共享的 **`skills/`**。钩子和托管指令**不在**插件包内——它们由 **`sonar integrate antigravity`** 安装。
 
-### Recommended flow (full integration)
+### 推荐流程（完整集成）
 
 ```bash
-# 1. Plugin bundle — skills, rules, MCP
+# 1. 插件包——技能、规则、MCP
 agy plugin install https://github.com/SonarSource/sonarqube-agent-plugins
 
-# 2. Auth + hooks / instructions / CAG / MCP patch
+# 2. 认证 + 钩子 / 指令 / CAG / MCP 补丁
 sonar auth login
 sonar integrate antigravity
 ```
 
-Or use **`/sonarqube:sonar-integrate`** inside Antigravity for a guided flow. Restart the agent session if MCP tools do not appear.
+或者在 Antigravity 中使用 **`/sonarqube:sonar-integrate`** 获得引导式流程。如果 MCP 工具没有出现，请重启智能体会话。
 
-### Install options
+### 安装方式
 
-| Option            | Command / path                                | What you get                                            |
-|-------------------|-----------------------------------------------|---------------------------------------------------------|
-| **CLI global**    | `agy plugin install <git-url\|path\|archive>` | Plugin copied to `~/.gemini/config/plugins/sonarqube/`  |
-| **IDE workspace** | `<project>/.agents/plugins/sonarqube/`        | Plugin for that workspace only                          |
-| **Monorepo dev**  | Open `sonarqube-agent-plugins` as workspace   | Auto-discovery from repo root — no `agy plugin install` |
+| 方式              | 命令 / 路径                                    | 你会得到                                                        |
+|-------------------|------------------------------------------------|-----------------------------------------------------------------|
+| **CLI 全局**      | `agy plugin install <git-url\|path\|archive>`  | 插件被复制到 `~/.gemini/config/plugins/sonarqube/`              |
+| **IDE 工作区**    | `<project>/.agents/plugins/sonarqube/`         | 仅对该工作区生效的插件                                          |
+| **Monorepo 开发** | 将 `sonarqube-agent-plugins` 作为工作区打开    | 从仓库根目录自动发现——无需 `agy plugin install`                 |
 
-Installing the **whole repo** is acceptable — other agents' dot-folders are inert in Antigravity.
+安装**整个仓库**也没问题——其他智能体的点前缀文件夹在 Antigravity 中不起作用。
 
-### Migrating from Gemini CLI
+### 从 Gemini CLI 迁移
 
-Gemini CLI is being replaced by Antigravity. Migrate platform config first (layout, skills paths, and cleanup), then update SonarQube as below.
+Gemini CLI 正在被 Antigravity 取代。请先迁移平台配置（布局、技能路径和清理），再按下文更新 SonarQube。
 
-If you already had the **SonarQube Gemini extension** installed:
+如果你此前安装过 **SonarQube Gemini 扩展**：
 
 ```bash
-agy plugin import gemini          # converts legacy extensions → native plugins
-sonar integrate antigravity       # add hooks, instructions, CAG (new vs Gemini)
+agy plugin import gemini          # 把旧版扩展转换为原生插件
+sonar integrate antigravity       # 添加钩子、指令、CAG（相对 Gemini 新增的部分）
 ```
 
-`agy plugin import gemini` scans legacy Gemini directories and migrates inline `mcpServers` into `mcp_config.json`. Expect output like `✔ mcpServers : 1 server definition migrated to mcp_config.json` for SonarQube.
+`agy plugin import gemini` 会扫描旧版 Gemini 目录，并把内联的 `mcpServers` 迁移到 `mcp_config.json`。对 SonarQube，你会看到类似 `✔ mcpServers : 1 server definition migrated to mcp_config.json` 的输出。
 
-If you had custom skills under `.gemini/skills/`, move them to `.agents/skills/`.
+如果你的自定义技能位于 `.gemini/skills/` 下，请把它们移动到 `.agents/skills/`。
 
-After verifying Antigravity works, remove any duplicate legacy Gemini extension install if import created a copy.
+确认 Antigravity 工作正常后，如果导入产生了副本，请删除重复的旧版 Gemini 扩展安装。
 
-For a fresh install, use the [recommended flow](#recommended-flow-full-integration) above.
+全新安装请使用上文的[推荐流程](#推荐流程完整集成)。
 
-Same workflows as **[Usage](#usage)** once MCP is connected.
+MCP 连接后，工作流与 **[用法](#用法)** 相同。
 
 ---
 
 ## Factory Droid
 
-**`.factory-plugin/`** with MCP via **`mcp.json`** and the reviewer in **`droids/`**. No hooks: secrets scanning and Vortex analysis hooks are not available in Droid.
+**`.factory-plugin/`**，通过 **`mcp.json`** 提供 MCP，评审器位于 **`droids/`**。没有钩子：Droid 不提供密钥扫描和 Vortex 分析钩子。
 
-1. Install the plugin from the SonarSource marketplace:
+1. 从 SonarSource 插件市场安装插件：
 
 ```shell
 droid plugin marketplace add SonarSource/sonarqube-agent-plugins
 droid plugin install sonarqube@sonarqube-agent-plugins
 ```
 
-   Droid names the marketplace after the repository, not after the `name` in `marketplace.json`, so the plugin is `sonarqube@sonarqube-agent-plugins`.
+   Droid 以仓库名而非 `marketplace.json` 中的 `name` 来命名市场，因此插件名为 `sonarqube@sonarqube-agent-plugins`。
 
-2. Run **`sonar auth login`**, or invoke the `/sonarqube:sonar-integrate` skill.
+2. 运行 **`sonar auth login`**，或调用 `/sonarqube:sonar-integrate` 技能。
 
-<!-- Maintainers: droids/sonarqube-reviewer.md is the Droid version of agents/sonarqube-reviewer.agent.md. With its own manifest, Droid no longer imports agents/, so the droid keeps Factory frontmatter (Factory tool IDs, mcpServers) and the same body. Its Execute is unrestricted because Factory cannot scope commands per droid; without it the reviewer could not run git diff or sonar. It has no edit tools. Keep the bodies identical, and bump .factory-plugin/ with the other manifests at each release. -->
+<!-- 维护者：droids/sonarqube-reviewer.md 是 agents/sonarqube-reviewer.agent.md 的 Droid 版本。由于有了自己的清单，Droid 不再导入 agents/，因此该 droid 保留 Factory frontmatter（Factory 工具 ID、mcpServers）和相同的正文。它的 Execute 不受限制，因为 Factory 无法按 droid 限定命令范围；否则评审器将无法运行 git diff 或 sonar。它没有编辑工具。请保持两者正文一致，并在每次发布时让 .factory-plugin/ 随其他清单一起更新。 -->
 
 ---
 
 ## Codex CLI
 
-Plugin bundle: **`.codex-plugin/`** — catalog **`sonar`**, plugin **`sonarqube`** (see **[`.codex-plugin/plugin.json`](.codex-plugin/plugin.json)**).
+插件包：**`.codex-plugin/`** —— 目录 **`sonar`**，插件 **`sonarqube`**（见 **[`.codex-plugin/plugin.json`](.codex-plugin/plugin.json)**）。
 
-1. Add **SonarSource/sonarqube-agent-plugins** as a plugin marketplace in Codex CLI:
+1. 在 Codex CLI 中将 **SonarSource/sonarqube-agent-plugins** 添加为插件市场：
 
    ```shell
    codex plugin marketplace add SonarSource/sonarqube-agent-plugins
    ```
-2. Install **sonarqube** plugin from that catalog:
+2. 从该目录安装 **sonarqube** 插件：
 
    ```shell
    codex plugin add sonarqube@sonar
    ```
 
-3. Run **`sonar auth login`**.
+3. 运行 **`sonar auth login`**。
 
-4. Run **`sonar integrate codex`**. This wires MCP in **`~/.codex/config.toml`**, secrets hooks, and—when your SonarQube Cloud org has Vortex analysis—a **PostToolUse** hook on **`apply_patch`** that runs analysis on the git change set after each edit, applying to all Codex sessions on this machine.
+4. 运行 **`sonar integrate codex`**。它会在 **`~/.codex/config.toml`** 中接好 MCP 和密钥钩子；如果你的 SonarQube Cloud 组织拥有 Vortex 分析，还会在 **`apply_patch`** 上安装一个 **PostToolUse** 钩子，在每次编辑之后对 git 变更集运行分析，对本机上的所有 Codex 会话生效。
 
-Same workflows as **[Usage](#usage)** once MCP is connected.
+MCP 连接后，工作流与 **[用法](#用法)** 相同。
 
 ---
 
 ## Kiro
 
-Plugin includes **MCP configuration** (**`kiro-power/mcp.json`**) that runs the **`mcp/sonarqube`** image and **relies on SonarQube CLI** for authentication—the same **`sonar auth login`** session.
+插件包含 **MCP 配置**（**`kiro-power/mcp.json`**），它会运行 **`mcp/sonarqube`** 镜像，并**依赖 SonarQube CLI** 完成认证——也就是同一个 **`sonar auth login`** 会话。
 
-**`sonar auth login`**, then enable the power per Kiro’s documentation.
-
----
-
-## Gemini CLI *(legacy)*
-
-**`gemini-extension.json`** and **`GEMINI.md`**. **`sonar auth login`** and **[Usage](#usage)**.
-
-Migrate to **[Antigravity](#antigravity)** with **`agy plugin import gemini`** and **`sonar integrate antigravity`** as described above.
+先 **`sonar auth login`**，然后按照 Kiro 的文档启用该 power。
 
 ---
-## Usage
 
-Skills are the same across agents. Ask in natural language, invoke skills explicitly, or use the **SonarQube MCP** tools your client shows after MCP starts.
+## Gemini CLI *（旧版）*
 
-On **Claude Code**, **GitHub Copilot CLI**, and **Cursor**, the plugin also ships a **`sonarqube-reviewer`** agent (`agents/sonarqube-reviewer.agent.md`) that composes the skills below into a single PR/diff review — quality gate, issues, dependency risks, duplication, and coverage — without editing code itself.
+包含 **`gemini-extension.json`** 和 **`GEMINI.md`**。运行 **`sonar auth login`**，用法见 **[用法](#用法)**。
 
-MCP reference: [SonarQube MCP Server docs](https://docs.sonarsource.com/sonarqube-mcp-server/).
+按照上文所述，使用 **`agy plugin import gemini`** 和 **`sonar integrate antigravity`** 迁移到 **[Antigravity](#antigravity)**。
 
-### Skills
+---
+## 用法
 
-#### Set up
+各智能体的技能是相同的。你可以用自然语言提问、显式调用技能，或使用 MCP 启动后你的客户端展示的 **SonarQube MCP** 工具。
+
+在 **Claude Code**、**GitHub Copilot CLI** 和 **Cursor** 上，插件还附带一个 **`sonarqube-reviewer`** 智能体（`agents/sonarqube-reviewer.agent.md`），它把下面的技能组合成一次完整的 PR/diff 评审——质量门禁、问题、依赖风险、重复度和覆盖率——本身不修改代码。
+
+MCP 参考：[SonarQube MCP 服务器文档](https://docs.sonarsource.com/sonarqube-mcp-server/)。
+
+### 技能
+
+#### 设置
 
 ```
 /sonarqube:sonar-integrate
 ```
 
-#### List projects
+#### 列出项目
 
 ```
 /sonarqube:sonar-list-projects
 /sonarqube:sonar-list-projects my-project
 ```
 
-#### List issues
+#### 列出问题
 
 ```
 /sonarqube:sonar-list-issues
 /sonarqube:sonar-list-issues my-project --severities CRITICAL
 ```
 
-#### Fix an issue
+#### 修复问题
 
 ```
 /sonarqube:sonar-fix-issue java:S1481 src/main/java/MyClass.java
 /sonarqube:sonar-fix-issue python:S2077 src/auth/login.py:34
 ```
 
-#### Quality gate / analyze / coverage / duplication / dependency risks
+#### 质量门禁 / 分析 / 覆盖率 / 重复度 / 依赖风险
 
 ```
 /sonarqube:sonar-quality-gate
@@ -270,10 +270,10 @@ MCP reference: [SonarQube MCP Server docs](https://docs.sonarsource.com/sonarqub
 
 ---
 
-## License
+## 许可证
 
-Copyright (C) 2025-2026 SonarSource Sàrl. Licensed under [SSAL-1.0](LICENSE).
+版权所有 (C) 2025-2026 SonarSource Sàrl。以 [SSAL-1.0](LICENSE) 许可证授权。
 
-## Support
+## 支持
 
-- Community: https://community.sonarsource.com/
+- 社区：https://community.sonarsource.com/

@@ -1,48 +1,48 @@
-# Mintlify Claude plugin
+# Mintlify Claude 插件
 
-A Claude Code plugin that gives Claude a comprehensive reference for building [Mintlify](https://mintlify.com) sites.
+一个 Claude Code 插件，为 Claude 提供构建 [Mintlify](https://mintlify.com) 站点的全面参考。
 
-## What it does
+## 功能说明
 
-Installs a `mintlify` skill that Claude can invoke when working on Mintlify-powered sites.
+安装一个 `mintlify` 技能，Claude 在开发基于 Mintlify 的站点时可以调用它。
 
-The skill covers:
+该技能涵盖：
 
-- **Components** — Full syntax and props for all Mintlify components (callouts, cards, steps, tabs, accordions, code groups, fields, frames, and more)
-- **Configuration** — Complete `docs.json` settings reference including theme, colors, logo, fonts, navbar, footer, redirects, integrations, and custom CSS/JS
-- **Navigation** — All navigation patterns: groups, tabs, anchors, dropdowns, products, versions, and languages
-- **API docs** — OpenAPI and AsyncAPI setup, endpoint pages, API playground configuration
+- **组件** — 所有 Mintlify 组件的完整语法与属性（callouts、cards、steps、tabs、accordions、code groups、fields、frames 等）
+- **配置** — 完整的 `docs.json` 设置参考，包括主题、颜色、logo、字体、导航栏、页脚、重定向、集成以及自定义 CSS/JS
+- **导航** — 所有导航模式：分组、标签页、锚点、下拉菜单、产品、版本和语言
+- **API 文档** — OpenAPI 与 AsyncAPI 配置、端点页面、API playground 配置
 
-## Installation
+## 安装
 
-To install the skills in this repo:
+将本仓库中的技能安装到任意环境：
 
 ```
 npx skills add mintlify/mintlify-claude-plugin
 ```
 
-To install as a Claude Code plugin:
+作为 Claude Code 插件安装：
 
 ```
 /plugin marketplace add mintlify/mintlify-claude-plugin
 /plugin install mintlify@mintlify-marketplace
 ```
 
-## Skills included
+## 包含的技能
 
 ### `mintlify`
 
-Invoke with `/mintlify:mintlify` or let Claude use it automatically when working on Mintlify projects.
+使用 `/mintlify:mintlify` 调用，或在开发 Mintlify 项目时让 Claude 自动使用。
 
-The skill loads a concise core reference and routes to detailed reference files only when the task requires them:
+该技能会加载一份精简的核心参考，并仅在任务需要时才路由到详细的参考文件：
 
-| Reference file | Contents |
+| 参考文件 | 内容 |
 |----------------|----------|
-| `reference/components.md` | All component syntax, props, and examples |
-| `reference/configuration.md` | Full `docs.json` schema and frontmatter fields |
-| `reference/navigation.md` | Navigation patterns and when to use each |
-| `reference/api-docs.md` | API documentation setup and playground config |
+| `reference/components.md` | 所有组件的语法、属性与示例 |
+| `reference/configuration.md` | 完整的 `docs.json` schema 与 frontmatter 字段 |
+| `reference/navigation.md` | 各种导航模式及其适用场景 |
+| `reference/api-docs.md` | API 文档设置与 playground 配置 |
 
-## License
+## 许可证
 
 MIT

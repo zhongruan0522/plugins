@@ -1,21 +1,21 @@
 <img width="2400" height="600" alt="hero-b" src="https://github.com/user-attachments/assets/c177a82d-334b-495c-81cb-9df69c521123" />
 
-# Langfuse Skills
+# Langfuse 技能
 
-[Agent Skills](https://github.com/anthropics/skills) that teach AI coding assistants (Claude Code, Cursor, etc.) how to work with [Langfuse](https://langfuse.com) — the open-source LLM engineering platform for tracing, prompt management, and evaluation.
+一组 [Agent Skills](https://github.com/anthropics/skills)，教会 AI 编码助手（Claude Code、Cursor 等）如何使用 [Langfuse](https://langfuse.com)——用于追踪、提示词管理和评估的开源 LLM 工程平台。
 
-## Skills
+## 技能
 
-| Skill                                                           | Description                                                                                        |
+| 技能                                                           | 说明                                                                                        |
 | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| [langfuse](./skills/langfuse)                                   | Main skill to work with Langfuse. Query and manage traces, prompts, datasets, and scores via the Langfuse API; look up documentation; do things with best practices in mind. |
-| [migrate-to-langfuse](./skills/migrate-to-langfuse)             | Migrate from another LLM observability/evals platform (LangSmith, Arize, Braintrust, etc.) to Langfuse. Interviews you about scope, then handles the live tracing cutover and transfer of historical traces, datasets, prompts, and evaluators. |
+| [langfuse](./skills/langfuse)                                   | 使用 Langfuse 的主技能。通过 Langfuse API 查询和管理追踪、提示词、数据集和评分；查阅文档；以最佳实践完成任务。 |
+| [migrate-to-langfuse](./skills/migrate-to-langfuse)             | 从其他 LLM 可观测性/评估平台（LangSmith、Arize、Braintrust 等）迁移到 Langfuse。会先就迁移范围对你进行访谈，然后处理实时追踪切换以及历史追踪、数据集、提示词和评估器的迁移。 |
 
-## Installation
+## 安装
 
-### Cursor Plugin
+### Cursor 插件
 
-Install as a [Cursor plugin](https://cursor.com/docs/plugins):
+作为 [Cursor 插件](https://cursor.com/docs/plugins)安装：
 
 ```
 /add-plugin langfuse
@@ -23,49 +23,49 @@ Install as a [Cursor plugin](https://cursor.com/docs/plugins):
 
 ### skills CLI
 
-Install via the [skills CLI](https://github.com/vercel-labs/skills):
+通过 [skills CLI](https://github.com/vercel-labs/skills) 安装：
 
 ```bash
 npx skills add langfuse/skills --skill "langfuse"
 ```
 
-### Manual symlink
+### 手动符号链接
 
-Clone this repo and symlink the skill into your agent's skills directory:
+克隆本仓库，并将技能符号链接到你智能体的技能目录中：
 
 ```bash
 git clone https://github.com/langfuse/skills.git /path/to/langfuse-skills
 ln -s /path/to/langfuse-skills/skills/langfuse /path/to/skills-directory/langfuse
 ```
 
-## Prerequisites
+## 前提条件
 
-You need a Langfuse account ([cloud](https://cloud.langfuse.com) or [self-hosted](https://langfuse.com/docs/deployment/self-host)) and API keys:
+你需要一个 Langfuse 账户（[云端](https://cloud.langfuse.com)或[自托管](https://langfuse.com/docs/deployment/self-host)）以及 API 密钥：
 
 ```bash
 export LANGFUSE_PUBLIC_KEY=pk-lf-...
 export LANGFUSE_SECRET_KEY=sk-lf-...
-export LANGFUSE_BASE_URL=https://cloud.langfuse.com  # or https://us.cloud.langfuse.com, or self-hosted URL
+export LANGFUSE_BASE_URL=https://cloud.langfuse.com  # 或 https://us.cloud.langfuse.com，或自托管 URL
 ```
 
-API keys are found in your Langfuse project under **Settings > API Keys**.
+API 密钥位于 Langfuse 项目的 **Settings > API Keys** 下。
 
-## Usage
+## 用法
 
-Once installed, the agent will automatically use these skills when relevant — for example:
+安装后，智能体会在相关场景下自动使用这些技能——例如：
 
-- Setting up Langfuse tracing in a project
-- Setting up CI/CD experiment gates with `langfuse/experiment-action`
-- Auditing existing instrumentation
-- Preparing an application and Langfuse project for the v4 platform migration
-- Migrating prompts to Langfuse prompt management
-- Querying traces, prompts, or datasets via the API
-- Looking up Langfuse docs, SDK usage, or integration guides
+- 在项目中搭建 Langfuse 追踪
+- 使用 `langfuse/experiment-action` 搭建 CI/CD 实验门禁
+- 审计现有的埋点
+- 为 v4 平台迁移准备应用和 Langfuse 项目
+- 将提示词迁移到 Langfuse 提示词管理
+- 通过 API 查询追踪、提示词或数据集
+- 查阅 Langfuse 文档、SDK 用法或集成指南
 
-## Contributing
+## 贡献
 
-Want to improve a skill or add a new one? See [CONTRIBUTING.md](./CONTRIBUTING.md).
+想改进某个技能或添加新技能？请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
-## Feedback & Requests
+## 反馈与需求
 
-Something not working as expected, or want a new skill? [Start a discussion](https://github.com/langfuse/skills/discussions/new?category=ideas-improvements).
+有什么没按预期工作，或想要新技能？[发起讨论](https://github.com/langfuse/skills/discussions/new?category=ideas-improvements)。

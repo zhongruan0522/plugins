@@ -1,23 +1,23 @@
 # rust-analyzer-lsp
 
-Rust language server for Claude Code, providing code intelligence and analysis.
+适用于 Claude Code 的 Rust 语言服务器，提供代码智能与分析功能。
 
-## Supported Extensions
+## 支持的扩展名
 `.rs`
 
-## Installation
+## 安装
 
-### Via rustup (recommended)
+### 通过 rustup 安装（推荐）
 ```bash
 rustup component add rust-analyzer
 ```
 
-### Via Homebrew (macOS)
+### 通过 Homebrew 安装（macOS）
 ```bash
 brew install rust-analyzer
 ```
 
-### Via package manager (Linux)
+### 通过包管理器安装（Linux）
 ```bash
 # Ubuntu/Debian
 sudo apt install rust-analyzer
@@ -26,9 +26,9 @@ sudo apt install rust-analyzer
 sudo pacman -S rust-analyzer
 ```
 
-### Manual download
-Download pre-built binaries from the [releases page](https://github.com/rust-lang/rust-analyzer/releases).
+### 手动下载
+从[发布页面](https://github.com/rust-lang/rust-analyzer/releases)下载预构建的二进制文件。
 
-## More Information
-- [rust-analyzer Website](https://rust-analyzer.github.io/)
-- [GitHub Repository](https://github.com/rust-lang/rust-analyzer)
+## 更多信息
+- [rust-analyzer 网站](https://rust-analyzer.github.io/)
+- [GitHub 仓库](https://github.com/rust-lang/rust-analyzer)
