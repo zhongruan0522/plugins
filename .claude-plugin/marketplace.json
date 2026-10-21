@@ -147,16 +147,6 @@
       "homepage": "https://www.airwallex.com/docs"
     },
     {
-      "name": "apollo-skills",
-      "description": "面向 Claude Code 的 Apollo GraphQL agent 技能——Apollo Client、Server、Federation、Connectors、Router、Rover CLI、iOS、Kotlin 及 Apollo MCP 服务器。覆盖 schema 设计、查询优化和 GraphQL 最佳实践。",
-      "author": {
-        "name": "Apollo GraphQL"
-      },
-      "category": "development",
-      "source": "./plugins/apollo-skills",
-      "homepage": "https://www.apollographql.com"
-    },
-    {
       "name": "clangd-lsp",
       "description": "用于代码智能分析的 C/C++ 语言服务器。",
       "version": "1.0.0",
@@ -466,16 +456,6 @@
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/linear"
     },
     {
-      "name": "logfire",
-      "description": "为 Python 应用接入 Logfire 可观测性，自动为 FastAPI、httpx、asyncpg、SQLAlchemy 等常用库添加监控。",
-      "author": {
-        "name": "Pydantic"
-      },
-      "category": "monitoring",
-      "source": "./plugins/logfire",
-      "homepage": "https://github.com/pydantic/skills/tree/main/plugins/logfire"
-    },
-    {
       "name": "mattpocock-skills",
       "description": "Matt Pocock 面向真实工程的 agent 技能——深度追问式评审、规格与工单流程、TDD、代码审查、领域建模等。即插即用，拒绝“氛围编程”。",
       "author": {
@@ -491,13 +471,6 @@
       "category": "database",
       "source": "./plugins/mongodb",
       "homepage": "https://www.mongodb.com/docs/mcp-server/overview/"
-    },
-    {
-      "name": "pagerduty",
-      "description": "借助 PagerDuty 风险评分和事件关联提升代码质量与安全性。用历史事件数据为提交前的 diff 打分，在发布前暴露部署风险。",
-      "category": "monitoring",
-      "source": "./plugins/pagerduty",
-      "homepage": "https://github.com/PagerDuty/claude-code-plugins"
     },
     {
       "name": "paypal",
