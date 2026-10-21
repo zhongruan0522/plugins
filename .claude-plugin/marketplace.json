@@ -36,26 +36,11 @@
       "homepage": "https://ai-first.techwolf.ai"
     },
     {
-      "name": "product-tracking-skills",
-      "displayName": "Product Tracking",
-      "description": "让 SaaS 产品为产品分析做好数据准备的 AI agent 技能——从扫描代码库、设计埋点方案，到生成可运行的埋点代码。",
-      "category": "analytics",
-      "source": "./plugins/product-tracking-skills",
-      "homepage": "https://www.accoil.com/product-tracking"
-    },
-    {
       "name": "desktop-commander",
       "description": "用于执行终端命令、管理进程，以及对文本、代码、PDF、DOCX、Excel、图像和结构化数据进行文件操作的 MCP 服务器。",
       "category": "productivity",
       "source": "./plugins/desktop-commander",
       "homepage": "https://desktopcommander.app"
-    },
-    {
-      "name": "servicenow-sdk",
-      "description": "通过 Claude 轻松使用 Fluent SDK 创建、编辑和部署 ServiceNow 应用。帮助开发者基于 ServiceNow SDK 构建、扩展和管理 ServiceNow 应用、工作流和 agent。",
-      "category": "development",
-      "source": "./plugins/servicenow-sdk",
-      "homepage": "https://servicenow.github.io/sdk/"
     },
     {
       "name": "twilio-developer-kit",
@@ -89,14 +74,6 @@
       "category": "security",
       "source": "./plugins/auth0",
       "homepage": "https://github.com/auth0/agent-skills"
-    },
-    {
-      "name": "datarobot-agent-skills",
-      "displayName": "DataRobot Agent Skills",
-      "description": "面向 AI 与机器学习工作流的 DataRobot 技能——模型训练、部署、预测、特征工程、监控、可解释性、数据准备、App Framework CI/CD 以及外部 agent 监控。",
-      "category": "development",
-      "source": "./plugins/datarobot-agent-skills",
-      "homepage": "https://datarobot.com"
     },
     {
       "name": "canva",
@@ -178,23 +155,6 @@
       "category": "development",
       "source": "./plugins/apollo-skills",
       "homepage": "https://www.apollographql.com"
-    },
-    {
-      "name": "appwrite",
-      "description": "面向 Claude Code 的 Appwrite 工具，包括 SDK 技能、Appwrite MCP 服务器和部署命令。",
-      "author": {
-        "name": "Appwrite"
-      },
-      "category": "development",
-      "source": "./plugins/appwrite",
-      "homepage": "https://appwrite.io"
-    },
-    {
-      "name": "astronomer-data-agents",
-      "description": "面向 Apache Airflow 与 Astronomer 的数据工程。按最佳实践编写 DAG、排查流水线故障、追踪数据血缘、梳理数据表画像、把 Airflow 2 迁移到 3，并管理本地与云端部署。",
-      "category": "development",
-      "source": "./plugins/astronomer-data-agents",
-      "homepage": "https://github.com/astronomer/agents"
     },
     {
       "name": "clangd-lsp",
@@ -388,13 +348,6 @@
       "source": "./plugins/feature-dev",
       "category": "development",
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/feature-dev"
-    },
-    {
-      "name": "firecrawl",
-      "description": "由 Firecrawl 驱动的网页抓取与爬取。把任意网站转换成干净的、适合 LLM 使用的 Markdown 或结构化数据。可以抓取单个页面、爬取整站、搜索网络并提取结构化信息。还包含能自主采集多来源数据的 AI agent——只需描述需求，它就会自动查找、跳转并提取。",
-      "category": "development",
-      "source": "./plugins/firecrawl",
-      "homepage": "https://github.com/firecrawl/firecrawl-claude-plugin.git"
     },
     {
       "name": "frontend-design",
@@ -1302,18 +1255,6 @@
       "category": "development",
       "homepage": "https://github.com/wshobson/agents",
       "license": "MIT"
-    },
-    {
-      "name": "brand-landingpage",
-      "source": "./plugins/brand-landingpage",
-      "description": "通过 Stitch 引导开发者从品牌探索、迭代设计，到产出可直接部署的 HTML。",
-      "version": "1.0.1",
-      "author": {
-        "name": "Travis D. Elliott",
-        "url": "https://github.com/travis-d-elliott"
-      },
-      "license": "MIT",
-      "category": "creative"
     },
     {
       "name": "block-no-verify",
