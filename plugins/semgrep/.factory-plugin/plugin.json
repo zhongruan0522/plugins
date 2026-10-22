@@ -1,0 +1,9 @@
+{
+  "name": "semgrep",
+  "version": "2.7.0",
+  "description": "Semgrep Guardian: Scans agent-generated code for security vulnerabilities.",
+  "author": {
+    "name": "Semgrep",
+    "url": "https://github.com/semgrep"
+  }
+}

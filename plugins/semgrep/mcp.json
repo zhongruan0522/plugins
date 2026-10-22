@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "guardian": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/scripts/hook",
+      "args": [
+        "claude",
+        "mcp"
+      ]
+    }
+  }
+}

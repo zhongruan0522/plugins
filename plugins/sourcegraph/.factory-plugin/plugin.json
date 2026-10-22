@@ -1,0 +1,11 @@
+{
+  "name": "sourcegraph",
+  "version": "0.1.0",
+  "description": "Use Sourcegraph MCP from Claude Code for code search, navigation, history, and Deep Search.",
+  "author": {
+    "name": "Sourcegraph Community"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/sourcegraph-community/sourcegraph-claudecode-plugin",
+  "homepage": "https://github.com/sourcegraph-community/sourcegraph-claudecode-plugin"
+}

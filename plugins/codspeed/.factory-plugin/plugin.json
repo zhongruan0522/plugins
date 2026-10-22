@@ -1,0 +1,18 @@
+{
+  "name": "codspeed",
+  "version": "1.0.0",
+  "description": "CodSpeed plugin for Claude Code helping with performance measurement and optimization.",
+  "author": {
+    "name": "CodSpeed"
+  },
+  "keywords": [
+    "codspeed",
+    "performance",
+    "profiling",
+    "optimization",
+    "benchmarking"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/CodSpeedHQ/codspeed",
+  "homepage": "https://codspeed.io"
+}

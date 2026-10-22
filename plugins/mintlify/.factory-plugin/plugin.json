@@ -1,0 +1,16 @@
+{
+  "name": "mintlify",
+  "version": "1.0.0",
+  "description": "Comprehensive skill for building Mintlify documentation sites.",
+  "author": {
+    "name": "Mintlify",
+    "url": "https://mintlify.com"
+  },
+  "keywords": [
+    "mintlify",
+    "documentation"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/anthropics/claude-plugins-official",
+  "homepage": "https://mintlify.com"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "api-security-testing",
+  "version": "1.5.5",
+  "description": "Catch API security issues during development: audit, scan, remediate, validate with AI guardrails in Claude Code.",
+  "author": {
+    "name": "42Crunch",
+    "email": "support@42crunch.com",
+    "url": "https://github.com/42Crunch"
+  },
+  "keywords": [
+    "openapi",
+    "api-security",
+    "audit",
+    "scan",
+    "remediation",
+    "vulnerability",
+    "compliance",
+    "owasp",
+    "bola",
+    "bfla",
+    "ai",
+    "devsecops",
+    "42crunch"
+  ],
+  "license": "Apache 2.0",
+  "repository": "https://github.com/42Crunch-AI/claude-plugins",
+  "homepage": "https://42crunch.com"
+}

@@ -1,0 +1,469 @@
+{
+  "name": "claude-plugins",
+  "description": "个人自用插件集合（Factory Droid 适配版）",
+  "owner": {
+    "name": "personal"
+  },
+  "plugins": [
+    {
+      "name": "42crunch-api-security-testing",
+      "description": "Catch API security issues during development: audit, scan, remediate, validate with AI guardrails in Claude Code.",
+      "source": "./plugins/42crunch-api-security-testing"
+    },
+    {
+      "name": "agentforce-adlc",
+      "description": "Agentforce Agent Development Life Cycle — author, discover, scaffold, deploy, test, secure, and optimize .agent files",
+      "source": "./plugins/agentforce-adlc"
+    },
+    {
+      "name": "ai-firstify",
+      "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
+      "source": "./plugins/ai-firstify"
+    },
+    {
+      "name": "airwallex-dev",
+      "description": "Airwallex integration skills for Claude. Code-generation workflows that scaffold, configure, and wire Airwallex APIs into your project.",
+      "source": "./plugins/airwallex-dev"
+    },
+    {
+      "name": "api-scaffolding",
+      "description": "REST and GraphQL API scaffolding, framework selection, backend architecture, and API generation",
+      "source": "./plugins/api-scaffolding"
+    },
+    {
+      "name": "api-testing-observability",
+      "description": "API testing automation, request mocking, OpenAPI documentation generation, observability setup, and monitoring",
+      "source": "./plugins/api-testing-observability"
+    },
+    {
+      "name": "auth0",
+      "description": "A single unified Auth0 skill that detects your framework, feature, and tooling, then loads the right reference guides for adding authentication — login, MFA, Organizations, ACUL, custom domains, branding, JWT validation, migration, and debugging — to any app.",
+      "source": "./plugins/auth0"
+    },
+    {
+      "name": "backend-api-security",
+      "description": "API security hardening, authentication implementation, authorization patterns, rate limiting, and input validation",
+      "source": "./plugins/backend-api-security"
+    },
+    {
+      "name": "backend-development",
+      "description": "Backend API design, GraphQL architecture, workflow orchestration with Temporal, and test-driven backend development",
+      "source": "./plugins/backend-development"
+    },
+    {
+      "name": "base44",
+      "description": "Build and deploy Base44 full-stack apps with CLI project management and JavaScript/TypeScript SDK development skills",
+      "source": "./plugins/base44"
+    },
+    {
+      "name": "block-no-verify",
+      "description": "PreToolUse hook that prevents AI agents from using --no-verify, --no-gpg-sign, and other bypass flags that skip git hooks",
+      "source": "./plugins/block-no-verify"
+    },
+    {
+      "name": "c4-architecture",
+      "description": "Comprehensive C4 architecture documentation workflow with bottom-up code analysis, component synthesis, container mapping, and context diagram generation",
+      "source": "./plugins/c4-architecture"
+    },
+    {
+      "name": "canva",
+      "description": "Create, edit, review, resize, and brand-check Canva designs with the Canva MCP server.",
+      "source": "./plugins/canva"
+    },
+    {
+      "name": "cicd-automation",
+      "description": "CI/CD pipeline configuration, GitHub Actions/GitLab CI workflow setup, and automated deployment pipeline orchestration",
+      "source": "./plugins/cicd-automation"
+    },
+    {
+      "name": "claude-code-setup",
+      "description": "Analyze codebases and recommend tailored Claude Code automations such as hooks, skills, MCP servers, and subagents.",
+      "source": "./plugins/claude-code-setup"
+    },
+    {
+      "name": "claude-md-management",
+      "description": "Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.",
+      "source": "./plugins/claude-md-management"
+    },
+    {
+      "name": "claude-security",
+      "description": "Deep vulnerability scanning of your own code, run entirely inside your Claude Code session at a chosen effort tier, with every finding challenged before it is reported and the verification tally computed in code. Turns surviving findings into targeted patches, each verified by a panel of agents, that you apply when you choose. See the plugin README for the tiers, the report format, and the trust model.",
+      "source": "./plugins/claude-security"
+    },
+    {
+      "name": "cloud-infrastructure",
+      "description": "Cloud architecture design for AWS/Azure/GCP/OCI, Kubernetes cluster configuration, Terraform infrastructure-as-code, hybrid cloud networking, and multi-cloud cost optimization",
+      "source": "./plugins/cloud-infrastructure"
+    },
+    {
+      "name": "cloudflare",
+      "description": "Build, test, and deploy applications on Cloudflare with platform guidance Skills and the Cloudflare MCP server.",
+      "source": "./plugins/cloudflare"
+    },
+    {
+      "name": "code-documentation",
+      "description": "Documentation generation, code explanation, and technical writing with automated doc generation and tutorial creation",
+      "source": "./plugins/code-documentation"
+    },
+    {
+      "name": "code-modernization",
+      "description": "Guided modernization for any legacy codebase: start with /modernize, get an assessment, an interactive map, the business rules mined from the code, and a plan you approve, then an upgrade, a rewrite or a rebuild with independent proof that the new code behaves like the old. Includes security hardening, a one-page report, specialist agents, and an optional live progress pane (early access).",
+      "source": "./plugins/code-modernization"
+    },
+    {
+      "name": "code-refactoring",
+      "description": "Code cleanup, refactoring automation, and technical debt management with context restoration",
+      "source": "./plugins/code-refactoring"
+    },
+    {
+      "name": "code-review",
+      "description": "Automated code review for pull requests using multiple specialized agents with confidence-based scoring",
+      "source": "./plugins/code-review"
+    },
+    {
+      "name": "code-simplifier",
+      "description": "Agent that simplifies and refines code for clarity, consistency, and maintainability while preserving functionality",
+      "source": "./plugins/code-simplifier"
+    },
+    {
+      "name": "codebase-cleanup",
+      "description": "Technical debt reduction, dependency updates, and code refactoring automation",
+      "source": "./plugins/codebase-cleanup"
+    },
+    {
+      "name": "coderabbit",
+      "description": "AI-powered code review in Claude Code, powered by CodeRabbit",
+      "source": "./plugins/coderabbit"
+    },
+    {
+      "name": "codspeed",
+      "description": "CodSpeed plugin for Claude Code helping with performance measurement and optimization.",
+      "source": "./plugins/codspeed"
+    },
+    {
+      "name": "commit-commands",
+      "description": "Streamline your git workflow with simple commands for committing, pushing, and creating pull requests",
+      "source": "./plugins/commit-commands"
+    },
+    {
+      "name": "comprehensive-review",
+      "description": "Multi-perspective code analysis covering architecture, security, and best practices",
+      "source": "./plugins/comprehensive-review"
+    },
+    {
+      "name": "conductor",
+      "description": "Context-Driven Development plugin that transforms Claude Code into a project management tool with structured workflow: Context → Spec & Plan → Implement",
+      "source": "./plugins/conductor"
+    },
+    {
+      "name": "context7",
+      "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Context7's hosted remote MCP server (https://mcp.context7.com/mcp) — no local Node.js or npx required — to pull version-specific documentation and code examples directly from source repositories into your LLM context. Authenticate with Context7 when prompted.",
+      "source": "./plugins/context7"
+    },
+    {
+      "name": "crowdsec",
+      "description": "CrowdSec skills: an operational skill (install/configure/operate/debug the engine, cscli, bouncers, WAF and bot detection across bare-metal/Docker/Kubernetes) and a Service API skill (drive the premium Console cloud API — blocklists, allowlists, firewall integrations, metrics, decisions).",
+      "source": "./plugins/crowdsec"
+    },
+    {
+      "name": "database-design",
+      "description": "Database architecture, schema design, and SQL optimization for production systems",
+      "source": "./plugins/database-design"
+    },
+    {
+      "name": "database-migrations",
+      "description": "Database migration automation, observability, and cross-database migration strategies",
+      "source": "./plugins/database-migrations"
+    },
+    {
+      "name": "dependency-management",
+      "description": "Dependency auditing, version management, and security vulnerability scanning",
+      "source": "./plugins/dependency-management"
+    },
+    {
+      "name": "deployment-strategies",
+      "description": "Deployment patterns, rollback automation, and infrastructure templates",
+      "source": "./plugins/deployment-strategies"
+    },
+    {
+      "name": "deployment-validation",
+      "description": "Pre-deployment checks, configuration validation, and deployment readiness assessment",
+      "source": "./plugins/deployment-validation"
+    },
+    {
+      "name": "design",
+      "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs.",
+      "source": "./plugins/design"
+    },
+    {
+      "name": "desktop-commander",
+      "description": "MCP server for terminal commands, process management, and file operations across text files, code, PDF, DOCX, Excel, images, and structured data",
+      "source": "./plugins/desktop-commander"
+    },
+    {
+      "name": "developer-essentials",
+      "description": "Essential developer skills including Git workflows, SQL optimization, error handling, code review, E2E testing, authentication, debugging, and monorepo management",
+      "source": "./plugins/developer-essentials"
+    },
+    {
+      "name": "documentation-generation",
+      "description": "OpenAPI specification generation, Mermaid diagram creation, tutorial writing, API reference documentation",
+      "source": "./plugins/documentation-generation"
+    },
+    {
+      "name": "error-debugging",
+      "description": "Error analysis, trace debugging, and multi-agent problem diagnosis",
+      "source": "./plugins/error-debugging"
+    },
+    {
+      "name": "expo",
+      "description": "Official Expo skills for building, deploying, upgrading, and debugging Expo apps",
+      "source": "./plugins/expo"
+    },
+    {
+      "name": "feature-dev",
+      "description": "Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review",
+      "source": "./plugins/feature-dev"
+    },
+    {
+      "name": "framework-migration",
+      "description": "Framework updates, migration planning, and architectural transformation workflows",
+      "source": "./plugins/framework-migration"
+    },
+    {
+      "name": "frontend-design",
+      "description": "Frontend design skill for UI/UX implementation",
+      "source": "./plugins/frontend-design"
+    },
+    {
+      "name": "frontend-mobile-development",
+      "description": "Frontend UI development and mobile application implementation across platforms",
+      "source": "./plugins/frontend-mobile-development"
+    },
+    {
+      "name": "frontend-mobile-security",
+      "description": "XSS prevention, CSRF protection, content security policies, mobile app security, and secure storage patterns",
+      "source": "./plugins/frontend-mobile-security"
+    },
+    {
+      "name": "full-stack-orchestration",
+      "description": "End-to-end feature orchestration with testing, security, performance, and deployment",
+      "source": "./plugins/full-stack-orchestration"
+    },
+    {
+      "name": "functional-programming",
+      "description": "Functional programming with Elixir, OTP patterns, Phoenix framework, and distributed systems",
+      "source": "./plugins/functional-programming"
+    },
+    {
+      "name": "git-pr-workflows",
+      "description": "Git workflow automation, pull request enhancement, and team onboarding processes",
+      "source": "./plugins/git-pr-workflows"
+    },
+    {
+      "name": "greptile",
+      "description": "AI code review agent for GitHub and GitLab. View and resolve Greptile's PR review comments, run reviews on your working branch, and search your organization's knowledge base and coding patterns, directly from Claude Code.",
+      "source": "./plugins/greptile"
+    },
+    {
+      "name": "hookify",
+      "description": "Easily create hooks to prevent unwanted behaviors by analyzing conversation patterns",
+      "source": "./plugins/hookify"
+    },
+    {
+      "name": "hyperframes",
+      "description": "HyperFrames by HeyGen. Write HTML, render video. Compositions, GSAP and runtime adapter animations, captions, voiceovers, audio-reactive visuals, and website capture for HyperFrames.",
+      "source": "./plugins/hyperframes"
+    },
+    {
+      "name": "javascript-typescript",
+      "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks",
+      "source": "./plugins/javascript-typescript"
+    },
+    {
+      "name": "kubernetes-operations",
+      "description": "Kubernetes manifest generation, networking configuration, security policies, observability setup, GitOps workflows, and auto-scaling",
+      "source": "./plugins/kubernetes-operations"
+    },
+    {
+      "name": "langfuse",
+      "description": "Skills for working with Langfuse, the open-source LLM engineering platform for tracing, prompt management, and evaluation.",
+      "source": "./plugins/langfuse"
+    },
+    {
+      "name": "linear",
+      "description": "Linear issue tracking integration. Create issues, manage projects, update statuses, search across workspaces, and streamline your software development workflow with Linear's modern issue tracker.",
+      "source": "./plugins/linear"
+    },
+    {
+      "name": "mattpocock-skills",
+      "description": "Matt Pocock's agent skills for real engineering: grilling, spec/ticket flows, TDD, code review, domain modelling and more. Plug-and-play, not vibe coding.",
+      "source": "./plugins/mattpocock-skills"
+    },
+    {
+      "name": "mintlify",
+      "description": "Comprehensive skill for building Mintlify documentation sites.",
+      "source": "./plugins/mintlify"
+    },
+    {
+      "name": "modern-web-guidance",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "source": "./plugins/modern-web-guidance"
+    },
+    {
+      "name": "mongodb",
+      "description": "Connect to any MongoDB deployment (Community, Enterprise Advanced, local dev container via Atlas CLI or Atlas clusters) through a self-managed MongoDB MCP Server using your connection string. Explore data, manage collections, optimize queries, and generate reliable code with MongoDB best practices.",
+      "source": "./plugins/mongodb"
+    },
+    {
+      "name": "multi-platform-apps",
+      "description": "Cross-platform application development coordinating web, iOS, Android, and desktop implementations",
+      "source": "./plugins/multi-platform-apps"
+    },
+    {
+      "name": "paypal",
+      "description": "PayPal development plugin for Claude — integrate payments, subscriptions, invoices, disputes, and more using PayPal's APIs and MCP server",
+      "source": "./plugins/paypal"
+    },
+    {
+      "name": "performance-testing-review",
+      "description": "Performance analysis, test coverage review, and AI-powered code quality assessment",
+      "source": "./plugins/performance-testing-review"
+    },
+    {
+      "name": "plugin-dev",
+      "description": "Plugin development toolkit with skills for creating agents, commands, hooks, MCP integrations, and comprehensive plugin structure guidance",
+      "source": "./plugins/plugin-dev"
+    },
+    {
+      "name": "pr-review-toolkit",
+      "description": "Comprehensive PR review agents specializing in comments, tests, error handling, type design, code quality, and code simplification",
+      "source": "./plugins/pr-review-toolkit"
+    },
+    {
+      "name": "product-management",
+      "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape.",
+      "source": "./plugins/product-management"
+    },
+    {
+      "name": "python-development",
+      "description": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices",
+      "source": "./plugins/python-development"
+    },
+    {
+      "name": "ralph-loop",
+      "description": "Continuous self-referential AI loops for interactive iterative development, implementing the Ralph Wiggum technique. Run Claude in a while-true loop with the same prompt until task completion.",
+      "source": "./plugins/ralph-loop"
+    },
+    {
+      "name": "redis-development",
+      "description": "Redis development best practices — data structures, query engine, vector search, caching, and performance optimization",
+      "source": "./plugins/redis-development"
+    },
+    {
+      "name": "reverse-engineering",
+      "description": "Binary reverse engineering, malware analysis, firmware security, and software protection research for authorized security research, CTF competitions, and defensive security",
+      "source": "./plugins/reverse-engineering"
+    },
+    {
+      "name": "security-compliance",
+      "description": "SOC2, HIPAA, and GDPR compliance validation, secrets scanning, compliance checklists, and regulatory documentation",
+      "source": "./plugins/security-compliance"
+    },
+    {
+      "name": "security-guidance",
+      "description": "Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.",
+      "source": "./plugins/security-guidance"
+    },
+    {
+      "name": "security-scanning",
+      "description": "SAST analysis, dependency vulnerability scanning, OWASP Top 10 compliance, container security scanning, and automated security hardening",
+      "source": "./plugins/security-scanning"
+    },
+    {
+      "name": "semgrep",
+      "description": "Semgrep Guardian: Scans agent-generated code for security vulnerabilities.",
+      "source": "./plugins/semgrep"
+    },
+    {
+      "name": "serena",
+      "description": "Semantic code analysis MCP server providing intelligent code understanding, refactoring suggestions, and codebase navigation through language server protocol integration.",
+      "source": "./plugins/serena"
+    },
+    {
+      "name": "shell-scripting",
+      "description": "Production-grade Bash scripting with defensive programming, POSIX compliance, and comprehensive testing",
+      "source": "./plugins/shell-scripting"
+    },
+    {
+      "name": "skill-forge-essentials",
+      "description": "Three behavioral skills addressing AI-specific failure patterns: hidden code debt from agent generation, context compaction amnesia, and imprecise Design Mode edits",
+      "source": "./plugins/skill-forge-essentials"
+    },
+    {
+      "name": "sonarqube",
+      "description": "SonarQube is the AI code quality and security verification platform used by millions of developers to catch bugs, vulnerabilities, and leaked secrets. This plugin enforces those standards in the agent coding loop: 7,500+ distinct issue types, secrets scanning, agentic analysis, and quality gates across 40+ languages.",
+      "source": "./plugins/sonarqube"
+    },
+    {
+      "name": "sonatype-guide",
+      "description": "Sonatype Guide MCP server for software supply chain intelligence and dependency security analysis. Scan dependencies for vulnerabilities, get version recommendations, and check component quality metrics.",
+      "source": "./plugins/sonatype-guide"
+    },
+    {
+      "name": "sourcegraph",
+      "description": "Use Sourcegraph MCP from Claude Code for code search, navigation, history, and Deep Search.",
+      "source": "./plugins/sourcegraph"
+    },
+    {
+      "name": "stackhawk-api",
+      "description": "Query the StackHawk platform API for security posture reporting, findings analysis, and app management. Uses the combined hawk CLI (hawk op …) for all platform queries.",
+      "source": "./plugins/stackhawk-api"
+    },
+    {
+      "name": "stackhawk-hawkscan",
+      "description": "Configure, run, and interpret HawkScan DAST results inside Claude Code. Generates stackhawk.yml configs, runs scans via CLI or Docker, and transforms security findings into prioritized fix tasks for your coding agent.",
+      "source": "./plugins/stackhawk-hawkscan"
+    },
+    {
+      "name": "stripe",
+      "description": "Stripe development plugin for Claude",
+      "source": "./plugins/stripe"
+    },
+    {
+      "name": "sumup",
+      "description": "Skills for SumUp payment integrations across terminal and online checkout flows",
+      "source": "./plugins/sumup"
+    },
+    {
+      "name": "supabase",
+      "description": "Official Supabase plugin for Claude Code with bundled Supabase skills and MCP access for project management, database work, auth, storage, and Postgres best practices.",
+      "source": "./plugins/supabase"
+    },
+    {
+      "name": "superpowers",
+      "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+      "source": "./plugins/superpowers"
+    },
+    {
+      "name": "systems-programming",
+      "description": "Systems programming with Rust, Go, C, and C++ for performance-critical and low-level development",
+      "source": "./plugins/systems-programming"
+    },
+    {
+      "name": "tdd-workflows",
+      "description": "Test-driven development methodology with red-green-refactor cycles and code review",
+      "source": "./plugins/tdd-workflows"
+    },
+    {
+      "name": "twilio-developer-kit",
+      "description": "Complete set of Twilio skills. Covers Setup, Planner, Product, and Guardrail skills across SMS, Voice, WhatsApp, AI agents, Conversation Orchestrator, and 30+ products.",
+      "source": "./plugins/twilio-developer-kit"
+    },
+    {
+      "name": "ui-design",
+      "description": "Comprehensive UI/UX design plugin for mobile (iOS, Android, React Native) and web applications with design systems, accessibility, and modern patterns",
+      "source": "./plugins/ui-design"
+    }
+  ]
+}
