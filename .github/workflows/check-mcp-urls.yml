@@ -105,6 +105,22 @@ jobs:
             esac
           }
 
+          # Classify a URL as "private" or "public". Private means the host
+          # resolves to an address that is not globally routable — loopback,
+          # LAN, or shared/CGNAT space such as 100.64.0.0/10 (tailnets like
+          # Tailscale publish those in public DNS). Those endpoints are
+          # unreachable from a public runner by design, so probing them would
+          # false-fail. Hosts that do not resolve at all are left "public"
+          # here on purpose: probe() then fails loudly, keeping typo
+          # detection intact.
+          net_class() {
+            local host ip
+            host="$(printf '%s' "$1" | sed -E 's#^[a-zA-Z][a-zA-Z0-9+.-]*://([^/:?]+).*#\1#')"
+            ip="$(getent hosts "$host" 2>/dev/null | awk '{print $1; exit}')" || ip=""
+            [[ -n "$ip" ]] || { echo "public"; return; }
+            python3 -c 'import ipaddress,sys; print("private" if not ipaddress.ip_address(sys.argv[1]).is_global else "public")' "$ip"
+          }
+
           entries="$(discover)"
           if [[ -z "$entries" ]]; then
             echo "::notice::No http/sse MCP server URLs found in vendored plugins."
@@ -118,6 +134,12 @@ jobs:
             # and can't be probed as-is.
             if [[ "$url" == *'${'* || "$url" == *'{{'* ]]; then
               printf '%-24s %-18s %-52s %s\n' "$plugin" "$server" "$url" "SKIP  templated"
+              continue
+            fi
+            # Skip private-network endpoints (loopback/LAN/tailnet CGNAT) —
+            # unreachable from a public runner by design, not dead ones.
+            if [[ "$(net_class "$url")" == "private" ]]; then
+              printf '%-24s %-18s %-52s %s\n' "$plugin" "$server" "$url" "SKIP  private-network"
               continue
             fi
             result="$(probe "$url")" || true
