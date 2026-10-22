@@ -1,7 +1,7 @@
 ---
 name: design-critique
-description: Get structured design feedback on usability, hierarchy, and consistency. Trigger with "review this design", "critique this mockup", "what do you think of this screen?", or when sharing a Figma link or screenshot for feedback at any stage from exploration to final polish.
-argument-hint: "<Figma URL, screenshot, or description>"
+description: Get structured design feedback on usability, hierarchy, and consistency. Trigger with "review this design", "critique this mockup", "what do you think of this screen?", or when sharing an Ardot link or screenshot for feedback at any stage from exploration to final polish.
+argument-hint: "<Ardot URL, screenshot, or description>"
 ---
 
 # /design-critique
@@ -18,11 +18,11 @@ Get structured design feedback across multiple dimensions.
 
 Review the design: @$1
 
-If a Figma URL is provided, pull the design from Figma. If a file is referenced, read it. Otherwise, ask the user to describe or share their design.
+If an Ardot URL is provided, pull the design from Ardot. If a file is referenced, read it. Otherwise, ask the user to describe or share their design.
 
 ## What I Need From You
 
-- **The design**: Figma URL, screenshot, or detailed description
+- **The design**: Ardot URL, screenshot, or detailed description
 - **Context**: What is this? Who is it for? What stage (exploration, refinement, final)?
 - **Focus** (optional): "Focus on mobile" or "Focus on the onboarding flow"
 
@@ -105,7 +105,7 @@ If a Figma URL is provided, pull the design from Figma. If a file is referenced,
 ## If Connectors Available
 
 If **~~design tool** is connected:
-- Pull the design directly from Figma and inspect components, tokens, and layers
+- Pull the design directly from Ardot and inspect components, tokens, and layers
 - Compare against the existing design system for consistency
 
 If **~~user feedback** is connected:

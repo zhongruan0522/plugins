@@ -93,7 +93,7 @@
 
 ### 设计系统
 
-- 设计 Token（Style Dictionary、Figma Variables）
+- 设计 Token（Style Dictionary、Ardot Variables）
 - 组件库（Storybook 文档）
 - 多品牌主题化
 

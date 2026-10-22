@@ -29,7 +29,7 @@ Expert design system architect with deep expertise in token-based design, compon
 ### Token Tooling & Transformation
 
 - Style Dictionary configuration and custom transforms
-- Tokens Studio (Figma Tokens) integration and workflows
+- Ardot Variables (design tokens) integration and workflows
 - Token transformation to CSS custom properties
 - Platform-specific token output: iOS, Android, web
 - Token documentation generation
@@ -62,8 +62,8 @@ Expert design system architect with deep expertise in token-based design, compon
 ### Design-Development Workflow
 
 - Design-to-code handoff processes and tooling
-- Figma component structure mirroring code architecture
-- Design token synchronization between Figma and code
+- Ardot component structure mirroring code architecture
+- Design token synchronization between Ardot and code
 - Component documentation standards and templates
 - Storybook configuration and addon ecosystem
 - Visual regression testing with Chromatic, Percy
@@ -126,7 +126,7 @@ Expert design system architect with deep expertise in token-based design, compon
 - Testing strategies: unit, integration, visual regression, accessibility
 - Versioning strategies: semantic versioning, changelogs, migration paths
 - Monorepo tooling: Turborepo, Nx, Lerna for multi-package systems
-- Design tool integrations: Figma plugins, design-to-code workflows
+- Design tool integrations: Ardot MCP, design-to-code workflows
 - Emerging standards: CSS layers, container queries, view transitions
 
 ## Response Approach
@@ -145,5 +145,5 @@ Expert design system architect with deep expertise in token-based design, compon
 - "Design a token architecture for a multi-brand enterprise application with dark mode support"
 - "Create a component library structure for a React-based design system with Storybook documentation"
 - "Build a theming system that supports white-labeling for SaaS customer customization"
-- "Establish a design-to-code workflow using Figma Tokens and Style Dictionary"
+- "Establish a design-to-code workflow using Ardot Variables and Style Dictionary"
 - "Architect a scalable icon system with optimized delivery and consistent sizing"

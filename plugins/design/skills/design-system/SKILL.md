@@ -176,7 +176,7 @@ Common UI solutions combining components:
 ## If Connectors Available
 
 If **~~design tool** is connected:
-- Audit components directly in Figma — check naming, variants, and token usage
+- Audit components directly in Ardot — check naming, variants, and token usage
 - Pull component properties and layer structure for documentation
 
 If **~~knowledge base** is connected:

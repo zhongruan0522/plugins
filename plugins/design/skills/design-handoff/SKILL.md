@@ -1,7 +1,7 @@
 ---
 name: design-handoff
 description: Generate developer handoff specs from a design. Use when a design is ready for engineering and needs a spec sheet covering layout, design tokens, component props, interaction states, responsive breakpoints, edge cases, and animation details.
-argument-hint: "<Figma URL or design description>"
+argument-hint: "<Ardot URL or design description>"
 ---
 
 # /design-handoff
@@ -18,7 +18,7 @@ Generate comprehensive developer handoff documentation from a design.
 
 Generate handoff specs for: @$1
 
-If a Figma URL is provided, pull the design from Figma. Otherwise, work from the provided description or screenshot.
+If an Ardot URL is provided, pull the design from Ardot. Otherwise, work from the provided description or screenshot.
 
 ## What to Include
 
@@ -117,7 +117,7 @@ If a Figma URL is provided, pull the design from Figma. Otherwise, work from the
 ## If Connectors Available
 
 If **~~design tool** is connected:
-- Pull exact measurements, tokens, and component specs from Figma
+- Pull exact measurements, tokens, and component specs from Ardot
 - Export assets and generate a complete spec sheet
 
 If **~~project tracker** is connected:
@@ -126,6 +126,6 @@ If **~~project tracker** is connected:
 
 ## Tips
 
-1. **Share the Figma link** — I can pull exact measurements, tokens, and component info.
+1. **Share the Ardot link** — I can pull exact measurements, tokens, and component info.
 2. **Mention edge cases** — "What happens with 100 items?" helps me spec boundary conditions.
 3. **Specify the tech stack** — "We use React + Tailwind" helps me give relevant implementation notes.

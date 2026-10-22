@@ -13,7 +13,7 @@ Master design system architecture to create consistent, maintainable, and scalab
 - Implementing light/dark theme switching with CSS custom properties
 - Building multi-brand theming systems
 - Architecting component libraries with consistent APIs
-- Establishing design-to-code workflows with Figma tokens
+- Establishing design-to-code workflows with Ardot variables
 - Creating semantic token hierarchies (primitive, semantic, component)
 - Setting up design system documentation and guidelines
 
@@ -47,7 +47,7 @@ Master design system architecture to create consistent, maintainable, and scalab
 
 ### 4. Token Pipeline
 
-- Figma to code synchronization
+- Ardot to code synchronization
 - Style Dictionary configuration
 - Token transformation and formatting
 - CI/CD integration for token updates
@@ -102,7 +102,7 @@ Detailed pattern documentation lives in `references/details.md`. Read that file 
 3. **Document Token Usage**: Include usage guidelines with token definitions
 4. **Version Tokens**: Treat token changes as API changes with semver
 5. **Test Theme Combinations**: Verify all themes work with all components
-6. **Automate Token Pipeline**: CI/CD for Figma-to-code synchronization
+6. **Automate Token Pipeline**: CI/CD for Ardot-to-code synchronization
 7. **Provide Migration Paths**: Deprecate tokens gradually with clear alternatives
 
 ## Common Issues

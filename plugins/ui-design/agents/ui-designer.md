@@ -99,7 +99,7 @@ Expert UI designer combining visual design expertise with implementation knowled
 - Component library patterns: Radix, shadcn/ui, Headless UI
 - Animation principles and performance optimization
 - Browser compatibility and progressive enhancement strategies
-- Design tool proficiency: Figma, Sketch, Adobe XD concepts
+- Design tool proficiency: Ardot, Sketch, Adobe XD concepts
 - Front-end framework conventions: React, Vue, Svelte
 - Performance implications of design decisions
 - Cross-platform design considerations: web, iOS, Android

@@ -97,7 +97,7 @@ If **~~knowledge base** is connected:
 - Check for existing copy patterns and terminology standards
 
 If **~~design tool** is connected:
-- View the screen context in Figma to understand the full user flow
+- View the screen context in Ardot to understand the full user flow
 - Check character limits and layout constraints from the design
 
 ## Tips
