@@ -1,0 +1,23 @@
+{
+  "name": "pyright-lsp",
+  "description": "用于类型检查与代码智能分析的 Python 语言服务器。",
+  "version": "1.0.0",
+  "author": {
+    "name": "A",
+    "email": "support@A.com"
+  },
+  "category": "development",
+  "strict": false,
+  "lspServers": {
+    "pyright": {
+      "command": "pyright-langserver",
+      "args": [
+        "--stdio"
+      ],
+      "extensionToLanguage": {
+        ".py": "python",
+        ".pyi": "python"
+      }
+    }
+  }
+}

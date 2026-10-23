@@ -1,0 +1,30 @@
+{
+  "name": "clangd-lsp",
+  "description": "用于代码智能分析的 C/C++ 语言服务器。",
+  "version": "1.0.0",
+  "author": {
+    "name": "A",
+    "email": "support@A.com"
+  },
+  "category": "development",
+  "strict": false,
+  "lspServers": {
+    "clangd": {
+      "command": "clangd",
+      "args": [
+        "--background-index"
+      ],
+      "extensionToLanguage": {
+        ".c": "c",
+        ".h": "c",
+        ".cpp": "cpp",
+        ".cc": "cpp",
+        ".cxx": "cpp",
+        ".hpp": "cpp",
+        ".hxx": "cpp",
+        ".C": "cpp",
+        ".H": "cpp"
+      }
+    }
+  }
+}

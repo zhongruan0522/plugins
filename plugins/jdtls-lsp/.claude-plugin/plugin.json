@@ -1,0 +1,20 @@
+{
+  "name": "jdtls-lsp",
+  "description": "用于代码智能分析的 Java 语言服务器。",
+  "version": "1.0.0",
+  "author": {
+    "name": "A",
+    "email": "support@A.com"
+  },
+  "category": "development",
+  "strict": false,
+  "lspServers": {
+    "jdtls": {
+      "command": "jdtls",
+      "extensionToLanguage": {
+        ".java": "java"
+      },
+      "startupTimeout": 120000
+    }
+  }
+}

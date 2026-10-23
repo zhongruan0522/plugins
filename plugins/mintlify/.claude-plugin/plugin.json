@@ -1,0 +1,10 @@
+{
+  "name": "mintlify",
+  "version": "1.0.0",
+  "description": "使用 Mintlify 构建精美的文档站点。把非 Markdown 文件转换成格式规范的 MDX 页面，按正确的组件用法增改内容，并自动完成文档更新。",
+  "author": {
+    "name": "Mintlify"
+  },
+  "category": "development",
+  "homepage": "https://www.mintlify.com/"
+}

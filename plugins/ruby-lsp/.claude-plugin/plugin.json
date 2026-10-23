@@ -1,0 +1,23 @@
+{
+  "name": "ruby-lsp",
+  "description": "用于代码智能分析的 Ruby 语言服务器。",
+  "version": "1.0.0",
+  "author": {
+    "name": "A",
+    "email": "support@A.com"
+  },
+  "category": "development",
+  "strict": false,
+  "lspServers": {
+    "ruby-lsp": {
+      "command": "ruby-lsp",
+      "extensionToLanguage": {
+        ".rb": "ruby",
+        ".rake": "ruby",
+        ".gemspec": "ruby",
+        ".ru": "ruby",
+        ".erb": "erb"
+      }
+    }
+  }
+}

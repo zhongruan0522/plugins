@@ -1,0 +1,29 @@
+{
+  "name": "typescript-lsp",
+  "description": "用于增强代码智能分析的 TypeScript/JavaScript 语言服务器。",
+  "version": "1.0.0",
+  "author": {
+    "name": "A",
+    "email": "support@A.com"
+  },
+  "category": "development",
+  "strict": false,
+  "lspServers": {
+    "typescript": {
+      "command": "typescript-language-server",
+      "args": [
+        "--stdio"
+      ],
+      "extensionToLanguage": {
+        ".ts": "typescript",
+        ".tsx": "typescriptreact",
+        ".js": "javascript",
+        ".jsx": "javascriptreact",
+        ".mts": "typescript",
+        ".cts": "typescript",
+        ".mjs": "javascript",
+        ".cjs": "javascript"
+      }
+    }
+  }
+}
