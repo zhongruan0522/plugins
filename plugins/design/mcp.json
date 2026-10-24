@@ -3,7 +3,7 @@
   "mcpServers": {
     "ardot": {
       "type": "streamable-http",
-      "url": "https://ardot.nookmux.com/api/v1/mcp"
+      "url": "https://ardot.tencent.com/mcp"
     },
     "linear": {
       "type": "streamable-http",

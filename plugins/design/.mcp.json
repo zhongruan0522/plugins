@@ -2,7 +2,7 @@
   "mcpServers": {
     "ardot": {
       "type": "http",
-      "url": "https://ardot.nookmux.com/api/v1/mcp"
+      "url": "https://ardot.tencent.com/mcp"
     },
     "linear": {
       "type": "http",
