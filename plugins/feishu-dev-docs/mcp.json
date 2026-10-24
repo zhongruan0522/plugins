@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "lark_open_doc_search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@larksuiteoapi/lark-mcp",
+        "recall-developer-documents"
+      ]
+    }
+  }
+}

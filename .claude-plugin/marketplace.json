@@ -1252,6 +1252,14 @@
       },
       "license": "MIT",
       "category": "quality"
+    },
+    {
+      "name": "feishu-dev-docs",
+      "displayName": "飞书开发文档",
+      "description": "飞书/Lark 官方开发文档检索 MCP（lark-mcp 的 recall-developer-documents 模式，本地 stdio、无需凭证）。按自然语言问题召回飞书开放平台开发文档，让 AI 直接写出最新的 Open API 示例代码。",
+      "category": "development",
+      "source": "./plugins/feishu-dev-docs",
+      "homepage": "https://github.com/larksuite/lark-openapi-mcp"
     }
   ]
 }

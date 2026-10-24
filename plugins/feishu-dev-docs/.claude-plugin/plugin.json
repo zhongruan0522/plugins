@@ -1,0 +1,10 @@
+{
+  "name": "feishu-dev-docs",
+  "version": "0.1.0",
+  "description": "Feishu/Lark developer documentation search MCP. Runs the official lark-mcp in recall-developer-documents mode to recall up-to-date Feishu Open Platform developer docs by natural language query, so the agent writes accurate Open API sample code instead of guessing.",
+  "displayName": "Feishu Dev Docs（飞书开发文档）",
+  "author": {
+    "name": "Larksuite",
+    "url": "https://github.com/larksuite"
+  }
+}
