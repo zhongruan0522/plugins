@@ -1,6 +1,6 @@
 {
   "name": "plugin-dev",
-  "description": "Plugin development toolkit with skills for creating agents, commands, hooks, MCP integrations, and comprehensive plugin structure guidance",
+  "description": "开发 Claude Code 插件的全套工具。包含 7 个专家技能，覆盖 hooks、MCP 集成、命令、agent 和最佳实践，支持 AI 辅助的插件创建与验证。",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"

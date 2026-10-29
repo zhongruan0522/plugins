@@ -1,7 +1,7 @@
 {
   "name": "dependency-management",
   "version": "1.2.1",
-  "description": "Dependency auditing, version management, and security vulnerability scanning",
+  "description": "依赖审计、版本管理和安全漏洞扫描。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

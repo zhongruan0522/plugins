@@ -1,7 +1,7 @@
 {
   "name": "api-scaffolding",
   "version": "1.2.3",
-  "description": "REST and GraphQL API scaffolding, framework selection, backend architecture, and API generation",
+  "description": "REST 与 GraphQL API 脚手架、框架选型、后端架构和 API 生成。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

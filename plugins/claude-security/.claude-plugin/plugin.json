@@ -1,7 +1,7 @@
 {
   "name": "claude-security",
   "version": "0.12.0",
-  "description": "Deep vulnerability scanning of your own code, run entirely inside your Claude Code session at a chosen effort tier, with every finding challenged before it is reported and the verification tally computed in code. Turns surviving findings into targeted patches, each verified by a panel of agents, that you apply when you choose. See the plugin README for the tiers, the report format, and the trust model.",
+  "description": "完全在你的 Claude Code 会话内、按选定深度档位对自己的代码做漏洞深度扫描；每条发现都先经过验证才会报告，验证统计由代码算出，结果可信。验证通过的问题会转成针对性补丁，每个补丁再由一组 agent 复核，何时应用由你决定。",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"

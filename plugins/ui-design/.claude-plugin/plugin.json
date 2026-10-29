@@ -1,6 +1,6 @@
 {
   "name": "ui-design",
-  "description": "Comprehensive UI/UX design plugin for mobile (iOS, Android, React Native) and web applications with design systems, accessibility, and modern patterns",
+  "description": "全面的 UI/UX 设计插件，覆盖移动端（iOS、Android、React Native）和 Web 应用，涵盖设计系统、无障碍和现代设计模式。",
   "version": "1.0.5",
   "author": {
     "name": "Seth Hobson",

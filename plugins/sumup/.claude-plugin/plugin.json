@@ -1,6 +1,6 @@
 {
   "name": "sumup",
-  "description": "Skills for SumUp payment integrations across terminal and online checkout flows",
+  "description": "覆盖线下收银与线上结账流程的 SumUp 支付集成。用 SumUp 读卡器构建 Android 和 iOS 的 POS（销售终端）应用，通过服务端 SDK 和结账组件实现线上收款，并通过 Cloud API 远程管理读卡器。",
   "version": "1.0.0",
   "author": {
     "name": "SumUp"

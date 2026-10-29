@@ -1,6 +1,6 @@
 {
   "name": "ai-firstify",
-  "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
+  "description": "基于 TechWolf AI-First Bootcamp 的 9 条设计原则与 7 种设计模式，对项目进行“AI 优先”审计与重构。",
   "version": "1.1.0",
   "author": { "name": "TechWolf" }
 }

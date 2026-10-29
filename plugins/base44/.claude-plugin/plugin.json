@@ -1,7 +1,7 @@
 {
   "name": "base44",
   "version": "1.0.0-beta.1",
-  "description": "Build and deploy Base44 full-stack apps with CLI project management and JavaScript/TypeScript SDK development skills",
+  "description": "构建和部署 Base44 全栈应用的技能，涵盖 CLI 项目管理与 JavaScript/TypeScript SDK 开发。",
   "author": {
     "name": "base44",
     "url": "https://base44.com"

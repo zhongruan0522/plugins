@@ -1,7 +1,7 @@
 {
   "name": "cloud-infrastructure",
   "version": "1.3.2",
-  "description": "Cloud architecture design for AWS/Azure/GCP/OCI, Kubernetes cluster configuration, Terraform infrastructure-as-code, hybrid cloud networking, and multi-cloud cost optimization",
+  "description": "面向 AWS/Azure/GCP/OCI 的云架构设计、Kubernetes 集群配置、Terraform 基础设施即代码、混合云组网和多云成本优化。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

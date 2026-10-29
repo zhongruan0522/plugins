@@ -1,7 +1,7 @@
 {
   "name": "code-simplifier",
   "version": "1.0.0",
-  "description": "Agent that simplifies and refines code for clarity, consistency, and maintainability while preserving functionality",
+  "description": "在保留功能的前提下简化、精炼代码，提升清晰度、一致性和可维护性的 agent。重点关注最近改动的代码。",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"

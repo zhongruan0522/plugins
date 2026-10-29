@@ -1,7 +1,7 @@
 {
   "name": "database-migrations",
   "version": "1.2.1",
-  "description": "Database migration automation, observability, and cross-database migration strategies",
+  "description": "数据库迁移自动化、迁移可观测性，以及跨数据库迁移策略。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

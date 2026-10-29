@@ -1,7 +1,7 @@
 {
   "name": "frontend-mobile-security",
   "version": "1.2.1",
-  "description": "XSS prevention, CSRF protection, content security policies, mobile app security, and secure storage patterns",
+  "description": "XSS（跨站脚本）防护、CSRF（跨站请求伪造）防护、内容安全策略（CSP）、移动应用安全和安全存储方案。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

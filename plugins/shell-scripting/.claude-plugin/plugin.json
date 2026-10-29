@@ -1,7 +1,7 @@
 {
   "name": "shell-scripting",
   "version": "1.2.3",
-  "description": "Production-grade Bash scripting with defensive programming, POSIX compliance, and comprehensive testing",
+  "description": "生产级 Bash 脚本编写，讲究防御式编程、POSIX 兼容和充分测试。",
   "author": {
     "name": "Ryan Snodgrass",
     "url": "https://github.com/rsnodgrass"

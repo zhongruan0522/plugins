@@ -1,7 +1,7 @@
 {
   "name": "skill-forge-essentials",
   "version": "1.0.0",
-  "description": "Three behavioral skills addressing AI-specific failure patterns: hidden code debt from agent generation, context compaction amnesia, and imprecise Design Mode edits",
+  "description": "三个应对 AI 特有失败模式的行为技能：agent 生成代码留下的隐性技术债、上下文压缩导致的遗忘，以及 Design Mode 编辑不精准的问题。",
   "author": {
     "name": "Adit Jain",
     "email": "aditjain2005@gmail.com"

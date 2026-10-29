@@ -1,7 +1,7 @@
 {
   "name": "security-guidance",
   "version": "2.0.14",
-  "description": "Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.",
+  "description": "对 Claude 生成代码的安全审查：编辑时基于模式匹配实时告警，Stop 时由 LLM 复查改动 diff，提交时由智能体审查器捕获注入、XSS（跨站脚本）、SSRF、硬编码密钥等 25 类以上漏洞。",
   "author": {
     "name": "David Dworken",
     "email": "dworken@anthropic.com"

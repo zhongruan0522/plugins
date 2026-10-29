@@ -1,7 +1,7 @@
 {
   "name": "security-scanning",
   "version": "1.3.2",
-  "description": "SAST analysis, dependency vulnerability scanning, OWASP Top 10 compliance, container security scanning, and automated security hardening",
+  "description": "静态应用安全测试（SAST）分析、依赖漏洞扫描、OWASP Top 10 合规检查、容器安全扫描和自动化安全加固。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

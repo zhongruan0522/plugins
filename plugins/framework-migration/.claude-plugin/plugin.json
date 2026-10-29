@@ -1,7 +1,7 @@
 {
   "name": "framework-migration",
   "version": "1.3.2",
-  "description": "Framework updates, migration planning, and architectural transformation workflows",
+  "description": "框架升级、迁移规划和架构转型工作流。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

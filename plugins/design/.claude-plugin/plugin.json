@@ -1,7 +1,7 @@
 {
   "name": "design",
   "version": "1.2.0",
-  "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs.",
+  "description": "加速设计工作流——设计评审、设计系统管理、UX 文案撰写、无障碍审查、调研汇总与开发交接。从创意探索到像素级精确的设计稿。",
   "author": {
     "name": "Anthropic"
   }

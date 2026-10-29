@@ -1,7 +1,7 @@
 {
   "name": "cicd-automation",
   "version": "1.2.3",
-  "description": "CI/CD pipeline configuration, GitHub Actions/GitLab CI workflow setup, and automated deployment pipeline orchestration",
+  "description": "CI/CD 流水线配置、GitHub Actions/GitLab CI 工作流搭建，以及自动化部署流水线编排。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

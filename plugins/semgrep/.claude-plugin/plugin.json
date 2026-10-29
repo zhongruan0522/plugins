@@ -3,7 +3,7 @@
     "name": "Semgrep",
     "url": "https://github.com/semgrep"
   },
-  "description": "Semgrep Guardian: Scans agent-generated code for security vulnerabilities.",
+  "description": "Semgrep 实时捕获安全漏洞，引导 Claude 从第一行代码就写得安全。",
   "displayName": "Semgrep Guardian",
   "name": "semgrep",
   "version": "2.7.0"

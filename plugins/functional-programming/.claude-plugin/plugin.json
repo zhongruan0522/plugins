@@ -1,7 +1,7 @@
 {
   "name": "functional-programming",
   "version": "1.2.1",
-  "description": "Functional programming with Elixir, OTP patterns, Phoenix framework, and distributed systems",
+  "description": "函数式编程：Elixir、OTP 模式、Phoenix 框架和分布式系统。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

@@ -1,7 +1,7 @@
 {
   "name": "block-no-verify",
   "version": "1.0.2",
-  "description": "PreToolUse hook that prevents AI agents from using --no-verify, --no-gpg-sign, and other bypass flags that skip git hooks",
+  "description": "PreToolUse hook，防止 AI agent 使用 --no-verify、--no-gpg-sign 等跳过 git hooks 的绕过参数。",
   "author": {
     "name": "cskwork"
   },

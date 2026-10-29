@@ -1,6 +1,6 @@
 {
   "name": "pr-review-toolkit",
-  "description": "Comprehensive PR review agents specializing in comments, tests, error handling, type design, code quality, and code simplification",
+  "description": "一组全方位的 PR 审查 agent，专精注释、测试、错误处理、类型设计、代码质量和代码简化。",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"

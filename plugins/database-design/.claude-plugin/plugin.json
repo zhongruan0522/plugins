@@ -1,7 +1,7 @@
 {
   "name": "database-design",
   "version": "1.2.1",
-  "description": "Database architecture, schema design, and SQL optimization for production systems",
+  "description": "面向生产系统的数据库架构、表结构设计和 SQL 优化。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

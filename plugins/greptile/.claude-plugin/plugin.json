@@ -1,6 +1,6 @@
 {
   "name": "greptile",
-  "description": "AI code review agent for GitHub and GitLab. View and resolve Greptile's PR review comments, run reviews on your working branch, and search your organization's knowledge base and coding patterns, directly from Claude Code.",
+  "description": "面向 GitHub 和 GitLab 的 AI 代码审查 agent。直接在 Claude Code 里查看和处理 Greptile 的 PR 审查意见、对当前工作分支发起审查，并搜索你组织的知识库和编码模式。",
   "version": "1.2.4",
   "license": "MIT",
   "author": {

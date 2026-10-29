@@ -1,7 +1,7 @@
 {
   "name": "expo",
   "version": "1.13.9",
-  "description": "Official Expo skills for building, deploying, upgrading, and debugging Expo apps",
+  "description": "构建、部署、升级和调试基于 Expo 的 React Native 应用的官方 Expo 技能。覆盖用 Expo Router 做 UI 开发、SwiftUI 与 Jetpack Compose 组件、Tailwind CSS 配置、API 路由、数据获取、CI/CD 工作流、App Store 与 Play Store 上架、SDK 升级、DOM 组件和开发客户端分发。",
   "author": {
     "name": "Expo Team",
     "email": "support@expo.dev"

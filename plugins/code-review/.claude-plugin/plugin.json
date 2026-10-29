@@ -1,6 +1,6 @@
 {
   "name": "code-review",
-  "description": "Automated code review for pull requests using multiple specialized agents with confidence-based scoring",
+  "description": "用多个专职 agent 对 Pull Request 做自动化代码审查，按置信度评分过滤误报。",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"

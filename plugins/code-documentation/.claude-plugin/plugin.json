@@ -1,7 +1,7 @@
 {
   "name": "code-documentation",
   "version": "1.2.1",
-  "description": "Documentation generation, code explanation, and technical writing with automated doc generation and tutorial creation",
+  "description": "文档生成、代码解释和技术写作，支持自动生成文档和编写教程。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

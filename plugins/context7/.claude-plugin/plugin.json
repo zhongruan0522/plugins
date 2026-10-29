@@ -1,6 +1,6 @@
 {
   "name": "context7",
-  "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Context7's hosted remote MCP server (https://mcp.context7.com/mcp) — no local Node.js or npx required — to pull version-specific documentation and code examples directly from source repositories into your LLM context. Authenticate with Context7 when prompted.",
+  "description": "Upstash Context7 MCP 服务器，用于查询最新文档。连接 Context7 托管的远程 MCP 服务器（https://mcp.context7.com/mcp）——无需本地 Node.js 或 npx——直接把源仓库的特定版本文档和代码示例拉进你的 LLM 上下文。默认匿名即可使用；设置 CONTEXT7_API_KEY 可提高速率限制。",
   "author": {
     "name": "Upstash"
   },

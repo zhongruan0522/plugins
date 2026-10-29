@@ -1,6 +1,6 @@
 {
   "name": "claude-md-management",
-  "description": "Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.",
+  "description": "维护和改进 CLAUDE.md 文件的工具——检查质量、沉淀会话中的经验教训，让项目记忆保持最新。",
   "version": "1.0.0",
   "author": {
     "name": "Anthropic",

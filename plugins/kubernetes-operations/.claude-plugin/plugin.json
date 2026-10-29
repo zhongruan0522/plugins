@@ -1,7 +1,7 @@
 {
   "name": "kubernetes-operations",
   "version": "1.2.3",
-  "description": "Kubernetes manifest generation, networking configuration, security policies, observability setup, GitOps workflows, and auto-scaling",
+  "description": "Kubernetes 清单生成、网络配置、安全策略、可观测性设置、GitOps 工作流和自动扩缩容。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

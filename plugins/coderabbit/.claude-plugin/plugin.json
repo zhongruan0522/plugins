@@ -1,7 +1,7 @@
 {
   "name": "coderabbit",
   "version": "1.1.1",
-  "description": "AI-powered code review in Claude Code, powered by CodeRabbit",
+  "description": "你的代码审查伙伴。CodeRabbit 用专门的 AI 架构加 40 多个内置静态分析器提供外部验证——换个视角发现 bug、安全漏洞、逻辑错误和边界情况。通过 AST 解析和代码关系图做上下文感知分析，自动把 CLAUDE.md 和项目编码规范纳入审查。适合在写完或改完代码之后、提交之前，或在实现复杂、安全敏感的逻辑需要“第二意见”把关时使用。返回具体发现并附可直接应用的修复建议。免费使用。",
   "homepage": "https://docs.coderabbit.ai/cli/claude-code-integration",
   "author": {
     "name": "CodeRabbit AI",

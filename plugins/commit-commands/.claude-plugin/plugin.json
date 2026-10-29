@@ -1,6 +1,6 @@
 {
   "name": "commit-commands",
-  "description": "Streamline your git workflow with simple commands for committing, pushing, and creating pull requests",
+  "description": "git 提交工作流命令，包括提交、推送和创建 PR。",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"

@@ -1,6 +1,6 @@
 {
   "name": "airwallex-dev",
-  "description": "Airwallex integration skills for Claude. Code-generation workflows that scaffold, configure, and wire Airwallex APIs into your project.",
+  "description": "在你自己的代码库里构建 Airwallex 支付集成。生成收银台、卡片组件、商户入驻和订阅计费代码并接入项目：Hosted Payment Page、Drop-in 与 Split 卡片组件、关联账户 KYC 入驻，以及用于订阅和绑卡的 Billing Hosted Checkout。还能为 AI 服务商规划绑卡代扣等商户发起的支付流程，例如充值和自动续费。",
   "version": "0.1.3",
   "author": {
     "name": "Airwallex",

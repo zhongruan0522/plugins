@@ -1,7 +1,7 @@
 {
   "name": "code-modernization",
   "version": "1.0.0",
-  "description": "Guided modernization for any legacy codebase: start with /modernize, get an assessment, an interactive map, the business rules mined from the code, and a plan you approve, then an upgrade, a rewrite or a rebuild with independent proof that the new code behaves like the old. Includes security hardening, a one-page report, specialist agents, and an optional live progress pane (early access).",
+  "description": "任意遗留代码库的引导式现代化：运行 /modernize 后，先得到评估报告、交互式图谱、从代码中梳理出的业务规则和一份由你确认的方案，随后进行升级、重写或重建，并用独立测试证明新代码行为与旧代码一致。包含安全加固、一页纸报告、专家 agent 以及可选的实时进度面板（抢先体验）。",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"

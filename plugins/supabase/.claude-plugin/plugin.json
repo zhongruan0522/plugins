@@ -1,7 +1,7 @@
 {
   "name": "supabase",
   "version": "0.1.16",
-  "description": "Official Supabase plugin for Claude Code with bundled Supabase skills and MCP access for project management, database work, auth, storage, and Postgres best practices.",
+  "description": "用于数据库操作、身份验证、存储和实时订阅的 Supabase MCP 集成。管理你的 Supabase 项目、运行 SQL 查询，直接与后端交互。",
   "author": {
     "name": "Supabase",
     "url": "https://supabase.com"

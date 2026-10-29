@@ -1,7 +1,7 @@
 {
   "name": "reverse-engineering",
   "version": "1.0.1",
-  "description": "Binary reverse engineering, malware analysis, firmware security, and software protection research for authorized security research, CTF competitions, and defensive security",
+  "description": "二进制逆向工程、恶意软件分析、固件安全和软件保护研究，面向授权的安全研究、CTF 竞赛和防御性安全场景。",
   "author": {
     "name": "D\u00e1vid Balatoni",
     "url": "https://github.com/balcsida"

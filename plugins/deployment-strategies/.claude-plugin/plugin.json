@@ -1,7 +1,7 @@
 {
   "name": "deployment-strategies",
   "version": "1.2.1",
-  "description": "Deployment patterns, rollback automation, and infrastructure templates",
+  "description": "部署模式、回滚自动化和基础设施模板。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

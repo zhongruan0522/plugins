@@ -1,6 +1,6 @@
 {
   "name": "hookify",
-  "description": "Easily create hooks to prevent unwanted behaviors by analyzing conversation patterns",
+  "description": "通过分析会话模式或按明确指令，轻松创建自定义 hooks 来阻止不希望出现的行为。用简单的 Markdown 文件定义规则。",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"

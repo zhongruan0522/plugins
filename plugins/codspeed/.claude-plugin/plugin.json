@@ -1,6 +1,6 @@
 {
   "name": "codspeed",
-  "description": "CodSpeed plugin for Claude Code helping with performance measurement and optimization.",
+  "description": "CodSpeed 是一体化性能测试工具包。深入分析基准测试结果、火焰图和性能对比——给 Claude 提供细粒度的性能分析上下文，精确定位瓶颈，并通过 CodSpeed MCP 服务器自主迭代优化性能。",
   "version": "1.0.0",
   "author": {
     "name": "CodSpeed"

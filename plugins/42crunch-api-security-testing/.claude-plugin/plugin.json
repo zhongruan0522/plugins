@@ -1,6 +1,6 @@
 {
   "name": "api-security-testing",
-  "description": "Catch API security issues during development: audit, scan, remediate, validate with AI guardrails in Claude Code.",
+  "description": "在 Claude Code 中用 42Crunch 实现 API 安全自动化——自动审计 OpenAPI 规范，检测与 OWASP API Security 风险清单（含 BOLA/BFLA）对应的漏洞，并应用 AI 驱动的修复。专为 AI 辅助开发设计，通过“审计→扫描→修复→验证”循环提供持续防护，确保 API 在部署前达到企业安全标准。",
   "version": "1.5.5",
   "author": {
     "name": "42Crunch",

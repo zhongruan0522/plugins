@@ -1,7 +1,7 @@
 {
   "name": "c4-architecture",
   "version": "1.0.1",
-  "description": "Comprehensive C4 architecture documentation workflow with bottom-up code analysis, component synthesis, container mapping, and context diagram generation",
+  "description": "完整的 C4 架构文档工作流：自底向上分析代码、归纳组件、映射容器并生成上下文图。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

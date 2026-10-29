@@ -1,7 +1,7 @@
 {
   "name": "error-debugging",
   "version": "1.2.1",
-  "description": "Error analysis, trace debugging, and multi-agent problem diagnosis",
+  "description": "错误分析、调用链调试和多 agent 协作的问题诊断。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

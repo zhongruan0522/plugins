@@ -1,7 +1,7 @@
 {
   "name": "javascript-typescript",
   "version": "1.2.3",
-  "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks",
+  "description": "使用 ES6+、Node.js、React 和现代 Web 框架的 JavaScript 与 TypeScript 开发。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

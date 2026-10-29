@@ -1,7 +1,7 @@
 {
   "name": "developer-essentials",
   "version": "1.0.4",
-  "description": "Essential developer skills including Git workflows, SQL optimization, error handling, code review, E2E testing, authentication, debugging, and monorepo management",
+  "description": "开发者核心技能，包括 Git 工作流、SQL 优化、错误处理、代码审查、端到端（E2E）测试、身份认证、调试和 monorepo 管理。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

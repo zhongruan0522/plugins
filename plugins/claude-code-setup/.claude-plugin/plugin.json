@@ -1,6 +1,6 @@
 {
   "name": "claude-code-setup",
-  "description": "Analyze codebases and recommend tailored Claude Code automations such as hooks, skills, MCP servers, and subagents.",
+  "description": "分析你的代码库，推荐量身定制的 Claude Code 自动化配置，例如 hooks、skills、MCP 服务器和子代理。",
   "version": "1.0.0",
   "author": {
     "name": "Anthropic",

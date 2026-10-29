@@ -1,7 +1,7 @@
 {
   "name": "codebase-cleanup",
   "version": "1.2.1",
-  "description": "Technical debt reduction, dependency updates, and code refactoring automation",
+  "description": "削减技术债务、更新依赖、自动重构代码。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

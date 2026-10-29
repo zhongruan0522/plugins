@@ -1,7 +1,7 @@
 {
   "name": "conductor",
   "version": "1.2.2",
-  "description": "Context-Driven Development plugin that transforms Claude Code into a project management tool with structured workflow: Context \u2192 Spec & Plan \u2192 Implement",
+  "description": "上下文驱动开发插件，把 Claude Code 变成项目管理工具，遵循“上下文 → 规格与计划 → 实现”的结构化工作流。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

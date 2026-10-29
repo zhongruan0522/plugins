@@ -1,7 +1,7 @@
 {
   "name": "deployment-validation",
   "version": "1.2.1",
-  "description": "Pre-deployment checks, configuration validation, and deployment readiness assessment",
+  "description": "部署前检查、配置校验和部署就绪度评估。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"

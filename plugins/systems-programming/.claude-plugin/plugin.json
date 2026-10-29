@@ -1,7 +1,7 @@
 {
   "name": "systems-programming",
   "version": "1.2.3",
-  "description": "Systems programming with Rust, Go, C, and C++ for performance-critical and low-level development",
+  "description": "用 Rust、Go、C、C++ 做性能敏感与底层开发的系统编程。",
   "author": {
     "name": "Seth Hobson",
     "email": "seth@major7apps.com"
