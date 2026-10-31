@@ -1,0 +1,29 @@
+{
+  "name": "shuohao-skills",
+  "version": "1.0.0",
+  "description": "面向各类 Agent 的 AI 短剧制作 skill 集合：从一本小说到交给生成管线的投产素材——改编大纲、角色设定、美术设定、剧本、开场站位、分镜，外加可独立使用的角色参考图生成。每个 skill 自包含，零依赖、零 API key。",
+  "author": {
+    "name": "烁皓 (eternityspring)",
+    "url": "https://github.com/eternityspring"
+  },
+  "homepage": "https://github.com/eternityspring/shuohao-skills",
+  "repository": "https://github.com/eternityspring/shuohao-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "短剧",
+    "小说改编",
+    "分镜",
+    "storyboard",
+    "skills",
+    "video"
+  ],
+  "skills": [
+    "./skills/character-refs",
+    "./skills/novel-art",
+    "./skills/novel-characters",
+    "./skills/novel-outline",
+    "./skills/novel-script",
+    "./skills/novel-staging",
+    "./skills/novel-storyboard"
+  ]
+}

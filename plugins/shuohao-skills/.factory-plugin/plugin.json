@@ -1,0 +1,19 @@
+{
+  "name": "shuohao-skills",
+  "version": "1.0.0",
+  "description": "AI short drama production skill set for agents: from novel to production-ready assets - adaptation outline, characters, art direction, script, staging, storyboard, plus standalone character reference image generation. Self-contained skills, zero dependencies.",
+  "author": {
+    "name": "烁皓 (eternityspring)",
+    "url": "https://github.com/eternityspring"
+  },
+  "homepage": "https://github.com/eternityspring/shuohao-skills",
+  "repository": "https://github.com/eternityspring/shuohao-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "short-drama",
+    "novel-adaptation",
+    "storyboard",
+    "skills",
+    "video"
+  ]
+}

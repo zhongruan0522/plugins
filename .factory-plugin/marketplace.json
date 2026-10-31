@@ -469,6 +469,11 @@
       "name": "ui-design",
       "description": "Comprehensive UI/UX design plugin for mobile (iOS, Android, React Native) and web applications with design systems, accessibility, and modern patterns",
       "source": "./plugins/ui-design"
+    },
+    {
+      "name": "shuohao-skills",
+      "description": "AI short drama production skill set for agents: from novel to production-ready assets - adaptation outline, characters, art direction, script, staging, storyboard, plus standalone character reference image generation. Self-contained skills, zero dependencies.",
+      "source": "./plugins/shuohao-skills"
     }
   ]
 }
