@@ -37,7 +37,7 @@
     },
     {
       "name": "desktop-commander",
-      "displayName": "Desktop Commander",
+      "displayName": "桌面指挥官",
       "description": "用于执行终端命令、管理进程，以及对文本、代码、PDF、DOCX、Excel、图像和结构化数据进行文件操作的 MCP 服务器。",
       "category": "productivity",
       "source": "./plugins/desktop-commander",
@@ -45,7 +45,7 @@
     },
     {
       "name": "twilio-developer-kit",
-      "displayName": "Twilio Developer Kit",
+      "displayName": "Twilio 开发者工具包",
       "description": "Twilio Skills 为 AI 编码 agent 提供实操知识——该用哪些 API、按什么顺序调用、以及要避开哪些坑。覆盖 SMS、Voice、WhatsApp、Verify、SendGrid、Compliance 等 30 多个产品。",
       "author": {
         "name": "Twilio"
@@ -112,7 +112,7 @@
     },
     {
       "name": "security-guidance",
-      "displayName": "Security Guidance",
+      "displayName": "安全指导",
       "description": "对 Claude 生成代码的安全审查：编辑时基于模式匹配实时告警，Stop 时由 LLM 复查改动 diff，提交时由智能体审查器捕获注入、XSS（跨站脚本）、SSRF、硬编码密钥等 25 类以上漏洞。",
       "version": "2.0.14",
       "author": {
@@ -125,7 +125,7 @@
     },
     {
       "name": "42crunch-api-security-testing",
-      "displayName": "42Crunch API Security Testing",
+      "displayName": "42Crunch API 安全测试",
       "description": "在 Claude Code 中用 42Crunch 实现 API 安全自动化——自动审计 OpenAPI 规范，检测与 OWASP API Security 风险清单（含 BOLA/BFLA）对应的漏洞，并应用 AI 驱动的修复。专为 AI 辅助开发设计，通过“审计→扫描→修复→验证”循环提供持续防护，确保 API 在部署前达到企业安全标准。",
       "author": {
         "name": "42Crunch"
@@ -136,7 +136,7 @@
     },
     {
       "name": "agentforce-adlc",
-      "displayName": "Agentforce ADLC",
+      "displayName": "Agentforce 开发生命周期",
       "description": "Agentforce agent 开发生命周期——编写、发现、脚手架生成、部署、测试和优化 .agent 文件。",
       "category": "development",
       "source": "./plugins/agentforce-adlc",
@@ -144,7 +144,7 @@
     },
     {
       "name": "airwallex-dev",
-      "displayName": "Airwallex Dev",
+      "displayName": "Airwallex 开发",
       "description": "在你自己的代码库里构建 Airwallex 支付集成。生成收银台、卡片组件、商户入驻和订阅计费代码并接入项目：Hosted Payment Page、Drop-in 与 Split 卡片组件、关联账户 KYC 入驻，以及用于订阅和绑卡的 Billing Hosted Checkout。还能为 AI 服务商规划绑卡代扣等商户发起的支付流程，例如充值和自动续费。",
       "author": {
         "name": "Airwallex"
@@ -187,7 +187,7 @@
     },
     {
       "name": "claude-code-setup",
-      "displayName": "Claude Code Setup",
+      "displayName": "Claude Code 配置",
       "description": "分析你的代码库，推荐量身定制的 Claude Code 自动化配置，例如 hooks、skills、MCP 服务器和子代理。",
       "author": {
         "name": "A",
@@ -199,7 +199,7 @@
     },
     {
       "name": "claude-md-management",
-      "displayName": "Claude MD Management",
+      "displayName": "Claude MD 管理",
       "description": "维护和改进 CLAUDE.md 文件的工具——检查质量、沉淀会话中的经验教训，让项目记忆保持最新。",
       "author": {
         "name": "A",
@@ -211,7 +211,7 @@
     },
     {
       "name": "claude-security",
-      "displayName": "Claude Security",
+      "displayName": "Claude 安全扫描",
       "description": "完全在你的 Claude Code 会话内、按选定深度档位对自己的代码做漏洞深度扫描；每条发现都先经过验证才会报告，验证统计由代码算出，结果可信。验证通过的问题会转成针对性补丁，每个补丁再由一组 agent 复核，何时应用由你决定。",
       "author": {
         "name": "A",
@@ -231,7 +231,7 @@
     },
     {
       "name": "code-modernization",
-      "displayName": "Code Modernization",
+      "displayName": "代码现代化",
       "description": "任意遗留代码库的引导式现代化：运行 /modernize 后，先得到评估报告、交互式图谱、从代码中梳理出的业务规则和一份由你确认的方案，随后进行升级、重写或重建，并用独立测试证明新代码行为与旧代码一致。包含安全加固、一页纸报告、专家 agent 以及可选的实时进度面板（抢先体验）。",
       "author": {
         "name": "A",
@@ -243,7 +243,7 @@
     },
     {
       "name": "code-review",
-      "displayName": "Code Review",
+      "displayName": "代码审查",
       "description": "用多个专职 agent 对 Pull Request 做自动化代码审查，按置信度评分过滤误报。",
       "author": {
         "name": "A",
@@ -255,7 +255,7 @@
     },
     {
       "name": "code-simplifier",
-      "displayName": "Code Simplifier",
+      "displayName": "代码简化",
       "description": "在保留功能的前提下简化、精炼代码，提升清晰度、一致性和可维护性的 agent。重点关注最近改动的代码。",
       "author": {
         "name": "A",
@@ -286,7 +286,7 @@
     },
     {
       "name": "commit-commands",
-      "displayName": "Commit Commands",
+      "displayName": "提交命令",
       "description": "git 提交工作流命令，包括提交、推送和创建 PR。",
       "author": {
         "name": "A",
@@ -352,7 +352,7 @@
     },
     {
       "name": "feature-dev",
-      "displayName": "Feature Dev",
+      "displayName": "功能开发",
       "description": "覆盖完整功能开发流程的工作流，配备分别负责代码库探索、架构设计和质量审查的专职 agent。",
       "author": {
         "name": "A",
@@ -364,7 +364,7 @@
     },
     {
       "name": "frontend-design",
-      "displayName": "Frontend Design",
+      "displayName": "前端设计",
       "description": "以高设计水准创建独特的、可直接用于生产环境的前端界面。生成有创意、够精致、避免“一眼 AI 味”的代码。",
       "author": {
         "name": "A",
@@ -488,7 +488,7 @@
     },
     {
       "name": "mattpocock-skills",
-      "displayName": "Matt Pocock Skills",
+      "displayName": "Matt Pocock 技能",
       "description": "Matt Pocock 面向真实工程的 agent 技能——深度追问式评审、规格与工单流程、TDD、代码审查、领域建模等。即插即用，拒绝“氛围编程”。",
       "author": {
         "name": "Matt Pocock"
@@ -542,7 +542,7 @@
     },
     {
       "name": "plugin-dev",
-      "displayName": "Plugin Dev",
+      "displayName": "插件开发",
       "description": "开发 Claude Code 插件的全套工具。包含 7 个专家技能，覆盖 hooks、MCP 集成、命令、agent 和最佳实践，支持 AI 辅助的插件创建与验证。",
       "author": {
         "name": "A",
@@ -554,7 +554,7 @@
     },
     {
       "name": "pr-review-toolkit",
-      "displayName": "PR Review Toolkit",
+      "displayName": "PR 审查工具箱",
       "description": "一组全方位的 PR 审查 agent，专精注释、测试、错误处理、类型设计、代码质量和代码简化。",
       "author": {
         "name": "A",
@@ -591,7 +591,7 @@
     },
     {
       "name": "ralph-loop",
-      "displayName": "Ralph Loop",
+      "displayName": "Ralph 循环",
       "description": "实现 Ralph Wiggum 技法的交互式自我迭代 AI 循环。Claude 反复处理同一个任务，能看到自己之前的产出，直到完成为止。",
       "author": {
         "name": "A",
@@ -603,7 +603,7 @@
     },
     {
       "name": "redis-development",
-      "displayName": "Redis Development",
+      "displayName": "Redis 开发",
       "description": "Redis 开发最佳实践——数据结构、查询引擎、向量搜索、缓存与性能优化。",
       "author": {
         "name": "Redis"
@@ -690,7 +690,7 @@
     },
     {
       "name": "sonatype-guide",
-      "displayName": "Sonatype Guide",
+      "displayName": "Sonatype 指南",
       "description": "Sonatype Guide MCP 服务器，提供软件供应链情报和依赖安全。分析依赖中的漏洞、给出安全版本建议，并检查组件质量指标。",
       "category": "security",
       "source": "./plugins/sonatype-guide",
@@ -790,7 +790,7 @@
     },
     {
       "name": "code-documentation",
-      "displayName": "Code Documentation",
+      "displayName": "代码文档",
       "source": "./plugins/code-documentation",
       "description": "文档生成、代码解释和技术写作，支持自动生成文档和编写教程。",
       "version": "1.2.1",
@@ -804,7 +804,7 @@
     },
     {
       "name": "git-pr-workflows",
-      "displayName": "Git PR Workflows",
+      "displayName": "Git PR 工作流",
       "source": "./plugins/git-pr-workflows",
       "description": "Git 工作流自动化、Pull Request 增强，以及团队新人上手流程。",
       "version": "1.3.1",
@@ -818,7 +818,7 @@
     },
     {
       "name": "backend-development",
-      "displayName": "Backend Development",
+      "displayName": "后端开发",
       "source": "./plugins/backend-development",
       "description": "后端 API 设计、GraphQL 架构、基于 Temporal 的工作流编排，以及测试驱动的后端开发。",
       "version": "1.3.2",
@@ -832,7 +832,7 @@
     },
     {
       "name": "frontend-mobile-development",
-      "displayName": "Frontend & Mobile Development",
+      "displayName": "前端与移动开发",
       "source": "./plugins/frontend-mobile-development",
       "description": "前端 UI 开发与跨平台移动应用实现。",
       "version": "1.2.3",
@@ -846,7 +846,7 @@
     },
     {
       "name": "full-stack-orchestration",
-      "displayName": "Full-Stack Orchestration",
+      "displayName": "全栈编排",
       "source": "./plugins/full-stack-orchestration",
       "description": "端到端的功能编排，覆盖测试、安全、性能和部署。",
       "version": "1.3.1",
@@ -860,7 +860,7 @@
     },
     {
       "name": "tdd-workflows",
-      "displayName": "TDD Workflows",
+      "displayName": "TDD 工作流",
       "source": "./plugins/tdd-workflows",
       "description": "测试驱动开发方法论，包含“红-绿-重构”循环和代码审查。",
       "version": "1.3.1",
@@ -874,7 +874,7 @@
     },
     {
       "name": "code-refactoring",
-      "displayName": "Code Refactoring",
+      "displayName": "代码重构",
       "source": "./plugins/code-refactoring",
       "description": "代码清理、重构自动化，以及可恢复上下文的技术债务管理。",
       "version": "1.2.1",
@@ -888,7 +888,7 @@
     },
     {
       "name": "dependency-management",
-      "displayName": "Dependency Management",
+      "displayName": "依赖管理",
       "source": "./plugins/dependency-management",
       "description": "依赖审计、版本管理和安全漏洞扫描。",
       "version": "1.2.1",
@@ -902,7 +902,7 @@
     },
     {
       "name": "error-debugging",
-      "displayName": "Error Debugging",
+      "displayName": "错误调试",
       "source": "./plugins/error-debugging",
       "description": "错误分析、调用链调试和多 agent 协作的问题诊断。",
       "version": "1.2.1",
@@ -916,7 +916,7 @@
     },
     {
       "name": "deployment-strategies",
-      "displayName": "Deployment Strategies",
+      "displayName": "部署策略",
       "description": "部署模式、回滚自动化和基础设施模板。",
       "version": "1.2.1",
       "author": {
@@ -930,7 +930,7 @@
     },
     {
       "name": "deployment-validation",
-      "displayName": "Deployment Validation",
+      "displayName": "部署验证",
       "description": "部署前检查、配置校验和部署就绪度评估。",
       "version": "1.2.1",
       "author": {
@@ -944,7 +944,7 @@
     },
     {
       "name": "kubernetes-operations",
-      "displayName": "Kubernetes Operations",
+      "displayName": "Kubernetes 运维",
       "description": "Kubernetes 清单生成、网络配置、安全策略、可观测性设置、GitOps 工作流和自动扩缩容。",
       "version": "1.2.3",
       "author": {
@@ -958,7 +958,7 @@
     },
     {
       "name": "cloud-infrastructure",
-      "displayName": "Cloud Infrastructure",
+      "displayName": "云基础设施",
       "description": "面向 AWS/Azure/GCP/OCI 的云架构设计、Kubernetes 集群配置、Terraform 基础设施即代码、混合云组网和多云成本优化。",
       "version": "1.3.2",
       "author": {
@@ -972,7 +972,7 @@
     },
     {
       "name": "cicd-automation",
-      "displayName": "CI/CD Automation",
+      "displayName": "CI/CD 自动化",
       "description": "CI/CD 流水线配置、GitHub Actions/GitLab CI 工作流搭建，以及自动化部署流水线编排。",
       "version": "1.2.3",
       "author": {
@@ -986,7 +986,7 @@
     },
     {
       "name": "comprehensive-review",
-      "displayName": "Comprehensive Review",
+      "displayName": "综合审查",
       "source": "./plugins/comprehensive-review",
       "description": "覆盖架构、安全和最佳实践的多视角代码分析。",
       "version": "1.3.1",
@@ -1000,7 +1000,7 @@
     },
     {
       "name": "performance-testing-review",
-      "displayName": "Performance Testing Review",
+      "displayName": "性能测试审查",
       "source": "./plugins/performance-testing-review",
       "description": "性能分析、测试覆盖率审查和 AI 驱动的代码质量评估。",
       "version": "1.2.2",
@@ -1014,7 +1014,7 @@
     },
     {
       "name": "framework-migration",
-      "displayName": "Framework Migration",
+      "displayName": "框架迁移",
       "source": "./plugins/framework-migration",
       "description": "框架升级、迁移规划和架构转型工作流。",
       "version": "1.3.2",
@@ -1028,7 +1028,7 @@
     },
     {
       "name": "codebase-cleanup",
-      "displayName": "Codebase Cleanup",
+      "displayName": "代码库清理",
       "source": "./plugins/codebase-cleanup",
       "description": "削减技术债务、更新依赖、自动重构代码。",
       "version": "1.2.1",
@@ -1042,7 +1042,7 @@
     },
     {
       "name": "database-design",
-      "displayName": "Database Design",
+      "displayName": "数据库设计",
       "source": "./plugins/database-design",
       "description": "面向生产系统的数据库架构、表结构设计和 SQL 优化。",
       "version": "1.2.1",
@@ -1056,7 +1056,7 @@
     },
     {
       "name": "database-migrations",
-      "displayName": "Database Migrations",
+      "displayName": "数据库迁移",
       "source": "./plugins/database-migrations",
       "description": "数据库迁移自动化、迁移可观测性，以及跨数据库迁移策略。",
       "version": "1.2.1",
@@ -1070,7 +1070,7 @@
     },
     {
       "name": "security-scanning",
-      "displayName": "Security Scanning",
+      "displayName": "安全扫描",
       "description": "静态应用安全测试（SAST）分析、依赖漏洞扫描、OWASP Top 10 合规检查、容器安全扫描和自动化安全加固。",
       "version": "1.3.2",
       "author": {
@@ -1084,7 +1084,7 @@
     },
     {
       "name": "security-compliance",
-      "displayName": "Security Compliance",
+      "displayName": "安全合规",
       "description": "SOC2、HIPAA、GDPR 合规验证，密钥扫描、合规检查清单和监管文档。",
       "version": "1.2.1",
       "author": {
@@ -1098,7 +1098,7 @@
     },
     {
       "name": "backend-api-security",
-      "displayName": "Backend API Security",
+      "displayName": "后端 API 安全",
       "description": "API 安全加固、身份认证实现、授权模式、限流和输入校验。",
       "version": "1.2.1",
       "author": {
@@ -1112,7 +1112,7 @@
     },
     {
       "name": "frontend-mobile-security",
-      "displayName": "Frontend & Mobile Security",
+      "displayName": "前端与移动安全",
       "description": "XSS（跨站脚本）防护、CSRF（跨站请求伪造）防护、内容安全策略（CSP）、移动应用安全和安全存储方案。",
       "version": "1.2.1",
       "author": {
@@ -1126,7 +1126,7 @@
     },
     {
       "name": "api-scaffolding",
-      "displayName": "API Scaffolding",
+      "displayName": "API 脚手架",
       "source": "./plugins/api-scaffolding",
       "description": "REST 与 GraphQL API 脚手架、框架选型、后端架构和 API 生成。",
       "version": "1.2.3",
@@ -1140,7 +1140,7 @@
     },
     {
       "name": "api-testing-observability",
-      "displayName": "API Testing & Observability",
+      "displayName": "API 测试与可观测性",
       "source": "./plugins/api-testing-observability",
       "description": "API 测试自动化、请求模拟、OpenAPI 文档生成、可观测性配置和监控。",
       "version": "1.2.1",
@@ -1154,7 +1154,7 @@
     },
     {
       "name": "documentation-generation",
-      "displayName": "Documentation Generation",
+      "displayName": "文档生成",
       "source": "./plugins/documentation-generation",
       "description": "生成 OpenAPI 规范、Mermaid 图表、教程和 API 参考文档。",
       "version": "1.2.3",
@@ -1168,7 +1168,7 @@
     },
     {
       "name": "c4-architecture",
-      "displayName": "C4 Architecture",
+      "displayName": "C4 架构",
       "source": "./plugins/c4-architecture",
       "description": "完整的 C4 架构文档工作流：自底向上分析代码、归纳组件、映射容器并生成上下文图。",
       "version": "1.0.1",
@@ -1182,7 +1182,7 @@
     },
     {
       "name": "multi-platform-apps",
-      "displayName": "Multi-Platform Apps",
+      "displayName": "多平台应用",
       "source": "./plugins/multi-platform-apps",
       "description": "跨平台应用开发，统一协调 Web、iOS、Android 和桌面端实现。",
       "version": "1.3.1",
@@ -1196,7 +1196,7 @@
     },
     {
       "name": "python-development",
-      "displayName": "Python Development",
+      "displayName": "Python 开发",
       "source": "./plugins/python-development",
       "description": "基于 Python 3.12+、Django、FastAPI、异步模式和生产环境最佳实践的现代 Python 开发。",
       "version": "1.2.3",
@@ -1210,7 +1210,7 @@
     },
     {
       "name": "javascript-typescript",
-      "displayName": "JavaScript & TypeScript",
+      "displayName": "JavaScript 与 TypeScript",
       "source": "./plugins/javascript-typescript",
       "description": "使用 ES6+、Node.js、React 和现代 Web 框架的 JavaScript 与 TypeScript 开发。",
       "version": "1.2.3",
@@ -1224,7 +1224,7 @@
     },
     {
       "name": "systems-programming",
-      "displayName": "Systems Programming",
+      "displayName": "系统编程",
       "source": "./plugins/systems-programming",
       "description": "用 Rust、Go、C、C++ 做性能敏感与底层开发的系统编程。",
       "version": "1.2.3",
@@ -1238,7 +1238,7 @@
     },
     {
       "name": "functional-programming",
-      "displayName": "Functional Programming",
+      "displayName": "函数式编程",
       "source": "./plugins/functional-programming",
       "description": "函数式编程：Elixir、OTP 模式、Phoenix 框架和分布式系统。",
       "version": "1.2.1",
@@ -1252,7 +1252,7 @@
     },
     {
       "name": "shell-scripting",
-      "displayName": "Shell Scripting",
+      "displayName": "Shell 脚本",
       "source": "./plugins/shell-scripting",
       "description": "生产级 Bash 脚本编写，讲究防御式编程、POSIX 兼容和充分测试。",
       "version": "1.2.3",
@@ -1266,7 +1266,7 @@
     },
     {
       "name": "developer-essentials",
-      "displayName": "Developer Essentials",
+      "displayName": "开发者必备",
       "source": "./plugins/developer-essentials",
       "description": "开发者核心技能，包括 Git 工作流、SQL 优化、错误处理、代码审查、端到端（E2E）测试、身份认证、调试和 monorepo 管理。",
       "version": "1.0.4",
@@ -1280,7 +1280,7 @@
     },
     {
       "name": "reverse-engineering",
-      "displayName": "Reverse Engineering",
+      "displayName": "逆向工程",
       "source": "./plugins/reverse-engineering",
       "description": "二进制逆向工程、恶意软件分析、固件安全和软件保护研究，面向授权的安全研究、CTF 竞赛和防御性安全场景。",
       "version": "1.0.1",
@@ -1308,7 +1308,7 @@
     },
     {
       "name": "ui-design",
-      "displayName": "UI Design",
+      "displayName": "UI 设计",
       "description": "全面的 UI/UX 设计插件，覆盖移动端（iOS、Android、React Native）和 Web 应用，涵盖设计系统、无障碍和现代设计模式。",
       "version": "1.0.5",
       "author": {
@@ -1322,7 +1322,7 @@
     },
     {
       "name": "block-no-verify",
-      "displayName": "Block --no-verify",
+      "displayName": "阻止 --no-verify",
       "source": "./plugins/block-no-verify",
       "description": "PreToolUse hook，防止 AI agent 使用 --no-verify、--no-gpg-sign 等跳过 git hooks 的绕过参数。",
       "version": "1.0.2",
@@ -1335,7 +1335,7 @@
     },
     {
       "name": "skill-forge-essentials",
-      "displayName": "Skill Forge Essentials",
+      "displayName": "Skill Forge 必备技能",
       "source": "./plugins/skill-forge-essentials",
       "description": "针对 AI 特有失败模式的行为技能：通过行为层面的自我约束，解决 agent 生成代码留下的隐性技术债务，以及上下文压缩导致的遗忘问题。",
       "version": "1.0.0",
