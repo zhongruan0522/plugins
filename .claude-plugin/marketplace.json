@@ -1265,6 +1265,13 @@
       "category": "productivity",
       "source": "./plugins/shuohao-skills",
       "homepage": "https://github.com/eternityspring/shuohao-skills"
+    },
+    {
+      "name": "zhipu-plan-metrics",
+      "displayName": "智谱套餐额度指标",
+      "description": "输入框上方实时指标横条：GLM Coding Plan 5 小时与周限制额度进度条（三档配色、重置倒计时，自动识别 V1/V2/V3 套餐）、北京高峰期徽标，以及会话缓存率与每秒输出速度（AA 口径）。密钥经敏感配置存系统安全存储，额度直连智谱官方接口，每 60 秒刷新。",
+      "category": "productivity",
+      "source": "./plugins/zhipu-plan-metrics"
     }
   ]
 }

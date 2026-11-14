@@ -1,0 +1,23 @@
+{
+  "name": "zhipu-plan-metrics",
+  "version": "0.1.0",
+  "description": "智谱额度（5h/周）+ 缓存率 + 输出速度 指标横条（AbovePrompt band）",
+  "license": "MIT",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "zhipu_base_url": {
+      "type": "string",
+      "title": "智谱 API 地址",
+      "description": "国内套餐填 https://www.bigmodel.cn，国际套餐填 https://api.z.ai"
+    },
+    "api_token": {
+      "type": "string",
+      "title": "智谱 API Key",
+      "description": "Coding Plan 的 API Key（渠道密钥）",
+      "sensitive": true
+    }
+  },
+  "author": {
+    "name": "zhongruan"
+  }
+}
